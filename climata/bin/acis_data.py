@@ -30,12 +30,16 @@ def load_data(basin, elem, syear=1950, eyear=curyear,
         start, end = site.valid_daterange[elem]
         exclude = False
         if end.year < eyear - years and not inactive:
-            print "Site not active: %s (last %s)" % (site.name, end.date())
+            sys.stderr.write("Site not active: %s (last %s)" % (
+                site.name, end.date()
+            ))
+            sys.stderr.write("\n")
             exclude = True
         elif end.year - start.year + 1 < years:
-            print "Not enough data: %s (%s years)" % (
+            sys.stderr.write("Not enough data: %s (%s years)" % (
                 site.name, end.year - start.year
-            )
+            ))
+            sys.stderr.write("\n")
             exclude = True
 
         if exclude:
@@ -47,8 +51,6 @@ def load_data(basin, elem, syear=1950, eyear=curyear,
     # Sort sites by longitude
     include_sites = sorted(include_sites, key=lambda s: s.ll[0])
     seen_auths = sorted(seen_auths)
-
-    outfile = open("climate_data.csv", "w")
 
     def get_val(site, field):
         if hasattr(site, field):
@@ -62,22 +64,21 @@ def load_data(basin, elem, syear=1950, eyear=curyear,
 
     def header(field):
         vals = [get_val(site, field) for site in include_sites]
-        outfile.write(",".join([field + ":"] + map(str, vals)))
-        outfile.write("\n")
+        sys.stdout.write(",".join([field + ":"] + map(str, vals)))
+        sys.stdout.write("\n")
 
     header("name")
     for auth in seen_auths:
-        print "AUTH: %s" % auth
         header(auth)
     header("latitude")
     header("longitude")
 
     for year in range(syear, eyear + 1):
-        load_year_data(basin, elem, year, outfile, include_sites)
+        load_year_data(basin, elem, year, include_sites)
 
 
-def load_year_data(basin, elem, year, outfile, include_sites):
-    print "Loading %s data..." % year
+def load_year_data(basin, elem, year, include_sites):
+    sys.stderr.write("Loading %s data...\n" % year)
     sdate = parse_date('%s-01-01' % year).date()
     edate = parse_date('%s-12-31' % year).date()
     sitedata = StationDataIO(
@@ -106,13 +107,13 @@ def load_year_data(basin, elem, year, outfile, include_sites):
             dates[date].get(site.uid, "")
             for site in include_sites
         ])
-        outfile.write(",".join([str(date)] + data))
-        outfile.write("\n")
+        sys.stdout.write(",".join([str(date)] + data))
+        sys.stdout.write("\n")
         date += one_day
 
 
 def usage():
-    print """
+    sys.stderr.write("""
 Usage: acis_data.py basin elem [syear] [eyear] [inact] [years]
 
  basin:\tbasin(s) (HUC8, required)
@@ -126,10 +127,10 @@ Inactive sites are considered to be sites that have not had any data for n
 years, where n is the same as the years argument.
 
 Available elem codes:
-""" % curyear
+""" % curyear)
 
     for elem in sorted(ELEMENT_BY_NAME.keys()):
-        print " %s:\t%s" % (elem, ELEMENT_BY_NAME[elem]['desc'])
+        sys.stderr.write(" %s:\t%s\n" % (elem, ELEMENT_BY_NAME[elem]['desc']))
     exit()
 
 if __name__ == "__main__":
