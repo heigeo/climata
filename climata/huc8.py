@@ -1,5 +1,6 @@
 from wq.io import CsvNetIO
 
+
 class HucIO(CsvNetIO):
     # FIXME: some HUCs have changed, but new_huc_rdb.txt isn't a valid TSV file
     url = "http://water.usgs.gov/GIS/huc_rdb.txt"
@@ -7,9 +8,10 @@ class HucIO(CsvNetIO):
 
 hucs = list(HucIO())
 
+
 def get_huc8(prefix):
     """
-    Return all HUC8s matching the given prefix (e.g. 1801) or basin name 
+    Return all HUC8s matching the given prefix (e.g. 1801) or basin name
     (e.g. Klamath)
     """
     if not prefix.isdigit():
@@ -17,10 +19,10 @@ def get_huc8(prefix):
         name = prefix
         prefix = None
         for row in hucs:
-           if row.basin.lower() == name.lower():
-               # Use most general huc if two have the same name
-               if prefix is None or len(row.huc) < len(prefix):
-                   prefix = row.huc
+            if row.basin.lower() == name.lower():
+                # Use most general huc if two have the same name
+                if prefix is None or len(row.huc) < len(prefix):
+                    prefix = row.huc
 
     if prefix is None:
         return []

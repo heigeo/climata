@@ -7,7 +7,9 @@ from datetime import date, timedelta
 curyear = date.today().year
 one_day = timedelta(days=1)
 
-def load_data(basin, elem, syear=1950, eyear=curyear, inactive=False, years=30):
+
+def load_data(basin, elem, syear=1950, eyear=curyear,
+              inactive=False, years=30):
     syear = int(syear)
     eyear = int(eyear)
     inactive = bool(inactive)
@@ -31,7 +33,9 @@ def load_data(basin, elem, syear=1950, eyear=curyear, inactive=False, years=30):
             print "Site not active: %s (last %s)" % (site.name, end.date())
             exclude = True
         elif end.year - start.year + 1 < years:
-            print "Not enough data: %s (%s years)" % (site.name, end.year - start.year)
+            print "Not enough data: %s (%s years)" % (
+                site.name, end.year - start.year
+            )
             exclude = True
 
         if exclude:
@@ -45,7 +49,7 @@ def load_data(basin, elem, syear=1950, eyear=curyear, inactive=False, years=30):
     seen_auths = sorted(seen_auths)
 
     outfile = open("climate_data.csv", "w")
-   
+
     def get_val(site, field):
         if hasattr(site, field):
             return getattr(site, field)
@@ -68,8 +72,9 @@ def load_data(basin, elem, syear=1950, eyear=curyear, inactive=False, years=30):
     header("latitude")
     header("longitude")
 
-    for year in range(syear, eyear+1):
+    for year in range(syear, eyear + 1):
         load_year_data(basin, elem, year, outfile, include_sites)
+
 
 def load_year_data(basin, elem, year, outfile, include_sites):
     print "Loading %s data..." % year
@@ -104,6 +109,7 @@ def load_year_data(basin, elem, year, outfile, include_sites):
         outfile.write(",".join([str(date)] + data))
         outfile.write("\n")
         date += one_day
+
 
 def usage():
     print """

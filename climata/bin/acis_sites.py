@@ -8,6 +8,7 @@ elems = ELEMENT_BY_NAME.copy()
 # Eloement 7 (pan evap) does not have a name, copy from ID listing
 elems['7'] = ELEMENT_BY_ID['7']
 
+
 def load_sites(*basin_ids):
     """
     Load metadata for all sites in given basin codes.
@@ -38,9 +39,9 @@ def load_sites(*basin_ids):
     ]
 
     # Determine the following from the site lists:
-    seen_auths = set() # Which authority codes are actually used by any site
-    seen_elems = set() # Which elems actually have data in any site
-    ranges = {} # The overall period of record for each site
+    seen_auths = set()  # Which authority codes are actually used by any site
+    seen_elems = set()  # Which elems actually have data in any site
+    ranges = {}  # The overall period of record for each site
     for site in sites:
 
         for auth in site.sids.keys():
@@ -55,7 +56,7 @@ def load_sites(*basin_ids):
             if start is None or s < start:
                 start = s
             if end is None or e > end:
-                end = e 
+                end = e
         ranges[site.uid] = [start, end]
 
     # Check for authority codes that might not be in sites with data
@@ -76,7 +77,7 @@ def load_sites(*basin_ids):
     # Print sites with data
     for site in sites:
 
-        # Determine which elems are available for entire period vs only a shorter range
+        # Determine if elems are available for entire period or shorter range
         start, end = ranges[site.uid]
         if start and end:
             years = end.year - start.year + 1
