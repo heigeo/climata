@@ -86,9 +86,13 @@ class AcisIO(JsonNetIO):
             # FIXME: Support other region types
             raise NotImplementedError("No region specified")
 
-        for param in ('basin', 'meta', 'elems', 'sdate', 'edate'):
+        for param in ('basin', 'meta', 'elems'):
             if self.set_param(params, param):
                 complex = True
+        for param in ('sdate', 'edate'):
+            value = self.getdate(param)
+            if value:
+                params[param] = [unicode(value)]
         return params, complex
 
     @property
