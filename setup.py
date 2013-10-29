@@ -2,7 +2,8 @@ import os
 from setuptools import setup, find_packages
 
 LONG_DESCRIPTION = """
-Library for iterating over Applied Climate Information System time series data
+A python library for iterating over Applied Climate Information System (ACIS)
+time series data.  Powered by wq.io.
 """
 
 def long_description():
@@ -16,18 +17,18 @@ def long_description():
 
 setup(
     name='climata',
-    version='0.1.0-dev',
+    version='0.1.0',
     author='HEI Geo',
     author_email='gis@houstoneng.com',
     url='https://github.com/heigeo/climata',
     license='MIT',
     packages=find_packages(),
-    description='Load Applied Climate Information System time series data',
+    description='A pythonic interface for Applied Climate Information System (ACIS) data',
     long_description=long_description(),
     install_requires=['wq.io>=0.3.0'],
     scripts=['climata/bin/acis_sites.py', 'climata/bin/acis_data.py'],
     classifiers = [
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 2 - Pre-Alpha',
         'Environment :: Web Environment',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
