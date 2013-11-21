@@ -1,9 +1,8 @@
 import json
 from datetime import datetime, date, timedelta
-from wq.io import JsonNetIO, BaseIO, TimeSeriesMapper, make_date_mapper
+from wq.io import JsonNetIO, BaseIO, TimeSeriesMapper
+from climata.util import parse_date
 from .constants import *
-
-parse_date = make_date_mapper('%Y-%m-%d')
 
 
 class AcisIO(JsonNetIO):

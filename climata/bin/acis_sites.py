@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 from datetime import date
-from climata import StationMetaIO, ELEMENT_BY_NAME, ELEMENT_BY_ID
+from climata.acis import StationMetaIO, ELEMENT_BY_NAME, ELEMENT_BY_ID
 
 elems = ELEMENT_BY_NAME.copy()
 

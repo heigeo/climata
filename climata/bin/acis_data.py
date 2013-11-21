@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-from climata import StationMetaIO, StationDataIO, ELEMENT_BY_NAME
-from climata.io import parse_date
+from climata.acis import StationMetaIO, StationDataIO, ELEMENT_BY_NAME
+from climata.util import parse_date
 import sys
 from datetime import date, timedelta
 
