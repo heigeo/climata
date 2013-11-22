@@ -2,8 +2,8 @@ climata
 =======
 
 climata is a pythonic interface for loading and processing time series data
-from the Applied Climate Information System (ACIS).  climata leverages the
-webservices available at http://data.rcc-acis.org.
+from climate and flow monitoring stations and observers. climata leverages 
+a number of webservices as listed below.
 
 Getting Started
 ---------------
@@ -14,6 +14,17 @@ Getting Started
 
 See https://github.com/heigeo/climata to report any issues.
 climata is powered by `wq.io <http://wq.io/wq.io>`_.
+
+Available Services
+------------------
+
+========== ====================== ======================================
+ Source      Module                 Classes 
+========== ====================== ======================================
+ACIS_       ``climata.acis``       ``StationMetaIO``, ``StationDataIO``
+CoCoRaHS_   ``climata.cocorahs``   ``CocorahsIO``
+Hydromet_   ``climata.hydromet``   ``HydrometIO``, ``AgrimetIO``
+========== ====================== ======================================
 
 Usage
 -----
@@ -32,7 +43,7 @@ Python API:
 
 ::
 
-    from climata import StationDataIO
+    from climata.acis import StationDataIO
 
     # Load average temperature for sites in Mississippi Headwaters HUC8
     sites = StationDataIO(
@@ -48,3 +59,7 @@ Python API:
         for evt in site.data:
             print evt.date, evt.avgt
 
+
+.. _ACIS: http://data.rcc-acis.org/
+.. _CoCoRaHS: http://data.cocorahs.org/cocorahs/export/exportmanager.aspx
+.. _Hydromet: http://www.usbr.gov/pn/hydromet/arcread.html
