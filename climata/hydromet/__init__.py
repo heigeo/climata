@@ -5,13 +5,8 @@ from collections import OrderedDict
 
 class HydrometIO(TimeSeriesMapper, CsvNetIO):
     """
-    Retrieves Hydromet data from USBR
-
-    Usage:
-
-    data = HydrometIO(station='ACAO', parameters=['GD','QD'])
-    for row in data:
-        print row.date, row.gd, row.qd
+    Base class for retrieving Hydromet data from USBR.
+    Use DailyDataIO or InstantDataIO instead, depending on your needs.
     """
 
     # USBR region: pn or gp
@@ -28,11 +23,10 @@ class HydrometIO(TimeSeriesMapper, CsvNetIO):
     enddate = date.today()
 
     website = 'www.usbr.gov'
-    script = 'webarccsv.pl'
+    script = None
 
     # TimeSeriesMapper configuration
     date_formats = ['%m/%d/%Y %H:%M', '%m/%d/%Y']
-    key_fields = ['datetime', 'date']
 
     def clean_field_name(self, field):
         field = super(HydrometIO, self).clean_field_name(field)
@@ -41,6 +35,8 @@ class HydrometIO(TimeSeriesMapper, CsvNetIO):
     # NetLoader configuration
     @property
     def url(self):
+        if self.script is None:
+            raise NotImplementedError("Script must be defined!")
         return "http://%s/%s-bin/%s" % (
             self.website, self.region, self.script
         )
@@ -52,26 +48,23 @@ class HydrometIO(TimeSeriesMapper, CsvNetIO):
         if not self.parameters:
             raise NotImplementedError("Parameters must be defined!")
 
-        # Unfortunately, webarccsv.pl expects a very specific order of
-        # parameters in the query string. Thus, instead of returning a dict()
-        # here we need to construct the query string manually.
-        params = '&'.join([
-            "format=2",
-            "year={start.year}",
-            "month={start.month}",
-            "day={start.day}",
-            "year={end.year}",
-            "month={end.month}",
-            "day={end.day}",
-            "station={station}"
-        ]).format(
-            start=self.startdate,
-            end=self.enddate,
-            station=self.station.upper()
-        )
-        for param in self.parameters:
-            params += '&pcode=' + param.upper()
-        return params
+        start = self.startdate
+        end = self.enddate
+        pcodes = [
+            "%s %s" % (self.station, param)
+            for param in self.parameters
+        ]
+        # Note: ordering of URL parameters is important
+        return OrderedDict([
+            ('parameter', ",".join(pcodes)),
+            ('syer', start.year),
+            ('smnth', start.month),
+            ('sdy', start.day),
+            ('eyer', end.year),
+            ('emnth', end.month),
+            ('edy', end.day),
+            ('format', 2),
+        ])
 
     # Help CsvParser find data
     def reader_class(self):
@@ -94,9 +87,48 @@ class HydrometIO(TimeSeriesMapper, CsvNetIO):
         return item
 
 
-# PN also has an agrimet.pl that can return the last 8 days of data for a
-# station (no params need to be specified)
-class AgrimetIO(HydrometIO):
+class DailyDataIO(HydrometIO):
+    """
+    Retrieves daily values for USBR Hydromet/Agrimet sites.
+
+    Usage:
+
+    data = DailyDataIO(station='ACAO', parameters=['GD','QD'])
+    for row in data:
+        print row.date, row.gd, row.qd
+    """
+
+    script = "webarccsv.pl"
+    key_fields = ['date']
+
+
+class InstantDataIO(HydrometIO):
+    """
+    Retrieves instant (e.g. 15-min) values for USBR Hydromet/Agrimet sites.
+
+    Usage:
+
+    data = InstantDataIO(station='ACAO', parameters=['GH','Q'])
+    for row in data:
+        print row.datetime, row.gh, row.q
+    """
+
+    script = "webdaycsv.pl"
+    key_fields = ['datetime']
+
+
+# PN also has an agrimet.pl that can return all data from the last 2 weeks of
+# data for a station (no params need to be specified)
+class AgrimetRecentIO(InstantDataIO):
+    """
+    Load recent Agrimet data (all available parameters)
+
+    Usage:
+
+    data = AgrimetRecentIO(station='ABEI')
+    for row in data:
+        print row.datetime, row.ob, row.wd
+    """
     script = "agrimet.pl"
 
     @property
@@ -107,5 +139,5 @@ class AgrimetIO(HydrometIO):
             ('cbtt', self.station),
             ('interval', 'instant'),
             ('format', 2),
-            ('back', 192)
+            ('back', 360)
         ])
