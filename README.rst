@@ -3,7 +3,9 @@ climata
 
 climata is a pythonic interface for loading and processing time series data
 from climate and flow monitoring stations and observers. climata leverages 
-a number of webservices as listed below.
+a number of webservices as listed below.  climata is powered by
+`wq.io <http://wq.io/wq.io>`_, and shares its goal of maximizing the reusability of
+data parsing code, by smoothing over some of the differences between various data formats.
 
 Getting Started
 ---------------
@@ -13,18 +15,17 @@ Getting Started
     pip install climata
 
 See https://github.com/heigeo/climata to report any issues.
-climata is powered by `wq.io <http://wq.io/wq.io>`_.
 
 Available Services
 ------------------
 
-========== ====================== ======================================
- Source      Module                 Classes 
-========== ====================== ======================================
-ACIS_       ``climata.acis``       ``StationMetaIO``, ``StationDataIO``
-CoCoRaHS_   ``climata.cocorahs``   ``CocorahsIO``
-Hydromet_   ``climata.hydromet``   ``HydrometIO``, ``AgrimetIO``
-========== ====================== ======================================
+=================== ======================================================= ==========
+ Module             Classes                                                  Data Source
+=================== ======================================================= ==========
+climata.acis_       ``StationMetaIO``, ``StationDataIO``                     ACIS_
+climata.cocorahs_   ``CocorahsIO``                                           CoCoRaHS_
+climata.hydromet_   ``DailyDataIO``, ``InstantDataIO``, ``AgrimetRecentIO``  Hydromet_   
+=================== ======================================================= ==========
 
 Usage
 -----
@@ -63,3 +64,6 @@ Python API:
 .. _ACIS: http://data.rcc-acis.org/
 .. _CoCoRaHS: http://data.cocorahs.org/cocorahs/export/exportmanager.aspx
 .. _Hydromet: http://www.usbr.gov/pn/hydromet/arcread.html
+.. _climata.acis: https://github.com/heigeo/climata/blob/master/climata/acis/__init__.py
+.. _climata.cocorahs: https://github.com/heigeo/climata/blob/master/climata/cocorahs/__init__.py
+.. _climata.hydromet: https://github.com/heigeo/climata/blob/master/climata/hydromet/__init__.py
