@@ -68,7 +68,7 @@ def load_sites(*basin_ids):
     seen_auths = sorted(seen_auths)
     seen_elems = sorted(seen_elems)
     print ",".join(
-        ['name']
+        ['ACIS uid', 'name']
         + seen_auths
         + ['latitude', 'longitude', 'start', 'end', 'years']
         + [elems[elem]['desc'] for elem in seen_elems]
@@ -94,7 +94,7 @@ def load_sites(*basin_ids):
 
         # Output CSV row
         print ",".join(map(str,
-            [site.name]
+            [site.uid, site.name]
             + [site.sids.get(auth, "") for auth in seen_auths]
             + [site.ll[1], site.ll[0]]
             + [start.date(), end.date(), years]
@@ -103,12 +103,12 @@ def load_sites(*basin_ids):
 
     # Print CSV rows for sites without data
     for site in nodata_sites:
-        print ",".join(
-            [site.name]
+        print ",".join(map(str,
+            [site.uid, site.name]
             + [site.sids.get(auth, "") for auth in seen_auths]
-            + [str(site.ll[1]), str(site.ll[0])]
+            + [site.ll[1], site.ll[0]]
             + ["NO DATA"]
-        )
+        ))
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
