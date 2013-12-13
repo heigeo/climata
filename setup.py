@@ -17,7 +17,7 @@ def long_description():
 
 setup(
     name='climata',
-    version='0.1.0',
+    version='0.2.0',
     author='HEI Geo',
     author_email='gis@houstoneng.com',
     url='https://github.com/heigeo/climata',
@@ -25,7 +25,7 @@ setup(
     packages=find_packages(),
     description='A pythonic interface for Applied Climate Information System (ACIS) data',
     long_description=long_description(),
-    install_requires=['wq.io>=0.3.0'],
+    install_requires=['wq.io>=0.4.0'],
     scripts=['climata/bin/acis_sites.py', 'climata/bin/acis_data.py'],
     classifiers = [
         'Development Status :: 2 - Pre-Alpha',
