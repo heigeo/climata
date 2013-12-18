@@ -1,0 +1,2534 @@
+#
+# National Water Information System
+# 2013/12/17
+#
+#
+# Date Retrieved: USGS Water Data for the Nation Help System
+#
+parm_cd	parm_nm	fxd_va	fxd_tx
+00028	Analyzing agency	300.0	NAPD/NTN - Nat.Atmos.Deposition Program/Nat.Trends Network
+00028	Analyzing agency	500.0	Department of Agriculture
+00028	Analyzing agency	504.0	Agricultural Research Service
+00028	Analyzing agency	520.0	Soil Conservation Service
+00028	Analyzing agency	596.0	Forest Service
+00028	Analyzing agency	600.0	Department of Commerce
+00028	Analyzing agency	642.0	National Industrial Pollution Control Council
+00028	Analyzing agency	648.0	National Oceanic and Atmospheric Administration
+00028	Analyzing agency	655.0	National Bureau of Standards
+00028	Analyzing agency	701.0	Air Force
+00028	Analyzing agency	702.0	Army
+00028	Analyzing agency	703.0	Marines
+00028	Analyzing agency	704.0	Navy
+00028	Analyzing agency	800.0	Department of Defense - Civil
+00028	Analyzing agency	810.0	Corps of Engineers
+00028	Analyzing agency	900.0	Department of Health, Education and Welfare
+00028	Analyzing agency	910.0	Food and Drug Administration
+00028	Analyzing agency	915.0	Environmental Health Service
+00028	Analyzing agency	920.0	Fish & Wildlife Service
+00028	Analyzing agency	930.0	National Institutes of Health
+00028	Analyzing agency	1000.0	Department of the Interior
+00028	Analyzing agency	1004.0	Bureau of Land Management
+00028	Analyzing agency	1008.0	Bureau of Indian Affairs
+00028	Analyzing agency	1016.0	Bureau of Outdoor Recreation
+00028	Analyzing agency	1028.0	Geological Survey
+00028	Analyzing agency	1032.0	Bureau of Mines
+00028	Analyzing agency	1050.0	Bureau of Sport Fisheries and Wildlife
+00028	Analyzing agency	1053.0	National Park Service
+00028	Analyzing agency	1060.0	Bureau of Reclamation
+00028	Analyzing agency	1062.0	Alaska Power Administration
+00028	Analyzing agency	1064.0	Bonneville Power Administration
+00028	Analyzing agency	1068.0	Southeastern Power Administration
+00028	Analyzing agency	1072.0	Southwestern Power Administration
+00028	Analyzing agency	1076.0	Office of Saline Water
+00028	Analyzing agency	1800.0	Atomic Energy Commission
+00028	Analyzing agency	2000.0	U.S. Environmental Protection Agency
+00028	Analyzing agency	2010.0	USEPA, Reg. 1, New England Regional Laboratory, Lexington
+00028	Analyzing agency	2020.0	USEPA, Region 2, Edison, New Jersey
+00028	Analyzing agency	2100.0	Department of Transportation
+00028	Analyzing agency	2300.0	General Services Administration
+00028	Analyzing agency	2500.0	Department of Housing and Urban Development
+00028	Analyzing agency	2555.0	U.S. Public Health Service, Division of Indian Health
+00028	Analyzing agency	2700.0	National Aeronautics and Space Administration
+00028	Analyzing agency	3315.0	Tennessee Valley Authority
+00028	Analyzing agency	6001.0	Association of Bay Area Governments, California
+00028	Analyzing agency	6003.0	Alameda Co. Flood Control and Water Conservation Dist., CA
+00028	Analyzing agency	6005.0	East Bay Regional Park District, CA
+00028	Analyzing agency	6006.0	East Bay Municipal Utility District, Oakland CA
+00028	Analyzing agency	6010.0	CA Regional Water Quality Control Board North Coast Region
+00028	Analyzing agency	6015.0	United Water Conservation District, Santa Paula CA
+00028	Analyzing agency	6020.0	Santa Clara Valley Water District, California
+00028	Analyzing agency	6021.0	LA County Ag. Comm. Weights & Meas. Dept. Env. Toxicology L
+00028	Analyzing agency	6022.0	Antelope Valley East Kern Water Agency Laboratory
+00028	Analyzing agency	6040.0	Quanterra Environmental Services, West Sacramento, CA
+00028	Analyzing agency	8001.0	Chadwick and Associates, Inc., Littleton, CO
+00028	Analyzing agency	9701.0	Alabama
+00028	Analyzing agency	9702.0	Alaska
+00028	Analyzing agency	9704.0	Arizona
+00028	Analyzing agency	9705.0	Arkansas
+00028	Analyzing agency	9706.0	California
+00028	Analyzing agency	9708.0	Colorado
+00028	Analyzing agency	9709.0	Connecticut
+00028	Analyzing agency	9710.0	Delaware
+00028	Analyzing agency	9711.0	District of Columbia
+00028	Analyzing agency	9712.0	Florida
+00028	Analyzing agency	9713.0	Georgia
+00028	Analyzing agency	9715.0	Hawaii
+00028	Analyzing agency	9716.0	Idaho
+00028	Analyzing agency	9717.0	Illinois
+00028	Analyzing agency	9718.0	Indiana
+00028	Analyzing agency	9719.0	Iowa
+00028	Analyzing agency	9720.0	Kansas
+00028	Analyzing agency	9721.0	Kentucky
+00028	Analyzing agency	9722.0	Louisiana
+00028	Analyzing agency	9723.0	Maine
+00028	Analyzing agency	9724.0	Maryland
+00028	Analyzing agency	9725.0	Massachusetts
+00028	Analyzing agency	9726.0	Michigan
+00028	Analyzing agency	9727.0	Minnesota Pollution Control Council
+00028	Analyzing agency	9728.0	Mississippi
+00028	Analyzing agency	9729.0	Missouri
+00028	Analyzing agency	9730.0	Montana
+00028	Analyzing agency	9731.0	Nebraska
+00028	Analyzing agency	9732.0	Nevada
+00028	Analyzing agency	9733.0	New Hampshire
+00028	Analyzing agency	9734.0	NJ Dpt Hlth&Senior Svcs-Div Pub Hlth&Env Labs-Env&Chem Lab
+00028	Analyzing agency	9735.0	New Mexico
+00028	Analyzing agency	9736.0	New York
+00028	Analyzing agency	9737.0	North Carolina
+00028	Analyzing agency	9738.0	North Dakota
+00028	Analyzing agency	9739.0	Ohio
+00028	Analyzing agency	9740.0	Oklahoma
+00028	Analyzing agency	9741.0	Oregon
+00028	Analyzing agency	9742.0	Pennsylvania
+00028	Analyzing agency	9744.0	Rhode Island
+00028	Analyzing agency	9745.0	South Carolina
+00028	Analyzing agency	9746.0	South Dakota
+00028	Analyzing agency	9747.0	Tennessee
+00028	Analyzing agency	9748.0	Texas
+00028	Analyzing agency	9749.0	Utah
+00028	Analyzing agency	9750.0	Vermont
+00028	Analyzing agency	9751.0	Virginia
+00028	Analyzing agency	9753.0	Washington
+00028	Analyzing agency	9754.0	West Virginia
+00028	Analyzing agency	9755.0	Wisconsin
+00028	Analyzing agency	9756.0	Wyoming
+00028	Analyzing agency	9760.0	American Samoa
+00028	Analyzing agency	9761.0	Canal Zone
+00028	Analyzing agency	9762.0	Canton and Enderbury Islands
+00028	Analyzing agency	9766.0	Guam
+00028	Analyzing agency	9767.0	Johnston Atoll
+00028	Analyzing agency	9771.0	Midway Islands
+00028	Analyzing agency	9772.0	Puerto Rico
+00028	Analyzing agency	9773.0	Ryukyu Islands, Southern
+00028	Analyzing agency	9775.0	Trust Territories of the Pacific Islands
+00028	Analyzing agency	9777.0	U.S. Miscellaneous Pacific Islands
+00028	Analyzing agency	9778.0	Virgin Islands
+00028	Analyzing agency	9779.0	Wake Island
+00028	Analyzing agency	9780.0	Mexico
+00028	Analyzing agency	9781.0	Tamaulipas
+00028	Analyzing agency	9782.0	Nuevo Leon
+00028	Analyzing agency	9783.0	Coahuila
+00028	Analyzing agency	9784.0	Chihuahua
+00028	Analyzing agency	9785.0	Sonora
+00028	Analyzing agency	9786.0	Baja California Norte
+00028	Analyzing agency	9790.0	New Brunswick
+00028	Analyzing agency	9791.0	Quebec
+00028	Analyzing agency	9792.0	Ontario
+00028	Analyzing agency	9793.0	Manitoba
+00028	Analyzing agency	9794.0	Saskatchewan
+00028	Analyzing agency	9795.0	Alberta
+00028	Analyzing agency	9796.0	British Columbia
+00028	Analyzing agency	9797.0	Yukon
+00028	Analyzing agency	9801.0	Private Laboratory
+00028	Analyzing agency	9802.0	Salt River Valley Users Association
+00028	Analyzing agency	9803.0	Metropolitan Water District of Southern California
+00028	Analyzing agency	9804.0	Florida Department of Pollution Control
+00028	Analyzing agency	9805.0	Central and Southern Florida Flood Control District
+00028	Analyzing agency	9806.0	Florida Game and Fresh Water Fish Commission
+00028	Analyzing agency	9807.0	Florida Department of Health and Rehabilitative Services
+00028	Analyzing agency	9808.0	Southwest Florida Water Management District
+00028	Analyzing agency	9809.0	City of Jacksonville, Florida
+00028	Analyzing agency	9810.0	Reedy Creek Improvement District, Florida
+00028	Analyzing agency	9811.0	Orange County Pollution Control Department, Florida
+00028	Analyzing agency	9812.0	Brevard County Pollution Control Department, Florida
+00028	Analyzing agency	9813.0	Pennsylvania Department of Environmental Resources
+00028	Analyzing agency	9814.0	Alaska Department of Fish and Game
+00028	Analyzing agency	9815.0	Alaska Department of Environmental Conservation
+00028	Analyzing agency	9816.0	California Department of Water Resources
+00028	Analyzing agency	9817.0	Orange County Water District, Calif.
+00028	Analyzing agency	9818.0	Hillsborough County Environmental Protection Comm., FL
+00028	Analyzing agency	9819.0	Nassau County Department of Health, NY
+00028	Analyzing agency	9820.0	Suffolk County Department of Health, NY
+00028	Analyzing agency	9821.0	Suffolk County Department of Envir. Control, NY
+00028	Analyzing agency	9822.0	Suffolk County Water Authority, NY
+00028	Analyzing agency	9823.0	Alameda County Water District, CA
+00028	Analyzing agency	9824.0	Alameda Co. Flood Control & Water Conser. Dist, Zone 7, CA
+00028	Analyzing agency	9825.0	Valley Community Services District (Livermore), CA
+00028	Analyzing agency	9826.0	City of Livermore Waste Treatment Plant, CA
+00028	Analyzing agency	9827.0	Arkansas Department of Pollution Control and Ecology
+00028	Analyzing agency	9828.0	Arkansas Game and Fish Commission
+00028	Analyzing agency	9829.0	Nassau County Department of Public Works, NY
+00028	Analyzing agency	9830.0	City of Ithaca Wastewater Treatment Plant Laboratory, NY
+00028	Analyzing agency	9831.0	University of Iowa, State Hygienic Laboratory
+00028	Analyzing agency	9902.0	University of Arizona
+00028	Analyzing agency	9903.0	University of Florida
+00028	Analyzing agency	9904.0	Florida State University
+00028	Analyzing agency	9905.0	University of Central Florida
+00028	Analyzing agency	9906.0	University of Alaska
+00028	Analyzing agency	10001.0	University of Delaware, College of Marine Studies, Lewes,DE
+00028	Analyzing agency	10003.0	Del. Dept. Natural Resources and Envir. Control, Dover, DE
+00028	Analyzing agency	12001.0	City of Tampa, Florida
+00028	Analyzing agency	12002.0	City of Vero Beach, Florida
+00028	Analyzing agency	12005.0	City of Tallahassee, Florida
+00028	Analyzing agency	12007.0	ITT Community Development Corporation, Florida
+00028	Analyzing agency	12010.0	Palm Beach County Engineer
+00028	Analyzing agency	12020.0	Palm Beach County Health Dept.
+00028	Analyzing agency	12030.0	Dade County Dept. of Env. Resources Man.
+00028	Analyzing agency	12040.0	University of Miami, Tritium Laboratory, Miami, FL
+00028	Analyzing agency	12050.0	Quanterra Environmental Services, Tampa, FL
+00028	Analyzing agency	16001.0	Idaho Department of Water Resources
+00028	Analyzing agency	16002.0	Idaho Department of Health and Welfare
+00028	Analyzing agency	17001.0	Metropolitan Sanitary Dist. of Greater Chicago(MSD)
+00028	Analyzing agency	17002.0	Illinois Environmental Protection Agency (IEPA)
+00028	Analyzing agency	17003.0	Illinois State Water Survey (ISWS)
+00028	Analyzing agency	18001.0	Indiana Dept. Env. Mgmt., Drinking Water Branch, GW Section
+00028	Analyzing agency	18002.0	Indiana Department of Environmental Management (IDEM)
+00028	Analyzing agency	18003.0	Indiana Geological Survey (IGS)
+00028	Analyzing agency	18004.0	Indiana Department of Natural Resources (IDNR)
+00028	Analyzing agency	18005.0	Indianapolis Department of Public Works, Indiana (IDPW)
+00028	Analyzing agency	18006.0	Purdue University, Lafayette, Indiana
+00028	Analyzing agency	18007.0	Indiana University, Bloomington, Indiana
+00028	Analyzing agency	18008.0	Ball State University, Muncie, Indiana
+00028	Analyzing agency	18009.0	St. Joseph River Basin Commission, Indiana
+00028	Analyzing agency	20001.0	Kansas State Geological Survey
+00028	Analyzing agency	20003.0	City of Topeka, Kansas Wastewater Laboratory
+00028	Analyzing agency	20005.0	City of Wichita, Kansas Water and Wastewater Laboratory
+00028	Analyzing agency	21001.0	Geological Survey of Kentucky
+00028	Analyzing agency	25001.0	Barnstable County Health Department, Mass.
+00028	Analyzing agency	25005.0	Biology Department, Woods Hole Oceanographic Inst., MA
+00028	Analyzing agency	25007.0	Mass. WRA, Sewerage Division Central Lab., Winthrop, MA
+00028	Analyzing agency	25009.0	Alpha Analytical Labs, Westborough, MA
+00028	Analyzing agency	26001.0	PhycoTech, St Joseph, MI
+00028	Analyzing agency	27001.0	Minn. Department of Natural Resources (DNR), St. Paul, MN
+00028	Analyzing agency	27002.0	Minn. DNR, Waters Division, St. Paul, MN
+00028	Analyzing agency	27003.0	Minn. DNR, Fish and Wildlife Division, St. Paul, MN
+00028	Analyzing agency	27004.0	Minn. DNR, Forestry Division, St. Paul, MN
+00028	Analyzing agency	27005.0	Minn. DNR, Minerals Division, St. Paul, MN
+00028	Analyzing agency	27010.0	Minn. Pollution Control Agency (PCA), St. Paul, MN
+00028	Analyzing agency	27011.0	Minn. PCA, Water Quality Division, St. Paul, MN
+00028	Analyzing agency	27012.0	Minn. PCA, Solid/Hazardous Waste Division, St. Paul, MN
+00028	Analyzing agency	27013.0	Minn. PCA, Air Quality Division, St. Paul, MN
+00028	Analyzing agency	27020.0	Minn. Department of Health, Minneapolis, MN
+00028	Analyzing agency	27030.0	Minn. Geological Survey, St. Paul, MN
+00028	Analyzing agency	27035.0	Univ. of Minnesota, Minneapolis-St. Paul, MN
+00028	Analyzing agency	27036.0	Univ. of Minn., Geology and Geophysics, Minneapolis, MN
+00028	Analyzing agency	27037.0	Univ. of Minn., Research Analytical Lab, St. Paul, MN
+00028	Analyzing agency	27038.0	Univ. of Minn., Gray Freshwater Bio. Inst., Navarre, MN
+00028	Analyzing agency	27039.0	Univ. of Minn., Soil Science  St. Paul, MN
+00028	Analyzing agency	27040.0	Univ. of Minn., Agricultural Engineering, St. Paul, MN
+00028	Analyzing agency	27041.0	Univ. of Minn., Ecol., Evol., and Behavior, St. Paul, MN
+00028	Analyzing agency	27050.0	Metropolitan Waste Control Commission, St. Paul, MN
+00028	Analyzing agency	28001.0	Office of Pollution Control, Mississippi
+00028	Analyzing agency	28002.0	Office of Geology, Mississippi
+00028	Analyzing agency	28003.0	Office of Land and Water Resources, Mississippi
+00028	Analyzing agency	28004.0	Mississippi State Chemical Laboratory, Miss. State Univ.
+00028	Analyzing agency	29001.0	Missouri Dept of Natural Resources, Div of Envir. Quality
+00028	Analyzing agency	30010.0	Montana Bureau of Mines and Geology
+00028	Analyzing agency	30020.0	Montana Dept. of Fish Wildlife and Parks
+00028	Analyzing agency	30030.0	Montana Dept. of Health/Env. Sciences, Water Quality Bureau
+00028	Analyzing agency	30040.0	Montana Agricultural Research Center
+00028	Analyzing agency	30050.0	Montana Tunnels Mining, Inc., Wickes, MT
+00028	Analyzing agency	30060.0	Water Consulting, Inc., Hamilton, MT
+00028	Analyzing agency	31001.0	Nebraska Department of Environmental Control Laboratory
+00028	Analyzing agency	32001.0	Nevada Division of Environmental Protection
+00028	Analyzing agency	32003.0	Nevada Division of Water Resources
+00028	Analyzing agency	32005.0	Univ. of Nev., Div. of Renew. Nat. Resources
+00028	Analyzing agency	32006.0	Nevada Bureau of Environmental Health
+00028	Analyzing agency	32007.0	Nevada Bureau of Mines & Geology
+00028	Analyzing agency	32009.0	Nevada Department of Fish & Game
+00028	Analyzing agency	32010.0	Nevada Division of Forestry
+00028	Analyzing agency	32011.0	Nevada Division of Parks
+00028	Analyzing agency	32012.0	Nevada Consumer Health Protection Service
+00028	Analyzing agency	32013.0	Univ. of Nev., Desert Research Institute
+00028	Analyzing agency	32014.0	Univ. of Nev., College of Agriculture
+00028	Analyzing agency	32015.0	Clark County District Health Department, Nevada
+00028	Analyzing agency	32016.0	Washoe County District Health Department, Nevada
+00028	Analyzing agency	32017.0	Las Vegas Valley Water District, Nevada
+00028	Analyzing agency	32018.0	Sierra Pacific Power Co., Nevada
+00028	Analyzing agency	32019.0	Nevada Bureau of Laboratories and Research
+00028	Analyzing agency	32020.0	Washoe County Utilities, Reno, NV
+00028	Analyzing agency	32021.0	Carson City Public Works, Carson City, NV
+00028	Analyzing agency	32022.0	Truckee Meadows Water Reclamation Facility, Reno, NV
+00028	Analyzing agency	32091.0	Washoe County COG, Nevada
+00028	Analyzing agency	32092.0	Clark County COG, Nevada
+00028	Analyzing agency	32093.0	Municipal Water Company, Nevada
+00028	Analyzing agency	34001.0	New Jersey Department of Environmental Protection
+00028	Analyzing agency	34002.0	Roy F. Weston Inc., West Chester, PA
+00028	Analyzing agency	34003.0	Booth, Garrett, and Blair Inc., Ambler, PA
+00028	Analyzing agency	34004.0	Cape May County, NJ, Department of Health
+00028	Analyzing agency	34005.0	Cape May County, NJ, Planning Board
+00028	Analyzing agency	34006.0	Quanterra Environmental Services, Summerset, NJ
+00028	Analyzing agency	34007.0	Accutest Laboratories, Dayton, NJ
+00028	Analyzing agency	34008.0	Analab Inc, Edison, NJ
+00028	Analyzing agency	34010.0	New Jersey, DEP, Bureau of Marine Water Monitoring Lab
+00028	Analyzing agency	36010.0	New York Department of Health
+00028	Analyzing agency	36012.0	New York Dept. of Environmental Conservation, Albany, NY
+00028	Analyzing agency	36015.0	Environmental Associates, Ithaca, NY
+00028	Analyzing agency	36020.0	Nassau County, Department of Public Works
+00028	Analyzing agency	38001.0	North Dakota Geological Survey
+00028	Analyzing agency	38002.0	North Dakota State Water Commission
+00028	Analyzing agency	38003.0	North Dakota State Health Department
+00028	Analyzing agency	38004.0	Spirit Lake Tribe, North Dakota
+00028	Analyzing agency	39001.0	Heidelberg College QW Lab, Tiffin, Ohio
+00028	Analyzing agency	39002.0	Northeastern Ohio Regional Sewer District, Ohio
+00028	Analyzing agency	39003.0	Lake County General Health District, Ohio
+00028	Analyzing agency	39004.0	Cuyahoga County Board of Health, Ohio
+00028	Analyzing agency	40810.0	Corps of Engineers, Tulsa District
+00028	Analyzing agency	41000.0	City of Portland, Bureau of Water Works
+00028	Analyzing agency	42010.0	City of Philadelphia, PA.
+00028	Analyzing agency	42011.0	Susquehanna River Basin Commission
+00028	Analyzing agency	42015.0	The Academy of Natural Sciences of Philadelphia, PA
+00028	Analyzing agency	42016.0	Penn State Harrisburg, Middletown, PA
+00028	Analyzing agency	42020.0	Quanterra Environmental Services, Pittsburgh, PA
+00028	Analyzing agency	44001.0	Philip J. Holton Water Purification Plant, Scituate, RI
+00028	Analyzing agency	46001.0	South Dakota State University Soils Laboratory
+00028	Analyzing agency	46002.0	South Dakota Water Resources Institute
+00028	Analyzing agency	46003.0	South Dakota Agricultural Experiment Station
+00028	Analyzing agency	46004.0	South Dakota State Chemist
+00028	Analyzing agency	46005.0	South Dakota School of Mines and Technology
+00028	Analyzing agency	46006.0	South Dakota State University, Dept. Station Biochemistry
+00028	Analyzing agency	46007.0	South Dakota Division of Water Rights
+00028	Analyzing agency	46008.0	South Dakota Geological Survey, Vermillion, SD
+00028	Analyzing agency	46009.0	South Dakota Department of Health
+00028	Analyzing agency	47001.0	University of Tennessee at Knoxville
+00028	Analyzing agency	48001.0	Texas A&M U., Trace Element Research Lab., College Sta., TX
+00028	Analyzing agency	49001.0	Kennecott Environmental Lab, Salt Lake City, UT
+00028	Analyzing agency	51001.0	Hampton Roads Sanitation Dist, Cent Envir Lab, Virg Bch, VA
+00028	Analyzing agency	51003.0	George Mason University, Fairfax, VA
+00028	Analyzing agency	51005.0	Virginia Tech., Occoquan Watershed Monitoring Laboratory
+00028	Analyzing agency	55555.0	Individual
+00028	Analyzing agency	66666.0	Driller
+00028	Analyzing agency	80000.0	USGS-Branch of Quality Systems
+00028	Analyzing agency	80003.0	Inst. Kernphysik, Tech Univ, Darmstadt, Germany
+00028	Analyzing agency	80010.0	Atlanta Central Laboratory, GA
+00028	Analyzing agency	80020.0	USGS-National Water Quality Lab, Denver, CO
+00028	Analyzing agency	80030.0	Albany Central Laboratory, NY
+00028	Analyzing agency	80040.0	USGS Geologic Division, Branch of Geochemistry, Arvada, CO
+00028	Analyzing agency	80042.0	USGS, Biology Dept., Woods Hole Oceanographic Ins, MA
+00028	Analyzing agency	80045.0	USGS-Geologic Division Radionuclide Lab, Denver, CO
+00028	Analyzing agency	80055.0	IEAE, Vienna, Austria
+00028	Analyzing agency	80088.0	Radioactive Dating Lab, Geol. Survey, Sweden-Frescati
+00028	Analyzing agency	80090.0	USGS-National Research Program Lab, Reston, VA
+00028	Analyzing agency	80093.0	USGS-National Research Program Lab, Denver/Boulder, CO
+00028	Analyzing agency	80095.0	USGS-National Research Program Lab, Menlo Park, CA
+00028	Analyzing agency	80096.0	USGS Solids/Organic Matter Research Lab, Denver, CO
+00028	Analyzing agency	80097.0	USGS Carbon Research Lab, Boulder, CO
+00028	Analyzing agency	80098.0	USGS Isotope Research Lab, Menlo Park, CA
+00028	Analyzing agency	80110.0	Severn-Trent Laboratory - Mobile: Mobile, AL
+00028	Analyzing agency	80113.0	District Water-Quality Lab, Tuscaloosa, Alabama
+00028	Analyzing agency	80141.0	Geological Survey of Alabama
+00028	Analyzing agency	80201.0	Alaska Division of Geologic and Geophysical Surveys (DGGS)
+00028	Analyzing agency	80203.0	Chemical and Geological Laboratories of Alaska
+00028	Analyzing agency	80205.0	Northern Test Lab (Soldotna, Alaska)
+00028	Analyzing agency	80213.0	District Water-Quality Lab, Anchorage, Alaska
+00028	Analyzing agency	80410.0	City of Tucson, AZ
+00028	Analyzing agency	80413.0	District Water-Quality Lab, Yuma, Arizona
+00028	Analyzing agency	80415.0	Ariz. Dept. of Environmental Quality
+00028	Analyzing agency	80417.0	Ariz. Dept. of Water Resources
+00028	Analyzing agency	80501.0	Ouachita Baptist University, Arkadelphia, Arkansas
+00028	Analyzing agency	80503.0	University of Arkansas, Dept. of Engineering, Fayetteville
+00028	Analyzing agency	80505.0	University of Arkansas, Dept. of Geology, Fayetteville
+00028	Analyzing agency	80513.0	District Water-Quality Lab, Little Rock, Arkansas
+00028	Analyzing agency	80515.0	Arkansas Geological Commission
+00028	Analyzing agency	80601.0	Health and Human Services Indian Health Services, CA
+00028	Analyzing agency	80613.0	District Water-Quality Lab, Sacramento, California
+00028	Analyzing agency	80615.0	Sediment Analysis Lab, USGS, Marina, California
+00028	Analyzing agency	80618.0	District Water-Quality Lab, San Diego, California
+00028	Analyzing agency	80620.0	Severn-Trent Laboratory - Sacramento: West Sacramento, CA
+00028	Analyzing agency	80623.0	City of San Diego Lab, California
+00028	Analyzing agency	80630.0	Severn-Trent Laboratory - Los Angeles: Santa Ana, CA
+00028	Analyzing agency	80640.0	Montgomery-Watson-Harza Laboratories, Monrovia, CA
+00028	Analyzing agency	80641.0	Lawrence Livermore Lab, California
+00028	Analyzing agency	80642.0	Global Geochemistry Corporation, Canoga Park, CA
+00028	Analyzing agency	80643.0	Eberline Services, Richmond, California
+00028	Analyzing agency	80645.0	Montgomery Watson Laboratories, Monrovia, CA
+00028	Analyzing agency	80647.0	High Sierra Lab, Truckee, California
+00028	Analyzing agency	80650.0	University of California, Berkeley
+00028	Analyzing agency	80670.0	University of California, Davis
+00028	Analyzing agency	80671.0	University of California, San Diego, La Jolla
+00028	Analyzing agency	80672.0	University of California, Los Angeles
+00028	Analyzing agency	80801.0	City of Arvada, CO
+00028	Analyzing agency	80810.0	Colorado Division of Wildlife
+00028	Analyzing agency	80820.0	Pine River Watershed Stakeholders Group, Colorado
+00028	Analyzing agency	80839.0	Env.Health Div. Vet.Science College, CSU, Fort Collins, CO
+00028	Analyzing agency	80841.0	Davis Laboratories, Colorado
+00028	Analyzing agency	80843.0	Denver Regional Council Of Government
+00028	Analyzing agency	80845.0	Metropolitan Denver Sewage Disposal District Lab. No. 1
+00028	Analyzing agency	80847.0	Soils Testing Laboratory, Colo State Univ, Ft. Collins, CO
+00028	Analyzing agency	80849.0	Rocky Mountain Analytical Laboratory (Arvada, Colorado)
+00028	Analyzing agency	80851.0	Upper Clear Creek Advisory Group, Idaho Springs, CO
+00028	Analyzing agency	80853.0	City of Colorado Springs, Environmental Quality Lab
+00028	Analyzing agency	80855.0	Severn-Trent Laboratory, Denver, CO
+00028	Analyzing agency	80857.0	City of Fort Collins, CO
+00028	Analyzing agency	80859.0	Acculabs, Inc., Golden, CO
+00028	Analyzing agency	81210.0	St. Johns Water Management District, Florida
+00028	Analyzing agency	81213.0	District Water-Quality Lab, Ocala, Florida
+00028	Analyzing agency	81220.0	Severn-Trent Laboratory - Pensacola: Pensacola, FL
+00028	Analyzing agency	81222.0	Severn-Trent Laboratory - Tallahassee: Tallahassee, FL
+00028	Analyzing agency	81223.0	University of Miami-School of Marine Science, Miami, FL
+00028	Analyzing agency	81227.0	Volusia County Environmental Control, FL
+00028	Analyzing agency	81229.0	University of Miami, Miami, FL
+00028	Analyzing agency	81232.0	South Florida Water Management District, West Palm Beach, F
+00028	Analyzing agency	81233.0	Florida International University, Miami, FL
+00028	Analyzing agency	81320.0	Severn-Trent Laboratory - Savannah: Savannah, GA
+00028	Analyzing agency	81330.0	University of Georgia, Ag and Env Services Laboratory
+00028	Analyzing agency	81341.0	Georgia State Natural Resources Department
+00028	Analyzing agency	81345.0	USGS, Panola Mountain Research (WEBB) Lab, Georgia
+00028	Analyzing agency	81350.0	USGS, Sediment-partitioning Research Lab, Georgia
+00028	Analyzing agency	81513.0	District Water-Quality Lab, Honolulu, Hawaii
+00028	Analyzing agency	81601.0	Radiological & Env. Sciences Lab, DOE, INEL, Idaho Falls,ID
+00028	Analyzing agency	81603.0	Environmental Chemistry Lab, E.G.&G., INEL, Idaho Falls, ID
+00028	Analyzing agency	81605.0	Radiation Measurements Lab, E.G.&G., INEL, Idaho Falls, ID
+00028	Analyzing agency	81607.0	Environmental Analysis Group, WINCO, INEL, Idaho Falls, ID
+00028	Analyzing agency	81641.0	Idaho Dept. of Health and Welfare, Bureau of Laboratories
+00028	Analyzing agency	81700.0	USGS - Illinois District
+00028	Analyzing agency	81720.0	Severn-Trent Laboratory - Chicago: Chicago, IL
+00028	Analyzing agency	81741.0	Bloomington Normal Sanitary District, Illinois
+00028	Analyzing agency	81777.0	University of Chicago, Illinois
+00028	Analyzing agency	81804.0	Severn-Trent Laboratory - Valparaiso: Valparaiso, IN
+00028	Analyzing agency	81941.0	Iowa State Hygienic Laboratory
+00028	Analyzing agency	81951.0	Iowa Department of Environmental Quality
+00028	Analyzing agency	81960.0	USGS-Iowa District Sediment Lab, Iowa City, IA
+00028	Analyzing agency	82013.0	District Research Water-Quality Lab, Lawrence, KS
+00028	Analyzing agency	82041.0	Kansas State Department of Health and Environment
+00028	Analyzing agency	82043.0	Johnson County Environmental Laboratory, Lenexa, Kansas
+00028	Analyzing agency	82101.0	Kentucky Cabinet of Human Resources
+00028	Analyzing agency	82103.0	Beckmar Environmental Laboratory, Kentucky
+00028	Analyzing agency	82105.0	USGS-Kentucky District Sediment Lab, Louisville, KY
+00028	Analyzing agency	82213.0	District Water-Quality Lab, Baton Rouge, Louisiana
+00028	Analyzing agency	82215.0	Sediment Analysis Lab, USGS, Baton Rouge, Lousiana
+00028	Analyzing agency	82241.0	Louisiana, Gulf South Research Institute
+00028	Analyzing agency	82301.0	University of Maine Laboratory, Orono, ME
+00028	Analyzing agency	82303.0	Houlton Band of Maliseet Indians, Maine
+00028	Analyzing agency	82341.0	Maine, Dept. of Environmental Protection
+00028	Analyzing agency	82440.0	District Water-Quality Lab, Baltimore, Maryland
+00028	Analyzing agency	82520.0	Severn-Trent Laboratory - On-Site Technology: Westfield, MA
+00028	Analyzing agency	82522.0	Severn-Trent Laboratory - Westfield: Westfield, MA
+00028	Analyzing agency	82524.0	Severn-Trent Laboratory - Billerica: Billerica, MA
+00028	Analyzing agency	82641.0	Washtenaw County Health Department, Michigan
+00028	Analyzing agency	82810.0	University of Southern Mississippi
+00028	Analyzing agency	82901.0	Univ. of Missouri Environmental Trace Substances Lab
+00028	Analyzing agency	82902.0	Severn-Trent Laboratory - St. Louis: Earth City, MO
+00028	Analyzing agency	82913.0	District Water-Quality Lab, Rolla, Missouri
+00028	Analyzing agency	82915.0	Sediment Analysis Lab, USGS, Rolla, Missouri
+00028	Analyzing agency	83003.0	Billings Area Indian Health Service - Billings, MT
+00028	Analyzing agency	83005.0	Env Bio-Geo Chem Lab, Dept of Geol, U of MT, Missoula, MT
+00028	Analyzing agency	83011.0	MT Department of Environmental Quality
+00028	Analyzing agency	83015.0	Sediment Analysis Lab, USGS, Helena, Montana
+00028	Analyzing agency	83101.0	Harris Laboratories, Lincoln, Nebraska
+00028	Analyzing agency	83105.0	Olsen's Agricultrual Laboratory, Inc., McCook, NE
+00028	Analyzing agency	83107.0	University of Nebraska, Limnology Laboratory, Lincoln, NE
+00028	Analyzing agency	83109.0	Univ of Nebraska, Water Sciences Lab, Lincoln, NE
+00028	Analyzing agency	83113.0	District Water-Quality Lab, Lincoln, Nebraska
+00028	Analyzing agency	83241.0	Sierra Environmental Monitoring Service, Nevada
+00028	Analyzing agency	83341.0	Water Supply & Pollution Control Comm. Lab., NH
+00028	Analyzing agency	83401.0	Teledyne Isotopes, Inc. New Jersey
+00028	Analyzing agency	83405.0	Sussex County Health Department, New Jersey
+00028	Analyzing agency	83410.0	Rutgers University, Geology Dept, Stable Isotope Lab, NJ
+00028	Analyzing agency	83413.0	USGS New Jersey Water Science Center Laboratory
+00028	Analyzing agency	83441.0	NJ Dpt Hlth&Senior Svcs-Div Pub Hlth&Env Labs-Env&Chem Lab
+00028	Analyzing agency	83481.0	EMSL Analytical Services, Westmont, NJ
+00028	Analyzing agency	83513.0	District Water-Quality Lab, Albuquerque, New Mexico
+00028	Analyzing agency	83514.0	USGS District Sediment Laboratory, Albuquerque, New Mexico
+00028	Analyzing agency	83523.0	New Mexico Institute of Mining and Technology - Socorro
+00028	Analyzing agency	83541.0	University of New Mexico
+00028	Analyzing agency	83542.0	USBIA Soil, Water, & Material Testing Lab., New Mexico
+00028	Analyzing agency	83611.0	Monroe County Health Department, New York
+00028	Analyzing agency	83613.0	New York WSC Low Ionic Strength Lab, Troy (formerly Albany)
+00028	Analyzing agency	83620.0	Upstate Freshwater Institute, New York
+00028	Analyzing agency	83621.0	O'Brien and Gere, New York
+00028	Analyzing agency	83622.0	Darrin Fresh Water Institute, Bolton Landing, New York
+00028	Analyzing agency	83630.0	Syracuse University, Dept. of Civil Engineering
+00028	Analyzing agency	83631.0	Metropolitan Laboratory, New York
+00028	Analyzing agency	83640.0	City of Ithaca Waste Water Treatment Plant, Ithaca, NY
+00028	Analyzing agency	83641.0	City of Ithaca Water Filtration Plant, Ithaca, NY
+00028	Analyzing agency	83650.0	Erie County Laboratory, New York
+00028	Analyzing agency	83652.0	Lamont-Doherty Earth Observatory, Palisades, New York
+00028	Analyzing agency	83655.0	Severn-Trent Laboratory - Newburgh, New York
+00028	Analyzing agency	83656.0	Severn-Trent Laboratory - Buffalo: Amherst, NY
+00028	Analyzing agency	83660.0	State University of New York at Cortland, New York
+00028	Analyzing agency	83671.0	Columbia University, New York
+00028	Analyzing agency	83713.0	District Water-Quality Lab, Raleigh, North Carolina
+00028	Analyzing agency	83741.0	North Carolina Dept. of Natural and Economic Resources
+00028	Analyzing agency	83742.0	North Carolina DENR - Shellfish & Sanitation Rec WQ Sxn Lab
+00028	Analyzing agency	83751.0	Mecklenburg Co. Dept. of Environmental Health Lab, NC
+00028	Analyzing agency	83841.0	North Dakota State Laboratory
+00028	Analyzing agency	83901.0	National Testing Laboratory, Water Check Division, Ohio
+00028	Analyzing agency	83905.0	Ohio Environmental Protection Agency, Columbus, Ohio
+00028	Analyzing agency	83913.0	District Water-Quality Lab, Columbus, Ohio
+00028	Analyzing agency	83914.0	District Microbiological Laboratory, Columbus, Ohio
+00028	Analyzing agency	83915.0	City of Columbus, Water Quality Assurance Laboratory, Ohio
+00028	Analyzing agency	83920.0	Severn-Trent Laboratory - North Canton: North Canton, OH
+00028	Analyzing agency	84001.0	Oklahoma Water Resources Board
+00028	Analyzing agency	84003.0	Oklahoma State University
+00028	Analyzing agency	84005.0	Oklahoma State Health Department Radiochemistry Laboratory
+00028	Analyzing agency	84007.0	Oklahoma State Department of Agriculture
+00028	Analyzing agency	84009.0	Association of Central Oklahoma Governments
+00028	Analyzing agency	84011.0	Oklahoma Corporation Commission
+00028	Analyzing agency	84013.0	District Water-Quality Lab, Oklahoma City, Oklahoma
+00028	Analyzing agency	84015.0	Oklahoma Conservation Commission, Oklahoma City, OK
+00028	Analyzing agency	84017.0	Oklahoma Department of Environmental Quality (ODEQ)
+00028	Analyzing agency	84041.0	Oklahoma Geological Survey
+00028	Analyzing agency	84042.0	Oklahoma State Health Department
+00028	Analyzing agency	84101.0	Oregon Graduate Institute, Beaverton, Oregon
+00028	Analyzing agency	84113.0	District Water-Quality Lab, Portland, Oregon
+00028	Analyzing agency	84210.0	Pennsylvania Department of Agriculture Laboratory
+00028	Analyzing agency	84213.0	District Water-Quality Lab, Harrisburg, Pennsylvania
+00028	Analyzing agency	84215.0	Chester County Health Department Lab, PA.
+00028	Analyzing agency	84217.0	Allegheny County Health Dept Laboratory, Pittsburgh, PA
+00028	Analyzing agency	84218.0	Erie County Health Department, Erie, Pennsylvania
+00028	Analyzing agency	84220.0	Severn-Trent Laboratory - Pittsburgh: Pittsburgh, PA
+00028	Analyzing agency	84240.0	City of Philadelphia, PA and USGS
+00028	Analyzing agency	84250.0	Lancaster Laboratories, Lancaster, Pennsylvania
+00028	Analyzing agency	84540.0	South Carolina Water Resources Commission
+00028	Analyzing agency	84541.0	Savannah River Lab, South Carolina
+00028	Analyzing agency	84610.0	URE Project Laboratory, Oak Ridge, TN
+00028	Analyzing agency	84642.0	Michigan State University Microbiology Lab, East Lansing MI
+00028	Analyzing agency	84699.0	Public Entity
+00028	Analyzing agency	84710.0	Severn-Trent Laboratory - Knoxville: Knoxville, TN
+00028	Analyzing agency	84813.0	District Water-Quality Lab, Austin, Texas
+00028	Analyzing agency	84820.0	Severn-Trent Laboratory - Austin: Austin, TX
+00028	Analyzing agency	84821.0	Severn-Trent Laboratory - Corpus Christi: Corpus Christi TX
+00028	Analyzing agency	84823.0	International Boundary Water Commision
+00028	Analyzing agency	84833.0	Guadalupe-Blanco River Authority
+00028	Analyzing agency	84913.0	District Water-Quality Lab, Salt Lake City, Utah
+00028	Analyzing agency	85020.0	Severn-Trent Laboratory - Burlington: Colchester, VT
+00028	Analyzing agency	85113.0	Headquarters Tritium Lab, Reston, Virginia
+00028	Analyzing agency	85114.0	District Water-Quality Lab, Charlottesville, Virginia
+00028	Analyzing agency	85115.0	Univ. of Virginia Dept. of Environmental Sciences Lab
+00028	Analyzing agency	85116.0	Virginia Division of Consolidated Laboratory Services
+00028	Analyzing agency	85301.0	Severn-Trent Laboratory - Richland: Richland, WA
+00028	Analyzing agency	85313.0	District Water-Quality Lab, Tacoma, Washington
+00028	Analyzing agency	85315.0	Cascades Volcano Obs Sediment Analysis Lab, Vancouver, WA
+00028	Analyzing agency	85341.0	AM Test Inc., Washington
+00028	Analyzing agency	85342.0	Municipality of Metropolitan Seattle, Washington
+00028	Analyzing agency	85343.0	Washington State Dept. of Ecology
+00028	Analyzing agency	85344.0	Washington State Dept. of Social and Health Services
+00028	Analyzing agency	85345.0	Analytical Resources Incorporated (Seattle, Washington)
+00028	Analyzing agency	85346.0	Ecology and Environment Inc (Seattle, Washington)
+00028	Analyzing agency	85347.0	International Technology Corporation, Richland, WA
+00028	Analyzing agency	85348.0	Edge Analytical (MTC), Inc.  Burlington, WA
+00028	Analyzing agency	85349.0	Sound Analytical Services, Inc. Fife, WA
+00028	Analyzing agency	85350.0	Inland Environmental Laboratory, Inc. Spokane, WA
+00028	Analyzing agency	85351.0	Frontier Geosciences, Seattle, WA
+00028	Analyzing agency	85411.0	District Water-Quality Lab, Charleston, WV
+00028	Analyzing agency	85540.0	Robert E. Lee and Assoc. Green Bay, WISC.
+00028	Analyzing agency	85541.0	Mayo Clinic, University of Wisconsin
+00028	Analyzing agency	85542.0	University of Wisconsin Extension
+00028	Analyzing agency	85543.0	State Laboratory of Hygiene, Wisconsin
+00028	Analyzing agency	85544.0	Hazelton Laboratories America (Madison, Wisconsin)
+00028	Analyzing agency	85547.0	Milwaukee Metropolitan Sewerage District, Milwaukee, WI
+00028	Analyzing agency	85548.0	Madison Department of Public Health, Madison, WI
+00028	Analyzing agency	85550.0	USGS-Wisconsin District Mercury Lab, Madison, WI
+00028	Analyzing agency	85551.0	University of Wisconsin at Lacrosse, River Studies Center
+00028	Analyzing agency	85613.0	District Water-Quality Lab, Cheyenne, Wyoming
+00028	Analyzing agency	85614.0	Louisville & Jefferson County Metro Sewer District Lab
+00028	Analyzing agency	85641.0	Wyoming Department of Agriculture
+00028	Analyzing agency	87213.0	District Water-Quality Lab, San Juan, Puerto Rico
+00028	Analyzing agency	89201.0	Environment Canada, Qater Quality Br., Burlington, Ontario
+00028	Analyzing agency	89202.0	XRAL Laboratory Services, Don Mills, Ontario, Canada
+00028	Analyzing agency	89203.0	Activation Labs, Ltd, Ancaster, Ontario, Canada
+00028	Analyzing agency	89213.0	Chalk River Nuclear Laboratories, Chalk River, Canada
+00028	Analyzing agency	89301.0	Manitoba Environment, Water Standards Sec., Winnipeg, Man.
+00028	Analyzing agency	89401.0	Saskatchewan Environment, Water Quality Br., Regina, Sask.
+00028	Analyzing agency	92001.0	Univ. of Waterloo, Isotope Lab,Waterloo, Ontario, Canada
+00028	Analyzing agency	99001.0	Private contractor
+00028	Analyzing agency	99999.0	Other
+00041	Weather, WMO code	0.0	Cloudless
+00041	Weather, WMO code	1.0	Partly cloudy
+00041	Weather, WMO code	2.0	Cloudy
+00041	Weather, WMO code	3.0	Overcast
+00041	Weather, WMO code	10.0	Precipitation within sight
+00041	Weather, WMO code	13.0	Ugly, threatening sky
+00041	Weather, WMO code	40.0	Fog
+00041	Weather, WMO code	50.0	Drizzle
+00041	Weather, WMO code	51.0	Slight drizzle, intermittent
+00041	Weather, WMO code	52.0	Slight drizzle, continuous
+00041	Weather, WMO code	53.0	Moderate drizzle, intermittent
+00041	Weather, WMO code	54.0	Moderate drizzle, continuous
+00041	Weather, WMO code	55.0	Thick drizzle, intermittent
+00041	Weather, WMO code	56.0	Thick drizzle, continuous
+00041	Weather, WMO code	57.0	Drizzle and fog
+00041	Weather, WMO code	58.0	Slight or moderate drizzle and rain
+00041	Weather, WMO code	59.0	Thick drizzle and rain
+00041	Weather, WMO code	60.0	Rain
+00041	Weather, WMO code	61.0	Slight rain, intermittent
+00041	Weather, WMO code	62.0	Slight rain, continuous
+00041	Weather, WMO code	63.0	Moderate rain, intermittent
+00041	Weather, WMO code	64.0	Moderate rain, continuous
+00041	Weather, WMO code	65.0	Heavy rain, intermittent
+00041	Weather, WMO code	66.0	Heavy rain, continuous
+00041	Weather, WMO code	67.0	Rain and fog
+00041	Weather, WMO code	68.0	Slight or moderate mixed rain and snow
+00041	Weather, WMO code	69.0	Heavy mixed rain and snow
+00041	Weather, WMO code	70.0	Snow or sleet
+00041	Weather, WMO code	71.0	Slight snow in flakes, intermittent
+00041	Weather, WMO code	72.0	Slight snow in flakes, continuous
+00041	Weather, WMO code	73.0	Moderate snow in flakes, intermittent
+00041	Weather, WMO code	74.0	Moderate snow in flakes, continuous
+00041	Weather, WMO code	75.0	Heavy snow in flakes, intermittent
+00041	Weather, WMO code	76.0	Heavy snow in flakes, continuous
+00041	Weather, WMO code	77.0	Snow and fog
+00041	Weather, WMO code	78.0	Granular snow (frozen drizzle)
+00041	Weather, WMO code	79.0	Ice crystals
+00041	Weather, WMO code	80.0	Shower(s)
+00041	Weather, WMO code	81.0	Slight or moderate rain shower(s)
+00041	Weather, WMO code	82.0	Heavy rain shower(s)
+00041	Weather, WMO code	83.0	Slight or moderate snow shower(s)
+00041	Weather, WMO code	84.0	Heavy snow shower(s)
+00041	Weather, WMO code	85.0	Slight or moderate rain and snow shower(s)
+00041	Weather, WMO code	86.0	Heavy rain and snow shower(s)
+00041	Weather, WMO code	87.0	Granular snow shower(s)
+00041	Weather, WMO code	88.0	Slight or moderate hail or rain and hail shower(s)
+00041	Weather, WMO code	89.0	Heavy hail or rain and hail shower(s)
+00041	Weather, WMO code	90.0	Thunderstorm
+00041	Weather, WMO code	93.0	Slight thunderstorm with rain or snow
+00041	Weather, WMO code	94.0	Slight thunderstorm with hail
+00041	Weather, WMO code	95.0	Moderate thunderstorm with rain or snow
+00041	Weather, WMO code	96.0	Moderate thunderstorm with hail
+00041	Weather, WMO code	97.0	Heavy thunderstorm with rain or snow
+00041	Weather, WMO code	99.0	Heavy thunderstorm with hail
+00067	Tide stage	1000.0	High water slack; wi 3 hrs
+00067	Tide stage	1001.0	High water slack; wi 3 hrs; Max ebb current
+00067	Tide stage	1002.0	High water slack; wi 3 hrs; Max flood current
+00067	Tide stage	1010.0	High water slack; wi 3 hrs; C&GS table
+00067	Tide stage	1011.0	High water slack; wi 3 hrs; C&GS table; Max ebb current
+00067	Tide stage	1012.0	High water slack; wi 3 hrs; C&GS table; Max flood current
+00067	Tide stage	1020.0	High water slack; wi 3 hrs; measured
+00067	Tide stage	1021.0	High water slack; wi 3 hrs; measured; Max ebb current
+00067	Tide stage	1022.0	High water slack; wi 3 hrs; measured; Max flood current
+00067	Tide stage	1100.0	High water slack; wi 2 hrs
+00067	Tide stage	1101.0	High water slack; wi 2 hrs; Max ebb current
+00067	Tide stage	1102.0	High water slack; wi 2 hrs; Max flood current
+00067	Tide stage	1110.0	High water slack; wi 2 hrs; C&GS table
+00067	Tide stage	1111.0	High water slack; wi 2 hrs; C&GS table; Max ebb current
+00067	Tide stage	1112.0	High water slack; wi 2 hrs; C&GS table; Max flood current
+00067	Tide stage	1120.0	High water slack; wi 2 hrs; measured
+00067	Tide stage	1121.0	High water slack; wi 2 hrs; measured; Max ebb current
+00067	Tide stage	1122.0	High water slack; wi 2 hrs; measured; Max flood current
+00067	Tide stage	1200.0	High water slack; wi 1 hr
+00067	Tide stage	1201.0	High water slack; wi 1 hr; Max ebb current
+00067	Tide stage	1202.0	High water slack; wi 1 hr; Max flood current
+00067	Tide stage	1210.0	High water slack; wi 1 hr; C&GS table
+00067	Tide stage	1211.0	High water slack; wi 1 hr; C&GS table; Max ebb current
+00067	Tide stage	1212.0	High water slack; wi 1 hr; C&GS table; Max flood current
+00067	Tide stage	1220.0	High water slack; wi 1 hr; measured
+00067	Tide stage	1221.0	High water slack; wi 1 hr; measured; Max ebb current
+00067	Tide stage	1222.0	High water slack; wi 1 hr; measured; Max flood current
+00067	Tide stage	1300.0	High water slack; wi 40 min
+00067	Tide stage	1301.0	High water slack; wi 40 min; Max ebb current
+00067	Tide stage	1302.0	High water slack; wi 40 min; Max flood current
+00067	Tide stage	1310.0	High water slack; wi 40 min; C&GS table
+00067	Tide stage	1311.0	High water slack; wi 40 min; C&GS table; Max ebb current
+00067	Tide stage	1312.0	High water slack; wi 40 min; C&GS table; Max flood current
+00067	Tide stage	1320.0	High water slack; wi 40 min; measured
+00067	Tide stage	1321.0	High water slack; wi 40 min; measured; Max ebb current
+00067	Tide stage	1322.0	High water slack; wi 40 min; measured; Max flood current
+00067	Tide stage	1400.0	High water slack; wi 20 min
+00067	Tide stage	1401.0	High water slack; wi 20 min; Max ebb current
+00067	Tide stage	1402.0	High water slack; wi 20 min; Max flood current
+00067	Tide stage	1410.0	High water slack; wi 20 min; C&GS table
+00067	Tide stage	1411.0	High water slack; wi 20 min; C&GS table; Max ebb current
+00067	Tide stage	1412.0	High water slack; wi 20 min; C&GS table; Max flood current
+00067	Tide stage	1420.0	High water slack; wi 20 min; measured
+00067	Tide stage	1421.0	High water slack; wi 20 min; measured; Max ebb current
+00067	Tide stage	1422.0	High water slack; wi 20 min; measured; Max flood current
+00067	Tide stage	1500.0	High water slack; wi 10 min
+00067	Tide stage	1501.0	High water slack; wi 10 min; Max ebb current
+00067	Tide stage	1502.0	High water slack; wi 10 min; Max flood current
+00067	Tide stage	1510.0	High water slack; wi 10 min; C&GS table
+00067	Tide stage	1511.0	High water slack; wi 10 min; C&GS table; Max ebb current
+00067	Tide stage	1512.0	High water slack; wi 10 min; C&GS table; Max flood current
+00067	Tide stage	1520.0	High water slack; wi 10 min; measured
+00067	Tide stage	1521.0	High water slack; wi 10 min; measured; Max ebb current
+00067	Tide stage	1522.0	High water slack; wi 10 min; measured; Max flood current
+00067	Tide stage	1600.0	High water slack; wi 5 min
+00067	Tide stage	1601.0	High water slack; wi 5 min; Max ebb current
+00067	Tide stage	1602.0	High water slack; wi 5 min; Max flood current
+00067	Tide stage	1610.0	High water slack; wi 5 min; C&GS table
+00067	Tide stage	1611.0	High water slack; wi 5 min; C&GS table; Max ebb current
+00067	Tide stage	1612.0	High water slack; wi 5 min; C&GS table; Max flood current
+00067	Tide stage	1620.0	High water slack; wi 5 min; measured
+00067	Tide stage	1621.0	High water slack; wi 5 min; measured; Max ebb current
+00067	Tide stage	1622.0	High water slack; wi 5 min; measured; Max flood current
+00067	Tide stage	2000.0	Ebb current; wi 3 hrs
+00067	Tide stage	2001.0	Ebb current; wi 3 hrs; Max ebb current
+00067	Tide stage	2002.0	Ebb current; wi 3 hrs; Max flood current
+00067	Tide stage	2010.0	Ebb current; wi 3 hrs; C&GS table
+00067	Tide stage	2011.0	Ebb current; wi 3 hrs; C&GS table; Max ebb current
+00067	Tide stage	2012.0	Ebb current; wi 3 hrs; C&GS table; Max flood current
+00067	Tide stage	2020.0	Ebb current; wi 3 hrs; measured
+00067	Tide stage	2021.0	Ebb current; wi 3 hrs; measured; Max ebb current
+00067	Tide stage	2022.0	Ebb current; wi 3 hrs; measured; Max flood current
+00067	Tide stage	2100.0	Ebb current; wi 2 hrs
+00067	Tide stage	2101.0	Ebb current; wi 2 hrs; Max ebb current
+00067	Tide stage	2102.0	Ebb current; wi 2 hrs; Max flood current
+00067	Tide stage	2110.0	Ebb current; wi 2 hrs; C&GS table
+00067	Tide stage	2111.0	Ebb current; wi 2 hrs; C&GS table; Max ebb current
+00067	Tide stage	2112.0	Ebb current; wi 2 hrs; C&GS table; Max flood current
+00067	Tide stage	2120.0	Ebb current; wi 2 hrs; measured
+00067	Tide stage	2121.0	Ebb current; wi 2 hrs; measured; Max ebb current
+00067	Tide stage	2122.0	Ebb current; wi 2 hrs; measured; Max flood current
+00067	Tide stage	2200.0	Ebb current; wi 1 hr
+00067	Tide stage	2201.0	Ebb current; wi 1 hr; Max ebb current
+00067	Tide stage	2202.0	Ebb current; wi 1 hr; Max flood current
+00067	Tide stage	2210.0	Ebb current; wi 1 hr; C&GS table
+00067	Tide stage	2211.0	Ebb current; wi 1 hr; C&GS table; Max ebb current
+00067	Tide stage	2212.0	Ebb current; wi 1 hr; C&GS table; Max flood current
+00067	Tide stage	2220.0	Ebb current; wi 1 hr; measured
+00067	Tide stage	2221.0	Ebb current; wi 1 hr; measured; Max ebb current
+00067	Tide stage	2222.0	Ebb current; wi 1 hr; measured; Max flood current
+00067	Tide stage	2300.0	Ebb current; wi 40 min
+00067	Tide stage	2301.0	Ebb current; wi 40 min; Max ebb current
+00067	Tide stage	2302.0	Ebb current; wi 40 min; Max flood current
+00067	Tide stage	2310.0	Ebb current; wi 40 min; C&GS table
+00067	Tide stage	2311.0	Ebb current; wi 40 min; C&GS table; Max ebb current
+00067	Tide stage	2312.0	Ebb current; wi 40 min; C&GS table; Max flood current
+00067	Tide stage	2320.0	Ebb current; wi 40 min; measured
+00067	Tide stage	2321.0	Ebb current; wi 40 min; measured; Max ebb current
+00067	Tide stage	2322.0	Ebb current; wi 40 min; measured; Max flood current
+00067	Tide stage	2400.0	Ebb current; wi 20 min
+00067	Tide stage	2401.0	Ebb current; wi 20 min; Max ebb current
+00067	Tide stage	2402.0	Ebb current; wi 20 min; Max flood current
+00067	Tide stage	2410.0	Ebb current; wi 20 min; C&GS table
+00067	Tide stage	2411.0	Ebb current; wi 20 min; C&GS table; Max ebb current
+00067	Tide stage	2412.0	Ebb current; wi 20 min; C&GS table; Max flood current
+00067	Tide stage	2420.0	Ebb current; wi 20 min; measured
+00067	Tide stage	2421.0	Ebb current; wi 20 min; measured; Max ebb current
+00067	Tide stage	2422.0	Ebb current; wi 20 min; measured; Max flood current
+00067	Tide stage	2500.0	Ebb current; wi 10 min
+00067	Tide stage	2501.0	Ebb current; wi 10 min; Max ebb current
+00067	Tide stage	2502.0	Ebb current; wi 10 min; Max flood current
+00067	Tide stage	2510.0	Ebb current; wi 10 min; C&GS table
+00067	Tide stage	2511.0	Ebb current; wi 10 min; C&GS table; Max ebb current
+00067	Tide stage	2512.0	Ebb current; wi 10 min; C&GS table; Max flood current
+00067	Tide stage	2520.0	Ebb current; wi 10 min; measured
+00067	Tide stage	2521.0	Ebb current; wi 10 min; measured; Max ebb current
+00067	Tide stage	2522.0	Ebb current; wi 10 min; measured; Max flood current
+00067	Tide stage	2600.0	Ebb current; wi 5 min
+00067	Tide stage	2601.0	Ebb current; wi 5 min; Max ebb current
+00067	Tide stage	2602.0	Ebb current; wi 5 min; Max flood current
+00067	Tide stage	2610.0	Ebb current; wi 5 min; C&GS table
+00067	Tide stage	2611.0	Ebb current; wi 5 min; C&GS table; Max ebb current
+00067	Tide stage	2612.0	Ebb current; wi 5 min; C&GS table; Max flood current
+00067	Tide stage	2620.0	Ebb current; wi 5 min; measured
+00067	Tide stage	2621.0	Ebb current; wi 5 min; measured; Max ebb current
+00067	Tide stage	2622.0	Ebb current; wi 5 min; measured; Max flood current
+00067	Tide stage	3000.0	Low water slack; wi 3 hrs
+00067	Tide stage	3001.0	Low water slack; wi 3 hrs; Max ebb current
+00067	Tide stage	3002.0	Low water slack; wi 3 hrs; Max flood current
+00067	Tide stage	3010.0	Low water slack; wi 3 hrs; C&GS table
+00067	Tide stage	3011.0	Low water slack; wi 3 hrs; C&GS table; Max ebb current
+00067	Tide stage	3012.0	Low water slack; wi 3 hrs; C&GS table; Max flood current
+00067	Tide stage	3020.0	Low water slack; wi 3 hrs; measured
+00067	Tide stage	3021.0	Low water slack; wi 3 hrs; measured; Max ebb current
+00067	Tide stage	3022.0	Low water slack; wi 3 hrs; measured; Max flood current
+00067	Tide stage	3100.0	Low water slack; wi 2 hrs
+00067	Tide stage	3101.0	Low water slack; wi 2 hrs; Max ebb current
+00067	Tide stage	3102.0	Low water slack; wi 2 hrs; Max flood current
+00067	Tide stage	3110.0	Low water slack; wi 2 hrs; C&GS table
+00067	Tide stage	3111.0	Low water slack; wi 2 hrs; C&GS table; Max ebb current
+00067	Tide stage	3112.0	Low water slack; wi 2 hrs; C&GS table; Max flood current
+00067	Tide stage	3120.0	Low water slack; wi 2 hrs; measured
+00067	Tide stage	3121.0	Low water slack; wi 2 hrs; measured; Max ebb current
+00067	Tide stage	3122.0	Low water slack; wi 2 hrs; measured; Max flood current
+00067	Tide stage	3200.0	Low water slack; wi 1 hr
+00067	Tide stage	3201.0	Low water slack; wi 1 hr; Max ebb current
+00067	Tide stage	3202.0	Low water slack; wi 1 hr; Max flood current
+00067	Tide stage	3210.0	Low water slack; wi 1 hr; C&GS table
+00067	Tide stage	3211.0	Low water slack; wi 1 hr; C&GS table; Max ebb current
+00067	Tide stage	3212.0	Low water slack; wi 1 hr; C&GS table; Max flood current
+00067	Tide stage	3220.0	Low water slack; wi 1 hr; measured
+00067	Tide stage	3221.0	Low water slack; wi 1 hr; measured; Max ebb current
+00067	Tide stage	3222.0	Low water slack; wi 1 hr; measured; Max flood current
+00067	Tide stage	3300.0	Low water slack; wi 40 min
+00067	Tide stage	3301.0	Low water slack; wi 40 min; Max ebb current
+00067	Tide stage	3302.0	Low water slack; wi 40 min; Max flood current
+00067	Tide stage	3310.0	Low water slack; wi 40 min; C&GS table
+00067	Tide stage	3311.0	Low water slack; wi 40 min; C&GS table; Max ebb current
+00067	Tide stage	3312.0	Low water slack; wi 40 min; C&GS table; Max flood current
+00067	Tide stage	3320.0	Low water slack; wi 40 min; measured
+00067	Tide stage	3321.0	Low water slack; wi 40 min; measured; Max ebb current
+00067	Tide stage	3322.0	Low water slack; wi 40 min; measured; Max flood current
+00067	Tide stage	3400.0	Low water slack; wi 20 min
+00067	Tide stage	3401.0	Low water slack; wi 20 min; Max ebb current
+00067	Tide stage	3402.0	Low water slack; wi 20 min; Max flood current
+00067	Tide stage	3410.0	Low water slack; wi 20 min; C&GS table
+00067	Tide stage	3411.0	Low water slack; wi 20 min; C&GS table; Max ebb current
+00067	Tide stage	3412.0	Low water slack; wi 20 min; C&GS table; Max flood current
+00067	Tide stage	3420.0	Low water slack; wi 20 min; measured
+00067	Tide stage	3421.0	Low water slack; wi 20 min; measured; Max ebb current
+00067	Tide stage	3422.0	Low water slack; wi 20 min; measured; Max flood current
+00067	Tide stage	3500.0	Low water slack; wi 10 min
+00067	Tide stage	3501.0	Low water slack; wi 10 min; Max ebb current
+00067	Tide stage	3502.0	Low water slack; wi 10 min; Max flood current
+00067	Tide stage	3510.0	Low water slack; wi 10 min; C&GS table
+00067	Tide stage	3511.0	Low water slack; wi 10 min; C&GS table; Max ebb current
+00067	Tide stage	3512.0	Low water slack; wi 10 min; C&GS table; Max flood current
+00067	Tide stage	3520.0	Low water slack; wi 10 min; measured
+00067	Tide stage	3521.0	Low water slack; wi 10 min; measured; Max ebb current
+00067	Tide stage	3522.0	Low water slack; wi 10 min; measured; Max flood current
+00067	Tide stage	3600.0	Low water slack; wi 5 min
+00067	Tide stage	3601.0	Low water slack; wi 5 min; Max ebb current
+00067	Tide stage	3602.0	Low water slack; wi 5 min; Max flood current
+00067	Tide stage	3610.0	Low water slack; wi 5 min; C&GS table
+00067	Tide stage	3611.0	Low water slack; wi 5 min; C&GS table; Max ebb current
+00067	Tide stage	3612.0	Low water slack; wi 5 min; C&GS table; Max flood current
+00067	Tide stage	3620.0	Low water slack; wi 5 min; measured
+00067	Tide stage	3621.0	Low water slack; wi 5 min; measured; Max ebb current
+00067	Tide stage	3622.0	Low water slack; wi 5 min; measured; Max flood current
+00067	Tide stage	4000.0	Flood current; wi 3 hrs
+00067	Tide stage	4001.0	Flood current; wi 3 hrs; Max ebb current
+00067	Tide stage	4002.0	Flood current; wi 3 hrs; Max flood current
+00067	Tide stage	4010.0	Flood current; wi 3 hrs; C&GS table
+00067	Tide stage	4011.0	Flood current; wi 3 hrs; C&GS table; Max ebb current
+00067	Tide stage	4012.0	Flood current; wi 3 hrs; C&GS table; Max flood current
+00067	Tide stage	4020.0	Flood current; wi 3 hrs; measured
+00067	Tide stage	4021.0	Flood current; wi 3 hrs; measured; Max ebb current
+00067	Tide stage	4022.0	Flood current; wi 3 hrs; measured; Max flood current
+00067	Tide stage	4100.0	Flood current; wi 2 hrs
+00067	Tide stage	4101.0	Flood current; wi 2 hrs; Max ebb current
+00067	Tide stage	4102.0	Flood current; wi 2 hrs; Max flood current
+00067	Tide stage	4110.0	Flood current; wi 2 hrs; C&GS table
+00067	Tide stage	4111.0	Flood current; wi 2 hrs; C&GS table; Max ebb current
+00067	Tide stage	4112.0	Flood current; wi 2 hrs; C&GS table; Max flood current
+00067	Tide stage	4120.0	Flood current; wi 2 hrs; measured
+00067	Tide stage	4121.0	Flood current; wi 2 hrs; measured; Max ebb current
+00067	Tide stage	4122.0	Flood current; wi 2 hrs; measured; Max flood current
+00067	Tide stage	4200.0	Flood current; wi 1 hr
+00067	Tide stage	4201.0	Flood current; wi 1 hr; Max ebb current
+00067	Tide stage	4202.0	Flood current; wi 1 hr; Max flood current
+00067	Tide stage	4210.0	Flood current; wi 1 hr; C&GS table
+00067	Tide stage	4211.0	Flood current; wi 1 hr; C&GS table; Max ebb current
+00067	Tide stage	4212.0	Flood current; wi 1 hr; C&GS table; Max flood current
+00067	Tide stage	4220.0	Flood current; wi 1 hr; measured
+00067	Tide stage	4221.0	Flood current; wi 1 hr; measured; Max ebb current
+00067	Tide stage	4222.0	Flood current; wi 1 hr; measured; Max flood current
+00067	Tide stage	4300.0	Flood current; wi 40 min
+00067	Tide stage	4301.0	Flood current; wi 40 min; Max ebb current
+00067	Tide stage	4302.0	Flood current; wi 40 min; Max flood current
+00067	Tide stage	4310.0	Flood current; wi 40 min; C&GS table
+00067	Tide stage	4311.0	Flood current; wi 40 min; C&GS table; Max ebb current
+00067	Tide stage	4312.0	Flood current; wi 40 min; C&GS table; Max flood current
+00067	Tide stage	4320.0	Flood current; wi 40 min; measured
+00067	Tide stage	4321.0	Flood current; wi 40 min; measured; Max ebb current
+00067	Tide stage	4322.0	Flood current; wi 40 min; measured; Max flood current
+00067	Tide stage	4400.0	Flood current; wi 20 min
+00067	Tide stage	4401.0	Flood current; wi 20 min; Max ebb current
+00067	Tide stage	4402.0	Flood current; wi 20 min; Max flood current
+00067	Tide stage	4410.0	Flood current; wi 20 min; C&GS table
+00067	Tide stage	4411.0	Flood current; wi 20 min; C&GS table; Max ebb current
+00067	Tide stage	4412.0	Flood current; wi 20 min; C&GS table; Max flood current
+00067	Tide stage	4420.0	Flood current; wi 20 min; measured
+00067	Tide stage	4421.0	Flood current; wi 20 min; measured; Max ebb current
+00067	Tide stage	4422.0	Flood current; wi 20 min; measured; Max flood current
+00067	Tide stage	4500.0	Flood current; wi 10 min
+00067	Tide stage	4501.0	Flood current; wi 10 min; Max ebb current
+00067	Tide stage	4502.0	Flood current; wi 10 min; Max flood current
+00067	Tide stage	4510.0	Flood current; wi 10 min; C&GS table
+00067	Tide stage	4511.0	Flood current; wi 10 min; C&GS table; Max ebb current
+00067	Tide stage	4512.0	Flood current; wi 10 min; C&GS table; Max flood current
+00067	Tide stage	4520.0	Flood current; wi 10 min; measured
+00067	Tide stage	4521.0	Flood current; wi 10 min; measured; Max ebb current
+00067	Tide stage	4522.0	Flood current; wi 10 min; measured; Max flood current
+00067	Tide stage	4600.0	Flood current; wi 5 min
+00067	Tide stage	4601.0	Flood current; wi 5 min; Max ebb current
+00067	Tide stage	4602.0	Flood current; wi 5 min; Max flood current
+00067	Tide stage	4610.0	Flood current; wi 5 min; C&GS table
+00067	Tide stage	4611.0	Flood current; wi 5 min; C&GS table; Max ebb current
+00067	Tide stage	4612.0	Flood current; wi 5 min; C&GS table; Max flood current
+00067	Tide stage	4620.0	Flood current; wi 5 min; measured
+00067	Tide stage	4621.0	Flood current; wi 5 min; measured; Max ebb current
+00067	Tide stage	4622.0	Flood current; wi 5 min; measured; Max flood current
+00067	Tide stage	5000.0	Mean tide level; wi 3 hrs
+00067	Tide stage	5001.0	Mean tide level; wi 3 hrs; Max ebb current
+00067	Tide stage	5002.0	Mean tide level; wi 3 hrs; Max flood current
+00067	Tide stage	5010.0	Mean tide level; wi 3 hrs; C&GS table
+00067	Tide stage	5011.0	Mean tide level; wi 3 hrs; C&GS table; Max ebb current
+00067	Tide stage	5012.0	Mean tide level; wi 3 hrs; C&GS table; Max flood current
+00067	Tide stage	5020.0	Mean tide level; wi 3 hrs; measured
+00067	Tide stage	5021.0	Mean tide level; wi 3 hrs; measured; Max ebb current
+00067	Tide stage	5022.0	Mean tide level; wi 3 hrs; measured; Max flood current
+00067	Tide stage	5100.0	Mean tide level; wi 2 hrs
+00067	Tide stage	5101.0	Mean tide level; wi 2 hrs; Max ebb current
+00067	Tide stage	5102.0	Mean tide level; wi 2 hrs; Max flood current
+00067	Tide stage	5110.0	Mean tide level; wi 2 hrs; C&GS table
+00067	Tide stage	5111.0	Mean tide level; wi 2 hrs; C&GS table; Max ebb current
+00067	Tide stage	5112.0	Mean tide level; wi 2 hrs; C&GS table; Max flood current
+00067	Tide stage	5120.0	Mean tide level; wi 2 hrs; measured
+00067	Tide stage	5121.0	Mean tide level; wi 2 hrs; measured; Max ebb current
+00067	Tide stage	5122.0	Mean tide level; wi 2 hrs; measured; Max flood current
+00067	Tide stage	5200.0	Mean tide level; wi 1 hr
+00067	Tide stage	5201.0	Mean tide level; wi 1 hr; Max ebb current
+00067	Tide stage	5202.0	Mean tide level; wi 1 hr; Max flood current
+00067	Tide stage	5210.0	Mean tide level; wi 1 hr; C&GS table
+00067	Tide stage	5211.0	Mean tide level; wi 1 hr; C&GS table; Max ebb current
+00067	Tide stage	5212.0	Mean tide level; wi 1 hr; C&GS table; Max flood current
+00067	Tide stage	5220.0	Mean tide level; wi 1 hr; measured
+00067	Tide stage	5221.0	Mean tide level; wi 1 hr; measured; Max ebb current
+00067	Tide stage	5222.0	Mean tide level; wi 1 hr; measured; Max flood current
+00067	Tide stage	5300.0	Mean tide level; wi 40 min
+00067	Tide stage	5301.0	Mean tide level; wi 40 min; Max ebb current
+00067	Tide stage	5302.0	Mean tide level; wi 40 min; Max flood current
+00067	Tide stage	5310.0	Mean tide level; wi 40 min; C&GS table
+00067	Tide stage	5311.0	Mean tide level; wi 40 min; C&GS table; Max ebb current
+00067	Tide stage	5312.0	Mean tide level; wi 40 min; C&GS table; Max flood current
+00067	Tide stage	5320.0	Mean tide level; wi 40 min; measured
+00067	Tide stage	5321.0	Mean tide level; wi 40 min; measured; Max ebb current
+00067	Tide stage	5322.0	Mean tide level; wi 40 min; measured; Max flood current
+00067	Tide stage	5400.0	Mean tide level; wi 20 min
+00067	Tide stage	5401.0	Mean tide level; wi 20 min; Max ebb current
+00067	Tide stage	5402.0	Mean tide level; wi 20 min; Max flood current
+00067	Tide stage	5410.0	Mean tide level; wi 20 min; C&GS table
+00067	Tide stage	5411.0	Mean tide level; wi 20 min; C&GS table; Max ebb current
+00067	Tide stage	5412.0	Mean tide level; wi 20 min; C&GS table; Max flood current
+00067	Tide stage	5420.0	Mean tide level; wi 20 min; measured
+00067	Tide stage	5421.0	Mean tide level; wi 20 min; measured; Max ebb current
+00067	Tide stage	5422.0	Mean tide level; wi 20 min; measured; Max flood current
+00067	Tide stage	5500.0	Mean tide level; wi 10 min
+00067	Tide stage	5501.0	Mean tide level; wi 10 min; Max ebb current
+00067	Tide stage	5502.0	Mean tide level; wi 10 min; Max flood current
+00067	Tide stage	5510.0	Mean tide level; wi 10 min; C&GS table
+00067	Tide stage	5511.0	Mean tide level; wi 10 min; C&GS table; Max ebb current
+00067	Tide stage	5512.0	Mean tide level; wi 10 min; C&GS table; Max flood current
+00067	Tide stage	5520.0	Mean tide level; wi 10 min; measured
+00067	Tide stage	5521.0	Mean tide level; wi 10 min; measured; Max ebb current
+00067	Tide stage	5522.0	Mean tide level; wi 10 min; measured; Max flood current
+00067	Tide stage	5600.0	Mean tide level; wi 5 min
+00067	Tide stage	5601.0	Mean tide level; wi 5 min; Max ebb current
+00067	Tide stage	5602.0	Mean tide level; wi 5 min; Max flood current
+00067	Tide stage	5610.0	Mean tide level; wi 5 min; C&GS table
+00067	Tide stage	5611.0	Mean tide level; wi 5 min; C&GS table; Max ebb current
+00067	Tide stage	5612.0	Mean tide level; wi 5 min; C&GS table; Max flood current
+00067	Tide stage	5620.0	Mean tide level; wi 5 min; measured
+00067	Tide stage	5621.0	Mean tide level; wi 5 min; measured; Max ebb current
+00067	Tide stage	5622.0	Mean tide level; wi 5 min; measured; Max flood current
+00115	Sample treatment	1.0	Raw
+00115	Sample treatment	2.0	Treated
+00115	Sample treatment	3.0	Wastewater
+00115	Sample treatment	4.0	Drinking Water
+01300	Oil & grease, severity	0.0	None
+01300	Oil & grease, severity	1.0	Mild
+01300	Oil & grease, severity	2.0	Moderate
+01300	Oil & grease, severity	3.0	Serious
+01300	Oil & grease, severity	4.0	Extreme
+01305	Suds, severity	0.0	None
+01305	Suds, severity	1.0	Mild
+01305	Suds, severity	2.0	Moderate
+01305	Suds, severity	3.0	Serious
+01305	Suds, severity	4.0	Extreme
+01310	Gas bubbles,severity	0.0	None
+01310	Gas bubbles,severity	1.0	Mild
+01310	Gas bubbles,severity	2.0	Moderate
+01310	Gas bubbles,severity	3.0	Serious
+01310	Gas bubbles,severity	4.0	Extreme
+01315	Floating sludge, severity	0.0	None
+01315	Floating sludge, severity	1.0	Mild
+01315	Floating sludge, severity	2.0	Moderate
+01315	Floating sludge, severity	3.0	Serious
+01315	Floating sludge, severity	4.0	Extreme
+01320	Float.Garbage, svrty	0.0	None
+01320	Float.Garbage, svrty	1.0	Mild
+01320	Float.Garbage, svrty	2.0	Moderate
+01320	Float.Garbage, svrty	3.0	Serious
+01320	Float.Garbage, svrty	4.0	Extreme
+01325	Floating algae mats, severity	0.0	None
+01325	Floating algae mats, severity	1.0	Mild
+01325	Floating algae mats, severity	2.0	Moderate
+01325	Floating algae mats, severity	3.0	Serious
+01325	Floating algae mats, severity	4.0	Extreme
+01330	Odor, severity	0.0	None
+01330	Odor, severity	1.0	Mild
+01330	Odor, severity	2.0	Moderate
+01330	Odor, severity	3.0	Serious
+01330	Odor, severity	4.0	Extreme
+01335	Sewage solids, severity	0.0	None
+01335	Sewage solids, severity	1.0	Mild
+01335	Sewage solids, severity	2.0	Moderate
+01335	Sewage solids, severity	3.0	Serious
+01335	Sewage solids, severity	4.0	Extreme
+01340	Dead fish, severity	0.0	None
+01340	Dead fish, severity	1.0	Mild
+01340	Dead fish, severity	2.0	Moderate
+01340	Dead fish, severity	3.0	Serious
+01340	Dead fish, severity	4.0	Extreme
+01345	Floating debris, severity	0.0	None
+01345	Floating debris, severity	1.0	Mild
+01345	Floating debris, severity	2.0	Moderate
+01345	Floating debris, severity	3.0	Serious
+01345	Floating debris, severity	4.0	Extreme
+01350	Turbidity, severity	0.0	None
+01350	Turbidity, severity	1.0	Mild
+01350	Turbidity, severity	2.0	Moderate
+01350	Turbidity, severity	3.0	Serious
+01350	Turbidity, severity	4.0	Extreme
+01351	Streamflow, severity	1.0	Dry
+01351	Streamflow, severity	2.0	Low
+01351	Streamflow, severity	3.0	Normal
+01351	Streamflow, severity	4.0	Flood
+01351	Streamflow, severity	5.0	Above normal
+01355	Ice cover, severity	0.0	None
+01355	Ice cover, severity	1.0	Mild
+01355	Ice cover, severity	2.0	Moderate
+01355	Ice cover, severity	3.0	Serious
+01355	Ice cover, severity	4.0	Extreme
+04117	Tether line used	0.0	No
+04117	Tether line used	1.0	Yes
+31678	Fecal strep,AD-EVA broth,tube	1.0	Five 10-mL tubes
+31678	Fecal strep,AD-EVA broth,tube	2.0	Five 10-mL, five 1-mL and five 0.1-mL tubes
+31678	Fecal strep,AD-EVA broth,tube	3.0	Five 10-mL, one 1-mL and one 0.1-mL tubes
+31678	Fecal strep,AD-EVA broth,tube	4.0	One 50-mL and five 10-mL tubes
+31678	Fecal strep,AD-EVA broth,tube	5.0	One 50-mL, five 10-mL and five 1-mL tubes
+31678	Fecal strep,AD-EVA broth,tube	6.0	Five 50-mL, five 10-mL and five 1-mL tubes
+31678	Fecal strep,AD-EVA broth,tube	7.0	Three 10-mL, three 1-mL and three 0.1-mL tubes
+31678	Fecal strep,AD-EVA broth,tube	8.0	Five 100-mL, five 10-mL and five 1-mL tubes
+31696	IRB biotester RPS	0.0	No reaction
+31696	IRB biotester RPS	2180.0	Brown Gel, Brown Cloudy, Red Cloudy
+31696	IRB biotester RPS	4000.0	Brown Ring
+31696	IRB biotester RPS	4100.0	Brown Ring, Brown Cloudy
+31696	IRB biotester RPS	4160.0	Brown Ring, Brown Cloudy, Foam
+31696	IRB biotester RPS	4200.0	Brown Ring, Brown Gel
+31696	IRB biotester RPS	4600.0	Brown Ring, Foam
+31696	IRB biotester RPS	4610.0	Brown Ring, Foam, Brown Cloudy
+31696	IRB biotester RPS	4627.0	Brown Ring, Foam, Brown Gel, Green Cloudy
+31696	IRB biotester RPS	4730.0	Brown Ring, Green Cloudy, Blackened Liquid
+31696	IRB biotester RPS	5100.0	Cloudy Growth, Brown Cloudy
+31696	IRB biotester RPS	5140.0	Cloudy Growth, Brown Cloudy, Brown Ring
+31696	IRB biotester RPS	5199.0	Cloudy Growth, Brown Cloudy, other
+31696	IRB biotester RPS	5200.0	Cloudy Growth, Brown Gel
+31696	IRB biotester RPS	5299.0	Cloudy Growth, Brown Gel, other
+31696	IRB biotester RPS	5300.0	Cloudy Growth, Blackened Liquid
+31696	IRB biotester RPS	5400.0	Cloudy Growth, Brown Ring
+31696	IRB biotester RPS	5499.0	Cloudy Growth, Brown Ring, other
+31696	IRB biotester RPS	5600.0	Cloudy Growth, Foam
+31696	IRB biotester RPS	5699.0	Cloudy Growth, Foam, other
+31696	IRB biotester RPS	5700.0	Cloudy Growth, Green Cloudy
+31696	IRB biotester RPS	5800.0	Cloudy Growth, Red Cloudy
+31696	IRB biotester RPS	6000.0	Foam
+31696	IRB biotester RPS	6100.0	Foam, Brown Cloudy
+31696	IRB biotester RPS	6120.0	Foam, Brown Cloudy, Brown Gel
+31696	IRB biotester RPS	6124.0	Foam, Brown Cloudy, Brown Gel, Brown Ring
+31696	IRB biotester RPS	6130.0	Foam, Brown Cloudy, Blackened Liquid
+31696	IRB biotester RPS	6140.0	Foam, Brown Cloudy, Brown Ring
+31696	IRB biotester RPS	6142.0	Foam, Brown Cloudy, Brown Ring, Brown Gel
+31696	IRB biotester RPS	6143.0	Foam, Brown Cloudy, Brown Ring, Blackened Liquid
+31696	IRB biotester RPS	6147.0	Foam, Brown Cloudy, Brown Ring, Green Cloudy
+31696	IRB biotester RPS	6173.0	Foam, Brown Cloudy, Green Cloudy, Blackened Liquid
+31696	IRB biotester RPS	6183.0	Foam, Brown Cloudy, Red Cloudy, Blackened Liquid
+31696	IRB biotester RPS	6184.0	Foam, Brown Cloudy, Red Cloudy, Brown Ring
+31696	IRB biotester RPS	6199.0	Foam, Brown Cloudy, other
+31696	IRB biotester RPS	6200.0	Foam, Brown Gel
+31696	IRB biotester RPS	6214.0	Foam, Brown Gel, Brown Cloudy, Brown Ring
+31696	IRB biotester RPS	6217.0	Foam, Brown Gel, Brown Cloudy, Green Cloudy
+31696	IRB biotester RPS	6234.0	Foam, Brown Gel, Blackened Liquid, Brown Ring
+31696	IRB biotester RPS	6240.0	Foam, Brown Gel, Brown Ring
+31696	IRB biotester RPS	6241.0	Foam, Brown Gel, Brown Ring, Brown Cloudy
+31696	IRB biotester RPS	6243.0	Foam, Brown Gel, Brown Ring, Blackened Liquid
+31696	IRB biotester RPS	6247.0	Foam, Brown Gel, Brown Ring, Green Cloudy
+31696	IRB biotester RPS	6270.0	Foam, Brown Gel, Green Cloudy
+31696	IRB biotester RPS	6283.0	Foam, Brown Gel, Red Cloudy, Blackened Liquid
+31696	IRB biotester RPS	6299.0	Foam, Brown Gel, other
+31696	IRB biotester RPS	6300.0	Foam, Blackened Liquid
+31696	IRB biotester RPS	6340.0	Foam, Blackened Liquid, Brown Ring
+31696	IRB biotester RPS	6370.0	Foam, Blackened Liquid, Green Cloudy
+31696	IRB biotester RPS	6400.0	Foam, Brown Ring
+31696	IRB biotester RPS	6410.0	Foam, Brown Ring, Brown Cloudy
+31696	IRB biotester RPS	6412.0	Foam, Brown Ring, Brown Cloudy, Brown Gel
+31696	IRB biotester RPS	6413.0	Foam, Brown Ring, Brown Cloudy, Blackened Liquid
+31696	IRB biotester RPS	6417.0	Foam, Brown Ring, Brown Cloudy, Green Cloudy
+31696	IRB biotester RPS	6418.0	Foam, Brown Ring, Brown Cloudy, Red Cloudy
+31696	IRB biotester RPS	6420.0	Foam, Brown Ring, Brown Gel
+31696	IRB biotester RPS	6421.0	Foam, Brown Ring, Brown Cloudy, Brown Cloudy
+31696	IRB biotester RPS	6423.0	Foam, Brown Ring, Brown Gel, Blackened Liquid
+31696	IRB biotester RPS	6427.0	Foam, Brown Ring, Brown Gel, Green Cloudy
+31696	IRB biotester RPS	6430.0	Foam, Brown Ring, Blackened Liquid
+31696	IRB biotester RPS	6470.0	Foam, Brown Ring, Green Cloudy
+31696	IRB biotester RPS	6473.0	Foam, Brown Ring, Green Cloudy, Blackened Liquid
+31696	IRB biotester RPS	6480.0	Foam, Brown Ring, Red Cloudy
+31696	IRB biotester RPS	6483.0	Foam, Brown Ring, Red Cloudy, Blackened Liquid
+31696	IRB biotester RPS	6499.0	Foam, Grown Ring, other
+31696	IRB biotester RPS	6500.0	Foam, Cloudy Growth
+31696	IRB biotester RPS	6599.0	Foam, Cloudy Growth, other
+31696	IRB biotester RPS	6700.0	Foam, Green Cloudy
+31696	IRB biotester RPS	6720.0	Foam, Green Cloudy, Brown Gel
+31696	IRB biotester RPS	6723.0	Foam, Green Cloudy, Brown Gel, Blackened Liquid
+31696	IRB biotester RPS	6730.0	Foam, Green Cloudy, Blackened Liquid
+31696	IRB biotester RPS	6740.0	Foam, Green Cloudy, Brown Ring
+31696	IRB biotester RPS	6741.0	Foam, Green Cloudy, Brown Ring, Brown Cloudy
+31696	IRB biotester RPS	6743.0	Foam, Green Cloudy, Brown Ring, Blackened Liquid
+31696	IRB biotester RPS	6780.0	Foam, Green Cloudy, Red Cloudy
+31696	IRB biotester RPS	6799.0	Foam, Green Cloudy, other
+31696	IRB biotester RPS	6800.0	Foam, Red Cloudy
+31696	IRB biotester RPS	6830.0	Foam, Red Cloudy, Blackened Liquid
+31696	IRB biotester RPS	6840.0	Foam, Red Cloudy, Brown Ring
+31696	IRB biotester RPS	6843.0	Foam, Red Cloudy, Brown Ring, Blackened Liquid
+31696	IRB biotester RPS	7000.0	Green Cloudy
+31696	IRB biotester RPS	7300.0	Green Cloudy, Blackened Liquid
+31696	IRB biotester RPS	7400.0	Green Cloudy, Brown Ring
+31696	IRB biotester RPS	7600.0	Green Cloudy, Foam
+31696	IRB biotester RPS	7999.0	Green Cloudy, other
+31696	IRB biotester RPS	8000.0	Red Cloudy
+31696	IRB biotester RPS	8300.0	Red Cloudy, Blackened Liquid
+31696	IRB biotester RPS	8400.0	Red Cloudy, Brown Ring
+31696	IRB biotester RPS	8600.0	Red Cloudy, Foam
+31696	IRB biotester RPS	8999.0	Red Cloudy, other
+31696	IRB biotester RPS	9999.0	Other
+31698	SRB biotester RPS	0.0	No reaction
+31698	SRB biotester RPS	1000.0	Black Base and Top
+31698	SRB biotester RPS	2000.0	Blackened Base
+31698	SRB biotester RPS	2100.0	Blackened Base then All Black
+31698	SRB biotester RPS	3000.0	Blackened Top
+31698	SRB biotester RPS	3100.0	Blackened Top then All Black
+31698	SRB biotester RPS	4000.0	Cloudy Growth Only
+31699	SFB biotester RPS	0.0	No reaction
+31699	SFB biotester RPS	2100.0	Cloudy Growth, Blackened Liquid
+31699	SFB biotester RPS	2340.0	Cloudy Growth, Cloudy Plates Layering, Dense Slime
+31699	SFB biotester RPS	2400.0	Cloudy Growth, Dense Slime
+31699	SFB biotester RPS	2500.0	Cloudy Growth, Greenish-Yellow Glow in UV
+31699	SFB biotester RPS	2600.0	Cloudy Growth, Pale Blue Glow in UV Light
+31699	SFB biotester RPS	2700.0	Cloudy Growth, Slime Ring around Ball
+31699	SFB biotester RPS	2740.0	Cloudy Growth, Slime Ring around Ball, Dense Slime
+31699	SFB biotester RPS	2874.0	Cloudy Growth, Thread-like Strands, Slime Ring around Ball, Dense Slime
+31699	SFB biotester RPS	3200.0	Cloudy Plates Layering, Cloudy Growth
+31699	SFB biotester RPS	4000.0	Dense Slime
+31699	SFB biotester RPS	4200.0	Dense Slime, Cloudy Growth
+31699	SFB biotester RPS	4210.0	Dense Slime, Cloudy Growth Blackened Liquid
+31699	SFB biotester RPS	4300.0	Dense Slime, Cloudy Plates Layering
+31699	SFB biotester RPS	7200.0	Slime Ring around Ball, Cloudy Growth
+31699	SFB biotester RPS	8200.0	Thread-Like Strands, Cloudy Growth
+31699	SFB biotester RPS	9999.0	Other
+49986	Degree of decomposition, soil	1.0	Fibrix
+49986	Degree of decomposition, soil	2.0	Hemic
+49986	Degree of decomposition, soil	3.0	Sapric
+50276	Filter type	10.0	Gelman capsule, 0.45um
+50276	Filter type	20.0	Membrane, 0.45um, 142mm
+50276	Filter type	30.0	Membrane, 0.45um, 47mm
+50276	Filter type	40.0	Membrane, 0.22um, 47mm
+50276	Filter type	50.0	Membrane, 0.1um, 47mm
+50276	Filter type	60.0	Membrane, 0.1um, 142mm
+50276	Filter type	65.0	Membrane, syringe-type, 0.7um pore, 25mm dia.
+50276	Filter type	70.0	Membrane, syringe-type, 0.45um
+50276	Filter type	80.0	Membrane, syringe-type, 0.22um
+50276	Filter type	90.0	Silver membrane, 0.45um, 47mm
+50276	Filter type	100.0	Glass fiber, 0.7um, 142mm
+50276	Filter type	110.0	Glass fiber, baked, 0.7um, 142mm
+50276	Filter type	120.0	Glass fiber, 0.7um, 47mm
+50276	Filter type	130.0	Glass fiber, baked, 0.7um, 47mm
+50276	Filter type	200.0	Other
+50280	Site visit purpose	1001.0	Fixed frequency, surface-water
+50280	Site visit purpose	1002.0	Storm hydrograph, surface-water
+50280	Site visit purpose	1003.0	Extreme high flow, surface-water
+50280	Site visit purpose	1004.0	Extreme low flow, surface-water
+50280	Site visit purpose	1005.0	Diurnal, surface-water
+50280	Site visit purpose	1006.0	Synoptic, surface-water
+50280	Site visit purpose	1007.0	Oil spill response
+50280	Site visit purpose	1098.0	Surface-water quality control
+50280	Site visit purpose	1099.0	Other, surface-water
+50280	Site visit purpose	1501.0	Synoptic, Hyporheic zone
+50280	Site visit purpose	1502.0	Low flow, Hyporheic zone
+50280	Site visit purpose	1503.0	High flow, Hyporheic zone
+50280	Site visit purpose	2001.0	Primary, groundwater
+50280	Site visit purpose	2002.0	Supplemental, groundwater
+50280	Site visit purpose	2003.0	Temporal characterization, groundwater
+50280	Site visit purpose	2004.0	Resample, groundwater
+50280	Site visit purpose	2098.0	Groundwater quality control
+50280	Site visit purpose	2099.0	Other, groundwater
+50280	Site visit purpose	3001.0	Occurrence Survey, bed sediment or tissue
+50280	Site visit purpose	3002.0	Spatial distribution survey, bed sediment or tissue
+50280	Site visit purpose	3003.0	Synoptic study, bed sediment or tissue
+50280	Site visit purpose	3098.0	Bed sediment or tissue quality control
+50280	Site visit purpose	3099.0	Other, bed sediment or tissue
+50280	Site visit purpose	4001.0	Reconstructive trends from sediment core
+50280	Site visit purpose	5051.0	Sample collected during site installation, any media
+50280	Site visit purpose	5052.0	Event-based (runoff or recharge conditions), any media
+50280	Site visit purpose	5053.0	Fixed frequency (non event-based), any media
+50280	Site visit purpose	5054.0	Synoptic study, any media
+50280	Site visit purpose	5098.0	QA/QC, media other than SW, GW, or BS&T
+50280	Site visit purpose	5099.0	Other purpose, any media
+62955	Sample matrix	70.0	Soil
+62955	Sample matrix	80.0	Borehole core
+62955	Sample matrix	90.0	Borehole cuttings
+71995	Water use, primary	111.0	cash grains
+71995	Water use, primary	131.0	Field crops - except cash grains
+71995	Water use, primary	161.0	Vegetables and melons
+71995	Water use, primary	171.0	Fruits and tree nuts
+71995	Water use, primary	181.0	Horticultural specialties
+71995	Water use, primary	191.0	General farm crops
+71995	Water use, primary	211.0	Livestock
+71995	Water use, primary	251.0	Poultry and eggs
+71995	Water use, primary	271.0	Animal specialties
+71995	Water use, primary	291.0	General farms - primarily livestock
+71995	Water use, primary	711.0	Agricultural services - soil prep, crop plantings, etc.
+71995	Water use, primary	741.0	Veterinary services
+71995	Water use, primary	761.0	Animal services, farm labor and management
+71995	Water use, primary	811.0	Forestry
+71995	Water use, primary	912.0	Fish and wildlife farming
+71995	Water use, primary	1011.0	Metal mining
+71995	Water use, primary	1111.0	Anthracite mining
+71995	Water use, primary	1211.0	Bituminous coal and lignite mining
+71995	Water use, primary	1311.0	Oil and gas extraction
+71995	Water use, primary	1411.0	Mining and quarrying of nonmetalic minerals, - nonfuel
+71995	Water use, primary	1521.0	Building construction
+71995	Water use, primary	1611.0	Construction - other than building
+71995	Water use, primary	1711.0	Special trade (plumbing, heat, air, elec., masonry, etc.)
+71995	Water use, primary	2011.0	Manufacturing - meat products
+71995	Water use, primary	2016.0	Poultry and egg plants
+71995	Water use, primary	2021.0	Dairy products
+71995	Water use, primary	2032.0	Canned & preserved fruits and vegetables
+71995	Water use, primary	2041.0	Grain mill products
+71995	Water use, primary	2051.0	Bakery products
+71995	Water use, primary	2061.0	Sugar and confectionery products
+71995	Water use, primary	2074.0	Fats and oils
+71995	Water use, primary	2084.0	Beverages - alcoholic & soft drinks, syrups & extracts
+71995	Water use, primary	2091.0	Miscellaneous food preparations
+71995	Water use, primary	2111.0	Tobacco manufacturers
+71995	Water use, primary	2211.0	Textile mill products
+71995	Water use, primary	2311.0	Apparel - products from fabrics
+71995	Water use, primary	2411.0	Lumber & wood products except furniture
+71995	Water use, primary	2511.0	Furniture and fixtures
+71995	Water use, primary	2611.0	Paper and allied products
+71995	Water use, primary	2711.0	Printing, publishing, & allied industries
+71995	Water use, primary	2821.0	Chemicals and allied products
+71995	Water use, primary	2911.0	Petroleum refining and related products
+71995	Water use, primary	3011.0	Rubber and miscellaneous plastic products
+71995	Water use, primary	3111.0	Leather and leather products
+71995	Water use, primary	3211.0	Stone, clay, glass, and concrete products
+71995	Water use, primary	3281.0	Cut stone and stone products
+71995	Water use, primary	3291.0	Abrasive, asbestos, & miscellaneous nonmetalic products
+71995	Water use, primary	3312.0	Blast furnaces, steel works, & rolling & finishing mills
+71995	Water use, primary	3411.0	Metal products & trans. equipment (no machinery)
+71995	Water use, primary	3511.0	Machinery, except electrical
+71995	Water use, primary	3612.0	Electrical & electronic machinery, equipment & supplies
+71995	Water use, primary	3711.0	Transportation equipment repairing and parts
+71995	Water use, primary	3811.0	Measuring, analyzing, & controlling instruments
+71995	Water use, primary	3911.0	Miscellaneous manufacturing industries
+71995	Water use, primary	4011.0	Transportation - trains, taxicabs, aircraft
+71995	Water use, primary	4212.0	Motor freight transportation and warehousing
+71995	Water use, primary	4311.0	U.S. postal service
+71995	Water use, primary	4411.0	Water transportation
+71995	Water use, primary	4423.0	Water recreation on bays, lakes, rivers, & canals
+71995	Water use, primary	4511.0	Transportation by air
+71995	Water use, primary	4612.0	Pipelines - except natural gas
+71995	Water use, primary	4811.0	Communications
+71995	Water use, primary	4922.0	Gas production and distribution; elec. and gas service
+71995	Water use, primary	4941.0	Water supply
+71995	Water use, primary	4952.0	Sewerage systems
+71995	Water use, primary	4961.0	Public steam supply
+71995	Water use, primary	4971.0	Irrigation systems
+71995	Water use, primary	5012.0	Wholesale trade - durable goods
+71995	Water use, primary	5111.0	Wholesale trade - nondurable goods
+71995	Water use, primary	5211.0	Building materials, hardware, garden supply
+71995	Water use, primary	5311.0	General merchandise stores
+71995	Water use, primary	5411.0	Food stores
+71995	Water use, primary	5511.0	Auto. dealers and gasoline service stations
+71995	Water use, primary	5611.0	Apparel and accessory stores
+71995	Water use, primary	5712.0	Furniture, home furnishing, and equipment stores
+71995	Water use, primary	5812.0	Eating and drinking places
+71995	Water use, primary	5912.0	Miscellaneous retail - drug, liquor, book, camera, etc.
+71995	Water use, primary	6011.0	Banking
+71995	Water use, primary	6112.0	Credit agencies
+71995	Water use, primary	6212.0	Security and commodity brokers, dealers, and services
+71995	Water use, primary	6311.0	Insurance
+71995	Water use, primary	6512.0	Real estate
+71995	Water use, primary	6711.0	Holding and other investment offices
+71995	Water use, primary	7011.0	Hotels, motels, tourist courts
+71995	Water use, primary	7021.0	Rooming and boarding houses
+71995	Water use, primary	7032.0	Camps, transient trailer parks, & camp sites
+71995	Water use, primary	7041.0	Organization hotels and membership lodging houses
+71995	Water use, primary	7211.0	Laundry, cleaning, and garment services
+71995	Water use, primary	7221.0	Shops - photo, beauty, barber, shoe, funeral services
+71995	Water use, primary	7311.0	Advertising services
+71995	Water use, primary	7321.0	Consumer credit and collection
+71995	Water use, primary	7331.0	Mailing, reproduction, commercial art & photography
+71995	Water use, primary	7341.0	Service to dwellings and other buildings
+71995	Water use, primary	7351.0	News syndicates
+71995	Water use, primary	7361.0	Employment services
+71995	Water use, primary	7372.0	Computer and data processing
+71995	Water use, primary	7391.0	Miscellaneous business services
+71995	Water use, primary	7512.0	Automotive and truck rental leasing without driver
+71995	Water use, primary	7523.0	Automobile parking
+71995	Water use, primary	7531.0	Automotive repair shops
+71995	Water use, primary	7542.0	Car washes
+71995	Water use, primary	7549.0	Automotive services - except repair
+71995	Water use, primary	7622.0	Miscellaneous repair services
+71995	Water use, primary	7813.0	Motion picture-t.v. services, theaters, except drive-ins
+71995	Water use, primary	7911.0	Recreation services, except theaters and public golf
+71995	Water use, primary	7992.0	Public golf courses
+71995	Water use, primary	7993.0	Coin operated amusement devices
+71995	Water use, primary	7996.0	Amusement parks, sports and recreation clubs, etc.
+71995	Water use, primary	8011.0	Health services (offices)
+71995	Water use, primary	8051.0	Nursing and personal care facilities
+71995	Water use, primary	8062.0	Hospitals
+71995	Water use, primary	8071.0	Medical and dental laboratories
+71995	Water use, primary	8081.0	Outpatient care fac
+71995	Water use, primary	8091.0	Health & allies services, not elsewhere classified
+71995	Water use, primary	8111.0	Legal services
+71995	Water use, primary	8211.0	Educational services, libraries and information centers
+71995	Water use, primary	8231.0	Social services & rehabilitation centers
+71995	Water use, primary	8411.0	Museums, art galleries, zoological & botanical gardens
+71995	Water use, primary	8611.0	Membership organizations
+71995	Water use, primary	8811.0	Private houses, condos, municipalities, & trailer parks
+71995	Water use, primary	8911.0	Miscellaneous services (eng.,ed., r&d, accounting, etc.)
+71995	Water use, primary	9111.0	Gov., legislative, justice, public order & safety misc.
+71995	Water use, primary	9411.0	Administration of human resources programs
+71995	Water use, primary	9511.0	Air & water resource, & solid waste management
+71995	Water use, primary	9512.0	Natural resource conservation by public administration
+71995	Water use, primary	9531.0	Admin. of housing & economic programs & internat'l affairs
+71995	Water use, primary	9999.0	Water compacts, agreements & legislative actions
+71995	Water use, primary	14911.0	Commercial electric energy establishments - fossil
+71995	Water use, primary	24911.0	Commercial electric energy establishments - geothermal
+71995	Water use, primary	34911.0	Commercial electric energy establishments - hydroelectric
+71995	Water use, primary	44911.0	Commercial electric energy establishments - nuclear
+71996	Water use, secondary	111.0	Cash grains
+71996	Water use, secondary	131.0	Field crops - except cash grains
+71996	Water use, secondary	161.0	Vegetables and melons
+71996	Water use, secondary	171.0	Fruits and tree nuts
+71996	Water use, secondary	181.0	Horticultural specialties
+71996	Water use, secondary	191.0	General farm crops
+71996	Water use, secondary	211.0	Livestock
+71996	Water use, secondary	251.0	Poultry and eggs
+71996	Water use, secondary	271.0	Animal specialties
+71996	Water use, secondary	291.0	General farms - primarily livestock
+71996	Water use, secondary	711.0	Agricultural services - soil prep, crop plantings, etc.
+71996	Water use, secondary	741.0	Veterinary services
+71996	Water use, secondary	761.0	Animal services, farm labor and management
+71996	Water use, secondary	811.0	Forestry
+71996	Water use, secondary	912.0	Fish and wildlife farming
+71996	Water use, secondary	1011.0	Metal mining
+71996	Water use, secondary	1111.0	Anthracite mining
+71996	Water use, secondary	1211.0	Bituminous coal and lignite mining
+71996	Water use, secondary	1311.0	Oil and gas extraction
+71996	Water use, secondary	1411.0	Mining and quarrying of nonmetalic minerals, - nonfuel
+71996	Water use, secondary	1521.0	Building construction
+71996	Water use, secondary	1611.0	Construction - other than building
+71996	Water use, secondary	1711.0	Special trade (plumbing, heat, air, elec., masonry, etc.)
+71996	Water use, secondary	2011.0	Manufacturing - meat products
+71996	Water use, secondary	2016.0	Poultry and egg plants
+71996	Water use, secondary	2021.0	Dairy products
+71996	Water use, secondary	2032.0	Canned & preserved fruits and vegetables
+71996	Water use, secondary	2041.0	Grain mill products
+71996	Water use, secondary	2051.0	Bakery products
+71996	Water use, secondary	2061.0	Sugar and confectionery products
+71996	Water use, secondary	2074.0	Fats and oils
+71996	Water use, secondary	2084.0	Beverages - alcoholic & soft drinks, syrups & extracts
+71996	Water use, secondary	2091.0	Miscellaneous food preparations
+71996	Water use, secondary	2111.0	Tobacco manufacturers
+71996	Water use, secondary	2211.0	Textile mill products
+71996	Water use, secondary	2311.0	Apparel - products from fabrics
+71996	Water use, secondary	2411.0	Lumber & wood products except furniture
+71996	Water use, secondary	2511.0	Furniture and fixtures
+71996	Water use, secondary	2611.0	Paper and allied products
+71996	Water use, secondary	2711.0	Printing, publishing, & allied industries
+71996	Water use, secondary	2821.0	Chemicals and allied products
+71996	Water use, secondary	2911.0	Petroleum refining and related products
+71996	Water use, secondary	3011.0	Rubber and miscellaneous plastic products
+71996	Water use, secondary	3111.0	Leather and leather products
+71996	Water use, secondary	3211.0	Stone, clay, glass, and concrete products
+71996	Water use, secondary	3281.0	Cut stone and stone products
+71996	Water use, secondary	3291.0	Abrasive, asbestos, & miscellaneous nonmetalic products
+71996	Water use, secondary	3312.0	Blast furnaces, steel works, & rolling & finishing mills
+71996	Water use, secondary	3411.0	Metal products & trans. equipment (no machinery)
+71996	Water use, secondary	3511.0	Machinery, except electrical
+71996	Water use, secondary	3612.0	Electrical & electronic machinery, equipment & supplies
+71996	Water use, secondary	3711.0	Transportation equipment repairing and parts
+71996	Water use, secondary	3811.0	Measuring, analyzing, & controlling instruments
+71996	Water use, secondary	3911.0	Miscellaneous manufacturing industries
+71996	Water use, secondary	4011.0	Transportation - trains, taxicabs, aircraft
+71996	Water use, secondary	4212.0	Motor freight transportation and warehousing
+71996	Water use, secondary	4311.0	U.S. postal service
+71996	Water use, secondary	4411.0	Water transportation
+71996	Water use, secondary	4423.0	Water recreation on bays, lakes, rivers, & canals
+71996	Water use, secondary	4511.0	Transportation by air
+71996	Water use, secondary	4612.0	Pipelines - except natural gas
+71996	Water use, secondary	4811.0	Communications
+71996	Water use, secondary	4922.0	Gas production and distribution; elec. and gas service
+71996	Water use, secondary	4941.0	Water supply
+71996	Water use, secondary	4952.0	Sewerage systems
+71996	Water use, secondary	4961.0	Public steam supply
+71996	Water use, secondary	4971.0	Irrigation systems
+71996	Water use, secondary	5012.0	Wholesale trade - durable goods
+71996	Water use, secondary	5111.0	Wholesale trade - nondurable goods
+71996	Water use, secondary	5211.0	Building materials, hardware, garden supply
+71996	Water use, secondary	5311.0	General merchandise stores
+71996	Water use, secondary	5411.0	Food stores
+71996	Water use, secondary	5511.0	Auto. dealers and gasoline service stations
+71996	Water use, secondary	5611.0	Apparel and accessory stores
+71996	Water use, secondary	5712.0	Furniture, home furnishing, and equipment stores
+71996	Water use, secondary	5812.0	Eating and drinking places
+71996	Water use, secondary	5912.0	Miscellaneous retail - drug, liquor, book, camera, etc.
+71996	Water use, secondary	6011.0	Banking
+71996	Water use, secondary	6112.0	Credit agencies
+71996	Water use, secondary	6212.0	Security and commodity brokers, dealers, and services
+71996	Water use, secondary	6311.0	Insurance
+71996	Water use, secondary	6512.0	Real estate
+71996	Water use, secondary	6711.0	Holding and other investment offices
+71996	Water use, secondary	7011.0	Hotels, motels, tourist courts
+71996	Water use, secondary	7021.0	Rooming and boarding houses
+71996	Water use, secondary	7032.0	Camps, transient trailer parks, & camp sites
+71996	Water use, secondary	7041.0	Organization hotels and membership lodging houses
+71996	Water use, secondary	7211.0	Laundry, cleaning, and garment services
+71996	Water use, secondary	7221.0	Shops - photo, beauty, barber, shoe, funeral services
+71996	Water use, secondary	7311.0	Advertising services
+71996	Water use, secondary	7321.0	Consumer credit and collection
+71996	Water use, secondary	7331.0	Mailing, reproduction, commercial art & photography
+71996	Water use, secondary	7341.0	Service to dwellings and other buildings
+71996	Water use, secondary	7351.0	News syndicates
+71996	Water use, secondary	7361.0	Employment services
+71996	Water use, secondary	7372.0	Computer and data processing
+71996	Water use, secondary	7391.0	Miscellaneous business services
+71996	Water use, secondary	7512.0	Automotive and truck rental leasing without driver
+71996	Water use, secondary	7523.0	Automobile parking
+71996	Water use, secondary	7531.0	Automotive repair shops
+71996	Water use, secondary	7542.0	Car washes
+71996	Water use, secondary	7549.0	Automotive services - except repair
+71996	Water use, secondary	7622.0	Miscellaneous repair services
+71996	Water use, secondary	7813.0	Motion picture-t.v. services, theaters, except drive-ins
+71996	Water use, secondary	7911.0	Recreation services, except theaters and public golf
+71996	Water use, secondary	7992.0	Public golf courses
+71996	Water use, secondary	7993.0	Coin operated amusement devices
+71996	Water use, secondary	7996.0	Amusement parks, sports and recreation clubs, etc.
+71996	Water use, secondary	8011.0	Health services (offices)
+71996	Water use, secondary	8051.0	Nursing and personal care facilities
+71996	Water use, secondary	8062.0	Hospitals
+71996	Water use, secondary	8071.0	Medical and dental laboratories
+71996	Water use, secondary	8081.0	Outpatient care fac
+71996	Water use, secondary	8091.0	Health & allies services, not elsewhere classified
+71996	Water use, secondary	8111.0	Legal services
+71996	Water use, secondary	8211.0	Educational services, libraries and information centers
+71996	Water use, secondary	8231.0	Social services & rehabilitation centers
+71996	Water use, secondary	8411.0	Museums, art galleries, zoological & botanical gardens
+71996	Water use, secondary	8611.0	Membership organizations
+71996	Water use, secondary	8811.0	Private houses, condos, municipalities, & trailer parks
+71996	Water use, secondary	8911.0	Miscellaneous services (eng.,ed., r&d, accounting, etc.)
+71996	Water use, secondary	9111.0	Gov., legislative, justice, public order & safety misc.
+71996	Water use, secondary	9411.0	Administration of human resources programs
+71996	Water use, secondary	9511.0	Air & water resource, & solid waste management
+71996	Water use, secondary	9512.0	Natural resource conservation by public administration
+71996	Water use, secondary	9531.0	Admin. of housing & economic programs & internat'l affairs
+71996	Water use, secondary	9999.0	Water compacts, agreements & legislative actions
+71996	Water use, secondary	14911.0	Commercial electric energy establishments - fossil
+71996	Water use, secondary	24911.0	Commercial electric energy establishments - geothermal
+71996	Water use, secondary	34911.0	Commercial electric energy establishments - hydroelectric
+71996	Water use, secondary	44911.0	Commercial electric energy establishments - nuclear
+71997	Water use, tertiary	111.0	Cash grains
+71997	Water use, tertiary	131.0	Field crops - except cash grains
+71997	Water use, tertiary	161.0	Vegetables and melons
+71997	Water use, tertiary	171.0	Fruits and tree nuts
+71997	Water use, tertiary	181.0	Horticultural specialties
+71997	Water use, tertiary	191.0	General farm crops
+71997	Water use, tertiary	211.0	Livestock
+71997	Water use, tertiary	251.0	Poultry and eggs
+71997	Water use, tertiary	271.0	Animal specialties
+71997	Water use, tertiary	291.0	General farms - primarily livestock
+71997	Water use, tertiary	711.0	Agricultural services - soil prep, crop plantings, etc.
+71997	Water use, tertiary	741.0	Veterinary services
+71997	Water use, tertiary	761.0	Animal services, farm labor and management
+71997	Water use, tertiary	811.0	Forestry
+71997	Water use, tertiary	912.0	Fish and wildlife farming
+71997	Water use, tertiary	1011.0	Metal mining
+71997	Water use, tertiary	1111.0	Anthracite mining
+71997	Water use, tertiary	1211.0	Bituminous coal and lignite mining
+71997	Water use, tertiary	1311.0	Oil and gas extraction
+71997	Water use, tertiary	1411.0	Mining and quarrying of nonmetalic minerals, - nonfuel
+71997	Water use, tertiary	1521.0	Building construction
+71997	Water use, tertiary	1611.0	Construction - other than building
+71997	Water use, tertiary	1711.0	Special trade (plumbing, heat, air, elec., masonry, etc.)
+71997	Water use, tertiary	2011.0	Manufacturing - meat products
+71997	Water use, tertiary	2016.0	Poultry and egg plants
+71997	Water use, tertiary	2021.0	Dairy products
+71997	Water use, tertiary	2032.0	Canned & preserved fruits and vegetables
+71997	Water use, tertiary	2041.0	Grain mill products
+71997	Water use, tertiary	2051.0	Bakery products
+71997	Water use, tertiary	2061.0	Sugar and confectionery products
+71997	Water use, tertiary	2074.0	Fats and oils
+71997	Water use, tertiary	2084.0	Beverages - alcoholic & soft drinks, syrups & extracts
+71997	Water use, tertiary	2091.0	Miscellaneous food preparations
+71997	Water use, tertiary	2111.0	Tobacco manufacturers
+71997	Water use, tertiary	2211.0	Textile mill products
+71997	Water use, tertiary	2311.0	Apparel - products from fabrics
+71997	Water use, tertiary	2411.0	Lumber & wood products except furniture
+71997	Water use, tertiary	2511.0	Furniture and fixtures
+71997	Water use, tertiary	2611.0	Paper and allied products
+71997	Water use, tertiary	2711.0	Printing, publishing, & allied industries
+71997	Water use, tertiary	2821.0	Chemicals and allied products
+71997	Water use, tertiary	2911.0	Petroleum refining and related products
+71997	Water use, tertiary	3011.0	Rubber and miscellaneous plastic products
+71997	Water use, tertiary	3111.0	Leather and leather products
+71997	Water use, tertiary	3211.0	Stone, clay, glass, and concrete products
+71997	Water use, tertiary	3281.0	Cut stone and stone products
+71997	Water use, tertiary	3291.0	Abrasive, asbestos, & miscellaneous nonmetalic products
+71997	Water use, tertiary	3312.0	Blast furnaces, steel works, & rolling & finishing mills
+71997	Water use, tertiary	3411.0	Metal products & trans. equipment (no machinery)
+71997	Water use, tertiary	3511.0	Machinery, except electrical
+71997	Water use, tertiary	3612.0	Electrical & electronic machinery, equipment & supplies
+71997	Water use, tertiary	3711.0	Transportation equipment repairing and parts
+71997	Water use, tertiary	3811.0	Measuring, analyzing, & controlling instruments
+71997	Water use, tertiary	3911.0	Miscellaneous manufacturing industries
+71997	Water use, tertiary	4011.0	Transportation - trains, taxicabs, aircraft
+71997	Water use, tertiary	4212.0	Motor freight transportation and warehousing
+71997	Water use, tertiary	4311.0	U.S. postal service
+71997	Water use, tertiary	4411.0	Water transportation
+71997	Water use, tertiary	4423.0	Water recreation on bays, lakes, rivers, & canals
+71997	Water use, tertiary	4511.0	Transportation by air
+71997	Water use, tertiary	4612.0	Pipelines - except natural gas
+71997	Water use, tertiary	4811.0	Communications
+71997	Water use, tertiary	4922.0	Gas production and distribution; elec. and gas service
+71997	Water use, tertiary	4941.0	Water supply
+71997	Water use, tertiary	4952.0	Sewerage systems
+71997	Water use, tertiary	4961.0	Public steam supply
+71997	Water use, tertiary	4971.0	Irrigation systems
+71997	Water use, tertiary	5012.0	Wholesale trade - durable goods
+71997	Water use, tertiary	5111.0	Wholesale trade - nondurable goods
+71997	Water use, tertiary	5211.0	Building materials, hardware, garden supply
+71997	Water use, tertiary	5311.0	General merchandise stores
+71997	Water use, tertiary	5411.0	Food stores
+71997	Water use, tertiary	5511.0	Auto. dealers and gasoline service stations
+71997	Water use, tertiary	5611.0	Apparel and accessory stores
+71997	Water use, tertiary	5712.0	Furniture, home furnishing, and equipment stores
+71997	Water use, tertiary	5812.0	Eating and drinking places
+71997	Water use, tertiary	5912.0	Miscellaneous retail - drug, liquor, book, camera, etc.
+71997	Water use, tertiary	6011.0	Banking
+71997	Water use, tertiary	6112.0	Credit agencies
+71997	Water use, tertiary	6212.0	Security and commodity brokers, dealers, and services
+71997	Water use, tertiary	6311.0	Insurance
+71997	Water use, tertiary	6512.0	Real estate
+71997	Water use, tertiary	6711.0	Holding and other investment offices
+71997	Water use, tertiary	7011.0	Hotels, motels, tourist courts
+71997	Water use, tertiary	7021.0	Rooming and boarding houses
+71997	Water use, tertiary	7032.0	Camps, transient trailer parks, & camp sites
+71997	Water use, tertiary	7041.0	Organization hotels and membership lodging houses
+71997	Water use, tertiary	7211.0	Laundry, cleaning, and garment services
+71997	Water use, tertiary	7221.0	Shops - photo, beauty, barber, shoe, funeral services
+71997	Water use, tertiary	7311.0	Advertising services
+71997	Water use, tertiary	7321.0	Consumer credit and collection
+71997	Water use, tertiary	7331.0	Mailing, reproduction, commercial art & photography
+71997	Water use, tertiary	7341.0	Service to dwellings and other buildings
+71997	Water use, tertiary	7351.0	News syndicates
+71997	Water use, tertiary	7361.0	Employment services
+71997	Water use, tertiary	7372.0	Computer and data processing
+71997	Water use, tertiary	7391.0	Miscellaneous business services
+71997	Water use, tertiary	7512.0	Automotive and truck rental leasing without driver
+71997	Water use, tertiary	7523.0	Automobile parking
+71997	Water use, tertiary	7531.0	Automotive repair shops
+71997	Water use, tertiary	7542.0	Car washes
+71997	Water use, tertiary	7549.0	Automotive services - except repair
+71997	Water use, tertiary	7622.0	Miscellaneous repair services
+71997	Water use, tertiary	7813.0	Motion picture-t.v. services, theaters, except drive-ins
+71997	Water use, tertiary	7911.0	Recreation services, except theaters and public golf
+71997	Water use, tertiary	7992.0	Public golf courses
+71997	Water use, tertiary	7993.0	Coin operated amusement devices
+71997	Water use, tertiary	7996.0	Amusement parks, sports and recreation clubs, etc.
+71997	Water use, tertiary	8011.0	Health services (offices)
+71997	Water use, tertiary	8051.0	Nursing and personal care facilities
+71997	Water use, tertiary	8062.0	Hospitals
+71997	Water use, tertiary	8071.0	Medical and dental laboratories
+71997	Water use, tertiary	8081.0	Outpatient care fac
+71997	Water use, tertiary	8091.0	Health & allies services, not elsewhere classified
+71997	Water use, tertiary	8111.0	Legal services
+71997	Water use, tertiary	8211.0	Educational services, libraries and information centers
+71997	Water use, tertiary	8231.0	Social services & rehabilitation centers
+71997	Water use, tertiary	8411.0	Museums, art galleries, zoological & botanical gardens
+71997	Water use, tertiary	8611.0	Membership organizations
+71997	Water use, tertiary	8811.0	Private houses, condos, municipalities, & trailer parks
+71997	Water use, tertiary	8911.0	Miscellaneous services (eng.,ed., r&d, accounting, etc.)
+71997	Water use, tertiary	9111.0	Gov., legislative, justice, public order & safety misc.
+71997	Water use, tertiary	9411.0	Administration of human resources programs
+71997	Water use, tertiary	9511.0	Air & water resource, & solid waste management
+71997	Water use, tertiary	9512.0	Natural resource conservation by public administration
+71997	Water use, tertiary	9531.0	Admin. of housing & economic programs & internat'l affairs
+71997	Water use, tertiary	9999.0	Water compacts, agreements & legislative actions
+71997	Water use, tertiary	14911.0	Commercial electric energy establishments - fossil
+71997	Water use, tertiary	24911.0	Commercial electric energy establishments - geothermal
+71997	Water use, tertiary	34911.0	Commercial electric energy establishments - hydroelectric
+71997	Water use, tertiary	44911.0	Commercial electric energy establishments - nuclear
+71998	Water use, quaternary	111.0	Cash grains
+71998	Water use, quaternary	131.0	Field crops - except cash grains
+71998	Water use, quaternary	161.0	Vegetables and melons
+71998	Water use, quaternary	171.0	Fruits and tree nuts
+71998	Water use, quaternary	181.0	Horticultural specialties
+71998	Water use, quaternary	191.0	General farm crops
+71998	Water use, quaternary	211.0	Livestock
+71998	Water use, quaternary	251.0	Poultry and eggs
+71998	Water use, quaternary	271.0	Animal specialties
+71998	Water use, quaternary	291.0	General farms - primarily livestock
+71998	Water use, quaternary	711.0	Agricultural services - soil prep, crop plantings, etc.
+71998	Water use, quaternary	741.0	Veterinary services
+71998	Water use, quaternary	761.0	Animal services, farm labor and management
+71998	Water use, quaternary	811.0	Forestry
+71998	Water use, quaternary	912.0	Fish and wildlife farming
+71998	Water use, quaternary	1011.0	Metal mining
+71998	Water use, quaternary	1111.0	Anthracite mining
+71998	Water use, quaternary	1211.0	Bituminous coal and lignite mining
+71998	Water use, quaternary	1311.0	Oil and gas extraction
+71998	Water use, quaternary	1411.0	Mining and quarrying of nonmetalic minerals, - nonfuel
+71998	Water use, quaternary	1521.0	Building construction
+71998	Water use, quaternary	1611.0	Construction - other than building
+71998	Water use, quaternary	1711.0	Special trade (plumbing, heat, air, elec., masonry, etc.)
+71998	Water use, quaternary	2011.0	Manufacturing - meat products
+71998	Water use, quaternary	2016.0	Poultry and egg plants
+71998	Water use, quaternary	2021.0	Dairy products
+71998	Water use, quaternary	2032.0	Canned & preserved fruits and vegetables
+71998	Water use, quaternary	2041.0	Grain mill products
+71998	Water use, quaternary	2051.0	Bakery products
+71998	Water use, quaternary	2061.0	Sugar and confectionery products
+71998	Water use, quaternary	2074.0	Fats and oils
+71998	Water use, quaternary	2084.0	Beverages - alcoholic & soft drinks, syrups & extracts
+71998	Water use, quaternary	2091.0	Miscellaneous food preparations
+71998	Water use, quaternary	2111.0	Tobacco manufacturers
+71998	Water use, quaternary	2211.0	Textile mill products
+71998	Water use, quaternary	2311.0	Apparel - products from fabrics
+71998	Water use, quaternary	2411.0	Lumber & wood products except furniture
+71998	Water use, quaternary	2511.0	Furniture and fixtures
+71998	Water use, quaternary	2611.0	Paper and allied products
+71998	Water use, quaternary	2711.0	Printing, publishing, & allied industries
+71998	Water use, quaternary	2821.0	Chemicals and allied products
+71998	Water use, quaternary	2911.0	Petroleum refining and related products
+71998	Water use, quaternary	3011.0	Rubber and miscellaneous plastic products
+71998	Water use, quaternary	3111.0	Leather and leather products
+71998	Water use, quaternary	3211.0	Stone, clay, glass, and concrete products
+71998	Water use, quaternary	3281.0	Cut stone and stone products
+71998	Water use, quaternary	3291.0	Abrasive, asbestos, & miscellaneous nonmetalic products
+71998	Water use, quaternary	3312.0	Blast furnaces, steel works, & rolling & finishing mills
+71998	Water use, quaternary	3411.0	Metal products & trans. equipment (no machinery)
+71998	Water use, quaternary	3511.0	Machinery, except electrical
+71998	Water use, quaternary	3612.0	Electrical & electronic machinery, equipment & supplies
+71998	Water use, quaternary	3711.0	Transportation equipment repairing and parts
+71998	Water use, quaternary	3811.0	Measuring, analyzing, & controlling instruments
+71998	Water use, quaternary	3911.0	Miscellaneous manufacturing industries
+71998	Water use, quaternary	4011.0	Transportation - trains, taxicabs, aircraft
+71998	Water use, quaternary	4212.0	Motor freight transportation and warehousing
+71998	Water use, quaternary	4311.0	U.S. postal service
+71998	Water use, quaternary	4411.0	Water transportation
+71998	Water use, quaternary	4423.0	Water recreation on bays, lakes, rivers, & canals
+71998	Water use, quaternary	4511.0	Transportation by air
+71998	Water use, quaternary	4612.0	Pipelines - except natural gas
+71998	Water use, quaternary	4811.0	Communications
+71998	Water use, quaternary	4922.0	Gas production and distribution; elec. and gas service
+71998	Water use, quaternary	4941.0	Water supply
+71998	Water use, quaternary	4952.0	Sewerage systems
+71998	Water use, quaternary	4961.0	Public steam supply
+71998	Water use, quaternary	4971.0	Irrigation systems
+71998	Water use, quaternary	5012.0	Wholesale trade - durable goods
+71998	Water use, quaternary	5111.0	Wholesale trade - nondurable goods
+71998	Water use, quaternary	5211.0	Building materials, hardware, garden supply
+71998	Water use, quaternary	5311.0	General merchandise stores
+71998	Water use, quaternary	5411.0	Food stores
+71998	Water use, quaternary	5511.0	Auto. dealers and gasoline service stations
+71998	Water use, quaternary	5611.0	Apparel and accessory stores
+71998	Water use, quaternary	5712.0	Furniture, home furnishing, and equipment stores
+71998	Water use, quaternary	5812.0	Eating and drinking places
+71998	Water use, quaternary	5912.0	Miscellaneous retail - drug, liquor, book, camera, etc.
+71998	Water use, quaternary	6011.0	Banking
+71998	Water use, quaternary	6112.0	Credit agencies
+71998	Water use, quaternary	6212.0	Security and commodity brokers, dealers, and services
+71998	Water use, quaternary	6311.0	Insurance
+71998	Water use, quaternary	6512.0	Real estate
+71998	Water use, quaternary	6711.0	Holding and other investment offices
+71998	Water use, quaternary	7011.0	Hotels, motels, tourist courts
+71998	Water use, quaternary	7021.0	Rooming and boarding houses
+71998	Water use, quaternary	7032.0	Camps, transient trailer parks, & camp sites
+71998	Water use, quaternary	7041.0	Organization hotels and membership lodging houses
+71998	Water use, quaternary	7211.0	Laundry, cleaning, and garment services
+71998	Water use, quaternary	7221.0	Shops - photo, beauty, barber, shoe, funeral services
+71998	Water use, quaternary	7311.0	Advertising services
+71998	Water use, quaternary	7321.0	Consumer credit and collection
+71998	Water use, quaternary	7331.0	Mailing, reproduction, commercial art & photography
+71998	Water use, quaternary	7341.0	Service to dwellings and other buildings
+71998	Water use, quaternary	7351.0	News syndicates
+71998	Water use, quaternary	7361.0	Employment services
+71998	Water use, quaternary	7372.0	Computer and data processing
+71998	Water use, quaternary	7391.0	Miscellaneous business services
+71998	Water use, quaternary	7512.0	Automotive and truck rental leasing without driver
+71998	Water use, quaternary	7523.0	Automobile parking
+71998	Water use, quaternary	7531.0	Automotive repair shops
+71998	Water use, quaternary	7542.0	Car washes
+71998	Water use, quaternary	7549.0	Automotive services - except repair
+71998	Water use, quaternary	7622.0	Miscellaneous repair services
+71998	Water use, quaternary	7813.0	Motion picture-t.v. services, theaters, except drive-ins
+71998	Water use, quaternary	7911.0	Recreation services, except theaters and public golf
+71998	Water use, quaternary	7992.0	Public golf courses
+71998	Water use, quaternary	7993.0	Coin operated amusement devices
+71998	Water use, quaternary	7996.0	Amusement parks, sports and recreation clubs, etc.
+71998	Water use, quaternary	8011.0	Health services (offices)
+71998	Water use, quaternary	8051.0	Nursing and personal care facilities
+71998	Water use, quaternary	8062.0	Hospitals
+71998	Water use, quaternary	8071.0	Medical and dental laboratories
+71998	Water use, quaternary	8081.0	Outpatient care fac
+71998	Water use, quaternary	8091.0	Health & allies services, not elsewhere classified
+71998	Water use, quaternary	8111.0	Legal services
+71998	Water use, quaternary	8211.0	Educational services, libraries and information centers
+71998	Water use, quaternary	8231.0	Social services & rehabilitation centers
+71998	Water use, quaternary	8411.0	Museums, art galleries, zoological & botanical gardens
+71998	Water use, quaternary	8611.0	Membership organizations
+71998	Water use, quaternary	8811.0	Private houses, condos, municipalities, & trailer parks
+71998	Water use, quaternary	8911.0	Miscellaneous services (eng.,ed., r&d, accounting, etc.)
+71998	Water use, quaternary	9111.0	Gov., legislative, justice, public order & safety misc.
+71998	Water use, quaternary	9411.0	Administration of human resources programs
+71998	Water use, quaternary	9511.0	Air & water resource, & solid waste management
+71998	Water use, quaternary	9512.0	Natural resource conservation by public administration
+71998	Water use, quaternary	9531.0	Admin. of housing & economic programs & internat'l affairs
+71998	Water use, quaternary	9999.0	Water compacts, agreements & legislative actions
+71998	Water use, quaternary	14911.0	Commercial electric energy establishments - fossil
+71998	Water use, quaternary	24911.0	Commercial electric energy establishments - geothermal
+71998	Water use, quaternary	34911.0	Commercial electric energy establishments - hydroelectric
+71998	Water use, quaternary	44911.0	Commercial electric energy establishments - nuclear
+71999	Sample purpose	10.0	Routine
+71999	Sample purpose	15.0	NAWQA - National Water-Quality Assessment
+71999	Sample purpose	20.0	NASQAN - National Stream Quality Accounting Network
+71999	Sample purpose	25.0	NMN - National Monitoring Network
+71999	Sample purpose	30.0	Benchmark
+71999	Sample purpose	35.0	RASA - Regional Aquifer Systems Analysis
+71999	Sample purpose	40.0	SW Network
+71999	Sample purpose	50.0	GW Network
+71999	Sample purpose	60.0	Lowflow Network
+71999	Sample purpose	70.0	Highflow Network
+71999	Sample purpose	80.0	Acid rain
+71999	Sample purpose	80.01	Bulk or undefined (bu)
+71999	Sample purpose	80.02	Sample related problem (ns)
+71999	Sample purpose	80.03	Dry wet-side sample (na)
+71999	Sample purpose	80.04	Completely missing samples (un)
+71999	Sample purpose	80.05	Long duration sample (ld)
+71999	Sample purpose	80.06	Sampling protocol (time) (sp)
+71999	Sample purpose	80.07	Sampler malfunction (s)
+71999	Sample purpose	90.0	Snow survey
+71999	Sample purpose	100.0	Mt. St. Helens
+71999	Sample purpose	110.0	Seepage study
+71999	Sample purpose	120.0	Irrigation effects
+71999	Sample purpose	130.0	Recharge
+71999	Sample purpose	140.0	Injection
+71999	Sample purpose	145.0	Tracer Test
+71999	Sample purpose	150.0	Bank erodibility
+71999	Sample purpose	160.0	National blank and spike program
+71999	Sample purpose	170.0	Quality assurance
+71999	Sample purpose	180.0	Cross-section variation
+71999	Sample purpose	190.0	Groundwater/Surface-water Interaction Study
+71999	Sample purpose	200.0	Oil spill response
+71999	Sample purpose	210.0	National Children's Study
+71999	Sample purpose	220.0	Great Lakes Restoration Initiative
+72005	Sample source	0.01	Airline measurement
+72005	Sample source	0.02	Analog or graphic recorder
+72005	Sample source	0.03	Calibrated airline measurement
+72005	Sample source	0.04	Estimated
+72005	Sample source	0.05	Pressure-gage measurement
+72005	Sample source	0.06	Calibrated pressure-gage measurement
+72005	Sample source	0.07	Interpreted from geophysical logs
+72005	Sample source	0.08	Manometer measurement
+72005	Sample source	0.09	Nonrecording gage
+72005	Sample source	0.1	Reported, method not known
+72005	Sample source	0.11	Steel-tape measurement
+72005	Sample source	0.12	Electric-tape measurement
+72005	Sample source	0.13	Calibrated electric-tape measurement
+72005	Sample source	0.14	Other
+72005	Sample source	1.0	Well head
+72005	Sample source	2.0	Drill stem test
+72005	Sample source	3.0	Separator
+72005	Sample source	4.0	Boiler
+72005	Sample source	5.0	Flow line
+72005	Sample source	6.0	Battery
+72005	Sample source	7.0	Undesignated
+72005	Sample source	8.0	Tank
+72005	Sample source	9.0	Production test
+72005	Sample source	10.0	Heater treater
+72005	Sample source	11.0	Gun barrel
+72005	Sample source	12.0	Swab
+72005	Sample source	13.0	Pit
+72005	Sample source	14.0	Manifold test
+72005	Sample source	15.0	Gas line drip
+72005	Sample source	16.0	Casing leak
+72005	Sample source	17.0	Wire line test
+72005	Sample source	18.0	Header
+72005	Sample source	19.0	Filter
+72005	Sample source	20.0	Test tool
+72005	Sample source	21.0	Ltx unit
+72005	Sample source	22.0	Knockout
+72005	Sample source	23.0	Well bleeder
+72005	Sample source	24.0	Fracture test
+72005	Sample source	25.0	Test wagon
+72005	Sample source	26.0	Pump
+72005	Sample source	27.0	Tap near well
+72005	Sample source	28.0	Tap away from well
+72005	Sample source	29.0	Bucket
+72005	Sample source	30.0	Pressure tank
+72005	Sample source	31.0	Discharge pipe
+72005	Sample source	32.0	Foerst sampler
+72005	Sample source	33.0	Bailer
+72005	Sample source	34.0	Drain line
+72005	Sample source	35.0	Injection pump
+72005	Sample source	36.0	Spot sample in fluid column
+72005	Sample source	37.0	Tank battery including gun barrel
+72005	Sample source	38.0	Windmill
+72005	Sample source	39.0	Water siphon
+72005	Sample source	40.0	Special
+72005	Sample source	41.0	Municipal and domestic waste
+72005	Sample source	42.0	Industrial waste
+72005	Sample source	43.0	Storm water (prior to entering natural channels)
+72005	Sample source	44.0	Public water supplies (treated water)
+72005	Sample source	45.0	Mine water
+72005	Sample source	46.0	Public water supplies (untreated water)
+72005	Sample source	47.0	Water well
+72005	Sample source	48.0	Multiple water wells
+72005	Sample source	49.0	Oil well
+72005	Sample source	50.0	Multi-oil well
+72005	Sample source	51.0	Gas well
+72005	Sample source	52.0	Multi-gas well
+72005	Sample source	53.0	Oil and gas well
+72005	Sample source	54.0	Multi-oil and gas well
+72005	Sample source	55.0	Drilled and abandoned well
+72005	Sample source	56.0	Plugged and abandoned well
+72005	Sample source	57.0	Junked and abandoned well
+72005	Sample source	58.0	Temporarily abandoned well
+72005	Sample source	59.0	Abandoned oil well
+72005	Sample source	60.0	Abandoned gas well
+72005	Sample source	61.0	Salt-water supply well
+72005	Sample source	62.0	Salt-water disposal well
+72005	Sample source	63.0	Injection well
+72005	Sample source	64.0	Service well
+72005	Sample source	65.0	Wetland ecosystem
+72005	Sample source	66.0	Dredge wake
+72005	Sample source	67.0	Mainstream
+72005	Sample source	68.0	Overbank
+72005	Sample source	69.0	Composited public water supply(untreated water)
+72005	Sample source	70.0	Composited public water supply(treated water)
+72005	Sample source	72.0	Interstitial water
+72005	Sample source	74.0	Lysimeter
+72005	Sample source	76.0	Oil or gas test well converted to water well
+72005	Sample source	77.0	Surficial bank
+72005	Sample source	78.0	Interior bank
+72005	Sample source	79.0	Before pressure tank
+72005	Sample source	80.0	After pressure tank
+72005	Sample source	86.0	Hyporheic zone
+72005	Sample source	88.0	Seepage Meter
+72005	Sample source	100.0	Domestic supply-untreated
+72005	Sample source	110.0	Domestic supply-treated
+72005	Sample source	1001.0	Wet deposition
+72005	Sample source	1002.0	Dustfall
+72005	Sample source	1003.0	Landfill
+72005	Sample source	1004.0	Cast overburden
+72005	Sample source	1005.0	Street sweeping
+72005	Sample source	1006.0	Landfill seep
+72006	Sampling condition	0.01	The site was dry (no water level is recorded)
+72006	Sampling condition	0.02	The site had been flowing recently
+72006	Sampling condition	0.03	The site was flowing, head could not be measured
+72006	Sampling condition	0.04	A nearby site that taps the aquifer was flowing
+72006	Sampling condition	0.05	Nearby site tapping same aquifer had been flowing recently
+72006	Sampling condition	0.06	Injector site
+72006	Sampling condition	0.07	Injector site monitor
+72006	Sampling condition	0.08	Measurement discontinued
+72006	Sampling condition	0.09	Obstruction encountered in well above water surface
+72006	Sampling condition	0.1	The site was being pumped
+72006	Sampling condition	0.11	The site had been pumped recently
+72006	Sampling condition	0.12	Nearby site tapping the same aquifer was being pumped
+72006	Sampling condition	0.13	Nearby site tapping the same aquifer was pumped recently
+72006	Sampling condition	0.14	Foreign substance present on the surface of the water
+72006	Sampling condition	0.15	Well destroyed
+72006	Sampling condition	0.16	Water level affected by stage in nearby site
+72006	Sampling condition	0.17	Other conditions affecting the measured water level
+72006	Sampling condition	1.0	Testing
+72006	Sampling condition	2.0	Undesignated
+72006	Sampling condition	3.0	Swabbing
+72006	Sampling condition	4.0	Flowing
+72006	Sampling condition	5.0	Reversing out
+72006	Sampling condition	6.0	Flowing on gas lift
+72006	Sampling condition	7.0	After acidizing
+72006	Sampling condition	8.0	Pumping
+72006	Sampling condition	9.0	Millipore filter
+72006	Sampling condition	10.0	Open hole
+72006	Sampling condition	11.0	Flowing on drill stem test
+72006	Sampling condition	12.0	After drill stem test
+72006	Sampling condition	15.0	Bailing
+72006	Sampling condition	16.0	After perforation
+72006	Sampling condition	17.0	Tubing flow
+72006	Sampling condition	18.0	Producing
+72006	Sampling condition	19.0	Circulating
+72006	Sampling condition	20.0	Flowing on production test
+72006	Sampling condition	21.0	Flowing on potential test
+72006	Sampling condition	22.0	Lifting
+72006	Sampling condition	23.0	Flowing to pit
+72006	Sampling condition	24.0	Water flooding
+72006	Sampling condition	25.0	Jetting
+72006	Sampling condition	26.0	Production and development test
+72006	Sampling condition	27.0	Production by unknown method
+72006	Sampling condition	30.0	Seeping
+72006	Sampling condition	31.0	Nearby well pumping
+72006	Sampling condition	32.0	Nearby well taking water
+72006	Sampling condition	33.0	Well taking water
+72219	Sampler nozzle material	1.0	Brass
+72219	Sampler nozzle material	2.0	Plastic
+72219	Sampler nozzle material	3.0	Tetrafluoroethylene
+72220	Sampler nozzle diameter	3.0	Three-sixteenths of an inch
+72220	Sampler nozzle diameter	4.0	One-fourth of an inch
+72220	Sampler nozzle diameter	5.0	Five-sixteenths of an inch
+74200	Sample preservation	1.0	FA, Polyethylene bottle, 250 mL, acid rinsed
+74200	Sample preservation	3.0	FAB, Teflon bottle, 250 mL, acid rinsed
+74200	Sample preservation	5.0	FAR, Polyethylene bottle, 1L, acid rinsed
+74200	Sample preservation	7.0	FC, Brown polyethylene bottle, size dependent on lab sched
+74200	Sample preservation	9.0	FU, poly bottle, field rinsed
+74200	Sample preservation	11.0	RA, Polyethylene bottle, acid-rinsed, 250 mL
+74200	Sample preservation	13.0	RAB, Teflon bottle, acid rinsed, 250 mL
+74200	Sample preservation	15.0	RAE, Polyethylene bottle, acid-rinsed, 250 mL
+74200	Sample preservation	17.0	RAH, Polyethylene bottle, acid-rinsed, 250 mL
+74200	Sample preservation	19.0	RC, brown poly bottle, field rinsed, 250 mL
+74200	Sample preservation	21.0	RU, Polyethylene bottle, size dependent on lab sched
+74200	Sample preservation	23.0	RUR, Polyethylene bottle, polyseal cap, 250 or 500 mL, or1L
+74200	Sample preservation	25.0	LC0023 or RCN, Polyethylene bottle, 250 mL
+74200	Sample preservation	27.0	LC0076 or COD, Glass bottle, 125 mL, baked at 450 deg C
+74200	Sample preservation	29.0	LC0089, Polyethylene bottle, 250 mL
+74200	Sample preservation	31.0	LC0239, Poly Bottle, Acid Rinsed, 1 L
+74200	Sample preservation	33.0	Contact NWQL
+74200	Sample preservation	35.0	LC0300, glass bottle, field rinsed, 250 mL
+74200	Sample preservation	39.0	LC0439, steel barrel
+74200	Sample preservation	41.0	LC0440, Glass bottle, narrow-neck, polyethylene seal cap,1L
+74200	Sample preservation	43.0	LC0452, Polyethylene bottle, polyethylene seal cap, 125 mL
+74200	Sample preservation	45.0	LC0489, Glass or polyethylene bottle, 125 mL
+74200	Sample preservation	47.0	LC0490, Contact NWQL
+74200	Sample preservation	49.0	LC0491, Contact NWQL
+74200	Sample preservation	51.0	LC0880 or FCN, Polyethylene bottle, 250 mL
+74200	Sample preservation	53.0	LC0995, Contact NWQL
+74200	Sample preservation	55.0	LC0996, Glass bottle, field rinsed
+74200	Sample preservation	57.0	LC0997, Contact NWQL
+74200	Sample preservation	59.0	CL, septum bottle, 40 mL
+74200	Sample preservation	61.0	GCC, Amber glass bottle, baked at 450 degrees C, 1L
+74200	Sample preservation	63.0	GCV, Amber glass septum vial, 40 mL
+74200	Sample preservation	65.0	RCB, Polyethylene bottle, 250 mL (Same as fixed value 79)
+74200	Sample preservation	67.0	LC0052 or PHE, Glass bottle, baked, 500 mL
+74200	Sample preservation	69.0	LC0113 or DOC, Amber glass bottle, baked at 450 deg C,125mL
+74200	Sample preservation	71.0	LC0114 or TOC, Amber glass bottle, baked at 450 deg C,125mL
+74200	Sample preservation	73.0	LC0127, Amber oil & grease bottle, baked @450deg C, 125 mL
+74200	Sample preservation	75.0	LC0305 or SOC, 0.45 um silver filter in a petri dish
+74200	Sample preservation	77.0	FU, Polyethylene bottle, size dependent on laboratory sched
+74200	Sample preservation	79.0	RCB, Polyethylene bottle, 250 mL (Same as fixed value 65)
+74200	Sample preservation	81.0	RU, poly bottle, field rinsed, 500 mL
+74200	Sample preservation	83.0	LC0050 or TBY, Polyethylene bottle, 125 mL
+74200	Sample preservation	85.0	LC0169 or SUSO, Polyethylene bottle, 500 mL
+74200	Sample preservation	87.0	CC, plastic freezer carton, 1 pt
+74200	Sample preservation	89.0	CU, plastic freezer carton, 1 pt
+74200	Sample preservation	91.0	BGC, wide mouth glass bottle, 1 L
+74200	Sample preservation	93.0	CC, Plastic Freezer Carton, 1 Pt
+74200	Sample preservation	95.0	PP, Contact NWQL
+74200	Sample preservation	97.0	SIZE, untreated
+74200	Sample preservation	99.0	BEN, poly bottle, wide mouth
+74200	Sample preservation	101.0	CHE, glass jar, wide mouth
+74200	Sample preservation	103.0	CHY, glass vial
+74200	Sample preservation	105.0	DIA, contact Atlanta Central Laboratory
+74200	Sample preservation	107.0	PER, contact Atlanta Central Laboratory
+74200	Sample preservation	109.0	SHY, poly bottle
+74200	Sample preservation	111.0	ST, poly bottle
+74200	Sample preservation	113.0	ZOO, contact Atlanta Central Laboratory
+74200	Sample preservation	115.0	LC0055, poly bottle
+74200	Sample preservation	117.0	LC0438, Contact NWQL
+74200	Sample preservation	119.0	LC0616, glass vial
+74200	Sample preservation	121.0	LC1049, wide mouth glass bottle, 1 L
+74200	Sample preservation	123.0	FAM, Glass bottle, acid rinsed, 250 mL
+74200	Sample preservation	125.0	FCU, brown poly bottle, field rinsed, 250 mL
+74200	Sample preservation	127.0	RAM, Glass bottle, acid rinsed, 250 mL
+74200	Sample preservation	129.0	LCO460, poly bottle, field rinsed, 500 mL
+74200	Sample preservation	131.0	LCO881, poly bottle, field rinsed, 125 mL
+74200	Sample preservation	133.0	LC1043, Glass or high-density poly bottle & seal cap, 1L
+74200	Sample preservation	135.0	LC1199, Contact NWQL
+74200	Sample preservation	137.0	LC0019, Amber glass bottle, baked at 450 deg C, 125 mL
+74200	Sample preservation	139.0	LC0306, glass bottle, 125 mL
+74200	Sample preservation	141.0	LC1038, plastic freezer carton, 1 pt
+74200	Sample preservation	143.0	LC0961, Contact NWQL
+74200	Sample preservation	145.0	ALF, Aluminum foil
+74200	Sample preservation	147.0	C18, C-18 SPE Cartridge
+74200	Sample preservation	149.0	CC, Polyethylene bottle, wide-mouthed, 500 mL
+74200	Sample preservation	151.0	CRB, Carbopak-B cartridge
+74200	Sample preservation	153.0	CUR, Polyethylene bottle, wide-mouth, 500 mL
+74200	Sample preservation	155.0	EAM, Amber glass bottle, 250 mL
+74200	Sample preservation	157.0	EBC, Amber glass bottle, teflon cap liner, 1L
+74200	Sample preservation	159.0	ECC, Amber glass bottle, teflon cap liner, 1L
+74200	Sample preservation	161.0	EDV, Amber glass screw-cap vials, teflon-faced septa, 40mL
+74200	Sample preservation	163.0	ELV, Glass screw-cap vials, teflon-faced septa, 60mL
+74200	Sample preservation	165.0	EOV, Amber glass screw-cap val, teflon-faced septa, 40 mL
+74200	Sample preservation	167.0	EPC, High-density poly-vinyl chloride bottle, 1L
+74200	Sample preservation	169.0	ERA, Polyethylene bottle, 500 mL
+74200	Sample preservation	171.0	ERC, Amber polyethylene bottle, 125 mL
+74200	Sample preservation	173.0	ERU, polyethylene bottle, 250 mL
+74200	Sample preservation	175.0	FCA, Brown polyethylene bottle, 125 mL
+74200	Sample preservation	177.0	FCC, Brown polyethylene bottle, 125 mL
+74200	Sample preservation	179.0	FUS, Filtered untreated stable isotopes
+74200	Sample preservation	181.0	IQE, Invertebrate QMH Elitriate: NWQL Tech Memo 98-09
+74200	Sample preservation	183.0	IQL, Invertebrate QMH Large Rare: NWQL Tech Memo 98-09
+74200	Sample preservation	185.0	IQM, Invertebrate QMH Main Body, NWQL Tech Memo 98-09
+74200	Sample preservation	187.0	IRE, Invertebrate RTH Elutriate; NWQL Tech Memo 98-09
+74200	Sample preservation	189.0	IRL, Invertebrate RTH Large Rare: NWQL Tech Memo 98-09
+74200	Sample preservation	191.0	IRM, Invertebrate RTH Main Body: NWQL Tech Memo 98-09
+74200	Sample preservation	193.0	LC0460, Polyethylene bottle, polyethylene seal cap, 250mL
+74200	Sample preservation	195.0	LC0624, Polyethylene bottle, polyethylene seal cap, 500 mL
+74200	Sample preservation	197.0	LC1565, Glass /high-density poly bottle, poly seal cap, 1L
+74200	Sample preservation	199.0	LC1567, Polyethylene bottle, polyethylene seal cap, 125 mL
+74200	Sample preservation	201.0	LC1574, Glass/high-density poly bottle, poly seal cap,125mL
+74200	Sample preservation	203.0	LC1717, Amber glass/high-dens poly bottle, poly seal cap,1L
+74200	Sample preservation	205.0	LC1949, Contact Ty Coplen (703-648-5862)
+74200	Sample preservation	207.0	LC1951, Glass/untrtd high-dens poly bottle,poly seal cap,1L
+74200	Sample preservation	209.0	MBAS, Polyethylene bottle, 250 mL
+74200	Sample preservation	211.0	PIC, Glass fiber filter
+74200	Sample preservation	213.0	RAR, Polyethylene bottle, acid rinsed, 1L
+74200	Sample preservation	215.0	RCA, Brown polyethylene bottle, 125 mL
+74200	Sample preservation	217.0	RCC, Brown polyethylene bottle, 125 mL
+74200	Sample preservation	219.0	RURCT, Copper tube, 1L: NWQL Tech Memo 97.04 & 97.04S
+74200	Sample preservation	221.0	RURCV, Glass vial, 20 mL
+74200	Sample preservation	223.0	RUS, Polyethylene bottle, 250mL, 500mL, or 1L
+74200	Sample preservation	225.0	SC1379, Amber glass bottle, baked @ 450 deg C, 125 mL
+74200	Sample preservation	227.0	SUR, Petri dish or vial
+74200	Sample preservation	229.0	TBI, Ziplock-type bag, glass or poly wide-mouth jar
+74200	Sample preservation	231.0	TPCN, Glass fiber filter, 25 mm
+74200	Sample preservation	233.0	UAS, Supor/glass fiber filter &amber glass septum vial,40mL
+74200	Sample preservation	235.0	WCA, Polyethylene bottle, 125 mL
+74200	Sample preservation	237.0	LC1648, Polyethylene bottle, 250 mL
+74200	Sample preservation	239.0	LC1718, Amber glass/high-dens poly bottle, poly seal cap,1L
+82309	Contamination source	1.0	Oil spill
+82309	Contamination source	3.0	Gas spill
+82309	Contamination source	5.0	Organic
+82309	Contamination source	7.0	Pesticide
+82309	Contamination source	9.0	Herbicide
+82309	Contamination source	11.0	Insecticide
+82309	Contamination source	13.0	Feedlot runoff
+82309	Contamination source	15.0	Salt water
+82309	Contamination source	17.0	Injection well
+82309	Contamination source	19.0	Sewage treatment plant
+82309	Contamination source	21.0	Land spreading
+82309	Contamination source	23.0	Landfill
+82309	Contamination source	25.0	Sludge dump
+82309	Contamination source	27.0	Waste lagoon
+82309	Contamination source	29.0	Urban runoff
+82309	Contamination source	31.0	Mine drainage
+82309	Contamination source	33.0	Construction drainage
+82309	Contamination source	35.0	Pulp mill outfall
+82309	Contamination source	37.0	Textile mill outfall
+82309	Contamination source	39.0	Irrigation runoff
+82309	Contamination source	41.0	Fertilizer
+82309	Contamination source	43.0	Dairy operation
+82398	Sampling method	10.0	Equal width increment (ewi)
+82398	Sampling method	15.0	Multiple verticals, non-isokinetic, equal widths and transit rate
+82398	Sampling method	20.0	Equal discharge increment (edi)
+82398	Sampling method	25.0	Timed sampling interval
+82398	Sampling method	30.0	Single vertical
+82398	Sampling method	40.0	Multiple verticals
+82398	Sampling method	50.0	Point sample
+82398	Sampling method	55.0	Composite - Multiple point samples
+82398	Sampling method	60.0	Weighted bottle
+82398	Sampling method	70.0	Grab sample  (dip)
+82398	Sampling method	80.0	Discharge integrated, equal transit rate (etr)
+82398	Sampling method	90.0	Discharge integrated, centroid
+82398	Sampling method	100.0	Van Dorn sampler
+82398	Sampling method	110.0	Sewage sampler
+82398	Sampling method	120.0	Velocity integrated
+82398	Sampling method	130.0	Seepage Meter
+82398	Sampling method	140.0	Passive diffusion, organic-free deionized water
+82398	Sampling method	141.0	Passive diffusion, ambient air
+82398	Sampling method	200.0	Zooplankton-net
+82398	Sampling method	210.0	Benthic invertebrate-mechanical grab
+82398	Sampling method	220.0	Benthic invertebrate-mechanical dredge
+82398	Sampling method	230.0	Benthic invertebrate-artificial substrate
+82398	Sampling method	240.0	Benthic invertebrate-natural substrate
+82398	Sampling method	250.0	Benthic invertebrate-net
+82398	Sampling method	260.0	Phytoplankton-net
+82398	Sampling method	270.0	Phytoplankton-water bottle
+82398	Sampling method	280.0	Periphyton-natural substrate
+82398	Sampling method	281.0	Periphyton-Natural Substrate, Depositional Targeted Habitat
+82398	Sampling method	282.0	Periphyton-Natural Substrate, Richest Targeted Habitat
+82398	Sampling method	290.0	Periphyton-artificial substrate
+82398	Sampling method	300.0	Tissue taken with biopsy plug
+82398	Sampling method	900.0	SuspSed; Pumping - stream sample using a pumping mechanism
+82398	Sampling method	910.0	SuspSed;Single-stage,nozzle at fixed stage,passively fillng
+82398	Sampling method	920.0	SuspSed; Box-single ver, depth-int, attached to structure
+82398	Sampling method	930.0	SuspSed;Partial Depth,depth integrated,part of single vert.
+82398	Sampling method	940.0	SuspSed; Partial Width - dep/width int, part of x-section
+82398	Sampling method	1000.0	Bedload, single equal width increment (SEWI)
+82398	Sampling method	1010.0	Bedload, multiple equal width increment (MEWI)
+82398	Sampling method	1020.0	Bedload, unequal width increment (UWI)
+82398	Sampling method	4010.0	Thief sample
+82398	Sampling method	4020.0	Open-top bailer
+82398	Sampling method	4025.0	Double-valve bailer
+82398	Sampling method	4030.0	Suction pump
+82398	Sampling method	4031.0	Suction lift centrifugal pump
+82398	Sampling method	4032.0	Suction lift jet pump
+82398	Sampling method	4033.0	Suction lift peristaltic pump
+82398	Sampling method	4040.0	Submersible pump
+82398	Sampling method	4041.0	Submersible bladder pump
+82398	Sampling method	4042.0	Submersible gas reciprocating pump
+82398	Sampling method	4043.0	Submersible gas lift pump
+82398	Sampling method	4044.0	Submersible jet pump
+82398	Sampling method	4045.0	Submersible multiple impeller (turbine) pump
+82398	Sampling method	4046.0	Submersible helical rotor pump
+82398	Sampling method	4047.0	Submersible gear pump
+82398	Sampling method	4048.0	Submersible gas-displacement pump
+82398	Sampling method	4050.0	Squeeze pump
+82398	Sampling method	4060.0	Gas reciprocating pump
+82398	Sampling method	4070.0	Gas lift
+82398	Sampling method	4080.0	Peristaltic pump
+82398	Sampling method	4090.0	Jet pump
+82398	Sampling method	4100.0	Flowing well
+82398	Sampling method	4110.0	Resin trap collector
+82398	Sampling method	5010.0	Sediment core
+82398	Sampling method	8010.0	Other
+82398	Sampling method	8020.0	Syringe sample
+82398	Sampling method	8030.0	Grab sample at water-supply tap
+82398	Sampling method	8040.0	Spigot
+82398	Sampling method	8050.0	Grab sample at Tap(s) on a Dam
+82923	Atm. Dep. Type, wet	1.0	Snow
+82923	Atm. Dep. Type, wet	2.0	Hail
+82923	Atm. Dep. Type, wet	3.0	Mixture (rain, snow, and or hail)
+82923	Atm. Dep. Type, wet	4.0	Rain
+82923	Atm. Dep. Type, wet	5.0	Throughfall, rain dripping from a vegetative canopy
+82923	Atm. Dep. Type, wet	6.0	Stemflow, rain flowing along tree branches and trunk
+82923	Atm. Dep. Type, wet	9.99	Unknown
+83205	Atmos deposition type, bulk	1.0	Snow
+83205	Atmos deposition type, bulk	2.0	Hail
+83205	Atmos deposition type, bulk	3.0	Mixture (rain, snow, and or hail)
+83205	Atmos deposition type, bulk	4.0	Rain
+83205	Atmos deposition type, bulk	9.99	Unknown
+84060	Topography, physio settng	10.0	Alluvial fan
+84060	Topography, physio settng	20.0	Playa
+84060	Topography, physio settng	30.0	Stream channel
+84060	Topography, physio settng	40.0	Local depression
+84060	Topography, physio settng	50.0	Dunes
+84060	Topography, physio settng	60.0	Flat surface
+84060	Topography, physio settng	70.0	Flood plain
+84060	Topography, physio settng	80.0	Hilltop
+84060	Topography, physio settng	90.0	Sinkhole
+84060	Topography, physio settng	100.0	Lake, swamp, or marsh
+84060	Topography, physio settng	110.0	Mangrove swamp
+84060	Topography, physio settng	120.0	Offshore (estuary)
+84060	Topography, physio settng	130.0	Pediment
+84060	Topography, physio settng	140.0	Hillside (slope)
+84060	Topography, physio settng	150.0	Terrace, alluvial or marine
+84060	Topography, physio settng	160.0	Undulating
+84060	Topography, physio settng	170.0	Valley flat
+84060	Topography, physio settng	180.0	Upland draw
+84143	WellPurgingCondition	100.0	Well purged to stable pH
+84143	WellPurgingCondition	110.0	Well purged to stable temperature
+84143	WellPurgingCondition	120.0	Well purged to stable specific conductance
+84143	WellPurgingCondition	130.0	Well purged to stable pH and temperature
+84143	WellPurgingCondition	140.0	Well purged to stable pH and specific conductance
+84143	WellPurgingCondition	150.0	Well purged to stable temperature and specific conductance
+84143	WellPurgingCondition	160.0	Well purged to stable pH, temp. and specific conductance
+84143	WellPurgingCondition	170.0	Well purged, at least three well volumes
+84143	WellPurgingCondition	500.0	Well not purged, water in casing less than 6 hours
+84143	WellPurgingCondition	510.0	Well not purged, water in casing 6-12 hours
+84143	WellPurgingCondition	520.0	Well not purged, water in casing 12-24 hours
+84143	WellPurgingCondition	530.0	Well not purged, water in casing more than 24 hours
+84144	Well selection critera	100.0	Site selected because it is near/within local problem area
+84144	Well selection critera	200.0	Site selected without regard to local problem area
+84145	Project component	100.0	Regional sampling
+84145	Project component	200.0	Targeted sampling (agricultural area)
+84145	Project component	300.0	Targeted sampling (urban or suburban area)
+84145	Project component	400.0	Targeted sampling (naturally occurring substances)
+84145	Project component	500.0	Targeted sampling (local-scale network)
+84145	Project component	600.0	Targeted sampling (other)
+84145	Project component	700.0	Geochemical investigation
+84145	Project component	800.0	Targeted sampling (avian-use area)
+84145	Project component	900.0	Quality control statistical sample group
+84146	Land use within 100 feet	110.0	Residential
+84146	Land use within 100 feet	120.0	Commercial and services
+84146	Land use within 100 feet	130.0	Industrial
+84146	Land use within 100 feet	170.0	Other urban or built-up land
+84146	Land use within 100 feet	211.0	Nonirrigated cropland
+84146	Land use within 100 feet	212.0	Irrigated cropland
+84146	Land use within 100 feet	213.0	Pasture
+84146	Land use within 100 feet	220.0	Orchards, groves, vineyards, nurseries
+84146	Land use within 100 feet	230.0	Confined feeding operations
+84146	Land use within 100 feet	240.0	Other agricultural land
+84146	Land use within 100 feet	300.0	Rangeland
+84146	Land use within 100 feet	400.0	Forestland
+84146	Land use within 100 feet	500.0	Water
+84146	Land use within 100 feet	600.0	Wetland
+84146	Land use within 100 feet	700.0	Barren land
+84147	Land use within 1/4 mile	110.0	Residential
+84147	Land use within 1/4 mile	120.0	Commercial and services
+84147	Land use within 1/4 mile	130.0	Industrial
+84147	Land use within 1/4 mile	170.0	Other urban or built-up land
+84147	Land use within 1/4 mile	211.0	Nonirrigated cropland
+84147	Land use within 1/4 mile	212.0	Irrigated cropland
+84147	Land use within 1/4 mile	213.0	Pasture
+84147	Land use within 1/4 mile	220.0	Orchards, groves, vineyards, nurseries
+84147	Land use within 1/4 mile	230.0	Confined feeding operations
+84147	Land use within 1/4 mile	240.0	Other agricultural land
+84147	Land use within 1/4 mile	300.0	Rangeland
+84147	Land use within 1/4 mile	400.0	Forestland
+84147	Land use within 1/4 mile	500.0	Water
+84147	Land use within 1/4 mile	600.0	Wetland
+84147	Land use within 1/4 mile	700.0	Barren land
+84148	Predominant land use in 1/4mi	25.0	Less than 25 percent
+84148	Predominant land use in 1/4mi	50.0	From 26 percent to 50 percent
+84148	Predominant land use in 1/4mi	75.0	From 51 percent to 75 percent
+84148	Predominant land use in 1/4mi	100.0	From 76 percent to 100 percent
+84149	Land use changes, 10yr, 1/4mi	100.0	Yes
+84149	Land use changes, 10yr, 1/4mi	200.0	Probably
+84149	Land use changes, 10yr, 1/4mi	300.0	Probably not
+84149	Land use changes, 10yr, 1/4mi	400.0	No
+84164	Sampler type	100.0	Van Dorn sampler
+84164	Sampler type	110.0	Sewage sample
+84164	Sampler type	120.0	Velocity integrated sample
+84164	Sampler type	125.0	Kemmerer bottle
+84164	Sampler type	130.0	Drum Seepage Meter (Lee, 1977)
+84164	Sampler type	200.0	Zooplankton net
+84164	Sampler type	210.0	Benthic invertebrate-mechanical, grab
+84164	Sampler type	220.0	Benthic invertebrate-mechancial, dredge
+84164	Sampler type	230.0	Benthic invertebrate-artificial substrate
+84164	Sampler type	240.0	Benthic invertebrate-natural substrate
+84164	Sampler type	250.0	Benthic invertebrate-net
+84164	Sampler type	260.0	Phytoplankton net
+84164	Sampler type	270.0	Phytoplankton-water bottle
+84164	Sampler type	280.0	Periphyton-natural substrate
+84164	Sampler type	290.0	Periphyton-artificial substrate
+84164	Sampler type	1000.0	Bedload-Helley-Smith, 3 x 3, area ratio 3.22
+84164	Sampler type	1010.0	Bedload-Helley-Smith, 6 x 6, area ratio 3.22
+84164	Sampler type	1020.0	Bedload-Helley-Smith, 3 x 3, area ratio 1.40
+84164	Sampler type	1030.0	Bedload-Helley-Smith, 6 x 6, area ratio 1.40
+84164	Sampler type	1040.0	Bedload-Helley-Smith, 6 x 12, area ratio 1.40
+84164	Sampler type	1050.0	BL-6X12 in, Toutle R. Type 2, Exp. Ratio 1.40, Cable Susp
+84164	Sampler type	1055.0	BL-6X12 in, Toutle R. Type 2, Exp. Ratio 1.40, Wading
+84164	Sampler type	1060.0	BL-3X3 in, BL-84, Exp. Ratio 1.40, Cable Susp
+84164	Sampler type	1070.0	Bedload-Toutle River type 1, 6 x 6, area ratio 3.22
+84164	Sampler type	1080.0	Bedload-Hubble #5, 6 x 12, area ratio, 1.40
+84164	Sampler type	1090.0	FIASP, 3 x 3, area ratio 1.40
+84164	Sampler type	1100.0	BL-3X3 in, H-S, 50-100 lb, Exp. Ratio 3.22, Cable Susp
+84164	Sampler type	1110.0	BL-3X3 in, H-S, 100-200 lb,   Exp. Ratio 3.22, Cable Susp
+84164	Sampler type	1120.0	BL-3X3 in, H-S, 1/4-in thick nozzle,  Exp. Ratio 3.22, Wading
+84164	Sampler type	1130.0	3x3 inch H-S, sheet metal nozzle, wading
+84164	Sampler type	1140.0	3x3 inch FIASP, 1/4-in thick nozzle, 50-100lb, Exp. Ratio 3.22, Cable Susp
+84164	Sampler type	1150.0	BL-3X3 in, BLH-84, 1/4-in thick nozzle,  Exp. Ratio 1.4, Wading
+84164	Sampler type	1160.0	3x3 inch FIASP, sheet metal nozzle, wading
+84164	Sampler type	1170.0	BL-6X6 in H-S, 1/4-in nozzle, 150-200 lb, Exp. Ratio 3.22, Cable Susp
+84164	Sampler type	1180.0	BL-4X8 in, Elwha R., Exp. Ratio 1.40, Wading
+84164	Sampler type	1190.0	BL-4X8 in, Elwha R., Exp. Ratio 1.40, Cable Susp
+84164	Sampler type	1200.0	BL-Net-Frame Trap
+84164	Sampler type	3001.0	Sampler, US DH-48
+84164	Sampler type	3002.0	Sampler, US DH-59
+84164	Sampler type	3003.0	Sampler, US DH-75P
+84164	Sampler type	3004.0	Sampler, US DH-75Q
+84164	Sampler type	3005.0	Sampler, US DH-76
+84164	Sampler type	3006.0	Sampler, US D-43
+84164	Sampler type	3007.0	Sampler, US D-49
+84164	Sampler type	3008.0	Sampler, US D-49AL
+84164	Sampler type	3009.0	Sampler, US D-74
+84164	Sampler type	3010.0	Sampler, US D-74AL
+84164	Sampler type	3011.0	Sampler, US D-77
+84164	Sampler type	3012.0	Sampler, US P-46
+84164	Sampler type	3013.0	Sampler, US P-50
+84164	Sampler type	3014.0	Sampler, US P-61-A1
+84164	Sampler type	3015.0	Sampler, US P-63
+84164	Sampler type	3016.0	Sampler, US P-72
+84164	Sampler type	3017.0	Sampler, US U-59
+84164	Sampler type	3018.0	Sampler, US U-73
+84164	Sampler type	3019.0	Sampler, US PS-69
+84164	Sampler type	3020.0	Sampler, US PS-69TM
+84164	Sampler type	3021.0	Sampler, US CS-77
+84164	Sampler type	3022.0	Sampler, US PS-82
+84164	Sampler type	3023.0	Sampler, US BMH-53
+84164	Sampler type	3024.0	Sampler, US BMH-53TM
+84164	Sampler type	3025.0	Sampler, US BM-54
+84164	Sampler type	3026.0	Sampler, US BM-54TM
+84164	Sampler type	3027.0	Sampler, US BMH-60
+84164	Sampler type	3028.0	Sampler, US BMH-60TM
+84164	Sampler type	3029.0	Sampler, US RBM-80
+84164	Sampler type	3030.0	US DH-48 TM
+84164	Sampler type	3031.0	US DH-48 TM with Teflon gasket and nozzle
+84164	Sampler type	3032.0	US DH-59 TM
+84164	Sampler type	3033.0	US DH-59 TM with Teflon gasket and nozzle
+84164	Sampler type	3034.0	US DH-76 TM
+84164	Sampler type	3035.0	US DH-76 TM with Teflon gasket and nozzle
+84164	Sampler type	3036.0	US D-74 TM
+84164	Sampler type	3037.0	US D-74 AL-TM
+84164	Sampler type	3038.0	US D-74 AL-TM with Teflon gasket and nozzle
+84164	Sampler type	3039.0	US D-77 TM
+84164	Sampler type	3040.0	US D-77 TM modified Teflon bag sampler
+84164	Sampler type	3041.0	US P-61 AL-TM
+84164	Sampler type	3042.0	US P-61
+84164	Sampler type	3043.0	US P-61 TM
+84164	Sampler type	3044.0	US DH-81
+84164	Sampler type	3045.0	US DH-81 with Teflon cap and nozzle
+84164	Sampler type	3046.0	Sampler, D-77 TM, with Reynolds Oven Collapsible Bag
+84164	Sampler type	3047.0	Sampler, frame-type, plastic bottle with Reynolds Oven Bag
+84164	Sampler type	3048.0	Sampler, frame-type, Teflon bottle
+84164	Sampler type	3049.0	Sampler, frame-type, plastic bottle
+84164	Sampler type	3050.0	Sampler, frame-type, plastic bottle w/Teflon collaps. bag
+84164	Sampler type	3051.0	US DH-95 Teflon bottle
+84164	Sampler type	3052.0	US DH-95 plastic bottle
+84164	Sampler type	3053.0	US D-95 Teflon bottle
+84164	Sampler type	3054.0	US D-95 plastic bottle
+84164	Sampler type	3055.0	US D-96 bag sampler
+84164	Sampler type	3056.0	US D-96-A1 Bag Sampler
+84164	Sampler type	3057.0	US D-99 Bag Sampler
+84164	Sampler type	3058.0	US DH-2 Bag Sampler
+84164	Sampler type	3060.0	Weighted-bottle sampler
+84164	Sampler type	3061.0	US WBH-96 weighted-bottle sampler
+84164	Sampler type	3062.0	US P-6, 100 lb. Point-Integrating sampler, replaces P-61-A1
+84164	Sampler type	3063.0	US P-6, 200 lb. Point-Integrating sampler, replaces P-63
+84164	Sampler type	3070.0	Grab sample
+84164	Sampler type	3071.0	Open-Mouth Bottle
+84164	Sampler type	3080.0	VOC hand sampler
+84164	Sampler type	3090.0	Passive diffusion sampler
+84164	Sampler type	3099.0	US War Dept., Engineer District, Omaha, Neb. Time-Integrating Sediment Sampler
+84164	Sampler type	4010.0	Thief sampler
+84164	Sampler type	4020.0	Open-top bailer
+84164	Sampler type	4025.0	Double-valve bailer
+84164	Sampler type	4030.0	Suction pump
+84164	Sampler type	4035.0	Submersible centrifugal pump
+84164	Sampler type	4040.0	Submersible positive-pressure pump
+84164	Sampler type	4041.0	Submersible helical rotor pump
+84164	Sampler type	4045.0	Submersible gear pump
+84164	Sampler type	4050.0	Bladder pump
+84164	Sampler type	4055.0	Inertial Pump
+84164	Sampler type	4060.0	Gas reciprocating pump
+84164	Sampler type	4070.0	Gas lift
+84164	Sampler type	4075.0	Submersible piston pump
+84164	Sampler type	4080.0	Peristaltic pump
+84164	Sampler type	4090.0	Jet pump
+84164	Sampler type	4095.0	Line-shaft turbine pump
+84164	Sampler type	4100.0	Flowing well
+84164	Sampler type	4110.0	Resin trap collector
+84164	Sampler type	4115.0	Sampler, point, automatic
+84164	Sampler type	5010.0	Box core, long
+84164	Sampler type	5020.0	Box core, short
+84164	Sampler type	5030.0	Gravity core
+84164	Sampler type	5040.0	Piston core
+84164	Sampler type	5050.0	Push core
+84164	Sampler type	6000.0	Bed Material -- Scoop Shovel
+84164	Sampler type	6010.0	Bed Material -- Scoop TM (Epoxy coated metal sampler)
+84164	Sampler type	6020.0	Bed Material -- Scoop Teflon
+84164	Sampler type	6030.0	Bed Material -- Pipe Dredge
+84164	Sampler type	6040.0	Bed Material -- Dredge-Cooper Scooper
+84164	Sampler type	6050.0	Bed Material -- Ponar Grab
+84164	Sampler type	6060.0	Bed Material -- Ekman Grab
+84164	Sampler type	6070.0	Bed Material -- Box Core Grab
+84164	Sampler type	6080.0	Bed Material -- Peterson Grab
+84164	Sampler type	6090.0	Bed Material -- Van Veen Grab
+84164	Sampler type	6100.0	US SAH-97 FISP Hand-held gravelometer 14 square holes for sizes from 2 to 180 mm
+84164	Sampler type	8000.0	None
+84164	Sampler type	8010.0	Other
+84164	Sampler type	8020.0	Mulitple samplers used
+84171	Sample splitter type	10.0	Churn splitter, plastic, 8 liter, cooler-type spigot
+84171	Sample splitter type	20.0	Churn splitter, plastic, 14 liter, cooler-type spigot
+84171	Sample splitter type	30.0	Churn splitter, plastic, 8 liter, cubitainer-type spigot
+84171	Sample splitter type	40.0	Churn splitter, plastic, 14 liter, cubitainer-type spigot
+84171	Sample splitter type	50.0	Churn splitter, fluoropolymer, 8 liter
+84171	Sample splitter type	60.0	Churn splitter, fluoropolymer, 14 liter, US SS-1
+84171	Sample splitter type	70.0	Cone splitter, plastic
+84171	Sample splitter type	80.0	Cone splitter, fluoropolymer
+84171	Sample splitter type	90.0	Sieve, wet
+84171	Sample splitter type	100.0	Sieve, dry
+84171	Sample splitter type	110.0	Riffle splitter (Jones)
+84171	Sample splitter type	200.0	Other
+84172	Air sampler filter	10.0	GFF, Glass fiber filter
+84172	Air sampler filter	20.0	QFF, Quartz fiber filter
+84172	Air sampler filter	30.0	TF, Teflon filter
+84172	Air sampler filter	40.0	Other
+84173	Air sampler sorbent	10.0	PUF, Polyurethane foam
+84173	Air sampler sorbent	20.0	PUF/XAD, polyurethane foam plug/XAD resin/PUF plug sandwich
+84173	Air sampler sorbent	30.0	XAD, XAD resin
+84173	Air sampler sorbent	40.0	Tenax, Tenax GC resin
+84173	Air sampler sorbent	50.0	Oasis, Hydrophilic-Lipophilic Balance Sorbent (HLB) resin
+84173	Air sampler sorbent	60.0	Other
+84174	POCIS sorbent type	10.0	Oasis, Hydrophilic-Lipophilic Balance Sorbent (HLB) resin
+84174	POCIS sorbent type	20.0	80% Isolute ENV+ and 20% Ambersorb Carbon on Biobeads
+84175	Lake thermal layer	10.0	Epilimnion - Upper thermal lake layer
+84175	Lake thermal layer	20.0	Metalimnion - Middle thermal lake layer
+84175	Lake thermal layer	30.0	Hypolimnion - Lower thermal lake layer
+84176	Oil slick on water, severity	0.0	None
+84176	Oil slick on water, severity	1.0	Light sheen
+84176	Oil slick on water, severity	2.0	Heavy sheen
+84176	Oil slick on water, severity	3.0	Light slick
+84176	Oil slick on water, severity	4.0	Heavy slick
+84177	Oil slick on shore, severity	0.0	None
+84177	Oil slick on shore, severity	1.0	Mild
+84177	Oil slick on shore, severity	2.0	Moderate
+84177	Oil slick on shore, severity	3.0	Serious
+84177	Oil slick on shore, severity	4.0	Extreme
+84178	Floating vegetation, severity	0.0	None
+84178	Floating vegetation, severity	1.0	Mild
+84178	Floating vegetation, severity	2.0	Moderate
+84178	Floating vegetation, severity	3.0	Serious
+84178	Floating vegetation, severity	4.0	Extreme
+84180	Soil horizon	1000.0	O horizon
+84180	Soil horizon	1100.0	Oa horizon
+84180	Soil horizon	1200.0	Oe horizon
+84180	Soil horizon	1300.0	Oi horizon
+84180	Soil horizon	2000.0	A horizon
+84180	Soil horizon	3000.0	E horizon
+84180	Soil horizon	4000.0	B horizon
+84180	Soil horizon	4010.0	Upper B horizon
+84180	Soil horizon	4020.0	Mid B horizon
+84180	Soil horizon	4030.0	Lower B horizon
+84180	Soil horizon	4100.0	Bc horizon
+84180	Soil horizon	4200.0	Bh horizon
+84180	Soil horizon	4250.0	Bhs horizon
+84180	Soil horizon	4251.0	Bhs1 horizon
+84180	Soil horizon	4252.0	Bhs2 horizon
+84180	Soil horizon	4300.0	BI horizon
+84180	Soil horizon	4400.0	Bs horizon
+84180	Soil horizon	4410.0	Bs1(1) horizon
+84180	Soil horizon	4500.0	Bu horizon
+84180	Soil horizon	4600.0	Bw horizon
+84180	Soil horizon	4610.0	Bw1 horizon
+84180	Soil horizon	4620.0	Bw1(2) horizon
+84180	Soil horizon	4630.0	Bw2(1) horizon
+84180	Soil horizon	4640.0	Bw2(2) horizon
+84180	Soil horizon	4990.0	BC horizon
+84180	Soil horizon	5000.0	C horizon
+84180	Soil horizon	5200.0	Cd horizon
+84180	Soil horizon	5700.0	Cu horizon
+84180	Soil horizon	6000.0	R horizon
+84181	Reel and transit method	101.0	A-pack Reel, Manual; 3 bolt base, used with weights 50 lbs. or less
+84181	Reel and transit method	102.0	Canfield Reel, Manual; Cableway hangar, used with weights 50 lbs. or less
+84181	Reel and transit method	103.0	A-55 Reel, Manual; 4 bolt base, used with weights 100 lbs. or less
+84181	Reel and transit method	201.0	B-56 Reel, Manual; weights of 200 lbs. or less
+84181	Reel and transit method	202.0	B-56 Reel, Powered, J&H Single Speed; weights of 200 lbs. or less
+84181	Reel and transit method	203.0	B-56 Reel, Powered, USGS Variable Speed; weights of 200 lbs. or less
+84181	Reel and transit method	301.0	E-53 Reel, Powered, J&H Single Speed; weights of 300 lbs. or less
+84181	Reel and transit method	302.0	E-53 Reel, Powered, USGS Variable Speed; weights of 300 lbs.or less
+84182	Bottle/bag sampler material	1.0	Glass
+84182	Bottle/bag sampler material	2.0	Plastic
+84182	Bottle/bag sampler material	3.0	Fluoropolymer
+84182	Bottle/bag sampler material	4.0	Other
+84183	Plant water extraction method	1.0	Transpiration stream capture
+84183	Plant water extraction method	2.0	Solar distillation
+84183	Plant water extraction method	3.0	Toluene distillation
+84183	Plant water extraction method	4.0	Cryodistillation
+84183	Plant water extraction method	5.0	Centrifugation
+84183	Plant water extraction method	99.0	Other
+91112	Lat-long datum	27.0	North American Datum of 1927 (NAD27)
+91112	Lat-long datum	83.0	North American Datum of 1983 (NAD83)
+91112	Lat-long datum	100.0	Old Alaska (Mainland) and Aleutian Islands Datum (OLDAK)
+91112	Lat-long datum	110.0	Old Hawaii (OLDHI)
+91112	Lat-long datum	120.0	Old Puerto Rico and Virgin Islands Datum - (OLDPR)
+91112	Lat-long datum	130.0	Old American Samoa Datum (OLDSAMOA)
+91112	Lat-long datum	140.0	Old Guam Datum (OLDGUAM)
+91113	Lat-long method	10.0	Calculated from land net (C)
+91113	Lat-long method	20.0	Differentially corrected Global Positioning Sys (GPS) (D)
+91113	Lat-long method	30.0	Global positioning system, uncorrected SPS and PPS (G)
+91113	Lat-long method	40.0	Long-range navigation system (L)
+91113	Lat-long method	50.0	Interpolated from map (M)
+91113	Lat-long method	60.0	Interpolated from digital map (N)
+91113	Lat-long method	70.0	Reported (R)
+91113	Lat-long method	80.0	Transit, theodolite, or other surveying method (S)
+91113	Lat-long method	99.0	Unknown (U)
+91114	Lat-long accuracy	1.0	Accurate to +/- 1 second (S)
+91114	Lat-long accuracy	3.0	Accurate to +/- 3 seconds (Std positioning svc SPS GPS) (R)
+91114	Lat-long accuracy	5.0	Accurate to +/- 5 seconds (F)
+91114	Lat-long accuracy	10.0	Accurate to +/-10 seconds (T)
+91114	Lat-long accuracy	60.0	Accurate to +/- 1 minute (M)
+91114	Lat-long accuracy	99.0	Unknown (U)
+99100	Type of blank solution	10.0	Inorganic-free water
+99100	Type of blank solution	20.0	Standard reference water sample
+99100	Type of blank solution	30.0	Matched matrix
+99100	Type of blank solution	40.0	Organic-free water
+99100	Type of blank solution	50.0	VOC-free water (nitrogen-purged organic-free water)
+99100	Type of blank solution	60.0	Sterile saline buffered water
+99100	Type of blank solution	70.0	Sterile buffered water PO4/MgCl2
+99100	Type of blank solution	80.0	Universal Blank Water (discontinued June 1, 2006)
+99100	Type of blank solution	100.0	Inorganic-free water + organic-free water
+99100	Type of blank solution	110.0	Inorganic-free+nitrogen-purged organic-free water(voc-free)
+99100	Type of blank solution	120.0	Organic-free+nitrogen-purged organic-free water(voc-free)
+99100	Type of blank solution	130.0	Inorganic-free+org-free+nit-purged org-free water(voc-free)
+99100	Type of blank solution	200.0	Other
+99101	Source of blank solution	10.0	National water quality lab (USGS)
+99101	Source of blank solution	20.0	U.S. Environmental Protection Agency
+99101	Source of blank solution	30.0	Standard Reference Water Sample (USGS)
+99101	Source of blank solution	35.0	Mix of standard reference water samples
+99101	Source of blank solution	40.0	NIST (formerly NBS)
+99101	Source of blank solution	50.0	Canadian Inland Waters
+99101	Source of blank solution	55.0	USGS Mercury Research lab (Wisconsin district)
+99101	Source of blank solution	60.0	District lab
+99101	Source of blank solution	61.0	Subdistrict #1 lab
+99101	Source of blank solution	62.0	Subdistrict #2 lab
+99101	Source of blank solution	63.0	Subdistrict #3 lab
+99101	Source of blank solution	64.0	Subdistrict #4 lab
+99101	Source of blank solution	70.0	Natural sample
+99101	Source of blank solution	71.0	Field office #1 lab
+99101	Source of blank solution	72.0	Field office #2 lab
+99101	Source of blank solution	73.0	Field office #3 lab
+99101	Source of blank solution	74.0	Field office #4 lab
+99101	Source of blank solution	80.0	Ocala lab (USGS)
+99101	Source of blank solution	99.99	Unknown
+99101	Source of blank solution	100.0	Chemical supplier
+99101	Source of blank solution	110.0	Burdick and Jackson
+99101	Source of blank solution	120.0	J.T. Baker
+99101	Source of blank solution	130.0	EM Science
+99101	Source of blank solution	140.0	EMD Chemicals, Inc/Omnisolve
+99101	Source of blank solution	150.0	Ricca Chemical Company
+99101	Source of blank solution	200.0	Other
+99102	Type of blank sample	1.0	Source solution
+99102	Type of blank sample	10.0	Shelf (hold)
+99102	Type of blank sample	20.0	Refrigerator
+99102	Type of blank sample	30.0	Trip
+99102	Type of blank sample	40.0	Sampler
+99102	Type of blank sample	50.0	Splitter
+99102	Type of blank sample	60.0	Filter
+99102	Type of blank sample	70.0	Preservation
+99102	Type of blank sample	80.0	Equipment
+99102	Type of blank sample	90.0	Ambient
+99102	Type of blank sample	100.0	Field
+99102	Type of blank sample	150.0	lab blank
+99102	Type of blank sample	200.0	Other
+99103	Source of reference material	10.0	National water quality lab (USGS)
+99103	Source of reference material	15.0	Kansas Organic Geochemistry Research Lab (USGS)
+99103	Source of reference material	20.0	U.S. Environmental Protection Agency
+99103	Source of reference material	30.0	Standard Reference Water Sample (USGS)
+99103	Source of reference material	35.0	Mix of standard reference water samples
+99103	Source of reference material	40.0	NIST (formerly NBS)
+99103	Source of reference material	50.0	Canadian Inland Waters
+99103	Source of reference material	60.0	District lab
+99103	Source of reference material	70.0	Natural sample
+99103	Source of reference material	80.0	Ocala lab (USGS)
+99103	Source of reference material	99.99	Unknown
+99103	Source of reference material	100.0	Chemical supplier
+99103	Source of reference material	200.0	Other
+99105	Type of replicate	10.0	Concurrent
+99105	Type of replicate	20.0	Sequential
+99105	Type of replicate	30.0	Split
+99105	Type of replicate	40.0	Split-concurrent
+99105	Type of replicate	50.0	Split-sequential
+99105	Type of replicate	200.0	Other
+99106	Type of spike	10.0	Field
+99106	Type of spike	20.0	Laboratory
+99106	Type of spike	30.0	Surrogate
+99106	Type of spike	40.0	Internal standards
+99106	Type of spike	200.0	Other
+99107	Spike source	10.0	National Water Quality Lab (USGS)
+99107	Spike source	15.0	Kansas Organic Geochemistry Research Lab (USGS)
+99107	Spike source	20.0	U.S. Environmental Protection Agency
+99107	Spike source	25.0	Ohio Water Microbiology Lab (USGS)
+99107	Spike source	30.0	Standard Reference Water Sample (USGS)
+99107	Spike source	35.0	Mix of standard reference water samples
+99107	Spike source	40.0	NIST (formerly NBS)
+99107	Spike source	50.0	Canadian Inland Waters
+99107	Spike source	60.0	District lab
+99107	Spike source	70.0	Natural sample
+99107	Spike source	80.0	Ocala Lab (USGS)
+99107	Spike source	99.99	Unknown
+99107	Spike source	100.0	Chemical supplier
+99107	Spike source	110.0	SUPELCO
+99107	Spike source	120.0	Protocol Analytical Supplies, Inc.
+99107	Spike source	200.0	Other
+99111	Type of QA data	1.0	No associated QA data
+99111	Type of QA data	10.0	Blank
+99111	Type of QA data	20.0	Blind sample
+99111	Type of QA data	30.0	Replicate sample
+99111	Type of QA data	40.0	Spike sample
+99111	Type of QA data	100.0	More than one type of qa sample
+99111	Type of QA data	110.0	Cross-section information stored
+99111	Type of QA data	120.0	Well purge information stored
+99111	Type of QA data	200.0	Other
+99112	Topical QC data purpose	1.0	Routine QC (non-topical)
+99112	Topical QC data purpose	10.0	Topical QC for high bias (contamination)
+99112	Topical QC data purpose	20.0	Topical QC for low bias (recovery)
+99112	Topical QC data purpose	100.0	Topical QC for variability due to field equipment
+99112	Topical QC data purpose	110.0	Topical QC for variability due to field collection proc.
+99112	Topical QC data purpose	120.0	Topical QC for variability due to field personnel
+99112	Topical QC data purpose	130.0	Topical QC for variability due to field processing proc.
+99112	Topical QC data purpose	140.0	Topical QC for variability due to ship. & handling proc.
+99112	Topical QC data purpose	200.0	Topical QC for variability due to laboratory
+99112	Topical QC data purpose	900.0	Other topical qc purpose
