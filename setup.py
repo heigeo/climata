@@ -26,7 +26,7 @@ setup(
     description='A pythonic interface for Applied Climate Information System (ACIS) data',
     long_description=long_description(),
     install_requires=['wq.io>=0.4.0'],
-    scripts=['climata/bin/acis_sites.py', 'climata/bin/acis_data.py'],
+    scripts=['climata/bin/acis_sites.py', 'climata/bin/acis_data.py', 'climata/bin/usgs_data.py'],
     classifiers = [
         'Development Status :: 2 - Pre-Alpha',
         'Environment :: Web Environment',
