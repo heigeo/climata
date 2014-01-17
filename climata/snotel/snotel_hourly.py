@@ -3,8 +3,7 @@ from __init__ import *
 import sys
 from datetime import datetime
 
-
-def load_daily_data(**kwargs):
+def load_hourly_data(**kwargs):
     sites = site_list(hucs='180102')
     site_element_list = {}
     all_elements_in_range = set([])
@@ -26,36 +25,21 @@ def load_daily_data(**kwargs):
                 element_sites.add(key)
     
     for site, elements in site_element_list.items():
-        stels = station_elements(site)
         for element in elements:
-            stDate = get_start_date(stels, element)
             # sitelist.add(get_daily_for_site_and_element(site, element))
-            f = open('csv/daily_values_%s_%s.csv' % (site.replace(':', '-'), element), 'w+')
-            f.write("site: %s, element: %s" %(site, element))
+            f = open('csv/hourly_values_%s_%s.csv' % (site.replace(':', '-'), element), 'w+')
+            f.write("site: %s, flag, element: %s" %(site, element))
             f.write('\n')
-            f.write('date,value')
+            f.write('date, flag, value')
             f.write('\n')
-            data = get_daily_data(site, element, stDate)
+            data = get_hourly_data(site, element, '2005-01-01')
             try:
-                startDate = datetime.strptime(data.beginDate, '%Y-%m-%d %H:%M:%S')
-                endDate = data.endDate
-                dateCounter = 0
                 for value in data.values:
-                    f.write('%s,' % (startDate + timedelta(days=dateCounter)))
-                    dateCounter = dateCounter + 1
-                    if value is None:
-                        f.write('0')
-                    else:
-                        f.write(value)
+                    f.write(','.join(value))
                     f.write('\n')
                 f.close()
             except:
                 pass
 
-def get_start_date(stels, element):
-    for el in stels:
-        if el.elementCd == element:
-            return datetime.strftime(datetime.strptime(el.beginDate, '%Y-%m-%d %H:%M:%S'), "%Y-%m-%d")
-
 if __name__ == '__main__':
-    load_daily_data(*sys.argv[1:])
+    load_hourly_data(*sys.argv[1:])

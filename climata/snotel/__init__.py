@@ -1,17 +1,145 @@
-from wq.io import TimeSeriesMapper, CsvNetIO, JsonNetIO
+from wq.io import BaseIO
 from datetime import datetime, date, timedelta
 from wq.io.parsers import readers
 from collections import namedtuple, OrderedDict
 from SOAPpy import SOAPProxy
 import os, time, pickle
 
-
 namespace = 'http://www.wcc.nrcs.usda.gov/ns/awdbWebService'
 url = 'http://www.wcc.nrcs.usda.gov/awdbWebService/services?WSDL'
 server = SOAPProxy(url, namespace)
-server.config.debug = 1
 today = datetime.now()
 
+class SnotelIO(BaseIO):
+    '''
+     Works with the SOAP.py library to make a soap request.
+     The data is stored in a cached file to speed loading, then
+     it is loaded from the cache and returned.
+    '''
+    filename = None # File name is the actual filename 
+    data_function = None
+    cache = True
+    
+    def load(self):
+        if self.cache:
+            if self.checkfile():
+                self.write_cache
+            f = open(self.filename, 'r')
+            self.data = pickle.load(f)
+            f.close()
+        else:
+            self.data = self.data_function
+        
+    def write_cache(self):
+        f = open(self.filename, 'w+')
+        data = self.data_function
+        pickle.dump(data, f)
+        f.close()
+    
+    def checkfile(self):
+        if os.path.isfile(self.filename):
+            filedate = datetime.fromtimestamp(os.path.getmtime(self.filename))
+            timediff = datetime.now() - filedate
+            if timediff > timedelta(days=7):
+                return True
+            else:
+                return False
+        else:
+            return False
+        
+
+class SnotelSiteListIO(SnotelIO):
+    hucs = None
+    networkCds = None
+    cache = True
+    
+    @property
+    def filename(self):
+        return 'cache/site_list_%s.py' % self.hucs.replace(':', '-')
+    
+    @property
+    def data_function(self):
+        return server.getStations(
+            hucs=self.hucs,
+            networkCds=self.networkCds,
+            logicalAnd='true'
+            )
+
+
+class SnotelStationMetaIO(SnotelIO):
+    site = None
+    cache = True
+    
+    @property
+    def filename(self):
+        return 'cache/station_meta_%s.py' % self.site.replace(':', '-')
+    
+    @property
+    def data_function(self):
+        return server.getStationMetadata(stationTriplet=self.site)
+    
+class SnotelStationElementsIO(SnotelIO):
+    station = None
+    cache = True
+    
+    @property
+    def filename(self):
+        return 'cache/station_elements_%s.py' % self.station.replace(':', '-')
+    
+    @property
+    def data_function(self):
+        return server.getStationElements(stationTriplet=str(self.station))
+    
+class SnotelElementsIO(SnotelIO):
+    cache = False
+    
+    @property
+    def data_function(self):
+        return server.getElements()
+    
+class SnotelDailyDataIO(SnotelIO):
+    station_triplets = None
+    element_cd = None
+    start_date = None
+    
+    @property
+    def filename(self):
+        return 'cache/daily_data_%s_%s.py' % (self.station_triplets.replace(':', '-'),
+                                              self.element_cd)
+    
+    @property
+    def data_function(self):
+        return server.getData(
+            stationTriplets=self.station_triplets,
+            elementCd=self.element_cd,
+            ordinal=1,
+            duration='DAILY',
+            getFlags='true',  # Needs to be true for the other to be false...goofy!
+            beginDate=self.start_date,
+            endDate=str(datetime.date(datetime.now()).isoformat()),
+            alwaysReturnDailyFeb29='false'
+            )
+    
+class SnotelHourlyDataIO(SnotelIO):
+    station_triplets = None
+    element_cd = None
+    start_date = None
+    
+    @property
+    def filename(self):
+        return 'cache/hourly_data_%s_%s.py' % (self.station_triplets.replace(':', '-'),
+                                               self.element_cd)
+    
+    @property
+    def data_function(self):
+        return server.getHourlyData(
+            stationTriplets = self.station_triplets,
+            elementCd = self.element_cd,
+            ordinal = 1,
+            beginDate = self.start_date,
+            endDate = str(datetime.date(datetime.now()).isoformat()),
+        )
+    
 
 def checkfile(filename=None):
     '''
@@ -107,7 +235,7 @@ def get_daily_data(stationTriplets = None, elementCd = None, startDate=None):
      can be read from by the ordinal, '1' is the most common according to the
      documentation. 
     '''
-    filestring = 'cache/daily_data_%s_%s.py' % (stationTriplets.replace(':', '-'), elementCd.replace(',', '-'))
+    filestring = 'cache/daily_data_%s_%s.py' % (stationTriplets.replace(':', '-'), elementCd)
     def write_contents_to_file(**kwargs):
         today = datetime.strftime(datetime.now(), 'YYYY-MM-dd')
         f = open(filestring, 'w+')
@@ -130,54 +258,25 @@ def get_daily_data(stationTriplets = None, elementCd = None, startDate=None):
     return pickle.load(f)
         
 
-class SnotelIO(CsvNetIO):
-    """
-      Files are located on this base directory:
-      http://www.wcc.nrcs.usda.gov/ftpref/data/snow/snotel/cards/
-      Then %state_name/% for oregon or california
-      The file names are %id%_all.txt. Each file seems to have a different
-      first column. %ST%SITENAME-date where %ST% is the 2-character
-      state name. The other columns are:
-      pill  prec    tmax    tmin    tavg    prcp
-      
-      Klamath Watershed:
-      43.284, -121.566
-      42.810, -120.874
-      41.918, -120.627
-      41.507, -121.132
-      41.491, -122.006
-      40.207, -122.994
-      41.565, -124.066
-      41.983, -123.500
-      42.252, -122.418
-      42.786, -122.159
-      
-      CA:
-      SNTL 	2000 	CA 	CROWDER FLAT (977) 		1999-October 	2100-January 	41.89 	-120.75 	5170 	Modoc 	Mosquito Creek-Willow Creek (180102040103)  20H02S
-      OR:
-      SNTL 	2007 	OR 	SWAN LAKE MTN (1077) 		2006-October 	2100-January 	42.41 	-121.68 	6830 	Klamath 	Grizzly Butte (180102040802)    21G16S
-      SNTL 	2006 	OR 	SUN PASS (1078) 		2006-June 	2100-January 	42.79 	-121.98 	5400 	Klamath 	Egan Spring-Williamson River (180102010602) 21G17S
-      SNTL 	1980 	OR 	CHEMULT ALTERNATE (395) 		1980-June 	2100-January 	43.23 	-121.81 	4850 	Klamath 	Deer Creek (180102010201)   21F22S
-      SNTL 	1980 	OR 	COLD SPRINGS CAMP (406) 		1980-June 	2100-January 	42.53 	-122.18 	5940 	Klamath 	Upper Fourmile Creek (180102030202) 22G24S
-      SNTL 	1980 	OR 	HYATT PRAIRIE (259) 		1980-June 	1990-October 	42.18 	-122.47 	4900 	Jackson 	Keene Creek (180102060405)  
-      SNTL 	1980 	OR 	QUARTZ MOUNTAIN (706) 		1980-June 	2100-January 	42.32 	-120.83 	5720 	Lake 	Middle South Fork Sprague River (180102020404)  20G06S
-      SNTL 	1980 	OR 	SEVENMILE MARSH (745) 		1980-June 	2100-January 	42.70 	-122.14 	5700 	Klamath 	Sevenmile Creek (180102030104)  22G33S
-      SNTL 	1980 	OR 	STRAWBERRY (794) 		1980-June 	2100-January 	42.13 	-120.84 	5770 	Lake 	Barnes Valley Creek (180102040501)  20G09S
-      SNTL 	1979 	OR 	BILLIE CREEK DIVIDE (344) 		1978-October 	2100-January 	42.41 	-122.27 	5280 	Klamath 	Seldom Creek (180102030201) 22G13S
-      SNTL 	1979 	OR 	SUMMER RIM (800) 		1978-October 	2100-January 	42.70 	-120.80 	7080 	Lake 	Headwaters Sycan River (180102020103)   20G02S
-      SNTL 	1979 	OR 	TAYLOR BUTTE (810) 		1978-October 	2100-January 	42.69 	-121.43 	5030 	Klamath 	Chester Spring-Sycan River (180102020606)   21G03S
-      
-    """
-    delimiter = "\t"
-    site_code = '20H02S'
-    state = 'california'
-    debug = True
-     
-    @property
-    def filename(self):
-        return "%s_all.txt" % self.site_code.lower() # 20h02s for Crowder Flat
-   
-    
-    @property
-    def url(self):
-        return "http://www.wcc.nrcs.usda.gov/ftpref/data/snow/snotel/cards/%s/%s" % (self.state, self.filename)
+def get_hourly_data(stationTriplets = None, elementCd = None, startDate = None):
+    '''
+     Nearly identical to daily data. Gets hourly values instead
+    '''
+    filestring = 'cache/hourly_data_%s_%s.py' % (stationTriplets.replace(':', '-'), elementCd)
+    def write_contents_to_file():
+        today = datetime.strftime(datetime.now(), 'YYYY-MM-dd')
+        f = open(filestring, 'w+')
+        data = server.getHourlyData(
+            stationTriplets = stationTriplets,
+            elementCd = elementCd,
+            ordinal = 1,
+            beginDate = startDate,
+            endDate = str(datetime.date(datetime.now()).isoformat()),
+        )
+        pickle.dump(data, f)
+        f.close()
+        
+    if checkfile(filestring):
+        write_contents_to_file()
+    f = open(filestring, 'r')
+    return pickle.load(f)
