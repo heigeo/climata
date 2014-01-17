@@ -9,6 +9,7 @@ import os, time, pickle
 namespace = 'http://www.wcc.nrcs.usda.gov/ns/awdbWebService'
 url = 'http://www.wcc.nrcs.usda.gov/awdbWebService/services?WSDL'
 server = SOAPProxy(url, namespace)
+server.config.debug = 1
 today = datetime.now()
 
 
@@ -99,23 +100,35 @@ def element_list(element = None):  # Not needed
     elements = server.getElements()
     return elements
 
-def get_daily_data(stationTriplets = None, elementCd = None):
+def get_daily_data(stationTriplets = None, elementCd = None, startDate=None):
     '''
      This gets the daily data for any site or list of sites
      for only one element code. Although it is possible that other measurements
      can be read from by the ordinal, '1' is the most common according to the
      documentation. 
     '''
-    today = datetime.strftime(datetime.now(), 'YYYY-MM-dd')
-    data = server.getData(
-        stationTriplets=stationTriplets,
-        elementCd=elementCd,
-        ordinal=1,
-        duration='DAILY',
-        getFlags='false',
-        beginDate='2000-01-01',
-        endDate=str(datetime.date(datetime.now()).isoformat())
-        )
+    filestring = 'cache/daily_data_%s_%s.py' % (stationTriplets.replace(':', '-'), elementCd.replace(',', '-'))
+    def write_contents_to_file(**kwargs):
+        today = datetime.strftime(datetime.now(), 'YYYY-MM-dd')
+        f = open(filestring, 'w+')
+        data = server.getData(
+            stationTriplets=stationTriplets,
+            elementCd=elementCd,
+            ordinal=1,
+            duration='DAILY',
+            getFlags='true',  # Needs to be true for the other to be false...goofy!
+            beginDate=startDate,
+            endDate=str(datetime.date(datetime.now()).isoformat()),
+            alwaysReturnDailyFeb29='false'
+            )
+        pickle.dump(data, f)
+        f.close()
+
+    if checkfile(filestring):
+        write_contents_to_file()
+    f = open(filestring, 'r')
+    return pickle.load(f)
+        
 
 class SnotelIO(CsvNetIO):
     """
