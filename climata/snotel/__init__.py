@@ -48,7 +48,7 @@ class SnotelIO(BaseIO):
             else:
                 return False
         else:
-            return False
+            return True
 
 
 class SnotelSiteListIO(SnotelIO):
