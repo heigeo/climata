@@ -1,6 +1,7 @@
 from wq.io import CsvNetIO, CsvFileIO
 from bs4 import BeautifulSoup
 import requests
+from datetime import datetime
 
 
 class CDECMetaIO(CsvFileIO):
@@ -28,6 +29,7 @@ class CDECWaterIO(CsvNetIO):
     debug = True
     field_names = ['date', 'time', 'value']
     start_date = ''
+    end_date = ''
 
     @property
     def url(self):
@@ -40,7 +42,7 @@ class CDECWaterIO(CsvNetIO):
             'sensor_num': self.sensor_num,
             'dur_code': self.dur_code,
             'start_date': self.start_date,
-            'end_date': 'Now',
+            'end_date': self.end_date,
             # 'data_wish': 'View+CSV+Data',
         }
 
@@ -54,10 +56,11 @@ class ParamIO(CsvFileIO):
 class SiteMetaIO(object):
     station_code = ''  # 3-letter station code
     soup = ''
-    baseurl = 'http://cdec.water.ca.gov/cgi-progs/staMeta?station_id='
+    baseurl = 'http://cdec.water.ca.gov/cgi-progs/'
 
     def __init__(self, station_code):
-        r = requests.get(self.baseurl + station_code)
+        self.station_code = station_code
+        r = requests.get(self.baseurl + 'staMeta?station_id=' + self.station_code)
         self.soup = BeautifulSoup(r.text)
 
     @property
@@ -76,3 +79,30 @@ class SiteMetaIO(object):
     @property
     def elevation(self):
         return self.soup.table.find_all('td')[3]
+
+    @property
+    def valid_param_dates(self):
+        print self.station_code
+        r = requests.get('%squeryCSV?station_id=%s' % (self.baseurl, self.station_code))
+        soup = BeautifulSoup(r.text)
+        parameters_for_station = {}
+        for row in soup.table.find_all('tr'):
+            parameter = row.find_all('td')[0].text
+            duration = str(row.find_all('td')[-2].text)[2:3]
+            date_range = row.find_all('td')[-1].text
+            if str(date_range)[0:6] == ' From ':
+                date_range = str(date_range)[6:]
+                if str(date_range)[-12:] == ' to present.':
+                    date_range = str(date_range)[:-12]
+                    start_date = datetime.strptime(date_range, '%m/%d/%Y %H:%M')
+                    start_date = datetime.strftime(start_date, '%m/%d/%Y')
+                    end_date = 'Now'
+                else:
+                    start_date = datetime.strptime(str(date_range)[:16], '%m/%d/%Y %H:%M')
+                    start_date = datetime.strftime(start_date, '%m/%d/%Y')
+                    end_date = datetime.strptime(str(date_range)[-17:-1], '%m/%d/%Y %H:%M')
+                    end_date = datetime.strftime(end_date, '%m/%d/%Y')
+            else:
+                raise Exception('There was an error parsing the date: %s' % (soup))
+            parameters_for_station["%s%s" % (parameter, duration)] = [parameter, duration, start_date, end_date]
+        return parameters_for_station
