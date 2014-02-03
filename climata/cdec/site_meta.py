@@ -1,4 +1,4 @@
-from __init__ import CDECMetaIO, ParamIO
+from __init__ import CDECMetaIO, ParamIO, SiteMetaIO
 from wq.io.gis import ShapeIO, GisIO
 from shapely.geometry import Point
 from shapely.ops import cascaded_union
@@ -33,6 +33,7 @@ f.close()
 ##############################################################
 # Gets valid parameters for each site and puts them in a dict
 ##############################################################
+'''
 codes_for_stations = {}
 all_station_codes = []
 for station in CDECMetaIO(filename='cdec_klamath_stations.csv'):
@@ -52,19 +53,32 @@ for station in CDECMetaIO(filename='cdec_klamath_stations.csv'):
         else:
             skip_first = 1
     codes_for_stations[station.station_code] = parameters_for_station
-
+'''
+all_station_parameters = set()
+parameters_for_stations = {}
+for station in CDECMetaIO(filename="cdec_klamath_stations.csv"):
+    site = SiteMetaIO(station.station_code)
+    site_params = {}
+    for parameter, date_range in site.parameters.items():
+        all_station_parameters.add(parameter)
+        site_params[parameter] = date_range
+    parameters_for_stations[station.station_code] = site_params
+        
+        
 ######################################################
 # Sorts all parameter codes into another dict
 ######################################################
+'''
 sorted_station_codes = []
 for code in all_station_codes:
     sorted_station_codes.append(int(code))
 sorted_station_codes.sort()
-
+'''
 ####################################
 # Adds parameters to the header row
 ####################################
 headers_with_parameters = ['Station Code', 'Url', 'Description', 'No Of Records', 'Lat', 'Long']
+'''
 for param in sorted_station_codes:
     if param not in headers_with_parameters:
         headers_with_parameters.append(param)
@@ -76,7 +90,7 @@ for n, l in enumerate(headers_with_parameters):
     for prm in ParamIO():
         if str(l) == str(prm.id):
             headers_with_parameters[n] = '"' + prm.description + '(' + prm.units + ')"'
-
+'''
 #############################
 # Get period of record info for each parameter using
 # prm.description of the IO
@@ -91,15 +105,17 @@ for n, l in enumerate(headers_with_parameters):
 # Then writes the sites with parameters for those that exist
 ############################################################
 f = open('cdec_klamath_station_meta.csv', 'w+')
-f.write(','.join(str(h) for h in headers_with_parameters))
+f.write('"' + '","'.join(str(h) for h in headers_with_parameters) + '"')
+f.write(',')
+f.write('"' + '","'.join(str(h) for h in all_station_parameters) + '"')
 f.write('\n')
 for station in CDECMetaIO(filename='cdec_klamath_stations.csv'):
     station_string = ','.join(station)
-    for val in sorted_station_codes:
-        if str(val) in codes_for_stations[station.station_code]:
-            station_string += ',X'
+    for parameter in all_station_parameters:
+        if parameter in parameters_for_stations[station.station_code]:
+            station_string += ',"' + parameters_for_stations[station.station_code][parameter] + '"'
         else:
-            station_string += ','
+            station_string += ',""'
     f.write(station_string)
     f.write('\n')
 f.close()
