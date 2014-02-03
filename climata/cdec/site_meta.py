@@ -9,8 +9,8 @@ import os
 ###########################
 # Getting basins into an IO
 ###########################
-basins = ShapeIO(filename='/var/www/klamath/db/loaddata/scripts/data/basins.shp')
-klamath = cascaded_union([basin.geometry for basin in basins.values()])
+bsns = ShapeIO(filename='/var/www/klamath/db/loaddata/scripts/data/basins.shp')
+klamath = cascaded_union([basin.geometry for basin in bsns.values()])
 
 ###########################
 # Filter all stations by coords
@@ -33,27 +33,6 @@ f.close()
 ##############################################################
 # Gets valid parameters for each site and puts them in a dict
 ##############################################################
-'''
-codes_for_stations = {}
-all_station_codes = []
-for station in CDECMetaIO(filename='cdec_klamath_stations.csv'):
-    # This is the actual list of stations put out by the meta_io
-    r = requests.get('http://cdec.water.ca.gov/cgi-progs/queryCSV?station_id=%s' % station.station_code)
-    soup = BeautifulSoup(r.text)
-    fonts = soup.find_all('font')
-    parameters_for_station = []
-    skip_first = 0
-    for font in fonts:
-        if skip_first != 0:
-            for f in font.contents:
-                if f not in parameters_for_station:
-                    parameters_for_station.append(f)
-                if f not in all_station_codes:
-                    all_station_codes.append(f)
-        else:
-            skip_first = 1
-    codes_for_stations[station.station_code] = parameters_for_station
-'''
 all_station_parameters = set()
 parameters_for_stations = {}
 for station in CDECMetaIO(filename="cdec_klamath_stations.csv"):
@@ -63,42 +42,15 @@ for station in CDECMetaIO(filename="cdec_klamath_stations.csv"):
         all_station_parameters.add(parameter)
         site_params[parameter] = date_range
     parameters_for_stations[station.station_code] = site_params
-        
-        
-######################################################
-# Sorts all parameter codes into another dict
-######################################################
-'''
-sorted_station_codes = []
-for code in all_station_codes:
-    sorted_station_codes.append(int(code))
-sorted_station_codes.sort()
-'''
-####################################
-# Adds parameters to the header row
-####################################
-headers_with_parameters = ['Station Code', 'Url', 'Description', 'No Of Records', 'Lat', 'Long']
-'''
-for param in sorted_station_codes:
-    if param not in headers_with_parameters:
-        headers_with_parameters.append(param)
 
-###################
-# Get Parameter Definitions
-###################
-for n, l in enumerate(headers_with_parameters):
-    for prm in ParamIO():
-        if str(l) == str(prm.id):
-            headers_with_parameters[n] = '"' + prm.description + '(' + prm.units + ')"'
-'''
-#############################
-# Get period of record info for each parameter using
-# prm.description of the IO
-# From http://cdec.water.ca.gov/cgi-progs.staMeta?station_id=XXX
-# Use the BeautifulSoup library to get the data.
-# The SENSOR DESCRIPTION (first column) is always Bold.
-#############################
-
+headers_with_parameters = [
+    'Station Code',
+    'Url',
+    'Description',
+    'No Of Records',
+    'Lat',
+    'Long'
+    ]
 
 ###########################################################
 # Writes parameters to the file
@@ -110,12 +62,12 @@ f.write(',')
 f.write('"' + '","'.join(str(h) for h in all_station_parameters) + '"')
 f.write('\n')
 for station in CDECMetaIO(filename='cdec_klamath_stations.csv'):
-    station_string = ','.join(station)
+    tpr = ','.join(station)
     for parameter in all_station_parameters:
+        tpr += ',"'
         if parameter in parameters_for_stations[station.station_code]:
-            station_string += ',"' + parameters_for_stations[station.station_code][parameter] + '"'
-        else:
-            station_string += ',""'
+            tpr += parameters_for_stations[station.station_code][parameter]
+        tpr += '"'
     f.write(station_string)
     f.write('\n')
 f.close()
