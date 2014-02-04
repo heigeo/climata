@@ -2,6 +2,8 @@ from wq.io import CsvNetIO, CsvFileIO
 from bs4 import BeautifulSoup
 import requests
 from datetime import datetime
+from datetime import date
+from datetime import timedelta
 
 
 class CDECMetaIO(CsvFileIO):
@@ -45,6 +47,21 @@ class CDECWaterIO(CsvNetIO):
             'end_date': self.end_date,
             # 'data_wish': 'View+CSV+Data',
         }
+    
+    def add_more(self):
+        if self.end_date == 'Now':
+            self.end_date = date.today()
+        elif self.end_date == date.today():
+            pass
+        else:
+            self.end_date = datetime.strptime(self.end_date, '%m/%d/%Y')
+        # data[-1].date is the last bit of data returned from the IO
+        last_date_returned = datetime.strptime(data[-1].date, '%Y%m%d')
+        end_date = datetime.strptime(datetime.strftime(self.end_date, '%Y-%m-%d'), '%Y-%m-%d')
+        diff = end_date = last_date_returned
+        if diff.days > 0:
+            self.start_date = last_date_returned
+            # Call the IO again and append this data.
 
 
 class ParamIO(CsvFileIO):
