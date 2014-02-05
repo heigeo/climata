@@ -32,6 +32,8 @@ class CDECWaterIO(CsvNetIO):
     field_names = ['date', 'time', 'value']
     start_date = ''
     end_date = ''
+    inner_call = False
+    next_date = ''
 
     @property
     def url(self):
@@ -48,20 +50,36 @@ class CDECWaterIO(CsvNetIO):
             # 'data_wish': 'View+CSV+Data',
         }
     
+    def refresh(self):
+        super(CDECWaterIO, self).refresh()
+        if not self.inner_call:
+            while not self.check_dates(self.data[-1]['date']):
+                print self.data[-1]['date']
+                self.add_more()
+    
     def add_more(self):
+        self.data += CDECWaterIO(
+                station_id=self.station_id,
+                sensor_num=self.sensor_num,
+                dur_code=self.dur_code,
+                start_date=self.next_date,
+                end_date = self.end_date,
+                inner_call = True
+            ).data
+
+    def check_dates(self, last_date_returned):
         if self.end_date == 'Now':
-            self.end_date = date.today()
-        elif self.end_date == date.today():
-            pass
+            this_end_date = date.today()
         else:
-            self.end_date = datetime.strptime(self.end_date, '%m/%d/%Y')
-        # data[-1].date is the last bit of data returned from the IO
-        last_date_returned = datetime.strptime(data[-1].date, '%Y%m%d')
-        end_date = datetime.strptime(datetime.strftime(self.end_date, '%Y-%m-%d'), '%Y-%m-%d')
-        diff = end_date = last_date_returned
-        if diff.days > 0:
-            self.start_date = last_date_returned
-            # Call the IO again and append this data.
+            this_end_date = datetime.strptime(self.end_date, '%m/%d/%Y')
+        this_end_date = datetime.strptime(datetime.strftime(this_end_date, '%Y-%m-%d'), '%Y-%m-%d')
+        last_date_returned = datetime.strptime(last_date_returned, '%Y%m%d')
+        diff = this_end_date - last_date_returned
+        if diff.days > 1:
+            self.next_date = datetime.strftime(last_date_returned, '%m/%d/%Y')
+            return False
+        else:
+            return True
 
 
 class ParamIO(CsvFileIO):
