@@ -64,7 +64,7 @@ class SiteDataIO(JsonNetIO):
             'huc': self.basin,
             'startDT': self.start_date,
             'endDt': self.end_date,
-            'siteType': self.siteType,  # Not necessary with parameter codes.
+            #'siteType': self.siteType,  # Not necessary with parameter codes.
             'parameterCd': self.parameterCd,  # measurements in ft and ft3/s
         }
 
@@ -103,9 +103,10 @@ class InstantValuesIO(SiteDataIO):
     '''
     This class examines the instantaneous values for USGS data.
     '''
-
-    start_date = '2013-09-01'
-    sites = '11493500'
+    debug=False
+    start_date = ''
+    sites = ''
+    end_date = ''
 
     @property
     def url(self):
