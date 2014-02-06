@@ -34,7 +34,9 @@ class CDECWaterIO(CsvNetIO):
     end_date = ''
     inner_call = False
     next_date = ''
-
+    start_row = 3
+    all_data = {}
+    
     @property
     def url(self):
         return 'http://cdec.water.ca.gov/cgi-progs/queryCSV' % self.params
@@ -49,34 +51,54 @@ class CDECWaterIO(CsvNetIO):
             'end_date': self.end_date,
             # 'data_wish': 'View+CSV+Data',
         }
-    
+
     def refresh(self):
         super(CDECWaterIO, self).refresh()
         if not self.inner_call:
-            while not self.check_dates(self.data[-1]['date']):
-                print self.data[-1]['date']
+            for d in self.data:
+                dt = '%s%s' % (str(d['date']), str(d['time']))
+                self.all_data[dt] = d['value']
+            #print "All: %s" % sorted(self.all_data)
+            print 'All Data Date: %s' % sorted(self.all_data)[-2][:8]
+            self.next_date = datetime.strptime(sorted(self.all_data)[-2][:8], '%Y%m%d')
+            print "Next DAte: %s" % self.next_date    
+            while not self.check_dates():
                 self.add_more()
-    
+        # Revert data to array.
+        data_container = []
+        #for key, value in self.all_data.items():
+        #    dlist = [key[:8], key[-4:], value]
+        #    data_container.add(dlist)
+        #self.data = data_container
+
     def add_more(self):
-        self.data += CDECWaterIO(
+        start_date = datetime.strftime(self.next_date, '%m/%d/%Y')
+        new_io = CDECWaterIO(
                 station_id=self.station_id,
                 sensor_num=self.sensor_num,
                 dur_code=self.dur_code,
-                start_date=self.next_date,
+                start_date=start_date,
                 end_date = self.end_date,
                 inner_call = True
-            ).data
+            )
+        for row in new_io.data:
+            dt = '%s%s' % (str(row['date']), str(row['time']))
+            self.all_data[dt] = row['value']
+        print 'Sorted last after add: %s' % sorted(self.all_data)[-2][:8]
+        print 'New IO Date: %s' % new_io.data[-1]['date']
+        self.next_date = datetime.strptime(sorted(self.all_data)[-2][:8], '%Y%m%d')
+        print 'Next Date: %s' % self.next_date
+        #self.all_data += allvalues
 
-    def check_dates(self, last_date_returned):
+    def check_dates(self):
+        print self.data[-1]['date']
         if self.end_date == 'Now':
             this_end_date = date.today()
         else:
             this_end_date = datetime.strptime(self.end_date, '%m/%d/%Y')
         this_end_date = datetime.strptime(datetime.strftime(this_end_date, '%Y-%m-%d'), '%Y-%m-%d')
-        last_date_returned = datetime.strptime(last_date_returned, '%Y%m%d')
-        diff = this_end_date - last_date_returned
+        diff = this_end_date - self.next_date
         if diff.days > 1:
-            self.next_date = datetime.strftime(last_date_returned, '%m/%d/%Y')
             return False
         else:
             return True
