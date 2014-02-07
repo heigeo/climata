@@ -46,16 +46,44 @@ class NWSIO(XmlNetIO):
     @property
     def url(self):
         return self.baseurl % self.params
-
-
-# This IO makes a mess out of the headers, since the structure is weird.
-# Sample URL:
-# http://graphical.weather.gov/xml/sample_products/browser_interface/ndfdXMLclient.php?product=time-series&prcpblw90d=prcpblw90d&end=&prcpblw14d=prcpblw14d&prcpblw30d=prcpblw30d&lon=-120.872&begin=&prcpabv90d=prcpabv90d&prcpabv14d=prcpabv14d&lat=37.937&prcpabv30d=prcpabv30d&Unit=e
-r = requests.get('http://graphical.weather.gov/xml/sample_products/browser_interface/ndfdXMLclient.php?product=time-series&prcpblw90d=prcpblw90d&end=&prcpblw14d=prcpblw14d&prcpblw30d=prcpblw30d&lon=-120.872&begin=&prcpabv90d=prcpabv90d&prcpabv14d=prcpabv14d&lat=37.937&prcpabv30d=prcpabv30d&Unit=e')
-tree = ET.fromstring(r.text)
-for element in tree[1]:
-    for el in element:
-        print el.text
-    print element.text
-
-tree[1][2][0].text
+    
+    def parse(self):
+        doc = ET.parse(self.file)
+        root = doc.getroot()
+        if self.root_tag is None:
+            self.root_tag = root.tag
+        if self.item_tag is None:
+            self.item_tag = list(root)[1].tag # This is the data
+        self.data = map(self.parse_item, root.findall(self.item_tag))
+    
+    def parse_item(self, element):
+        item = {}
+        for elem in element:
+            layout_key = ''
+            if elem.tag == 'time-layout':
+                print elem[0].text
+                start_dates = []
+                end_dates = []
+                for el in elem:
+                    if el.tag == 'layout-key':
+                        layout_key = el.text
+                    elif el.tag == 'start-valid-time':
+                        start_dates.append(el.text)
+                    elif el.tag == 'end-valid-time':
+                        end_dates.append(el.text)
+                item[layout_key] = {'start_dates':[], 'end_dates':[], 'name': '', 'values':[]}
+                item[layout_key]['start_dates'] = start_dates
+                item[layout_key]['end_dates'] = end_dates
+                
+            if elem.tag == 'parameters':
+                for el in elem: # This level is a climate-anomaly
+                    for e in el: # This level is where the tag gets the time-layout           
+                        layout_key = e.items()[2][1]
+                        values_list = []
+                        for val in e:
+                            if val.tag == 'name':
+                                item[layout_key]['name'] = val.text
+                            else:
+                                values_list.append(val.text)
+                        item[layout_key]['values'] = values_list
+        return item
