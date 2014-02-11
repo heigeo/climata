@@ -1,4 +1,4 @@
-from wq.io import BaseIO, XmlNetIO
+from wq.io import BaseIO, XmlNetIO, CsvNetIO
 from datetime import datetime, date, timedelta
 from wq.io.parsers import readers
 from SOAPpy import SOAPProxy
@@ -149,7 +149,7 @@ class NWSForecastIO(XmlNetIO):
         return items
 
 
-class CNRFForecastIO(CSVNetIO):
+class CNRFForecastIO(CsvNetIO):
     ###################################################
     # This gets the table in tab-separated HTML format
     # Hopefully we can get a better way to access the
