@@ -22,6 +22,7 @@ class SnotelIO(BaseIO):
     filename = None  # File name is the actual filename
     data_function = None
     cache = True
+    debug=True
 
     def load(self):
         if self.cache:
@@ -50,11 +51,44 @@ class SnotelIO(BaseIO):
         else:
             return True
 
+class SnotelForecastIO(SnotelIO):
+    stationTriplet = ''
+    elementCd = ''
+    forecastPeriod = ''
+    cache = False
+    
+    @property
+    def data_function(self):
+        return server.getForecasts(
+            stationTriplet=self.stationTriplet,
+            elementCd=self.elementCd,
+            forecastPeriod=self.forecastPeriod
+        )
+
+
+class SnotelForecastPubIO(SnotelIO):
+    stationTriplet = ''
+    elementCd = ''
+    forecastPeriod = ''
+    publicationDate = ''
+    cache = False
+    debug = True
+
+    @property
+    def data_function(self):
+        return server.getForecast(
+            stationTriplet=self.stationTriplet,
+            elementCd=self.elementCd,
+            forecastPeriod=self.forecastPeriod,
+            publicationDate=self.publicationDate
+        )
+
 
 class SnotelSiteListIO(SnotelIO):
     hucs = None
     networkCds = None
     cache = True
+    elements = ''
 
     @property
     def filename(self):
@@ -65,7 +99,8 @@ class SnotelSiteListIO(SnotelIO):
         return server.getStations(
             hucs=self.hucs,
             networkCds=self.networkCds,
-            logicalAnd='true'
+            logicalAnd='true',
+            elementCds=self.elements,
             )
 
 
@@ -126,6 +161,18 @@ class SnotelDailyDataIO(SnotelIO):
             alwaysReturnDailyFeb29='false'
             )
 
+class ForecastPeriodsIO(SnotelIO):
+    cache=False
+    debug=True
+    
+    @property
+    def filename(self):
+        return None
+    
+    @property
+    def data_function(self):
+        return server.getForecastPeriods()
+
 
 class SnotelHourlyDataIO(SnotelIO):
     station_triplets = None
@@ -147,6 +194,26 @@ class SnotelHourlyDataIO(SnotelIO):
             endDate=str(datetime.date(datetime.now()).isoformat()),
         )
 
+
+class SnotelForecastData(SnotelIO):
+    station_triplets = None
+    element_cd = None
+    forecast_period = None
+    publication_date = None
+
+    @property
+    def filename(self):
+        return '/var/www/klamath/db/loaddata/climata/climata/snotel/cache/forecast_data_%s_%s.py' % (
+            self.station_triplets.replace(':', '-'), self.element_cd)
+
+    @property
+    def data_function(self):
+        return server.getForecast(
+            stationTriplets=self.station_triplets,
+            elementCd=self.elementCd,
+            forecastPeriod=self.forecast_period,
+            publicationDate=self.publication_date,
+        )
 
 def checkfile(filename=None):
     '''
