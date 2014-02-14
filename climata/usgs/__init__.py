@@ -16,14 +16,17 @@ class USGSIO(CsvNetIO):
     basin = None  # 18010201  # ,18010202, 18010203, etc.
     max_header_row = 100
     delimiter = "\t"
+    parameterCd = ''
 
     @property
     def params(self):
         return {
             'format': 'rdb,1.0',
             'huc': self.basin,
-            'seriesCatalogOutput': 'true',
-            'outputDataTypeCd': 'all',
+            #'seriesCatalogOutput': 'true',
+            'outputDataTypeCd': 'iv,dv,gw,id,aw',
+            'parameterCd': self.parameterCd,
+            'siteStatus':'active',
             }
 
     @property
