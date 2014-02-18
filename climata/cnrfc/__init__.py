@@ -7,6 +7,11 @@ from passfile import server, username, password
 import os
 
 class DownloadExtract(object):
+    ######################################
+    # datestr must be in YYYYMMDD format
+    # This class does not return anything.
+    # It just downloads the tar.Z file.
+    ######################################
     datestr = ''
 
     def __init__(self, *args, **kwargs):
