@@ -12,6 +12,7 @@ url = 'http://www.wcc.nrcs.usda.gov/awdbWebService/services?WSDL'
 server = SOAPProxy(url, namespace)
 today = datetime.now()
 
+
 class SnotelIO(BaseIO):
     '''
      Works with the SOAP.py library to make a soap request.
@@ -21,7 +22,7 @@ class SnotelIO(BaseIO):
     filename = None  # File name is the actual filename
     data_function = None
     cache = True
-    debug=True
+    debug = True
 
     def load(self):
         if self.cache:
@@ -56,7 +57,7 @@ class SnotelForecastIO(SnotelIO):
     elementCd = ''
     forecastPeriod = ''
     cache = False
-    
+
     @property
     def data_function(self):
         return server.getForecasts(
@@ -163,13 +164,13 @@ class SnotelDailyDataIO(SnotelIO):
 
 
 class ForecastPeriodsIO(SnotelIO):
-    cache=False
-    debug=True
-    
+    cache = False
+    debug = True
+
     @property
     def filename(self):
         return None
-    
+
     @property
     def data_function(self):
         return server.getForecastPeriods()
