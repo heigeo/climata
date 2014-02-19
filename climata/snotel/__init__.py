@@ -12,7 +12,6 @@ url = 'http://www.wcc.nrcs.usda.gov/awdbWebService/services?WSDL'
 server = SOAPProxy(url, namespace)
 today = datetime.now()
 
-
 class SnotelIO(BaseIO):
     '''
      Works with the SOAP.py library to make a soap request.
@@ -205,7 +204,7 @@ class SnotelForecastData(SnotelIO):
 
     @property
     def filename(self):
-        return '/var/www/klamath/db/loaddata/climata/climata/snotel/cache/forecast_data_%s_%s.py' % (
+        return 'forecast_data_%s_%s.py' % (
             self.station_triplets.replace(':', '-'), self.element_cd)
 
     @property
