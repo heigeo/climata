@@ -26,7 +26,7 @@ class USGSIO(CsvNetIO):
             #'seriesCatalogOutput': 'true',
             'outputDataTypeCd': 'iv,dv,gw,id,aw',
             'parameterCd': self.parameterCd,
-            'siteStatus':'active',
+            'siteStatus': 'active',
             }
 
     @property
@@ -106,7 +106,7 @@ class InstantValuesIO(SiteDataIO):
     '''
     This class examines the instantaneous values for USGS data.
     '''
-    debug=False
+    debug = False
     start_date = ''
     sites = ''
     end_date = ''
