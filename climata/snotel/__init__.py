@@ -51,6 +51,7 @@ class SnotelIO(BaseIO):
         else:
             return True
 
+
 class SnotelForecastIO(SnotelIO):
     stationTriplet = ''
     elementCd = ''
@@ -161,6 +162,7 @@ class SnotelDailyDataIO(SnotelIO):
             alwaysReturnDailyFeb29='false'
             )
 
+
 class ForecastPeriodsIO(SnotelIO):
     cache=False
     debug=True
@@ -214,160 +216,3 @@ class SnotelForecastData(SnotelIO):
             forecastPeriod=self.forecast_period,
             publicationDate=self.publication_date,
         )
-
-def checkfile(filename=None):
-    '''
-     Returns True if the file is expired or does not exist
-     and False if the file should be loaded.
-    '''
-    if os.path.isfile(filename):
-        filedate = datetime.fromtimestamp(os.path.getmtime(filename))
-        timediff = today - filedate
-        if timediff > timedelta(days=7):
-            return True
-        else:
-            return False
-    else:
-        return True
-
-
-def site_list(hucs=None, networkCds=None):
-    '''
-     This function returns a list of sites in triplet format
-     Triplets have this format: [station id]:[state code]:[network code]
-     http://www.wcc.nrcs.usda.gov/web_service/AWDB_Web_Service_Reference.htm
-     Network Codes:
-     BOR Any Bureau of Reclamation reservoir stations plus
-                    other non-BOR reservoir stations
-     CLMIND Used to store climate indices (such as Southern Oscillation Index
-                    or Trans-Nino Index)
-     COOP National Weather Service COOP stations
-     MPRC Manual precipitation sites
-     MSNT Manual SNOTEL non-telemetered, non-real time sites
-     SNOW NRCS Snow Course Sites
-     SNTL NWCC SNOTEL and SCAN stations
-     USGS Any USGS station, but also other non-USGS streamflow stations
-    '''
-    filestring = 'cache/site_list_%s.py' % hucs.replace(':', '-')
-
-    def write_contents_to_file():
-        f = open(filestring, 'w+')
-        sites = server.getStations(
-            hucs=str(hucs),
-            networkCds=networkCds,
-            logicalAnd='true')
-        pickle.dump(sites, f)
-        f.close()
-
-    if checkfile(filestring):
-        write_contents_to_file()
-    f = open(filestring, 'r')
-    return pickle.load(f)
-
-
-def station_meta(site=None):
-    '''
-     Gets the beginDate, endDate, fipsCountryCd (US), countyName,
-     fipsStateNumber, elevation, huc (eg. 180102040103), hud (eg. 18020001),
-     latitude, longitude, name, shefId (eg. CRWC1),
-     stationDataTimeZone (eg. -8.0), stationTriplet
-    '''
-    filestring = 'cache/station_meta_%s.py' % site.replace(':', '-')
-
-    def write_contents_to_file():
-        f = open(filestring, 'w+')
-        station = server.getStationMetadata(stationTriplet=site)
-        pickle.dump(station, f)
-        f.close()
-    if checkfile(filestring):
-        write_contents_to_file()
-    f = open(filestring)
-    return pickle.load(f)
-
-
-def station_elements(station=None):
-    '''
-     This returns a list of element codes measured at a given station
-     Also has the beginDate and endDate and the storedUnitCode for the
-     thing being measured.
-    '''
-    filestring = 'cache/station_elements_%s.py' % station.replace(':', '-')
-
-    def write_contents_to_file():
-        f = open(filestring, 'w+')
-        elements = server.getStationElements(stationTriplet=str(station))
-        pickle.dump(elements, f)
-        f.close()
-    if checkfile(filestring):
-        write_contents_to_file()
-    f = open(filestring)
-    return pickle.load(f)
-
-
-def element_list(element=None):  # Not needed
-    '''
-     This returns a list of elements, which are measurement codes
-     the elementCd needed for queries is accessed at elements[i].elementCd
-     where i is the index. elements[i].name is a description of the measurement
-     and elements[i].storedUnitCd is the unit of measurement
-    '''
-    elements = server.getElements()
-    return elements
-
-
-def get_daily_data(stationTriplets=None, elementCd=None, startDate=None):
-    '''
-     This gets the daily data for any site or list of sites
-     for only one element code. Although it is possible that other measurements
-     can be read from by the ordinal, '1' is the most common according to the
-     documentation.
-    '''
-    filestring = '''cache/daily_data_%s_%s.py
-                        ''' % (stationTriplets.replace(':', '-'), elementCd)
-
-    def write_contents_to_file(**kwargs):
-        today = datetime.strftime(datetime.now(), 'YYYY-MM-dd')
-        f = open(filestring, 'w+')
-        data = server.getData(
-            stationTriplets=stationTriplets,
-            elementCd=elementCd,
-            ordinal=1,
-            duration='DAILY',
-            getFlags='true',  # Needs to be true for the other to be false
-            beginDate=startDate,
-            endDate=str(datetime.date(datetime.now()).isoformat()),
-            alwaysReturnDailyFeb29='false'
-            )
-        pickle.dump(data, f)
-        f.close()
-
-    if checkfile(filestring):
-        write_contents_to_file()
-    f = open(filestring, 'r')
-    return pickle.load(f)
-
-
-def get_hourly_data(stationTriplets=None, elementCd=None, startDate=None):
-    '''
-     Nearly identical to daily data. Gets hourly values instead
-    '''
-    filestring = '''cache/hourly_data_%s_%s.py
-                    ''' % (stationTriplets.replace(':', '-'), elementCd)
-
-    def write_contents_to_file():
-        today = datetime.strftime(datetime.now(), 'YYYY-MM-dd')
-        f = open(filestring, 'w+')
-        data = server.getHourlyData(
-            stationTriplets=stationTriplets,
-            elementCd=elementCd,
-            ordinal=1,
-            beginDate=startDate,
-            endDate=str(datetime.date(datetime.now()).isoformat()),
-        )
-        pickle.dump(data, f)
-        f.close()
-
-    if checkfile(filestring):
-        write_contents_to_file()
-    f = open(filestring, 'r')
-    return pickle.load(f)
