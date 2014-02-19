@@ -6,6 +6,14 @@ from ftplib import FTP
 from passfile import server, username, password
 import os
 
+####################################################
+# The passfile module contains username and
+# password for the ftp server. It is not in
+# the repository.
+# Also, extract_file.sh is required for this script.
+####################################################
+
+
 class DownloadExtract(object):
     ######################################
     # datestr must be in YYYYMMDD format
@@ -19,7 +27,10 @@ class DownloadExtract(object):
         ftp = FTP(server)
         ftp.login(user=username, passwd=password)
         ftp.cwd('/outbound')
-        file_retrieved = ftp.retrbinary('RETR %s' % self.tarfilename, open('%s' % self.tarfilename, 'w').write)
+        file_retrieved = ftp.retrbinary(
+            'RETR %s' % self.tarfilename,
+            open('%s' % self.tarfilename, 'w').write
+            )
 
     @property
     def tarfilename(self):
@@ -32,7 +43,7 @@ class CNRFCFileIO(object):
     site = ''
     values_for_month = {}
     time_series = []
-    
+
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
         os.system('cnrfc/extract_file.sh %s %s' % (self.datestr, self.site))
@@ -50,14 +61,14 @@ class CNRFCFileIO(object):
                     months_seen.add(moyr)
                     #print months_seen
                     try:
-                        self.values_for_month[retained_date] = current_month_values
+                        self.values_for_month[r_date] = current_month_values
                     except NameError:
                         continue
                     current_month_values = []
                 for value in str.split(line[20:]):
                     if value != '-999.0':
                         current_month_values.append(value)
-                retained_date = moyr
+                r_date = moyr
             else:
                 pass
         return self.values_for_month
@@ -76,27 +87,27 @@ class CNRFCFileIO(object):
         return self.time_series
 
 site_list = {
-    "BTYO3":"SPRAGUE RIVER - BEATTY (BTYO3)",
-    "WMSO3":"WILLIAMSON RIVER - CHILOQUIN (WMSO3)",
-    "KLAO3":"KLAMATH RIVER - UPPER KLAMATH LAKE (KLAO3)",
-    "KEOO3L":"KLAMATH RIVER - KENO (KEOO3) *LOCAL*",
-    "BOYO3L":"KLAMATH RIVER - BELOW JC POWER PLANT (BOYO3) *LOCAL*",
-    "IRGC1L":"KLAMATH RIVER - IRON GATE RESERVOIR (IRGC1) *LOCAL*",
-    "YREC1":"SHASTA RIVER - YREKA (YREC1)",
-    "FTJC1":"SCOTT RIVER - FORT JONES (FTJC1)",
-    "SBRC1":"SALMON RIVER - SOMES BAR (SBRC1)",
-    "CEGC1":"TRINITY RIVER - TRINITY LAKE (CEGC1)",
-    "HYMC1":"SOUTH FORK TRINITY RIVER - HYAMPOM (HYMC1)",
-    "CREC1":"SMITH RIVER - JED SMITH NEAR CRESCENT CITY (CREC1)",
-    "KLMC1W":"KLAMATH RIVER - KLAMATH (KLMC1) *EXCLUDING RESERVOIR RELEASES*",
-    "FTDC1":"SMITH RIVER - DOCTOR FINE BRIDGE (FTDC1)",
-    "ORIC1":"REDWOOD CREEK - ORICK (ORIC1)",
-    "ARCC1":"MAD RIVER - ARCATA (ARCC1)",
-    "PLBC1":"EEL RIVER - LAKE PILLSBURY (PLBC1)",
-    "DOSC1":"MIDDLE FORK EEL RIVER - DOS RIOS (DOSC1)",
-    "FTSC1":"EEL RIVER - FORT SEWARD (FTSC1)",
-    "MRNC1":"SOUTH FORK EEL RIVER - MIRANDA (MRNC1)",
-    "SCOC1":"EEL RIVER - SCOTIA (SCOC1)",
-    "BRGC1":"VAN DUZEN RIVER - BRIDGEVILLE (BRGC1)",
-    "FRNC1":"EEL RIVER - FERNBRIDGE (FRNC1)",
+    "BTYO3": "SPRAGUE RIVER - BEATTY (BTYO3)",
+    "WMSO3": "WILLIAMSON RIVER - CHILOQUIN (WMSO3)",
+    "KLAO3": "KLAMATH RIVER - UPPER KLAMATH LAKE (KLAO3)",
+    "KEOO3L": "KLAMATH RIVER - KENO (KEOO3) *LOCAL*",
+    "BOYO3L": "KLAMATH RIVER - BELOW JC POWER PLANT (BOYO3) *LOCAL*",
+    "IRGC1L": "KLAMATH RIVER - IRON GATE RESERVOIR (IRGC1) *LOCAL*",
+    "YREC1": "SHASTA RIVER - YREKA (YREC1)",
+    "FTJC1": "SCOTT RIVER - FORT JONES (FTJC1)",
+    "SBRC1": "SALMON RIVER - SOMES BAR (SBRC1)",
+    "CEGC1": "TRINITY RIVER - TRINITY LAKE (CEGC1)",
+    "HYMC1": "SOUTH FORK TRINITY RIVER - HYAMPOM (HYMC1)",
+    "CREC1": "SMITH RIVER - JED SMITH NEAR CRESCENT CITY (CREC1)",
+    "KLMC1W": "KLAMATH RIVER - KLAMATH (KLMC1) *EXCLUDING RESERVOIR RELEASES*",
+    "FTDC1": "SMITH RIVER - DOCTOR FINE BRIDGE (FTDC1)",
+    "ORIC1": "REDWOOD CREEK - ORICK (ORIC1)",
+    "ARCC1": "MAD RIVER - ARCATA (ARCC1)",
+    "PLBC1": "EEL RIVER - LAKE PILLSBURY (PLBC1)",
+    "DOSC1": "MIDDLE FORK EEL RIVER - DOS RIOS (DOSC1)",
+    "FTSC1": "EEL RIVER - FORT SEWARD (FTSC1)",
+    "MRNC1": "SOUTH FORK EEL RIVER - MIRANDA (MRNC1)",
+    "SCOC1": "EEL RIVER - SCOTIA (SCOC1)",
+    "BRGC1": "VAN DUZEN RIVER - BRIDGEVILLE (BRGC1)",
+    "FRNC1": "EEL RIVER - FERNBRIDGE (FRNC1)",
     }
