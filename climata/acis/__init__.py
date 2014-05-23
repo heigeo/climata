@@ -176,6 +176,8 @@ class StationDataIO(StationMetaIO):
     See http://data.rcc-acis.org/doc/#title19
     """
 
+    nested = True
+
     namespace = "data"  # For wq.io.parsers.text.JsonParser
     path = "MultiStnData"
 
@@ -286,8 +288,8 @@ class DataIO(TimeSeriesMapper, BaseIO):
 
     def __init__(self, *args, **kwargs):
         data = kwargs.pop('data')
-        self.data = self.load_data(data)
         super(DataIO, self).__init__(*args, **kwargs)
+        self.data = list(self.load_data(data))
 
     def get_field_names(self):
         """
