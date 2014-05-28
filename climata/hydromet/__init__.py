@@ -1,36 +1,37 @@
-from wq.io import CsvNetIO, TimeSeriesMapper
+from wq.io import CsvParser, TimeSeriesMapper, BaseIO
 from datetime import datetime, date, timedelta
 from collections import OrderedDict
+from climata.base import WebserviceLoader, FilterOpt
 
 
-class HydrometIO(TimeSeriesMapper, CsvNetIO):
+class HydrometIO(WebserviceLoader, CsvParser, TimeSeriesMapper, BaseIO):
     """
     Base class for retrieving Hydromet data from USBR.
     Use DailyDataIO or InstantDataIO instead, depending on your needs.
     """
 
-    # USBR region: pn or gp
-    region = 'pn'
-
-    # Four-letter Hydromet station code
-    station = None
-
-    # Hydromet parameter codes
-    parameters = []
-
-    # Date Range
-    startdate = date.today() - timedelta(days=30)
-    enddate = date.today()
-
+    # URL components (see url() below)
+    region = 'pn'  # USBR region: pn or gp
     website = 'www.usbr.gov'
     script = None
 
     # TimeSeriesMapper configuration
     date_formats = ['%m/%d/%Y %H:%M', '%m/%d/%Y']
 
+    # None of the default region filters will work
+    state = FilterOpt(ignored=True)
+    county = FilterOpt(ignored=True)
+    basin = FilterOpt(ignored=True)
+
+    # Instead, specify a four-letter Hydromet station code (one per request)
+    station = FilterOpt(required=True)
+
+    # Hydromet parameter codes are also required (multiple allowed)
+    parameter = FilterOpt(required=True, multi=True)
+
     def clean_field_name(self, field):
         field = super(HydrometIO, self).clean_field_name(field)
-        return field.replace(self.station.lower(), "")
+        return field.replace(self.station.value.lower(), "")
 
     # NetLoader configuration
     @property
@@ -43,18 +44,16 @@ class HydrometIO(TimeSeriesMapper, CsvNetIO):
 
     @property
     def params(self):
-        if not self.station:
-            raise NotImplementedError("Station must be defined!")
-        if not self.parameters:
-            raise NotImplementedError("Parameters must be defined!")
-
-        start = self.startdate
-        end = self.enddate
+        start = self.start_date.value
+        end = self.end_date.value
+        params, params_is_complex = self.getlist('parameter')
         pcodes = [
-            "%s %s" % (self.station, param)
-            for param in self.parameters
+            "%s %s" % (self.station.value, param)
+            for param in params
         ]
-        # Note: ordering of URL parameters is important
+
+        # Note: The USBR Perl scripts are pretty quirky: a specific ordering of
+        # URL parameters is important for proper function.
         return OrderedDict([
             ('parameter', ",".join(pcodes)),
             ('syer', start.year),
@@ -93,7 +92,7 @@ class DailyDataIO(HydrometIO):
 
     Usage:
 
-    data = DailyDataIO(station='ACAO', parameters=['GD','QD'])
+    data = DailyDataIO(station='ACAO', parameter=['GD','QD'])
     for row in data:
         print row.date, row.gd, row.qd
     """
@@ -108,7 +107,7 @@ class InstantDataIO(HydrometIO):
 
     Usage:
 
-    data = InstantDataIO(station='ACAO', parameters=['GH','Q'])
+    data = InstantDataIO(station='ACAO', parameter=['GH','Q'])
     for row in data:
         print row.datetime, row.gh, row.q
     """
@@ -131,12 +130,14 @@ class AgrimetRecentIO(InstantDataIO):
     """
     script = "agrimet.pl"
 
+    start_date = FilterOpt(ignored=True)
+    end_date = FilterOpt(ignored=True)
+    parameter = FilterOpt(ignored=True)
+
     @property
     def params(self):
-        if not self.station:
-            raise NotImplementedError("Station must be defined!")
         return OrderedDict([
-            ('cbtt', self.station),
+            ('cbtt', self.station.value),
             ('interval', 'instant'),
             ('format', 2),
             ('back', 360)

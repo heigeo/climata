@@ -1,8 +1,9 @@
-from wq.io import TimeSeriesMapper, XmlNetIO
+from wq.io import TimeSeriesMapper, XmlParser, BaseIO
 from datetime import datetime, date, timedelta
+from climata.base import WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt
 
 
-class CocorahsIO(TimeSeriesMapper, XmlNetIO):
+class CocorahsIO(WebserviceLoader, XmlParser, TimeSeriesMapper, BaseIO):
     """
     Retrieves CoCoRaHS observations from data.cocorahs.org
 
@@ -13,20 +14,41 @@ class CocorahsIO(TimeSeriesMapper, XmlNetIO):
         print row.stationname, row.observationdate.date(), row.totalprecipamt
     """
 
-    state = None
-    county = None
-    startdate = date.today() - timedelta(days=30)
-    enddate = date.today()
-    datetype = "reportdate"
-    type = "Daily"
+    # Customize date parameters
+    start_date = DateOpt(
+        required=True,
+        date_only=False,
+        url_param="StartDate",
+    )
+    end_date = DateOpt(
+        date_only=False,
+        url_param="EndDate",
+    )
 
+    # These region filters are supported
+    state = FilterOpt(required=True)
+    county = FilterOpt()
+
+    # Other filters are ignored
+    basin = FilterOpt(ignored=True)
+    station = FilterOpt(ignored=True)
+    parameter = FilterOpt(ignored=True)
+
+    # CoCoRaHS-specific options
+    datetype = ChoiceOpt(
+        url_param="ReportDateType",
+        default="reportdate",
+        choices=["reportdate", "timestamp"],
+    )
+    reporttype = ChoiceOpt(
+        url_param="ReportType",
+        default="Daily",
+        choices=["Daily", "MultiDay"],
+    )
+
+    # Configuration for wq.io base classes
     url = "http://data.cocorahs.org/cocorahs/export/exportreports.aspx"
-    params = {
-        'dtf': "1",
-        'Format': "XML",
-        'TimesInGMT': "False",
-        'responsefields': "all"
-    }
+
     root_tag = 'Cocorahs'
 
     date_formats = [
@@ -47,32 +69,46 @@ class CocorahsIO(TimeSeriesMapper, XmlNetIO):
         "entrydatetime",
     ]
 
+    # These params apply to every request
+    default_params = {
+        'dtf': "1",
+        'Format': "XML",
+        'TimesInGMT': "False",
+        'responsefields': "all"
+    }
+
+    @property
+    def params(self):
+        params = super(CocorahsIO, self).params
+        params.update(self.default_params)
+        return params
+
     @property
     def item_tag(self):
-        if self.type == "Daily":
+        if self.reporttype.value == "Daily":
             return 'DailyPrecipReports/DailyPrecipReport'
-        elif self.type == "MultiDay":
+        else:
+            # i.e. self.reporttype.value == "MultiDay"
             return 'MultiDayPrecipReports/MultiDayPrecipReport'
-        raise Exception("%s is not a valid report type!" % self.type)
 
-    def load(self):
+    def serialize_params(self, params, complex):
+        params = super(CocorahsIO, self).serialize_params(params, complex)
         fmt = '%m/%d/%Y'
-        self.params['ReportType'] = self.type
-        self.params['State'] = self.state
-        if self.county is not None:
-            self.params['County'] = self.county
 
-        self.params['ReportDateType'] = self.datetype
-        if self.datetype == "reportdate":
-            self.params['StartDate'] = self.startdate.strftime(fmt)
-            self.params['EndDate'] = self.enddate.strftime(fmt)
-        elif self.datetype == "timestamp":
-            self.params['Date'] = self.startdate.strftime(fmt + " %I:%M %p")
-
-        super(CocorahsIO, self).load()
+        # Different date parameters and formats depending on use case
+        if 'EndDate' in params:
+            # Date range (usually used with datetype=reportdate)
+            params['StartDate'] = self.start_date.value.strftime(fmt)
+            params['EndDate'] = self.end_date.value.strftime(fmt)
+        else:
+            # Only start date (usually used with datetype=timestamp)
+            params['Date'] = self.start_date.value.strftime(fmt + " %I:%M %p")
+            del params['StartDate']
+        return params
 
     def map_value(self, field, value):
         value = super(CocorahsIO, self).map_value(field, value)
+        # CoCoRaHS empty dates are represented as 1/1/0001
         if isinstance(value, datetime) and value.year == 1:
             return None
         return value

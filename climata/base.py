@@ -34,7 +34,7 @@ class FilterOpt(object):
         if self.required and value is None:
             raise ValueError("%s is required!" % self.name)
         elif self.ignored and value is not None:
-            warn("%s is not a valid option name for this class!" % self.name)
+            warn("%s is ignored for this class!" % self.name)
         elif (not self.multi and isinstance(value, (list, tuple))
               and len(val) > 1):
             raise ValueError("%s does not accept multiple values!" % self.name)
@@ -42,6 +42,8 @@ class FilterOpt(object):
 
 
 class DateOpt(FilterOpt):
+    date_only = True
+
     def parse_date(self, value):
         return parse_date(value)
 
@@ -54,7 +56,7 @@ class DateOpt(FilterOpt):
             return None
         if isinstance(value, basestring):
             value = self.parse_date(value)
-        if isinstance(value, datetime):
+        if isinstance(value, datetime) and self.date_only:
             value = value.date()
         return value
 
