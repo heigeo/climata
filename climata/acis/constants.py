@@ -3,6 +3,7 @@
 # Constants as specified in http://data.rcc-acis.org/doc/
 
 
+# Authority Codes
 # http://data.rcc-acis.org/doc/#title2
 AUTHORITIES = [
     ('1', "WBAN", "Weather Bureau Army Navy"),
@@ -30,6 +31,7 @@ AUTHORITY_BY_NAME = {
     for auth in AUTHORITY_BY_ID.values()
 }
 
+# Element Codes
 # http://data.rcc-acis.org/doc/#title5
 ELEMENTS = (
     ('1', "maxt", "Maximum temperature (°F)"),
@@ -60,3 +62,31 @@ ELEMENT_BY_NAME = {
         'desc': desc
     } for id, name, desc in ELEMENTS if name is not None
 }
+
+# Metadata fields
+# http://www.rcc-acis.org/docs_webservices.html#title4
+DEFAULT_META_FIELDS = (
+    'name',  # Station name
+    'state',  # 2-letter state
+    'sids',  # Station ids (with Authority codes)
+    'll',  # Long, Lat
+    'elev',  # Elevation
+    'uid',  # Unique ACIS id
+    'county',  # County (FIPS) code
+    'climdiv',  # Climate division code
+)
+
+ALL_META_FIELDS = DEFAULT_META_FIELDS + (
+    # Period of record (by parameter code, which is effectively required)
+    'valid_daterange',
+)
+
+# Additional flags for individual values
+# http://www.rcc-acis.org/docs_webservices.html#title13
+ADD_IDS = (
+    'f',  # Flags,
+    't',  # Time of observation
+    'i',  # Station ID assoc. w/data
+    'v',  # Var minor
+    'n',  # Network
+)
