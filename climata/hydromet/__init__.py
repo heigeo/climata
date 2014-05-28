@@ -31,7 +31,7 @@ class HydrometIO(WebserviceLoader, CsvParser, TimeSeriesMapper, BaseIO):
 
     def clean_field_name(self, field):
         field = super(HydrometIO, self).clean_field_name(field)
-        return field.replace(self.station.value.lower(), "")
+        return field.replace(self.getvalue('station').lower(), "")
 
     # NetLoader configuration
     @property
@@ -44,11 +44,11 @@ class HydrometIO(WebserviceLoader, CsvParser, TimeSeriesMapper, BaseIO):
 
     @property
     def params(self):
-        start = self.start_date.value
-        end = self.end_date.value
+        start = self.getvalue('start_date')
+        end = self.getvalue('end_date')
         params, params_is_complex = self.getlist('parameter')
         pcodes = [
-            "%s %s" % (self.station.value, param)
+            "%s %s" % (self.getvalue('station'), param)
             for param in params
         ]
 
@@ -137,7 +137,7 @@ class AgrimetRecentIO(InstantDataIO):
     @property
     def params(self):
         return OrderedDict([
-            ('cbtt', self.station.value),
+            ('cbtt', self.getvalue('station')),
             ('interval', 'instant'),
             ('format', 2),
             ('back', 360)

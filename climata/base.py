@@ -15,7 +15,6 @@ class FilterOpt(object):
     multi = False  # Whether multiple values are allowed
     ignored = False  # Used on subclasses when option does not apply
 
-    value = None  # Value provided by IO class
     default = None  # Default value
 
     def __init__(self, **kwargs):
@@ -109,10 +108,11 @@ class WebserviceLoader(NetLoader):
         """
 
         #  Validate web service parameters using FilterOpt information
+        self._values = {}
         for name, opt in self.filter_options.items():
             opt.name = name
             val = kwargs.pop(name, opt.default)
-            opt.value = opt.parse(val)
+            self._values[name] = opt.parse(val)
 
         # Mimic BaseIO behavior since it's not a super class of NetLoader
         if kwargs:
@@ -138,13 +138,16 @@ class WebserviceLoader(NetLoader):
     def get_url_param(self, key):
         return self.filter_options[key].get_url_param()
 
+    def getvalue(self, name):
+        return self._values[name]
+
     def getlist(self, name):
         """
         Retrieve given property from class/instance, ensuring it is a list.
         Also determine whether the list contains simple text/numeric values or
         nested dictionaries (a "complex" list)
         """
-        value = self.filter_options[name].value
+        value = self._values[name]
         complex = False
 
         def str_value(val):

@@ -64,9 +64,9 @@ class StationMetaIO(AcisIO):
     namespace = "meta"  # For wq.io.parsers.text.JsonParser
     path = "StnMeta"
 
-    # These options don't apply to StationMetaIO
-    start_date = FilterOpt(ignored=True)
-    end_date = FilterOpt(ignored=True)
+    # These options are not required for StationMetaIO
+    start_date = DateOpt(url_param='sdate')
+    end_date = DateOpt(url_param='edate')
 
     def map_value(self, field, value):
         """
@@ -162,8 +162,8 @@ class StationDataIO(StationMetaIO):
             data=data['data'],
             parameter=elems,
             add=add,
-            start_date=self.start_date.value,
-            end_date=self.end_date.value,
+            start_date=self.getvalue('start_date'),
+            end_date=self.getvalue('end_date'),
         )
 
         # TupleMapper will convert item to namedtuple

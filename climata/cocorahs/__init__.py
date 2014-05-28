@@ -85,10 +85,10 @@ class CocorahsIO(WebserviceLoader, XmlParser, TimeSeriesMapper, BaseIO):
 
     @property
     def item_tag(self):
-        if self.reporttype.value == "Daily":
+        if self.getvalue('reporttype') == "Daily":
             return 'DailyPrecipReports/DailyPrecipReport'
         else:
-            # i.e. self.reporttype.value == "MultiDay"
+            # i.e. self.getvalue('reporttype') == "MultiDay"
             return 'MultiDayPrecipReports/MultiDayPrecipReport'
 
     def serialize_params(self, params, complex):
@@ -98,11 +98,13 @@ class CocorahsIO(WebserviceLoader, XmlParser, TimeSeriesMapper, BaseIO):
         # Different date parameters and formats depending on use case
         if 'EndDate' in params:
             # Date range (usually used with datetype=reportdate)
-            params['StartDate'] = self.start_date.value.strftime(fmt)
-            params['EndDate'] = self.end_date.value.strftime(fmt)
+            params['StartDate'] = self.getvalue('start_date').strftime(fmt)
+            params['EndDate'] = self.getvalue('end_date').strftime(fmt)
         else:
             # Only start date (usually used with datetype=timestamp)
-            params['Date'] = self.start_date.value.strftime(fmt + " %I:%M %p")
+            params['Date'] = self.getvalue(
+                'start_date'
+            ).strftime(fmt + " %I:%M %p")
             del params['StartDate']
         return params
 
