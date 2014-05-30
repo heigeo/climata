@@ -119,21 +119,26 @@ class WebserviceLoader(NetLoader):
             self.__dict__.update(**kwargs)
         self.refresh()
 
+    @classmethod
+    def get_filter_options(cls):
+        """
+        List all filter options defined on class (and superclasses)
+        """
+        if hasattr(cls, '_filter_options'):
+            return cls._filter_options
+
+        options = {}
+        for key in dir(cls):
+            val = getattr(cls, key)
+            if isinstance(val, FilterOpt):
+                options[key] = val
+
+        cls._filter_options = options
+        return options
+
     @property
     def filter_options(self):
-        """
-        List all filter options defined on class
-        """
-        options = {}
-        for key in dir(self):
-            if not key.startswith('__') and key not in (
-                'filter_options', 'params', 'field_map', 'tuple_class',
-                'tuple_prototype',
-            ):
-                val = getattr(self, key)
-                if isinstance(val, FilterOpt):
-                    options[key] = val
-        return options
+        return type(self).get_filter_options()
 
     def get_url_param(self, key):
         return self.filter_options[key].get_url_param()
