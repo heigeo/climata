@@ -1,10 +1,29 @@
-from wq.io import CsvParser, TimeSeriesMapper, BaseIO
+from wq.io import CsvParser, TimeSeriesMapper, TupleMapper, BaseIO
 from datetime import datetime, date, timedelta
 from collections import OrderedDict
 from climata.base import WebserviceLoader, FilterOpt
 
 
-class HydrometIO(WebserviceLoader, CsvParser, TimeSeriesMapper, BaseIO):
+class HydrometLoader(WebserviceLoader):
+    """
+    Shared options for Hydromet IO classes.
+    """
+
+    # start_date and end_date are the same as WebserviceLoader defaults
+
+    # None of the default region filters will work
+    state = FilterOpt(ignored=True)
+    county = FilterOpt(ignored=True)
+    basin = FilterOpt(ignored=True)
+
+    # Instead, specify a four-letter Hydromet station code (one per request)
+    station = FilterOpt(required=True)
+
+    # Hydromet parameter codes are also required (multiple allowed)
+    parameter = FilterOpt(required=True, multi=True)
+
+
+class HydrometIO(HydrometLoader, CsvParser, TimeSeriesMapper, BaseIO):
     """
     Base class for retrieving Hydromet data from USBR.
     Use DailyDataIO or InstantDataIO instead, depending on your needs.
@@ -18,20 +37,8 @@ class HydrometIO(WebserviceLoader, CsvParser, TimeSeriesMapper, BaseIO):
     # TimeSeriesMapper configuration
     date_formats = ['%m/%d/%Y %H:%M', '%m/%d/%Y']
 
-    # None of the default region filters will work
-    state = FilterOpt(ignored=True)
-    county = FilterOpt(ignored=True)
-    basin = FilterOpt(ignored=True)
-
-    # Instead, specify a four-letter Hydromet station code (one per request)
-    station = FilterOpt(required=True)
-
-    # Hydromet parameter codes are also required (multiple allowed)
-    parameter = FilterOpt(required=True, multi=True)
-
     def clean_field_name(self, field):
-        field = super(HydrometIO, self).clean_field_name(field)
-        return field.replace(self.getvalue('station').lower(), "")
+        return field.replace(self.getvalue('station').upper(), "").strip()
 
     # NetLoader configuration
     @property
@@ -88,7 +95,7 @@ class HydrometIO(WebserviceLoader, CsvParser, TimeSeriesMapper, BaseIO):
 
 class DailyDataIO(HydrometIO):
     """
-    Retrieves daily values for USBR Hydromet/Agrimet sites.
+    Retrieves daily values for a single USBR Hydromet/Agrimet site.
 
     Usage:
 
@@ -99,6 +106,41 @@ class DailyDataIO(HydrometIO):
 
     script = "webarccsv.pl"
     key_fields = ['date']
+
+
+class MultiStationDailyIO(HydrometLoader, TupleMapper, BaseIO):
+    """
+    Retrieves daily values for one or more USBR Hydromet/Agrimet sites.
+    (Internally calls DailyDataIO for each site.)
+
+    Usage:
+
+    data = MultiStationDailyIO(station=['ACAO'], parameter=['GD','QD'])
+    for s in data:
+        print s.station
+        for row in s.data:
+            print row.date, row.gd, row.qd
+    """
+
+    nested = True
+
+    station = FilterOpt(required=True, multi=True)
+
+    # Customize load function with nested IOs
+    def load(self):
+        self.data = [{
+            'station': station,
+            'data': DailyDataIO(
+                station=station,
+                parameter=self.getvalue('parameter'),
+                start_date=self.getvalue('start_date'),
+                end_date=self.getvalue('end_date'),
+                debug=self.debug,
+            )
+        } for station in self.getvalue('station')]
+
+    def parse(self):
+        pass
 
 
 class InstantDataIO(HydrometIO):
