@@ -16,11 +16,12 @@ class AcisIO(WebserviceLoader, JsonParser, TupleMapper, BaseIO):
     path = None  # ACIS web service path
 
     # (Re-)define some default WebserviceLoader options
-    state = FilterOpt(ignored=True)
-    county = FilterOpt(ignored=True)
-    basin = FilterOpt(multi=True, required=True)
+    state = FilterOpt(multi=True)
+    county = FilterOpt(multi=True)
+    basin = FilterOpt(multi=True)
     station = FilterOpt(ignored=True)
     parameter = ChoiceOpt(
+        required=True,
         multi=True,
         url_param='elems',
         choices=ELEMENT_BY_ID.keys() + ELEMENT_BY_NAME.keys(),
@@ -125,7 +126,10 @@ class StationDataIO(StationMetaIO):
         """
         field_names = super(StationDataIO, self).get_field_names()
         if field_names == ['meta', 'data']:
-            field_names = self.data[0]['meta'].keys() + ['data']
+            meta_fields = self.data[0]['meta'].keys()
+            if set(meta_fields) < set(self.getvalue('meta')):
+                meta_fields = self.getvalue('meta')
+            field_names = list(meta_fields) + ['data']
         return field_names
 
     def serialize_params(self, params, complex):
