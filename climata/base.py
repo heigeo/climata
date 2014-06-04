@@ -3,6 +3,9 @@ from warnings import warn
 from wq.io import make_date_mapper, NetLoader
 parse_date = make_date_mapper('%Y-%m-%d')
 
+from .version import VERSION
+from wq.io.loaders import HTTPLIB_VERSION, VERSION as WQIO_VERSION
+
 
 class FilterOpt(object):
     """
@@ -219,3 +222,11 @@ class WebserviceLoader(NetLoader):
                 self.get_url_param(key): ','.join(val)
                 for key, val in params.items()
             }
+
+    @property
+    def user_agent(self):
+        agent = "climata %s (wq.io/%s; Python-httplib2/%s) %s" % (
+            VERSION, WQIO_VERSION, HTTPLIB_VERSION,
+            "https://github.com/heigeo/climata"
+        )
+        return agent
