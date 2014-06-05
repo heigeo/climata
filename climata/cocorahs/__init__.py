@@ -78,12 +78,6 @@ class CocorahsIO(WebserviceLoader, XmlParser, TimeSeriesMapper, BaseIO):
     }
 
     @property
-    def params(self):
-        params = super(CocorahsIO, self).params
-        params.update(self.default_params)
-        return params
-
-    @property
     def item_tag(self):
         if self.getvalue('reporttype') == "Daily":
             return 'DailyPrecipReports/DailyPrecipReport'

@@ -111,6 +111,9 @@ class WebserviceLoader(NetLoader):
     station = FilterOpt(multi=True)
     parameter = FilterOpt(multi=True)
 
+    # URL params that apply to every request (if any)
+    default_params = {}
+
     def __init__(self, *args, **kwargs):
         """
         Initialize web service (and general IO) options
@@ -207,7 +210,9 @@ class WebserviceLoader(NetLoader):
         URL parameters for wq.io.loaders.NetLoader
         """
         params, complex = self.get_params()
-        return self.serialize_params(params, complex)
+        url_params = self.default_params.copy()
+        url_params.update(self.serialize_params(params, complex))
+        return url_params
 
     def serialize_params(self, params, complex=False):
         """
