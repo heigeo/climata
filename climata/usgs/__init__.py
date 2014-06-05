@@ -1,141 +1,135 @@
-from wq.io import TimeSeriesMapper, XmlNetIO, CsvNetIO, JsonNetIO, CsvFileIO
-from datetime import datetime, date, timedelta
-from wq.io.parsers import readers
-from collections import namedtuple, OrderedDict
-import os
-
-filename = os.path.join(os.path.dirname(__file__), 'parameter_cd_query.txt')
+from wq.io import NetLoader, TupleMapper, TimeSeriesMapper, BaseIO
+from climata.base import WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt
+from climata.parsers import RdbParser, WaterMlParser
+from .constants import SITE_TYPES
 
 
-class USGSIO(CsvNetIO):
+# Base/mixin classes (not meant to be called directly)
+
+class NwisLoader(WebserviceLoader):
     """
-      Base class for loading data from USGS web services: summary.
-      url: http://waterservices.usgs.gov/nwis/site/?format=rdb,
-        1.0&huc=18010101&seriesCatalogOutput=true&outputDataTypeCd=all
+    Base class for loading data from the USGS NWIS REST services.
     """
-    basin = None  # 18010201  # ,18010202, 18010203, etc.
-    max_header_row = 100
-    delimiter = "\t"
-    parameterCd = ''
 
-    @property
-    def params(self):
-        return {
-            'format': 'rdb,1.0',
-            'huc': self.basin,
-            #'seriesCatalogOutput': 'true',
-            'outputDataTypeCd': 'iv,dv,gw,id,aw',
-            'parameterCd': self.parameterCd,
-            'siteStatus': 'active',
-            }
+    # Map WebserviceLoader options to NWIS equivalents
+    start_date = DateOpt(url_param='startDT')
+    end_date = DateOpt(url_param='endDT')
+
+    state = FilterOpt(ignored=True)
+    county = FilterOpt(ignored=True)
+    basin = FilterOpt(url_param='huc', multi=True)
+
+    station = FilterOpt(url_param='site', multi=True)
+    parameter = FilterOpt(url_param='parameterCd', multi=True)
+
+    # Additional options unique to NWIS
+    sitetype = ChoiceOpt(
+        url_param='siteType',
+        multi=True,
+        choices=SITE_TYPES.keys(),
+    )
+
+    # Each NWIS webservice uses the same base URL, with a service path
+    service = None
 
     @property
     def url(self):
-        return "http://waterservices.usgs.gov/nwis/site/" % self.params
-
-    def list_to_csv(self):
-        pass
+        return "http://waterservices.usgs.gov/nwis/%s/" % self.service
 
 
-class SiteDataIO(JsonNetIO):
+class NwisWaterMlIO(NwisLoader, WaterMlParser, TupleMapper, BaseIO):
     """
-    Base class for loading data from the USGS web services: actual site data.
-
-    Here's how the data is layed out:
-    [{index}]       # The index is for each site
-        [1]         # 0 = sourceInfo; 1 = Values; 2 = Variables; 3 = Name
-            [0]     # This should probably be left as '0' as it's a spacer
-                ['value'] # This is to get the values list for each site
-                    [{index}] # Loop through this level for each site to get
-                              # to get the values
+    Base class for loading WaterML data from the USGS web services.  Use
+    DailyValuesIO or InstantValuesIO instead depending on your needs.
     """
-    basin = None
-    debug = True
-    namespace = "value.timeSeries"
-    start_date = None  # '1950-01-01'
-    end_date = datetime.strftime(datetime.today(), '%Y-%m-%d')
-    siteType = None  # 'LK,ST,ST-CA,ST-DCH,ST-TS,SP,
-    # GW,GW-CR,GW-EX,GW-HZ,GW-IW,GW-MW,GW-TH'
-    parameterCd = None  # '00055,00056,00058,00059,00060,00061,
-    # 00062,00064,00065,00072,72015,72016,72019,72020'
 
-    @property
-    def params(self):
-        return {
-            'format': 'json',
-            'indent': 'on',
-            'huc': self.basin,
-            'startDT': self.start_date,
-            'endDt': self.end_date,
-            #'siteType': self.siteType,  # Not necessary with parameter codes.
-            'parameterCd': self.parameterCd,  # measurements in ft and ft3/s
-        }
+    default_params = {
+        'format': 'waterml,1.1',
+    }
+
+
+class ParameterIO(NetLoader, RdbParser, TupleMapper, BaseIO):
+    """
+    Base class for loading USGS NWIS parameter code definitions.  Use
+    FixedParameterIO or NumericParameterIO instead depending on your needs.
+    """
+    query = None
+    params = {'fmt': 'rdb'}
 
     @property
     def url(self):
-        return "http://waterservices.usgs.gov/nwis/dv/"
+        return "http://help.waterdata.usgs.gov/code/%s" % self.query
 
 
-class SitesForHucIO(SiteDataIO):
-    '''
-    This is just designed to obtain all valid sites for a given huc id.
-    '''
-    basin = None  # 18010202
-    debug = False
-    startDT = None  # '2013-09-01'
-    endDT = None  # '2013-12-30'
-    parameterCd = None  # '00055,00056,00058,00059,00060,00061,
-    # 00062,00064,00065,00072,72015,72016,72019,72020'
+# Preset classes for commonly used NWIS web services
 
-    @property
-    def url(self):
-        return "http://waterservices.usgs.gov/nwis/iv/"
-
-    @property
-    def params(self):
-        return {
-            'format': 'json,1.1',
-            'huc': self.basin,
-            'startDT': self.startDT,
-            'endDT': self.endDT,
-            'parameterCd': self.parameterCd,
-        }
-
-
-class InstantValuesIO(SiteDataIO):
-    '''
-    This class examines the instantaneous values for USGS data.
-    '''
-    debug = False
-    start_date = ''
-    sites = ''
-    end_date = ''
-
-    @property
-    def url(self):
-        return "http://waterservices.usgs.gov/nwis/iv/"
-
-    @property
-    def params(self):
-        return {
-            'format': 'json,1.1',
-            'sites': self.sites,
-            'startDT': self.start_date,
-            'endDT': self.end_date,
-            # 'parameterCd':'00055,00056,00058,00059,00060,00061,
-            # 00062,00064,00065,00072,72015,72016,72019,72020',
-            # 'siteType':'LK,ST,ST-CA,ST-DCH,ST-TS,SP,
-            # GW,GW-CR,GW-EX,GW-HZ,GW-IW,GW-MW,GW-TH',
-        }
-
-
-class ParamIO(CsvFileIO):
+class SiteIO(NwisLoader, RdbParser, TupleMapper, BaseIO):
     """
-    The USGS water data has a very large code mapping segment for the parm_cd
-    field that needs to be put into readable text
+    Loads USGS site metadata from NWIS webservices (via RDB format).
+
+    Usage:
+
+        site_params = SiteIO(basin='02070010')
+        for site_param in site_params:
+            print site_param.site_no, site_param.parm_cd, site_param.end_date
     """
-    delimiter = "\t"
-    debug = True
-    max_header_row = 8
-    filename = filename
-    key_field = 'parm_cd'
+
+    service = "site"
+    default_params = {
+        'format': 'rdb,1.0',
+        'outputDataTypeCd': 'all',
+        'siteStatus': 'active',
+    }
+
+
+class DailyValueIO(NwisWaterMlIO):
+    """
+    Load USGS daily values from NWIS webservices (via WaterML format).
+
+    Usage:
+
+        dvals = DailyValueIO(basin='02070010')
+        for dval in dvals:
+            print
+            print dval.site_code, dval.variable_code
+            for row in dval.data:
+                print row.date, row.value
+    """
+
+    service = 'dv'
+
+
+class InstantValueIO(NwisWaterMlIO):
+    """
+    Load USGS instant values from NWIS webservices (via WaterML format).
+
+    Usage:
+
+        ivals = InstantValueIO(basin='02070010')
+        for ival in ivals:
+            print
+            print ival.site_code, ival.variable_code
+            for row in ival.data:
+                print row.date, row.value
+    """
+
+    service = 'iv'
+
+
+# Preset classes for USGS waterdata code definitions
+
+class FixedParameterIO(ParameterIO):
+    """
+    Loads USGS fixed (text) parameters and value definitions.
+    """
+
+    query = "fixed_parms_query"
+
+
+class NumericParameterIO(ParameterIO):
+    """
+    Loads USGS numeric parameter definitions.
+    """
+
+    query = "parameter_cd_query"
+    params = {'fmt': 'rdb', 'group_cd': '%'}

@@ -2,8 +2,8 @@ from os.path import join, dirname
 from setuptools import setup, find_packages
 
 LONG_DESCRIPTION = """
-A python library for iterating over Applied Climate Information System (ACIS),
-Hydromet (USBR), and CoCoRaHS time series data.  Powered by wq.io.
+A python library for iterating over ACIS (NOAA RCCs), Hydromet (USBR), NWIS
+(USGS), and CoCoRaHS time series data.  Powered by wq.io.
 """
 
 
@@ -30,15 +30,9 @@ setup(
     url='https://github.com/heigeo/climata',
     license='MIT',
     packages=find_packages(),
-    package_data={
-        'climata.usgs': [
-            'fixed_parms_query.txt',
-            'parameter_cd_query.txt'
-        ]
-    },
     description='A pythonic interface for loading data from various climate webservices',
     long_description=long_description(),
-    install_requires=['wq.io>=0.4.0'],
+    install_requires=['wq.io>=0.4.0', 'owslib'],
     scripts=['climata/bin/acis_sites.py', 'climata/bin/acis_data.py'],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
