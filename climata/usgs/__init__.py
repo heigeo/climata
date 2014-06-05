@@ -15,8 +15,8 @@ class NwisLoader(WebserviceLoader):
     start_date = DateOpt(url_param='startDT')
     end_date = DateOpt(url_param='endDT')
 
-    state = FilterOpt(ignored=True)
-    county = FilterOpt(ignored=True)
+    state = FilterOpt(url_param='stateCd')
+    county = FilterOpt(url_param='countyCd', multi=True)
     basin = FilterOpt(url_param='huc', multi=True)
 
     station = FilterOpt(url_param='site', multi=True)
