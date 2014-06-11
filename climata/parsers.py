@@ -58,6 +58,7 @@ class WaterMlParser(BaseParser):
             'site_code': site.site_codes[0],
             'variable_name': param.variable_name,
             'variable_code': param.variable_code,
+            'unit': param.unit.code,
             'latitude': lat,
             'longitude': lng,
             'data': TimeSeriesIO(data=data)
