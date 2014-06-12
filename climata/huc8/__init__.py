@@ -1,10 +1,21 @@
-from wq.io import CsvNetIO
+from wq.io import NetLoader, TupleMapper, BaseIO
+from climata.parsers import RdbParser
 
 
-class HucIO(CsvNetIO):
-    # FIXME: some HUCs have changed, but new_huc_rdb.txt isn't a valid TSV file
-    url = "http://water.usgs.gov/GIS/huc_rdb.txt"
-    delimiter = "\t"
+class HucIO(NetLoader, RdbParser, TupleMapper, BaseIO):
+    url = "http://water.usgs.gov/GIS/new_huc_rdb.txt"
+
+    def parse(self):
+        super(HucIO, self).parse()
+
+        # FIXME: new_huc_rdb.txt isn't a valid RDB file; remove non-digit text
+        # at end of file.
+        for i in range(0, 100):
+            val = self.data[-i - 1].get('huc', None) or ''
+            if val.isdigit():
+                break
+        self.data = self.data[:-i]
+
 
 hucs = list(HucIO())
 
