@@ -32,12 +32,17 @@ setup(
     packages=find_packages(),
     description='A pythonic interface for loading data from various climate webservices',
     long_description=long_description(),
-    install_requires=['wq.io>=0.4.0', 'owslib'],
+    install_requires=['wq.io>=0.5.0', 'owslib'],
     scripts=['climata/bin/acis_sites.py', 'climata/bin/acis_data.py'],
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 2.7',
         'Natural Language :: English',
+        'Intended Audience :: Science/Research',
+        'Topic :: Scientific/Engineering :: GIS',
+        'Topic :: Scientific/Engineering :: Information Analysis',
+        'Topic :: System :: Networking :: Monitoring',
     ]
 )
