@@ -51,16 +51,12 @@ def load_data(basin, elem, syear=1950, eyear=curyear,
             seen_auths.add(auth)
 
     # Sort sites by longitude
-    include_sites = sorted(include_sites, key=lambda s: s.ll[0])
+    include_sites = sorted(include_sites, key=lambda s: s.longitude)
     seen_auths = sorted(seen_auths)
 
     def get_val(site, field):
         if hasattr(site, field):
             return getattr(site, field)
-        elif field == "latitude":
-            return site.ll[1]
-        elif field == "longitude":
-            return site.ll[0]
         else:
             return site.sids.get(field, "")
 

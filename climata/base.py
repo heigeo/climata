@@ -136,16 +136,18 @@ class WebserviceLoader(NetLoader):
         """
         List all filter options defined on class (and superclasses)
         """
-        if hasattr(cls, '_filter_options'):
-            return cls._filter_options
+        attr = '_filter_options_%s' % id(cls)
 
-        options = {}
+        options = getattr(cls, attr, {})
+        if options:
+            return options
+
         for key in dir(cls):
             val = getattr(cls, key)
             if isinstance(val, FilterOpt):
                 options[key] = val
 
-        cls._filter_options = options
+        setattr(cls, attr, options)
         return options
 
     @property

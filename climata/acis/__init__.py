@@ -7,6 +7,12 @@ from climata.base import (
 from .constants import *
 
 
+class ParameterOpt(ChoiceOpt):
+    multi = True
+    url_param = 'elems'
+    choices = ELEMENT_BY_ID.keys() + ELEMENT_BY_NAME.keys()
+
+
 class AcisIO(WebserviceLoader, JsonParser, TupleMapper, BaseIO):
     """
     Base class for loading data from ACIS web services
@@ -20,12 +26,6 @@ class AcisIO(WebserviceLoader, JsonParser, TupleMapper, BaseIO):
     county = FilterOpt(multi=True)
     basin = FilterOpt(multi=True)
     station = FilterOpt(ignored=True)
-    parameter = ChoiceOpt(
-        required=True,
-        multi=True,
-        url_param='elems',
-        choices=ELEMENT_BY_ID.keys() + ELEMENT_BY_NAME.keys(),
-    )
 
     # Additional ACIS-specific option
     meta = ChoiceOpt(
@@ -68,6 +68,7 @@ class StationMetaIO(AcisIO):
     # These options are not required for StationMetaIO
     start_date = DateOpt(url_param='sdate')
     end_date = DateOpt(url_param='edate')
+    parameter = ParameterOpt()
 
     def parse(self):
         """
@@ -130,6 +131,8 @@ class StationDataIO(StationMetaIO):
     # Specify ACIS-defined URL parameters for start/end date
     start_date = DateOpt(required=True, url_param='sdate')
     end_date = DateOpt(required=True, url_param='edate')
+
+    parameter = ParameterOpt(required=True)
 
     # Additional information for daily results
     add = ChoiceOpt(multi=True, choices=ADD_IDS)

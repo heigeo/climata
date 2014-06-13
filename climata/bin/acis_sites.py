@@ -100,7 +100,7 @@ def load_sites(*basin_ids):
         print ",".join(map(str,
             [site.uid, site.name]
             + [site.sids.get(auth, "") for auth in seen_auths]
-            + [site.ll[1], site.ll[0]]
+            + [site.latitude, site.longitude]
             + [start.date(), end.date(), years]
             + elem_ranges
         ))
@@ -110,7 +110,7 @@ def load_sites(*basin_ids):
         print ",".join(map(str,
             [site.uid, site.name]
             + [site.sids.get(auth, "") for auth in seen_auths]
-            + [site.ll[1], site.ll[0]]
+            + [site.latitude, site.longitude]
             + ["NO DATA"]
         ))
 
