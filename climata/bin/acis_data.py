@@ -1,6 +1,7 @@
 #!/usr/bin/env python
-from climata.acis import StationMetaIO, StationDataIO, ELEMENT_BY_NAME
-from climata.util import parse_date
+from climata.acis import StationMetaIO, StationDataIO
+from climata.acis.constants import ELEMENT_BY_NAME, ALL_META_FIELDS
+from climata.base import parse_date
 import sys
 from datetime import date, timedelta
 
@@ -20,9 +21,10 @@ def load_data(basin, elem, syear=1950, eyear=curyear,
 
     sites = StationMetaIO(
         basin=basin,
-        sdate='%s-01-01' % syear,
-        edate='%s-12-31' % eyear,
-        elems=elem,
+        start_date='%s-01-01' % syear,
+        end_date='%s-12-31' % eyear,
+        parameter=elem,
+        meta=ALL_META_FIELDS,
     )
     include_sites = []
     seen_auths = set()
@@ -49,16 +51,12 @@ def load_data(basin, elem, syear=1950, eyear=curyear,
             seen_auths.add(auth)
 
     # Sort sites by longitude
-    include_sites = sorted(include_sites, key=lambda s: s.ll[0])
+    include_sites = sorted(include_sites, key=lambda s: s.longitude)
     seen_auths = sorted(seen_auths)
 
     def get_val(site, field):
         if hasattr(site, field):
             return getattr(site, field)
-        elif field == "latitude":
-            return site.ll[1]
-        elif field == "longitude":
-            return site.ll[0]
         else:
             return site.sids.get(field, "")
 
@@ -83,9 +81,9 @@ def load_year_data(basin, elem, year, include_sites):
     edate = parse_date('%s-12-31' % year).date()
     sitedata = StationDataIO(
         basin=basin,
-        sdate=sdate,
-        edate=edate,
-        elems=elem,
+        start_date=sdate,
+        end_date=edate,
+        parameter=elem,
     )
     sitedata = {site.uid: site for site in sitedata}
     dates = {}

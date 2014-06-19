@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 import sys
 from datetime import date
-from climata.acis import StationMetaIO, ELEMENT_BY_NAME, ELEMENT_BY_ID
+from climata.acis import StationMetaIO
+from climata.acis.constants import (
+    ELEMENT_BY_NAME, ELEMENT_BY_ID, ALL_META_FIELDS
+)
 
 elems = ELEMENT_BY_NAME.copy()
 
@@ -18,7 +21,7 @@ def load_sites(*basin_ids):
     basins = []
     for basin in basin_ids:
         if basin.isdigit() and len(basin) == 8:
-            basins.push(basin)
+            basins.append(basin)
         else:
             from climata.huc8 import get_huc8
             basins.extend(get_huc8(basin))
@@ -26,9 +29,10 @@ def load_sites(*basin_ids):
     # Load sites with data since 1900
     sites = StationMetaIO(
         basin=basins,
-        elems=elems.keys(),
-        sdate='1900-01-01',
-        edate=date.today(),
+        parameter=elems.keys(),
+        start_date='1900-01-01',
+        end_date=date.today(),
+        meta=ALL_META_FIELDS,
     )
 
     # Load all sites (to get sites without data)
@@ -96,7 +100,7 @@ def load_sites(*basin_ids):
         print ",".join(map(str,
             [site.uid, site.name]
             + [site.sids.get(auth, "") for auth in seen_auths]
-            + [site.ll[1], site.ll[0]]
+            + [site.latitude, site.longitude]
             + [start.date(), end.date(), years]
             + elem_ranges
         ))
@@ -106,7 +110,7 @@ def load_sites(*basin_ids):
         print ",".join(map(str,
             [site.uid, site.name]
             + [site.sids.get(auth, "") for auth in seen_auths]
-            + [site.ll[1], site.ll[0]]
+            + [site.latitude, site.longitude]
             + ["NO DATA"]
         ))
 

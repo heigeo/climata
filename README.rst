@@ -25,6 +25,7 @@ Available Services
 climata.acis_       ``StationMetaIO``, ``StationDataIO``                     ACIS_
 climata.cocorahs_   ``CocorahsIO``                                           CoCoRaHS_
 climata.hydromet_   ``DailyDataIO``, ``InstantDataIO``, ``AgrimetRecentIO``  Hydromet_   
+climata.usgs_       ``SiteIO``, ``DailyValueIO``, ``InstantValueIO``         `USGS (NWIS)`_
 =================== ======================================================= ==========
 
 Usage
@@ -49,9 +50,9 @@ Python API:
     # Load average temperature for sites in Mississippi Headwaters HUC8
     sites = StationDataIO(
         basin="07010101",
-        sdate="2012-12-01",
-        edate="2012-12-31",
-        elems="avgt"
+        start_date="2012-12-01",
+        end_date="2012-12-31",
+        parameter="avgt"
     )
 
     # Display site information and time series data
@@ -64,6 +65,8 @@ Python API:
 .. _ACIS: http://data.rcc-acis.org/
 .. _CoCoRaHS: http://data.cocorahs.org/cocorahs/export/exportmanager.aspx
 .. _Hydromet: http://www.usbr.gov/pn/hydromet/arcread.html
+.. _USGS (NWIS): http://waterdata.usgs.gov/nwis
 .. _climata.acis: https://github.com/heigeo/climata/blob/master/climata/acis/__init__.py
 .. _climata.cocorahs: https://github.com/heigeo/climata/blob/master/climata/cocorahs/__init__.py
 .. _climata.hydromet: https://github.com/heigeo/climata/blob/master/climata/hydromet/__init__.py
+.. _climata.usgs: https://github.com/heigeo/climata/blob/master/climata/usgs/__init__.py
