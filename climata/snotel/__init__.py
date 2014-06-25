@@ -3,216 +3,163 @@ from datetime import datetime, date, timedelta
 from wq.io.parsers import readers
 from collections import namedtuple, OrderedDict
 from SOAPpy import SOAPProxy
+from SOAPpy.Types import simplify
+from climata.base import WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt
 import os
 import time
-import pickle
+from datetime import datetime, timedelta
 
 namespace = 'http://www.wcc.nrcs.usda.gov/ns/awdbWebService'
 url = 'http://www.wcc.nrcs.usda.gov/awdbWebService/services?WSDL'
 server = SOAPProxy(url, namespace)
 today = datetime.now()
 
+def fill_date_range(start_date, end_date):
+    '''
+    Function accepts start and end dates as strings and returns a list of dates (as strings)
+    '''
+    dateformat = '%Y-%m-%d %H:%M:%S'
+    start_date = datetime.strptime(start_date, dateformat)
+    end_date = datetime.strptime(end_date, dateformat)
+    datelist = []
+    while start_date <= end_date:
+        datelist.append(datetime.strftime(start_date, dateformat))
+        start_date = start_date + timedelta(days=1)
+    return datelist
 
-class SnotelIO(BaseIO):
+class SnotelIO(WebserviceLoader):
     '''
      Works with the SOAP.py library to make a soap request.
      The data is stored in a cached file to speed loading, then
      it is loaded from the cache and returned.
     '''
-    filename = None  # File name is the actual filename
+    # Overriding default parameters
+    start_date = DateOpt(ignored=True)
+    end_date = DateOpt(ignored=True)
+    state = FilterOpt(ignored=True) # State is not used
+    basin = FilterOpt(ignored=True, multi=True, url_param='hucs')
+    county = FilterOpt(ignored=True) # never used
+    
+    # Adding additional parameters.
+    station = FilterOpt(ignored=True, multi=True, url_param='stationTriplet')
+    parameter = FilterOpt(multi=True, url_param='elementCd')
+    forecastPeriod = FilterOpt(ignored=True, multi=True)
+    networkCds = FilterOpt(ignored=True, multi=True, url_param='networkCds')
+    
     data_function = None
-    cache = True
     debug = True
 
     def load(self):
-        if self.cache:
-            if self.checkfile():
-                self.write_cache
-            f = open(self.filename, 'r')
-            self.data = pickle.load(f)
-            f.close()
-        else:
-            self.data = self.data_function
+        params = self.params
+        fn = getattr(server, self.data_function)
+        self.snotelData = fn(**params)
 
-    def write_cache(self):
-        f = open(self.filename, 'w+')
-        data = self.data_function
-        pickle.dump(data, f)
-        f.close()
+    def parse(self):
+        self.data = [simplify(self.snotelData)]
 
-    def checkfile(self):
-        if os.path.isfile(self.filename):
-            filedate = datetime.fromtimestamp(os.path.getmtime(self.filename))
-            timediff = datetime.now() - filedate
-            if timediff > timedelta(days=7):
-                return True
-            else:
-                return False
-        else:
-            return True
+class SnotelSiteListIO(SnotelIO, BaseIO):
+    data_function = 'getStations'
+    elementCds = FilterOpt(required=False, url_param='elementCds')
+    stationIds = FilterOpt(required=False, url_param='stationIds')
+    county = FilterOpt(required=False, url_param='countyNames')
+    minLatitude = FilterOpt(required=False, url_param='minLatitude')
+    maxLatitude = FilterOpt(required=False, url_param='maxLatitude')
+    minElevation = FilterOpt(required=False, url_param='minElevation')
+    maxElevation = FilterOpt(required=False, url_param='maxElevation')
+    ordinals = FilterOpt(required=False, url_param='ordinals')
+    # heightDepths = FilterOpt(required=False, url_param='heightDepths')
+    # This parameter is submitted as <heightDepths><value>value</value><unitCd>unit</unitCd></heightDepths>
+    # Since it doesn't seem important and isn't well-documented, it is left out for now.
+    
+    default_params = {
+        'logicalAnd': 'true',
+    }
 
 
-class SnotelForecastIO(SnotelIO):
-    stationTriplet = ''
-    elementCd = ''
-    forecastPeriod = ''
-    cache = False
+class SnotelStationMetaIO(SnotelIO, BaseIO):
+    data_function = 'getStationMetadata'
+    station = FilterOpt(multi=False, required=True, url_param='stationTriplet')
+    parameter = FilterOpt(ignored=True)
 
-    @property
-    def data_function(self):
-        return server.getForecasts(
-            stationTriplet=self.stationTriplet,
-            elementCd=self.elementCd,
-            forecastPeriod=self.forecastPeriod
-        )
+
+class SnotelStationElementsIO(SnotelIO, BaseIO):
+    data_function = 'getStationElements'
+    station = FilterOpt(multi=False, url_param='stationTriplet')
+    start_date = DateOpt(ignored=False, required=False, url_param='beginDate')
+    end_date = DateOpt(ignored=False, required=False, url_param='endDate')
+    parameter = FilterOpt(ignored=True)
+    
+
+class SnotelElementsIO(SnotelIO, BaseIO):
+    data_function = 'getElements'
+    parameter = FilterOpt(ignored=True)
+
+
+class SnotelDailyDataIO(SnotelIO, BaseIO):
+    data_function = 'getData'
+    station = FilterOpt(required=True, multi=True, url_param='stationTriplets')
+    parameter = FilterOpt(required=True, multi=True, url_param='elementCd')  # not sure if multi is possible
+    start_date = DateOpt(required=True, url_param='beginDate')
+    end_date = DateOpt(required=True, url_param='endDate')
+    '''
+        HeightDepth parameters apply as in SnotelSiteListIO, but don't seem to be necessary.
+    '''
+    
+    default_params = {
+        'ordinal': 1,
+        'duration': 'DAILY',
+        'getFlags': 'true',
+        'alwaysReturnDailyFeb29': 'false',
+    }
+    def parse(self):
+        self.snotelData = simplify(self.snotelData)
+        self.data = zip(fill_date_range(self.snotelData['beginDate'], self.snotelData['endDate']), self.snotelData['values'], self.snotelData['flags'])
+
+
+class SnotelHourlyDataIO(SnotelIO, BaseIO):
+    data_function = 'getHourlyData'
+    station = FilterOpt(required=True, url_param='stationTriplets', multi=True)
+    parameter = FilterOpt(required=True, url_param='elementCd')
+    start_date = DateOpt(required=True, url_param='beginDate')
+    end_date = DateOpt(required=True, url_param='endDate')
+    begin_hour = FilterOpt(required=False, url_param='beginHour')
+    end_hour = FilterOpt(required=False, url_param='endHour')
+    
+    '''
+        HeightDepth parameters apply as in SnotelSiteListIO, but don't seem to be necessary.
+    '''
+    
+    default_params = {
+        'ordinal': 1,
+    }
+    def parse(self):
+        self.data = simplify(self.snotelData['values'])
+
+
+class ForecastPeriodsIO(SnotelIO, BaseIO):
+    data_function = 'getForecastPeriods'
+    parameter = FilterOpt(ignored=True)
+
+
+class SnotelForecastData(SnotelIO, BaseIO):
+    data_function = 'getForecast'
+    
+    station = FilterOpt(required=True, url_param='stationTriplets', multi=True)
+    parameter = FilterOpt(required=True, url_param='elementCd')
+    forecast_period = FilterOpt(required=True, url_param='forecastPeriod')
+    publication_date = DateOpt(required=True, url_param='publicationDate')
+
+
+class SnotelForecastIO(SnotelIO, BaseIO):
+    data_function = 'getForecasts'
+    station = FilterOpt(required=True, multi=False, url_param='stationTriplet')
+    parameter = FilterOpt(required=True, url_param='elementCd')
+    forecastPeriod = FilterOpt(required=True, url_param='forecastPeriod')
 
 
 class SnotelForecastPubIO(SnotelIO):
-    stationTriplet = ''
-    elementCd = ''
-    forecastPeriod = ''
-    publicationDate = ''
-    cache = False
-    debug = True
-
-    @property
-    def data_function(self):
-        return server.getForecast(
-            stationTriplet=self.stationTriplet,
-            elementCd=self.elementCd,
-            forecastPeriod=self.forecastPeriod,
-            publicationDate=self.publicationDate
-        )
-
-
-class SnotelSiteListIO(SnotelIO):
-    hucs = None
-    networkCds = None
-    cache = True
-    elements = ''
-
-    @property
-    def filename(self):
-        return 'cache/site_list_%s.py' % self.hucs.replace(':', '-')
-
-    @property
-    def data_function(self):
-        return server.getStations(
-            hucs=self.hucs,
-            networkCds=self.networkCds,
-            logicalAnd='true',
-            elementCds=self.elements,
-            )
-
-
-class SnotelStationMetaIO(SnotelIO):
-    site = None
-    cache = True
-
-    @property
-    def filename(self):
-        return 'cache/station_meta_%s.py' % self.site.replace(':', '-')
-
-    @property
-    def data_function(self):
-        return server.getStationMetadata(stationTriplet=self.site)
-
-
-class SnotelStationElementsIO(SnotelIO):
-    station = None
-    cache = True
-
-    @property
-    def filename(self):
-        return 'cache/station_elements_%s.py' % self.station.replace(':', '-')
-
-    @property
-    def data_function(self):
-        return server.getStationElements(stationTriplet=str(self.station))
-
-
-class SnotelElementsIO(SnotelIO):
-    cache = False
-
-    @property
-    def data_function(self):
-        return server.getElements()
-
-
-class SnotelDailyDataIO(SnotelIO):
-    station_triplets = None
-    element_cd = None
-    start_date = None
-
-    @property
-    def filename(self):
-        return 'cache/daily_data_%s_%s.py' % (
-            self.station_triplets.replace(':', '-'), self.element_cd)
-
-    @property
-    def data_function(self):
-        return server.getData(
-            stationTriplets=self.station_triplets,
-            elementCd=self.element_cd,
-            ordinal=1,
-            duration='DAILY',
-            getFlags='true',  # Needs to be true for the other to be false
-            beginDate=self.start_date,
-            endDate=str(datetime.date(datetime.now()).isoformat()),
-            alwaysReturnDailyFeb29='false'
-            )
-
-
-class ForecastPeriodsIO(SnotelIO):
-    cache = False
-    debug = True
-
-    @property
-    def filename(self):
-        return None
-
-    @property
-    def data_function(self):
-        return server.getForecastPeriods()
-
-
-class SnotelHourlyDataIO(SnotelIO):
-    station_triplets = None
-    element_cd = None
-    start_date = None
-
-    @property
-    def filename(self):
-        return 'cache/hourly_data_%s_%s.py' % (
-            self.station_triplets.replace(':', '-'), self.element_cd)
-
-    @property
-    def data_function(self):
-        return server.getHourlyData(
-            stationTriplets=self.station_triplets,
-            elementCd=self.element_cd,
-            ordinal=1,
-            beginDate=self.start_date,
-            endDate=str(datetime.date(datetime.now()).isoformat()),
-        )
-
-
-class SnotelForecastData(SnotelIO):
-    station_triplets = None
-    element_cd = None
-    forecast_period = None
-    publication_date = None
-
-    @property
-    def filename(self):
-        return 'forecast_data_%s_%s.py' % (
-            self.station_triplets.replace(':', '-'), self.element_cd)
-
-    @property
-    def data_function(self):
-        return server.getForecast(
-            stationTriplets=self.station_triplets,
-            elementCd=self.elementCd,
-            forecastPeriod=self.forecast_period,
-            publicationDate=self.publication_date,
-        )
+    data_function = 'getForecast'
+    station = FilterOpt(required=True, multi=False, url_param='stationTriplet')
+    parameter = FilterOpt(required=True, url_param='elementCd')
+    forecastPeriod = FilterOpt(required=True, url_param='forecastPeriod')
+    publication_date = DateOpt(required=True, url_param='publicationDate')
