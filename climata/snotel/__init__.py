@@ -43,9 +43,7 @@ class SnotelIO(WebserviceLoader):
     # Adding additional parameters.
     station = FilterOpt(ignored=True, multi=True, url_param='stationTriplet')
     parameter = FilterOpt(multi=True, url_param='elementCd')
-    forecastPeriod = FilterOpt(ignored=True, multi=True)
-    networkCds = FilterOpt(ignored=True, multi=True, url_param='networkCds')
-    
+
     data_function = None
     debug = True
 
@@ -59,14 +57,17 @@ class SnotelIO(WebserviceLoader):
 
 class SnotelSiteListIO(SnotelIO, BaseIO):
     data_function = 'getStations'
-    elementCds = FilterOpt(required=False, url_param='elementCds')
-    stationIds = FilterOpt(required=False, url_param='stationIds')
+    parameter = FilterOpt(required=False, url_param='elementCds')
     county = FilterOpt(required=False, url_param='countyNames')
+    '''
+    The following parameters are optional, but they do not fit the default 7.
+    stationIds = FilterOpt(required=False, url_param='stationIds')
     minLatitude = FilterOpt(required=False, url_param='minLatitude')
     maxLatitude = FilterOpt(required=False, url_param='maxLatitude')
     minElevation = FilterOpt(required=False, url_param='minElevation')
     maxElevation = FilterOpt(required=False, url_param='maxElevation')
     ordinals = FilterOpt(required=False, url_param='ordinals')
+    '''
     # heightDepths = FilterOpt(required=False, url_param='heightDepths')
     # This parameter is submitted as <heightDepths><value>value</value><unitCd>unit</unitCd></heightDepths>
     # Since it doesn't seem important and isn't well-documented, it is left out for now.
@@ -85,8 +86,8 @@ class SnotelStationMetaIO(SnotelIO, BaseIO):
 class SnotelStationElementsIO(SnotelIO, BaseIO):
     data_function = 'getStationElements'
     station = FilterOpt(multi=False, url_param='stationTriplet')
-    start_date = DateOpt(ignored=False, required=False, url_param='beginDate')
-    end_date = DateOpt(ignored=False, required=False, url_param='endDate')
+    start_date = DateOpt(required=False, url_param='beginDate')
+    end_date = DateOpt(required=False, url_param='endDate')
     parameter = FilterOpt(ignored=True)
     
 
@@ -122,9 +123,11 @@ class SnotelHourlyDataIO(SnotelIO, BaseIO):
     parameter = FilterOpt(required=True, url_param='elementCd')
     start_date = DateOpt(required=True, url_param='beginDate')
     end_date = DateOpt(required=True, url_param='endDate')
+    '''
+    These are optional features, but do not fit the regular 7 parameters.
     begin_hour = FilterOpt(required=False, url_param='beginHour')
     end_hour = FilterOpt(required=False, url_param='endHour')
-    
+    '''
     '''
         HeightDepth parameters apply as in SnotelSiteListIO, but don't seem to be necessary.
     '''
