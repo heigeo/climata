@@ -6,6 +6,7 @@ parse_date = make_date_mapper('%Y-%m-%d')
 from .version import VERSION
 from wq.io.loaders import HTTPLIB_VERSION, VERSION as WQIO_VERSION
 
+from datetime import datetime, timedelta
 
 class FilterOpt(object):
     """
@@ -237,3 +238,17 @@ class WebserviceLoader(NetLoader):
             "https://github.com/heigeo/climata"
         )
         return agent
+
+def fill_date_range(start_date, end_date, date_format):
+    '''
+    Function accepts start date, end date, and date format
+    as strings and returns a list of dates in python date 
+    format.
+    '''
+    start_date = datetime.strptime(start_date, date_format)
+    end_date = datetime.strptime(end_date, date_format)
+    date_list = []
+    while start_date <= end_date:
+         date_list.append(start_date)
+         start_date = start_date + timedelta(days=1)
+    return date_list

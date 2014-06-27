@@ -1,31 +1,20 @@
-from wq.io import BaseIO
-from datetime import datetime, date, timedelta
+from wq.io import BaseIO, TupleMapper, TimeSeriesMapper
+from wq.io.exceptions import NoData
 from wq.io.parsers import readers
+from datetime import datetime, date, timedelta
 from collections import namedtuple, OrderedDict
 from SOAPpy import SOAPProxy
 from SOAPpy.Types import simplify
 from climata.base import WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt
+from climata.base import fill_date_range
 import os
 import time
-from datetime import datetime, timedelta
 
 namespace = 'http://www.wcc.nrcs.usda.gov/ns/awdbWebService'
 url = 'http://www.wcc.nrcs.usda.gov/awdbWebService/services?WSDL'
 server = SOAPProxy(url, namespace)
 today = datetime.now()
 
-def fill_date_range(start_date, end_date):
-    '''
-    Function accepts start and end dates as strings and returns a list of dates (as strings)
-    '''
-    dateformat = '%Y-%m-%d %H:%M:%S'
-    start_date = datetime.strptime(start_date, dateformat)
-    end_date = datetime.strptime(end_date, dateformat)
-    datelist = []
-    while start_date <= end_date:
-        datelist.append(datetime.strftime(start_date, dateformat))
-        start_date = start_date + timedelta(days=1)
-    return datelist
 
 class SnotelIO(WebserviceLoader):
     '''
@@ -36,13 +25,13 @@ class SnotelIO(WebserviceLoader):
     # Overriding default parameters
     start_date = DateOpt(ignored=True)
     end_date = DateOpt(ignored=True)
-    state = FilterOpt(ignored=True) # State is not used
-    basin = FilterOpt(ignored=True, multi=True, url_param='hucs')
-    county = FilterOpt(ignored=True) # never used
-    
+    state = FilterOpt(ignored=True)  # State is not used
+    basin = FilterOpt(ignored=True, url_param='hucs')
+    county = FilterOpt(ignored=True)  # never used
+
     # Adding additional parameters.
-    station = FilterOpt(ignored=True, multi=True, url_param='stationTriplet')
-    parameter = FilterOpt(multi=True, url_param='elementCd')
+    station = FilterOpt(ignored=True, url_param='stationTriplet')
+    parameter = FilterOpt(url_param='elementCd')
 
     data_function = None
     debug = True
@@ -50,119 +39,189 @@ class SnotelIO(WebserviceLoader):
     def load(self):
         params = self.params
         fn = getattr(server, self.data_function)
-        self.snotelData = fn(**params)
+        self.snotel_data = fn(**params)
+        #raise Exception(self.snotel_data)
 
     def parse(self):
-        self.data = [simplify(self.snotelData)]
+        self.data = simplify(self.snotel_data)
+        if not isinstance(self.snotel_data, list):
+            self.data = [simplify(self.snotel_data)]
 
-class SnotelSiteListIO(SnotelIO, BaseIO):
+
+class SnotelSiteIO(SnotelIO, TupleMapper, BaseIO):
     data_function = 'getStations'
     parameter = FilterOpt(required=False, url_param='elementCds')
+    basin = FilterOpt(required=False, url_param='hucs')
     county = FilterOpt(required=False, url_param='countyNames')
-    '''
-    The following parameters are optional, but they do not fit the default 7.
-    stationIds = FilterOpt(required=False, url_param='stationIds')
-    minLatitude = FilterOpt(required=False, url_param='minLatitude')
-    maxLatitude = FilterOpt(required=False, url_param='maxLatitude')
-    minElevation = FilterOpt(required=False, url_param='minElevation')
-    maxElevation = FilterOpt(required=False, url_param='maxElevation')
+    station_ids = FilterOpt(required=False, url_param='stationIds')
+    min_latitude = FilterOpt(required=False, url_param='minLatitude')
+    max_latitude = FilterOpt(required=False, url_param='maxLatitude')
+    min_elevation = FilterOpt(required=False, url_param='minElevation')
+    max_elevation = FilterOpt(required=False, url_param='maxElevation')
     ordinals = FilterOpt(required=False, url_param='ordinals')
-    '''
     # heightDepths = FilterOpt(required=False, url_param='heightDepths')
-    # This parameter is submitted as <heightDepths><value>value</value><unitCd>unit</unitCd></heightDepths>
-    # Since it doesn't seem important and isn't well-documented, it is left out for now.
-    
+    # This parameter is submitted as
+    # <heightDepths><value>value</value><unitCd>unit</unitCd></heightDepths>
+    # Left out since it doesn't seem important and isn't well-documented
+
     default_params = {
         'logicalAnd': 'true',
     }
 
+    def load(self):
+        super(SnotelSiteIO, self).load()
+        station_meta = []
+        for row in self.snotel_data:
+            fn2 = getattr(server, 'getStationMetadata')
+            tdict = simplify(fn2(stationTriplet=row))
+            station_meta.append(tdict)
+        self.data = station_meta
+        field_names = set()
+        for row in self.data:
+            field_names.update(row.keys())
+        self.field_names = field_names
 
-class SnotelStationMetaIO(SnotelIO, BaseIO):
+    def parse(self):
+        pass
+
+
+class SnotelStationMetaIO(SnotelIO, TupleMapper, BaseIO):
     data_function = 'getStationMetadata'
-    station = FilterOpt(multi=False, required=True, url_param='stationTriplet')
+    station = FilterOpt(required=True, url_param='stationTriplet')
     parameter = FilterOpt(ignored=True)
 
 
-class SnotelStationElementsIO(SnotelIO, BaseIO):
+class SnotelStationElementsIO(SnotelIO, TupleMapper, BaseIO):
     data_function = 'getStationElements'
-    station = FilterOpt(multi=False, url_param='stationTriplet')
-    start_date = DateOpt(required=False, url_param='beginDate')
-    end_date = DateOpt(required=False, url_param='endDate')
+    station = FilterOpt(required=True, url_param='stationTriplet')
+    start_date = DateOpt(required=True, url_param='beginDate')
+    end_date = DateOpt(required=True, url_param='endDate')
     parameter = FilterOpt(ignored=True)
-    
 
-class SnotelElementsIO(SnotelIO, BaseIO):
+
+class SnotelStationDataMetaIO(SnotelStationElementsIO):
+    date_formats = ['%Y-%m-%d %H:%M:%S', '%Y-%m-%d']
+    nested = True
+
+    def load(self):
+        super(SnotelStationDataMetaIO, self).load()
+        station_meta = []
+        for row in self.snotel_data:
+            if row.duration == "DAILY":
+                sd = datetime.strftime(self.getvalue('start_date'), '%Y-%m-%d')
+                ed = datetime.strftime(self.getvalue('end_date'), '%Y-%m-%d')
+                daily = SnotelDailyDataIO(
+                    station=row.stationTriplet,
+                    parameter=row.elementCd,
+                    start_date=sd,
+                    end_date=ed,
+                )
+                tdict = simplify(row)
+                tdict['data'] = daily
+                station_meta.append(tdict)
+        self.data = station_meta
+
+    def parse(self):
+        pass
+
+
+class SnotelStationListElementsLookupIO(SnotelSiteIO):
+    def load(self):
+        super(SnotelStationElementLookupIO, self).load()
+        station_meta = []
+        for row in self.data:
+            fn3 = getattr(server, 'getStationElements')
+            tdict = simplify(fn3(stationTriplet=row['stationTriplet']))
+            station_meta.append(tdict)
+            # Perhaps a mutable dictionary would be helpful here
+            # to override the function.
+
+
+class SnotelStationElementsLookupIO(SnotelSiteIO):
+    def load(self):
+        pass
+
+
+class SnotelElementsIO(SnotelIO, TupleMapper, BaseIO):
     data_function = 'getElements'
     parameter = FilterOpt(ignored=True)
 
 
-class SnotelDailyDataIO(SnotelIO, BaseIO):
+class SnotelDailyDataIO(SnotelIO, TupleMapper, BaseIO):
     data_function = 'getData'
-    station = FilterOpt(required=True, multi=True, url_param='stationTriplets')
-    parameter = FilterOpt(required=True, multi=True, url_param='elementCd')  # not sure if multi is possible
+    station = FilterOpt(required=True, url_param='stationTriplets')
+    parameter = FilterOpt(required=True, url_param='elementCd')
     start_date = DateOpt(required=True, url_param='beginDate')
     end_date = DateOpt(required=True, url_param='endDate')
     '''
-        HeightDepth parameters apply as in SnotelSiteListIO, but don't seem to be necessary.
+    HeightDepth parameters don't seem to be necessary.
     '''
-    
+
     default_params = {
         'ordinal': 1,
         'duration': 'DAILY',
         'getFlags': 'true',
         'alwaysReturnDailyFeb29': 'false',
     }
+
     def parse(self):
-        self.snotelData = simplify(self.snotelData)
-        self.data = zip(fill_date_range(self.snotelData['beginDate'], self.snotelData['endDate']), self.snotelData['values'], self.snotelData['flags'])
+        self.snotel_data = simplify(self.snotel_data)
+        try:
+            bd = self.snotel_data['beginDate']
+            ed = self.snotel_data['endDate']
+            df
+            zipped = fill_date_range(bd, ed, date_format=df)
+            vals = self.snotel_data['values']
+            flags = self.snotel_data['flags']
+            self.unnamed_tuple = zip(zipped, vals, flags)
+            self.data = [{
+                'date': date,
+                'value': val,
+                'flag': flag
+            } for date, val, flag in self.unnamed_tuple]
+        except:
+            raise NoData
 
 
-class SnotelHourlyDataIO(SnotelIO, BaseIO):
+class SnotelHourlyDataIO(SnotelIO, TimeSeriesMapper, BaseIO):
     data_function = 'getHourlyData'
-    station = FilterOpt(required=True, url_param='stationTriplets', multi=True)
+    date_formats = [
+        '%Y-%m-%d %H:%M:%S',
+        '%Y-%m-%d %H:%M'
+    ]
+    station = FilterOpt(required=True, url_param='stationTriplets')
     parameter = FilterOpt(required=True, url_param='elementCd')
     start_date = DateOpt(required=True, url_param='beginDate')
     end_date = DateOpt(required=True, url_param='endDate')
-    '''
-    These are optional features, but do not fit the regular 7 parameters.
     begin_hour = FilterOpt(required=False, url_param='beginHour')
     end_hour = FilterOpt(required=False, url_param='endHour')
     '''
+    HeightDepth parameters don't seem to be necessary.
     '''
-        HeightDepth parameters apply as in SnotelSiteListIO, but don't seem to be necessary.
-    '''
-    
+
     default_params = {
         'ordinal': 1,
     }
+
     def parse(self):
-        self.data = simplify(self.snotelData['values'])
+        self.data = simplify(self.snotel_data['values'])
 
 
-class ForecastPeriodsIO(SnotelIO, BaseIO):
+class ForecastPeriodsIO(SnotelIO, TupleMapper, BaseIO):
     data_function = 'getForecastPeriods'
     parameter = FilterOpt(ignored=True)
 
 
-class SnotelForecastData(SnotelIO, BaseIO):
+class SnotelForecastData(SnotelIO, TupleMapper, BaseIO):
     data_function = 'getForecast'
-    
-    station = FilterOpt(required=True, url_param='stationTriplets', multi=True)
+    station = FilterOpt(required=True, url_param='stationTriplets')
     parameter = FilterOpt(required=True, url_param='elementCd')
     forecast_period = FilterOpt(required=True, url_param='forecastPeriod')
     publication_date = DateOpt(required=True, url_param='publicationDate')
 
 
-class SnotelForecastIO(SnotelIO, BaseIO):
+class SnotelForecastIO(SnotelIO, TupleMapper, BaseIO):
     data_function = 'getForecasts'
-    station = FilterOpt(required=True, multi=False, url_param='stationTriplet')
+    station = FilterOpt(required=True, url_param='stationTriplet')
     parameter = FilterOpt(required=True, url_param='elementCd')
     forecastPeriod = FilterOpt(required=True, url_param='forecastPeriod')
-
-
-class SnotelForecastPubIO(SnotelIO):
-    data_function = 'getForecast'
-    station = FilterOpt(required=True, multi=False, url_param='stationTriplet')
-    parameter = FilterOpt(required=True, url_param='elementCd')
-    forecastPeriod = FilterOpt(required=True, url_param='forecastPeriod')
-    publication_date = DateOpt(required=True, url_param='publicationDate')
