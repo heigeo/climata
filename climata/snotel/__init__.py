@@ -109,8 +109,9 @@ class SnotelStationDataMetaIO(SnotelStationElementsIO):
         for row in self.snotel_data:
             try:
                 if row.duration == "DAILY":
-                    sd = datetime.strftime(self.getvalue('start_date'), '%Y-%m-%d')
-                    ed = datetime.strftime(self.getvalue('end_date'), '%Y-%m-%d')
+                    df = '%Y-%m-%d'
+                    sd = datetime.strftime(self.getvalue('start_date'), df)
+                    ed = datetime.strftime(self.getvalue('end_date'), df)
                     daily = SnotelDailyDataIO(
                         station=row.stationTriplet,
                         parameter=row.elementCd,
@@ -134,9 +135,9 @@ class SnotelStationListElementsLookupIO(SnotelSiteIO):
 
     def load(self):
         params = self.params
-        if params.has_key('start_date'):
+        if 'start_date' in params:
             params.pop('start_date')
-        if params.has_key('end_date'):
+        if 'end_date' in params:
             params.pop('end_date')
         fn = getattr(server, 'getStations')
         self.snotel_data = fn(**params)
@@ -144,11 +145,16 @@ class SnotelStationListElementsLookupIO(SnotelSiteIO):
         ed = datetime.strftime(self.getvalue('end_date'), '%Y-%m-%d')
         parent_dict = []
         for row in self.snotel_data:
-            elems = SnotelStationDataMetaIO(station=row, start_date=sd, end_date=ed)
+            elems = SnotelStationDataMetaIO(
+                station=row,
+                start_date=sd,
+                end_date=ed
+            )
             if elems.data != []:
                 for item in elems.data:
                     parent_dict.append(item)
         self.data = parent_dict
+
 
 class SnotelElementsIO(SnotelIO, TupleMapper, BaseIO):
     data_function = 'getElements'
