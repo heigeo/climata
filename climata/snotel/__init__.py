@@ -107,18 +107,21 @@ class SnotelStationDataMetaIO(SnotelStationElementsIO):
         super(SnotelStationDataMetaIO, self).load()
         station_meta = []
         for row in self.snotel_data:
-            if row.duration == "DAILY":
-                sd = datetime.strftime(self.getvalue('start_date'), '%Y-%m-%d')
-                ed = datetime.strftime(self.getvalue('end_date'), '%Y-%m-%d')
-                daily = SnotelDailyDataIO(
-                    station=row.stationTriplet,
-                    parameter=row.elementCd,
-                    start_date=sd,
-                    end_date=ed,
-                )
-                tdict = simplify(row)
-                tdict['data'] = daily
-                station_meta.append(tdict)
+            try:
+                if row.duration == "DAILY":
+                    sd = datetime.strftime(self.getvalue('start_date'), '%Y-%m-%d')
+                    ed = datetime.strftime(self.getvalue('end_date'), '%Y-%m-%d')
+                    daily = SnotelDailyDataIO(
+                        station=row.stationTriplet,
+                        parameter=row.elementCd,
+                        start_date=sd,
+                        end_date=ed,
+                    )
+                    tdict = simplify(row)
+                    tdict['data'] = daily.data
+                    station_meta.append(tdict)
+            except:
+                pass
         self.data = station_meta
 
     def parse(self):
@@ -126,21 +129,26 @@ class SnotelStationDataMetaIO(SnotelStationElementsIO):
 
 
 class SnotelStationListElementsLookupIO(SnotelSiteIO):
+    start_date = DateOpt(required=True)
+    end_date = DateOpt(required=True)
+
     def load(self):
-        super(SnotelStationElementLookupIO, self).load()
-        station_meta = []
-        for row in self.data:
-            fn3 = getattr(server, 'getStationElements')
-            tdict = simplify(fn3(stationTriplet=row['stationTriplet']))
-            station_meta.append(tdict)
-            # Perhaps a mutable dictionary would be helpful here
-            # to override the function.
-
-
-class SnotelStationElementsLookupIO(SnotelSiteIO):
-    def load(self):
-        pass
-
+        params = self.params
+        if params.has_key('start_date'):
+            params.pop('start_date')
+        if params.has_key('end_date'):
+            params.pop('end_date')
+        fn = getattr(server, 'getStations')
+        self.snotel_data = fn(**params)
+        sd = datetime.strftime(self.getvalue('start_date'), '%Y-%m-%d')
+        ed = datetime.strftime(self.getvalue('end_date'), '%Y-%m-%d')
+        parent_dict = []
+        for row in self.snotel_data:
+            elems = SnotelStationDataMetaIO(station=row, start_date=sd, end_date=ed)
+            if elems.data != []:
+                for item in elems.data:
+                    parent_dict.append(item)
+        self.data = parent_dict
 
 class SnotelElementsIO(SnotelIO, TupleMapper, BaseIO):
     data_function = 'getElements'
@@ -169,7 +177,7 @@ class SnotelDailyDataIO(SnotelIO, TupleMapper, BaseIO):
         try:
             bd = self.snotel_data['beginDate']
             ed = self.snotel_data['endDate']
-            df
+            df = '%Y-%m-%d %H:%M:%S'
             zipped = fill_date_range(bd, ed, date_format=df)
             vals = self.snotel_data['values']
             flags = self.snotel_data['flags']
