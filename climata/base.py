@@ -8,6 +8,7 @@ from wq.io.loaders import HTTPLIB_VERSION, VERSION as WQIO_VERSION
 
 from datetime import datetime, timedelta
 
+
 class FilterOpt(object):
     """
     Base class for describing a filter option
@@ -179,10 +180,8 @@ class WebserviceLoader(NetLoader):
 
         if value is None:
             pass
-        elif isinstance(value, (list, tuple)):
-            value = [str_value(val) for val in value]
         else:
-            value = [str_value(value)]
+            value = [str_value(val) for val in as_list(value)]
 
         return value, complex
 
@@ -203,6 +202,8 @@ class WebserviceLoader(NetLoader):
         complex = False
 
         for name, opt in self.filter_options.items():
+            if opt.ignored:
+                continue
             if self.set_param(params, name):
                 complex = True
         return params, complex
@@ -239,16 +240,24 @@ class WebserviceLoader(NetLoader):
         )
         return agent
 
+
 def fill_date_range(start_date, end_date, date_format):
     '''
     Function accepts start date, end date, and date format
-    as strings and returns a list of dates in python date 
+    as strings and returns a list of dates in python date
     format.
     '''
-    start_date = datetime.strptime(start_date, date_format)
-    end_date = datetime.strptime(end_date, date_format)
+    start_date = datetime.strptime(start_date, date_format).date()
+    end_date = datetime.strptime(end_date, date_format).date()
     date_list = []
     while start_date <= end_date:
-         date_list.append(start_date)
-         start_date = start_date + timedelta(days=1)
+        date_list.append(start_date)
+        start_date = start_date + timedelta(days=1)
     return date_list
+
+
+def as_list(value):
+    if isinstance(value, (list, tuple)):
+        return value
+    else:
+        return [value]
