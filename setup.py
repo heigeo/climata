@@ -1,10 +1,22 @@
 from os.path import join, dirname
 from setuptools import setup, find_packages
 
+
+SERVICES = (
+    "ACIS (NOAA RCCs)",
+    "CoCoRaHS",
+    "Hydromet (USBR)",
+    "SNOTEL AWDB (NRCS)",
+    "NWIS (USGS)",
+)
+SVC_STR = ", ".join(SERVICES[:-1]) + " and " + SERVICES[-1]
+
+DESCRIPTION = "Loads climate and hydrology data from %s." % SVC_STR
+
 LONG_DESCRIPTION = """
-A python library for iterating over ACIS (NOAA RCCs), Hydromet (USBR), NWIS
-(USGS), and CoCoRaHS time series data.  Powered by wq.io.
-"""
+A pythonic library for iterating over climate time series data from %s.
+Powered by wq.io.
+""" % SVC_STR
 
 
 def long_description():
@@ -30,7 +42,7 @@ setup(
     url='https://github.com/heigeo/climata',
     license='MIT',
     packages=find_packages(),
-    description='A pythonic interface for loading data from various climate webservices',
+    description=DESCRIPTION,
     long_description=long_description(),
     install_requires=['wq.io>=0.5.1', 'owslib', 'SOAPpy'],
     scripts=['climata/bin/acis_sites.py', 'climata/bin/acis_data.py'],
