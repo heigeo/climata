@@ -66,8 +66,8 @@ Python API:
 .. _ACIS: http://data.rcc-acis.org/
 .. _CoCoRaHS: http://data.cocorahs.org/cocorahs/export/exportmanager.aspx
 .. _Hydromet: http://www.usbr.gov/pn/hydromet/arcread.html
-.. _NRCS (SNOTEL AWDB): http://www.wcc.nrcs.usda.gov/web_service/awdb_web_service_landing.htm
-.. _USGS (NWIS): http://waterdata.usgs.gov/nwis
+.. _SNOTEL AWDB: http://www.wcc.nrcs.usda.gov/web_service/awdb_web_service_landing.htm
+.. _NWIS: http://waterdata.usgs.gov/nwis
 .. _climata.acis: https://github.com/heigeo/climata/blob/master/climata/acis/__init__.py
 .. _climata.cocorahs: https://github.com/heigeo/climata/blob/master/climata/cocorahs/__init__.py
 .. _climata.hydromet: https://github.com/heigeo/climata/blob/master/climata/hydromet/__init__.py
