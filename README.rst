@@ -19,14 +19,15 @@ See https://github.com/heigeo/climata to report any issues.
 Available Services
 ------------------
 
-=================== ======================================================= ==========
- Module             Classes                                                  Data Source
-=================== ======================================================= ==========
-climata.acis_       ``StationMetaIO``, ``StationDataIO``                     ACIS_
-climata.cocorahs_   ``CocorahsIO``                                           CoCoRaHS_
-climata.hydromet_   ``DailyDataIO``, ``InstantDataIO``, ``AgrimetRecentIO``  Hydromet_   
-climata.usgs_       ``SiteIO``, ``DailyValueIO``, ``InstantValueIO``         `USGS (NWIS)`_
-=================== ======================================================= ==========
+=================== ========================================================== ==========
+ Module             Classes                                                    Data Source
+=================== ========================================================== ==========
+climata.acis_       ``StationMetaIO``, ``StationDataIO``                       ACIS_
+climata.cocorahs_   ``CocorahsIO``                                             CoCoRaHS_
+climata.hydromet_   ``DailyDataIO``, ``InstantDataIO``, ``AgrimetRecentIO``    Hydromet_   
+climata.snotel_     ``StationIO``, ``StationDailyDataIO``, ``RegionDailyData`` `NRCS (Snotel)`_
+climata.usgs_       ``SiteIO``, ``DailyValueIO``, ``InstantValueIO``           `USGS (NWIS)`_
+=================== ========================================================== ==========
 
 Usage
 -----
@@ -65,6 +66,7 @@ Python API:
 .. _ACIS: http://data.rcc-acis.org/
 .. _CoCoRaHS: http://data.cocorahs.org/cocorahs/export/exportmanager.aspx
 .. _Hydromet: http://www.usbr.gov/pn/hydromet/arcread.html
+.. _NRCS (SNOTEL): http://www.wcc.nrcs.usda.gov/snow/
 .. _USGS (NWIS): http://waterdata.usgs.gov/nwis
 .. _climata.acis: https://github.com/heigeo/climata/blob/master/climata/acis/__init__.py
 .. _climata.cocorahs: https://github.com/heigeo/climata/blob/master/climata/cocorahs/__init__.py
