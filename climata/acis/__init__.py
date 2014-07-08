@@ -1,8 +1,8 @@
 import json
-from datetime import datetime, date, timedelta
 from wq.io import JsonParser, BaseIO, TupleMapper, TimeSeriesMapper
 from climata.base import (
-    parse_date, WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt
+    WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt,
+    parse_date, fill_date_range,
 )
 from .constants import *
 
@@ -212,9 +212,8 @@ class DataIO(TimeSeriesMapper, BaseIO):
         Infer time series based on start date.
         """
 
-        date = self.start_date
-        day = timedelta(days=1)
-        for row in data:
+        dates = fill_date_range(self.start_date, self.end_date)
+        for row, date in zip(data, dates):
             data = {'date': date}
             if self.add:
                 # If self.add is set, results will contain additional
@@ -235,7 +234,6 @@ class DataIO(TimeSeriesMapper, BaseIO):
                         elem = "e%s" % elem
                     data[elem] = val
                 yield data
-            date += day
 
     def __init__(self, *args, **kwargs):
         data = kwargs.pop('data')
