@@ -71,4 +71,5 @@ Python API:
 .. _climata.acis: https://github.com/heigeo/climata/blob/master/climata/acis/__init__.py
 .. _climata.cocorahs: https://github.com/heigeo/climata/blob/master/climata/cocorahs/__init__.py
 .. _climata.hydromet: https://github.com/heigeo/climata/blob/master/climata/hydromet/__init__.py
+.. _climata.snotel: https://github.com/heigeo/climata/blob/master/climata/snotel/__init__.py
 .. _climata.usgs: https://github.com/heigeo/climata/blob/master/climata/usgs/__init__.py
