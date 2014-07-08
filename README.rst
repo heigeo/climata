@@ -19,15 +19,15 @@ See https://github.com/heigeo/climata to report any issues.
 Available Services
 ------------------
 
-=================== ========================================================== ==========
- Module             Classes                                                    Data Source
-=================== ========================================================== ==========
-climata.acis_       ``StationMetaIO``, ``StationDataIO``                       ACIS_
-climata.cocorahs_   ``CocorahsIO``                                             CoCoRaHS_
-climata.hydromet_   ``DailyDataIO``, ``InstantDataIO``, ``AgrimetRecentIO``    Hydromet_   
-climata.snotel_     ``StationIO``, ``StationDailyDataIO``, ``RegionDailyData`` `NRCS (SNOTEL AWDB)`_
-climata.usgs_       ``SiteIO``, ``DailyValueIO``, ``InstantValueIO``           `USGS (NWIS)`_
-=================== ========================================================== ==========
+=================== ========================================================== ============== ============
+ Module             Classes                                                    Data Source     Agency/Org.
+=================== ========================================================== ============== ============
+climata.acis_       ``StationMetaIO``, ``StationDataIO``                       ACIS_           NOAA RCCs
+climata.cocorahs_   ``CocorahsIO``                                             CoCoRaHS_       CoCoRaHS
+climata.hydromet_   ``DailyDataIO``, ``InstantDataIO``, ``AgrimetRecentIO``    Hydromet_       USBR
+climata.snotel_     ``StationIO``, ``StationDailyDataIO``, ``RegionDailyData`` `SNOTEL AWDB`_  NRCS
+climata.usgs_       ``SiteIO``, ``DailyValueIO``, ``InstantValueIO``           `NWIS`_         USGS
+=================== ========================================================== ============== ============
 
 Usage
 -----
