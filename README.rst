@@ -25,7 +25,7 @@ Available Services
 climata.acis_       ``StationMetaIO``, ``StationDataIO``                       ACIS_
 climata.cocorahs_   ``CocorahsIO``                                             CoCoRaHS_
 climata.hydromet_   ``DailyDataIO``, ``InstantDataIO``, ``AgrimetRecentIO``    Hydromet_   
-climata.snotel_     ``StationIO``, ``StationDailyDataIO``, ``RegionDailyData`` `NRCS (Snotel)`_
+climata.snotel_     ``StationIO``, ``StationDailyDataIO``, ``RegionDailyData`` `NRCS (SNOTEL AWDB)`_
 climata.usgs_       ``SiteIO``, ``DailyValueIO``, ``InstantValueIO``           `USGS (NWIS)`_
 =================== ========================================================== ==========
 
@@ -66,7 +66,7 @@ Python API:
 .. _ACIS: http://data.rcc-acis.org/
 .. _CoCoRaHS: http://data.cocorahs.org/cocorahs/export/exportmanager.aspx
 .. _Hydromet: http://www.usbr.gov/pn/hydromet/arcread.html
-.. _NRCS (SNOTEL): http://www.wcc.nrcs.usda.gov/snow/
+.. _NRCS (SNOTEL AWDB): http://www.wcc.nrcs.usda.gov/web_service/awdb_web_service_landing.htm
 .. _USGS (NWIS): http://waterdata.usgs.gov/nwis
 .. _climata.acis: https://github.com/heigeo/climata/blob/master/climata/acis/__init__.py
 .. _climata.cocorahs: https://github.com/heigeo/climata/blob/master/climata/cocorahs/__init__.py
