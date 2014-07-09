@@ -34,6 +34,7 @@ class WaterMlParser(BaseParser):
     """
 
     nested = True
+    no_pickle_parser = ['response']
 
     def parse(self):
         response = WaterML(self.file.read()).response
@@ -63,11 +64,3 @@ class WaterMlParser(BaseParser):
             'longitude': lng,
             'data': TimeSeriesIO(data=data)
         }
-
-    def __getstate__(self):
-        # Don't include XML objects (or tuple classes) in state
-        state = self.__dict__.copy()
-        del state['response']
-        state.pop('_tuple_class', None)
-        state.pop('_tuple_prototype', None)
-        return state
