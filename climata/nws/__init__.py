@@ -1,58 +1,52 @@
-from wq.io import BaseIO, XmlNetIO, CsvNetIO
+from wq.io import BaseIO, CsvNetIO, TupleMapper, TimeSeriesMapper
+from wq.io.parsers.base import BaseParser
 from datetime import datetime, date, timedelta
 from wq.io.parsers import readers
 from SOAPpy import SOAPProxy
+from climata.base import WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt
+from xml.etree import ElementTree as ET
+from dateutil import parser
 
 # This service can be accessed via SOAP
 # or through REST. I chose the Rest/XML implementation
 # to work with wq.io more seamlessly
 
+parameters = {
+    'Prob. of 8-14-Day Total Precipitation Above Median': 'prcpabv14d',
+    'Prob. of 8-14-Day Total Precipitation Below Median': 'prcpblw14d',
+    'Prob. of 1-Month Total Precipitation Above Median': 'prcpabv30d',
+    'Prob. of 1-Month Total Precipitation Below Median': 'prcpblw30d',
+    'Prob. of 3-Month Total Precipitation Above Median': 'prcpabv90d',
+    'Prob. of 3-Month Total Precipitation Below Median': 'prcpblw90d',
+}
 
-class NWSIO(XmlNetIO):
-    lat = ''
-    lon = ''
-    product = 'time-series'
-    begin = ''  # Leave blank to get all data
-    end = ''  # leave blank to get all data
-    unit = 'e'  # for english measurements
+class NWSIO(WebserviceLoader, BaseParser, BaseIO):
+    
+    start_date = DateOpt(ignored=True)  # begin = ''  # Leave blank to get all data
+    end_date = DateOpt(ignored=True)  # end = ''  # leave blank to get all data
+    state = FilterOpt(ignored=True) 
+    lat = FilterOpt() # lat = ''
+    lon = FilterOpt() # lon = ''
     baseurl = 'http://graphical.weather.gov/xml/sample_products/'
     baseurl = baseurl + 'browser_interface/ndfdXMLclient.php'
     # http://graphical.weather.gov/xml/docs/elementInputNames.php
-    parameters = {
-        'Prob. of 8-14-Day Total Precipitation Above Median': 'prcpabv14d',
-        'Prob. of 8-14-Day Total Precipitation Below Median': 'prcpblw14d',
-        'Prob. of 1-Month Total Precipitation Above Median': 'prcpabv30d',
-        'Prob. of 1-Month Total Precipitation Below Median': 'prcpblw30d',
-        'Prob. of 3-Month Total Precipitation Above Median': 'prcpabv90d',
-        'Prob. of 3-Month Total Precipitation Below Median': 'prcpblw90d',
+    root_tag = None
+    item_tag = None
+    default_params = {
+        'product': 'time-series',
+        'unit': 'e',
+        'prcpabv14d': 'prcpabv14d',
+        'prcpblw14d': 'prcpblw14d',
+        'prcpabv30d': 'prcpabv30d',
+        'prcpblw30d': 'prcpblw30d',
+        'prcpabv90d': 'prcpabv90d',
+        'prcpblw90d': 'prcpblw90d',
     }
     debug = True
-    param_list = [
-        'prcpabv14d',
-        'prcpblw14d',
-        'prcpabv30d',
-        'prcpblw30d',
-        'prcpabv90d',
-        'prcpblw90d'
-        ]
-
-    @property
-    def params(self):
-        dic = {
-            'lat': self.lat,
-            'lon': self.lon,
-            'product': self.product,
-            'begin': self.begin,
-            'end': self.end,
-            'Unit': self.unit,
-        }
-        for p in self.param_list:
-            dic[p] = p
-        return dic
 
     @property
     def url(self):
-        return self.baseurl % self.params
+        return self.baseurl  # % self.params
 
     def parse(self):
         doc = ET.parse(self.file)
@@ -119,7 +113,7 @@ class NWSIO(XmlNetIO):
         return item_to_return
 
 
-class NWSForecastIO(XmlNetIO):
+class NWSForecastIO(WebserviceLoader, BaseIO, TimeSeriesMapper):
     ###########################################
     # valid is the time of the forecast in UTC
     # primary is the stage in ft
@@ -127,19 +121,22 @@ class NWSForecastIO(XmlNetIO):
     # pedts is ???
     # It appears to return 3 days forecast in the future
     ###########################################
-    gage = ''
-    baseurl = 'http://water.weather.gov/ahps2/hydrograph_to_xml.php'
-
-    @property
-    def url(self):
-        return 'http://water.weather.gov/ahps2/hydrograph_to_xml.php'
-
-    @property
-    def params(self):
-        return {
-            'gage': self.gage,
-            'output': 'xml',
-        }
+    start_date = DateOpt(ignored=True)
+    end_date = DateOpt(ignored=True)
+    state = FilterOpt(ignored=True)
+    county = FilterOpt(ignored=True)
+    station = FilterOpt(url_param='gage')
+    parameter = FilterOpt(ignored=True)
+    basin = FilterOpt(ignored=True)
+    root_tag = None
+    item_tag = None
+    default_parameters = {
+        'output': 'xml',
+    }
+    date_formats = [
+        '%Y-%m-%dT%H:%M:%S-%z'
+    ]
+    url = 'http://water.weather.gov/ahps2/hydrograph_to_xml.php'
 
     def parse(self):
         doc = ET.parse(self.file)
@@ -147,20 +144,21 @@ class NWSForecastIO(XmlNetIO):
         if self.root_tag is None:
             self.root_tag = root.tag
         if self.item_tag is None:
+            #root.forecast or something to get forecast, instead of looping through. 
             for l in list(root):
                 if l.tag == 'forecast':
                     self.item_tag = l
-                    print self.item_tag
         self.data = self.parse_item(self.item_tag)
 
     def parse_item(self, element):
         items = []
+        #self.element = element
         for el in element:
+            # figure out how to use name as the key.
             item = {
-                el[0].tag: el[0].text,
-                el[1].tag: el[1].text,
-                el[2].tag: el[2].text,
-                el[3].tag: el[3].text,
+                'date': parser.parse(el.find('valid').text),
+                el.find('primary').attrib['name']: el.find('primary').text,
+                el.find('secondary').attrib['name']: el.find('secondary').text,
             }
             items.append(item)
         return items
