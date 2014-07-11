@@ -20,13 +20,18 @@ parameters = {
     'Prob. of 3-Month Total Precipitation Below Median': 'prcpblw90d',
 }
 
+
 class NWSIO(WebserviceLoader, BaseParser, BaseIO):
-    
-    start_date = DateOpt(ignored=True)  # begin = ''  # Leave blank to get all data
+    #######################################################
+    ## This doesn't work as a timeseries, because        ##
+    ## a) The returned values vary by parameter, and     ##
+    ## b) The values come with a start and end date each ##
+    #######################################################
+    start_date = DateOpt(ignored=True)  # begin='' Leave blank to get all data
     end_date = DateOpt(ignored=True)  # end = ''  # leave blank to get all data
-    state = FilterOpt(ignored=True) 
-    lat = FilterOpt() # lat = ''
-    lon = FilterOpt() # lon = ''
+    state = FilterOpt(ignored=True)
+    lat = FilterOpt()  # lat = ''
+    lon = FilterOpt()  # lon = ''
     baseurl = 'http://graphical.weather.gov/xml/sample_products/'
     baseurl = baseurl + 'browser_interface/ndfdXMLclient.php'
     # http://graphical.weather.gov/xml/docs/elementInputNames.php
@@ -144,7 +149,8 @@ class NWSForecastIO(WebserviceLoader, BaseIO, TimeSeriesMapper):
         if self.root_tag is None:
             self.root_tag = root.tag
         if self.item_tag is None:
-            #root.forecast or something to get forecast, instead of looping through. 
+            #root.forecast or something to get forecast, instead of looping
+            self.my_root = list(root)
             for l in list(root):
                 if l.tag == 'forecast':
                     self.item_tag = l
@@ -162,46 +168,3 @@ class NWSForecastIO(WebserviceLoader, BaseIO, TimeSeriesMapper):
             }
             items.append(item)
         return items
-
-
-class CNRFForecastIO(CsvNetIO):
-    ###################################################
-    # This gets the table in tab-separated HTML format
-    # Hopefully we can get a better way to access the
-    # forecast data.
-    ###################################################
-    location = 'KLAO3'
-    accumtype = 'mean'
-    interval = 'day'
-    disttype = 'empirical'
-    S_month = '02'
-    S_day = '10'
-    S_year = '2014'
-    E_month = '05'
-    E_day = '10'
-    E_year = '2014'
-    plottype = 'traces'
-    tabletype = 'forecastinfo'
-    outtype = 'Generate+a+Table'
-
-    @property
-    def url(self):
-        return 'http://www.cnrfc.noaa.gov/send_espTrace.cgi' % self.params
-
-    @property
-    def params(self):
-        return {
-            'location': self.location,
-            'accumtype': self.accumtype,
-            'interval': self.interval,
-            'disttype': self.disttype,
-            'S_month': self.S_month,
-            'S_day': self.S_day,
-            'S_year': self.S_year,
-            'E_month': self.E_month,
-            'E_day': self.E_day,
-            'E_year': self.E_year,
-            'plottype': self.plottype,
-            'tabletype': self.tabletype,
-            'outtype': self.outtype,
-        }
