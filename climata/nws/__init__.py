@@ -149,8 +149,6 @@ class NWSForecastIO(WebserviceLoader, BaseIO, TimeSeriesMapper):
         if self.root_tag is None:
             self.root_tag = root.tag
         if self.item_tag is None:
-            #root.forecast or something to get forecast, instead of looping
-            self.my_root = list(root)
             for l in list(root):
                 if l.tag == 'forecast':
                     self.item_tag = l
@@ -158,9 +156,7 @@ class NWSForecastIO(WebserviceLoader, BaseIO, TimeSeriesMapper):
 
     def parse_item(self, element):
         items = []
-        #self.element = element
         for el in element:
-            # figure out how to use name as the key.
             item = {
                 'date': parser.parse(el.find('valid').text),
                 el.find('primary').attrib['name']: el.find('primary').text,
