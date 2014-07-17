@@ -4,7 +4,6 @@ from wq.io import make_date_mapper, NetLoader
 parse_date = make_date_mapper('%Y-%m-%d')
 
 from .version import VERSION
-from wq.io.loaders import HTTPLIB_VERSION, VERSION as WQIO_VERSION
 
 from datetime import datetime, timedelta
 
@@ -234,9 +233,10 @@ class WebserviceLoader(NetLoader):
 
     @property
     def user_agent(self):
-        agent = "climata %s (wq.io/%s; Python-httplib2/%s) %s" % (
-            VERSION, WQIO_VERSION, HTTPLIB_VERSION,
-            "https://github.com/heigeo/climata"
+        agent = "climata/%s %s %s" % (
+            VERSION,
+            super(WebserviceLoader, self).user_agent,
+            "https://github.com/heigeo/climata",
         )
         return agent
 
