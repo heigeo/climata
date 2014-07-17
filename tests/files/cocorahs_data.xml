@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Cocorahs>
+  <DailyPrecipReports>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>10:30 PM</ObservationTime>
+      <EntryDateTime>2014-07-02 11:55 AM</EntryDateTime>
+      <StationNumber>MN-HN-5</StationNumber>
+      <StationName>New Hope 1.9 S</StationName>
+      <Latitude>45.01</Latitude>
+      <Longitude>-93.37917</Longitude>
+      <TotalPrecipAmt>0.01</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>0.0</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-02 09:55 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:00 PM</ObservationTime>
+      <EntryDateTime>2014-07-01 09:03 PM</EntryDateTime>
+      <StationNumber>MN-HN-3</StationNumber>
+      <StationName>Richfield 1.2 WSW</StationName>
+      <Latitude>44.8717</Latitude>
+      <Longitude>-93.305506</Longitude>
+      <TotalPrecipAmt>0.10</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>0.0</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 07:03 PM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>12:00 PM</ObservationTime>
+      <EntryDateTime>2014-07-07 09:38 AM</EntryDateTime>
+      <StationNumber>MN-HN-48</StationNumber>
+      <StationName>Plymouth 3.3 NNW</StationName>
+      <Latitude>45.063793</Latitude>
+      <Longitude>-93.494675</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-07 07:38 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>11:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 11:38 AM</EntryDateTime>
+      <StationNumber>MN-HN-22</StationNumber>
+      <StationName>Minneapolis 3.3 SW</StationName>
+      <Latitude>44.928701</Latitude>
+      <Longitude>-93.315226</Longitude>
+      <TotalPrecipAmt>0.01</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 09:38 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes>light sprinkle fell early afternoon of Monday 30 June</Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>08:05 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 08:06 AM</EntryDateTime>
+      <StationNumber>MN-HN-86</StationNumber>
+      <StationName>Eden Prairie 3.1 ESE</StationName>
+      <Latitude>44.828253</Latitude>
+      <Longitude>-93.404026</Longitude>
+      <TotalPrecipAmt>0.02</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 06:06 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>08:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 09:18 AM</EntryDateTime>
+      <StationNumber>MN-HN-42</StationNumber>
+      <StationName>Eden Prairie 2.1 E</StationName>
+      <Latitude>44.845092</Latitude>
+      <Longitude>-93.417115</Longitude>
+      <TotalPrecipAmt>0.12</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 07:18 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>08:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 10:04 AM</EntryDateTime>
+      <StationNumber>MN-HN-99</StationNumber>
+      <StationName>Minneapolis 2.8 SSE</StationName>
+      <Latitude>44.9247</Latitude>
+      <Longitude>-93.2494</Longitude>
+      <TotalPrecipAmt>0.02</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 08:04 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>08:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-03 01:30 PM</EntryDateTime>
+      <StationNumber>MN-HN-51</StationNumber>
+      <StationName>Corcoran 3.3 ESE</StationName>
+      <Latitude>45.087023</Latitude>
+      <Longitude>-93.524252</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-03 11:30 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>08:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 05:17 PM</EntryDateTime>
+      <StationNumber>MN-HN-72</StationNumber>
+      <StationName>Maple Grove 2.9 NE</StationName>
+      <Latitude>45.13953</Latitude>
+      <Longitude>-93.42067</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 03:17 PM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>08:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 02:07 PM</EntryDateTime>
+      <StationNumber>MN-HN-17</StationNumber>
+      <StationName>Eden Prairie 3.3 WSW</StationName>
+      <Latitude>44.8294022</Latitude>
+      <Longitude>-93.5201406</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 12:07 PM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>08:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 09:03 AM</EntryDateTime>
+      <StationNumber>MN-HN-120</StationNumber>
+      <StationName>Minneapolis 3.2 ESE</StationName>
+      <Latitude>44.942734</Latitude>
+      <Longitude>-93.207932</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 07:03 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>08:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 08:30 AM</EntryDateTime>
+      <StationNumber>MN-HN-107</StationNumber>
+      <StationName>Minneapolis 4.2 S</StationName>
+      <Latitude>44.9024772644043</Latitude>
+      <Longitude>-93.2841033935547</Longitude>
+      <TotalPrecipAmt>T</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 06:30 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes>Sent via CoCoRaHS Observer for iOS</Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:45 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 08:23 AM</EntryDateTime>
+      <StationNumber>MN-HN-31</StationNumber>
+      <StationName>Maple Grove 1.0 NNE</StationName>
+      <Latitude>45.12260998</Latitude>
+      <Longitude>-93.45792238</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 06:23 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:43 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 07:47 AM</EntryDateTime>
+      <StationNumber>MN-HN-93</StationNumber>
+      <StationName>Minneapolis 1.9 SE</StationName>
+      <Latitude>44.94173</Latitude>
+      <Longitude>-93.24182</Longitude>
+      <TotalPrecipAmt>0.01</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 05:46 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding>No</Flooding>
+      <Notes>Submitted via CoCoRaHS Observer for Android version 1.1.6</Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 12:39 PM</EntryDateTime>
+      <StationNumber>MN-HN-85</StationNumber>
+      <StationName>Minneapolis 4.1 SSE</StationName>
+      <Latitude>44.913096</Latitude>
+      <Longitude>-93.221943</Longitude>
+      <TotalPrecipAmt>0.01</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 10:39 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 07:03 AM</EntryDateTime>
+      <StationNumber>MN-HN-19</StationNumber>
+      <StationName>Edina 1.3 SW</StationName>
+      <Latitude>44.8783</Latitude>
+      <Longitude>-93.3789</Longitude>
+      <TotalPrecipAmt>0.01</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 05:02 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes>Sent via CoCoRaHS Observer for iOS</Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-14 01:01 PM</EntryDateTime>
+      <StationNumber>MN-HN-53</StationNumber>
+      <StationName>Dayton 3.4 SSE</StationName>
+      <Latitude>45.198432</Latitude>
+      <Longitude>-93.481254</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-14 11:01 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-14 06:44 AM</EntryDateTime>
+      <StationNumber>MN-HN-49</StationNumber>
+      <StationName>Maple Grove 2.4 E</StationName>
+      <Latitude>45.114818</Latitude>
+      <Longitude>-93.414022</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-14 04:44 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-07 10:02 AM</EntryDateTime>
+      <StationNumber>MN-HN-88</StationNumber>
+      <StationName>Golden Valley 0.8 WSW</StationName>
+      <Latitude>44.98461</Latitude>
+      <Longitude>-93.37442</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-07 08:02 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 08:42 AM</EntryDateTime>
+      <StationNumber>MN-HN-28</StationNumber>
+      <StationName>Minneapolis 3.8 SSW</StationName>
+      <Latitude>44.91</Latitude>
+      <Longitude>-93.289</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 06:42 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 07:53 AM</EntryDateTime>
+      <StationNumber>MN-HN-14</StationNumber>
+      <StationName>Minnetrista 1.5 SSE</StationName>
+      <Latitude>44.914467</Latitude>
+      <Longitude>-93.699217</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 05:53 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes>66F, overcast</Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 07:00 AM</EntryDateTime>
+      <StationNumber>MN-HN-108</StationNumber>
+      <StationName>Minneapolis 3.6 NNE</StationName>
+      <Latitude>45.0343</Latitude>
+      <Longitude>-93.2496</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 05:00 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 07:20 AM</EntryDateTime>
+      <StationNumber>MN-HN-110</StationNumber>
+      <StationName>Edina 1.9 SSE</StationName>
+      <Latitude>44.8687479</Latitude>
+      <Longitude>-93.3394329</Longitude>
+      <TotalPrecipAmt>T</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 05:19 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes>Sent via CoCoRaHS Observer for iOS</Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>07:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 06:42 AM</EntryDateTime>
+      <StationNumber>MN-HN-103</StationNumber>
+      <StationName>Shorewood 2.3 SW</StationName>
+      <Latitude>44.8927192687988</Latitude>
+      <Longitude>-93.6165771484375</Longitude>
+      <TotalPrecipAmt>T</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 04:42 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>06:32 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 06:33 AM</EntryDateTime>
+      <StationNumber>MN-HN-116</StationNumber>
+      <StationName>Minnetonka 2.1 WSW</StationName>
+      <Latitude>44.9244537353516</Latitude>
+      <Longitude>-93.5036849975586</Longitude>
+      <TotalPrecipAmt>T</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 04:32 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding>No</Flooding>
+      <Notes>Submitted via CoCoRaHS Observer for Android version 1.1.6</Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>06:30 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 02:35 PM</EntryDateTime>
+      <StationNumber>MN-HN-36</StationNumber>
+      <StationName>Minnetonka 0.7 WSW</StationName>
+      <Latitude>44.928368</Latitude>
+      <Longitude>-93.475499</Longitude>
+      <TotalPrecipAmt>T</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 12:35 PM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>06:20 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 06:31 AM</EntryDateTime>
+      <StationNumber>MN-HN-66</StationNumber>
+      <StationName>Bloomington 1.2 SSE</StationName>
+      <Latitude>44.8136719</Latitude>
+      <Longitude>-93.308578</Longitude>
+      <TotalPrecipAmt>0.04</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 04:31 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes>Mostly sunny morning with a breeze looks like from the Southwest.  Temp 65 and DP 60.  Pressure reading 29.54 and steady.  The grass is quite dry for a change.  </Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>06:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-08 12:49 PM</EntryDateTime>
+      <StationNumber>MN-HN-37</StationNumber>
+      <StationName>Plymouth 0.8 SSE</StationName>
+      <Latitude>45.0109418</Latitude>
+      <Longitude>-93.4577184</Longitude>
+      <TotalPrecipAmt>0.02</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-08 10:49 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>06:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 06:45 AM</EntryDateTime>
+      <StationNumber>MN-HN-104</StationNumber>
+      <StationName>Brooklyn Park 0.5 SSE</StationName>
+      <Latitude>45.10413</Latitude>
+      <Longitude>-93.346748</Longitude>
+      <TotalPrecipAmt>0.02</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 04:45 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>06:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-08 10:38 AM</EntryDateTime>
+      <StationNumber>MN-HN-52</StationNumber>
+      <StationName>Champlin 1.8 ESE</StationName>
+      <Latitude>45.159328</Latitude>
+      <Longitude>-93.357627</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-08 08:38 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>06:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 05:16 AM</EntryDateTime>
+      <StationNumber>MN-HN-45</StationNumber>
+      <StationName>Richfield 1.2 ENE</StationName>
+      <Latitude>44.882948</Latitude>
+      <Longitude>-93.258349</Longitude>
+      <TotalPrecipAmt>0.00</TotalPrecipAmt>
+      <NewSnowDepth>0.0</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 03:16 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>05:40 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 05:41 AM</EntryDateTime>
+      <StationNumber>MN-HN-83</StationNumber>
+      <StationName>Spring Park 0.2 SSE</StationName>
+      <Latitude>44.933417</Latitude>
+      <Longitude>-93.6316</Longitude>
+      <TotalPrecipAmt>T</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 03:41 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes>Sent via CoCoRaHS Observer for iOS</Notes>
+    </DailyPrecipReport>
+    <DailyPrecipReport>
+      <ObservationDate>2014-07-01</ObservationDate>
+      <ObservationTime>05:00 AM</ObservationTime>
+      <EntryDateTime>2014-07-01 04:06 AM</EntryDateTime>
+      <StationNumber>MN-HN-78</StationNumber>
+      <StationName>Richfield 1.9 WNW</StationName>
+      <Latitude>44.891293</Latitude>
+      <Longitude>-93.314089</Longitude>
+      <TotalPrecipAmt>T</TotalPrecipAmt>
+      <NewSnowDepth>NA</NewSnowDepth>
+      <SnowCorePrecipAmt>NA</SnowCorePrecipAmt>
+      <TotalSnowDepth>NA</TotalSnowDepth>
+      <TotalSnowSWE>NA</TotalSnowSWE>
+      <DateTimeStamp>2014-07-01 02:06 AM</DateTimeStamp>
+      <PrecipBegan>1/1/0001 12:00 AM</PrecipBegan>
+      <PrecipEnded>1/1/0001 12:00 AM</PrecipEnded>
+      <PrecipMinLasted />
+      <HeavyPrecipBegan>1/1/0001 12:00 AM</HeavyPrecipBegan>
+      <HeavyPrecipEnded>1/1/0001 12:00 AM</HeavyPrecipEnded>
+      <HeavyPrecipMinLasted />
+      <PrecipDurationAccuracy />
+      <HasAdditionalData>False</HasAdditionalData>
+      <Flooding />
+      <Notes></Notes>
+    </DailyPrecipReport>
+  </DailyPrecipReports>
+</Cocorahs>

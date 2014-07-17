@@ -1,0 +1,5 @@
+module,filename,method,url
+cocorahs,data.xml,GET,http://data.cocorahs.org/cocorahs/export/exportreports.aspx?StartDate=07%2F01%2F2014&TimesInGMT=False&EndDate=07%2F01%2F2014&Format=XML&dtf=1&county=HN&state=MN&ReportType=Daily&ReportDateType=reportdate&responsefields=all
+acis,meta.json,GET,http://data.rcc-acis.org/StnMeta?county=27053&meta=name%2Cstate%2Csids%2Cll%2Celev%2Cuid%2Ccounty%2Cclimdiv
+acis,data.json,GET,http://data.rcc-acis.org/MultiStnData?county=27053&sdate=2014-07-01&meta=name%2Cstate%2Csids%2Cll%2Celev%2Cuid%2Ccounty%2Cclimdiv&edate=2014-07-01&elems=pcpn
+usgs,site.rdb,GET,http://waterservices.usgs.gov/nwis/site/?countyCd=27053&siteStatus=active&outputDataTypeCd=all&format=rdb%2C1.0
