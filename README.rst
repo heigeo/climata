@@ -7,6 +7,9 @@ a number of webservices as listed below.  climata is powered by
 `wq.io <http://wq.io/wq.io>`_, and shares its goal of maximizing the reusability of
 data parsing code, by smoothing over some of the differences between various data formats.
 
+.. image:: https://travis-ci.org/heigeo/climata.svg?branch=master
+    :target: https://travis-ci.org/heigeo/climata
+
 Getting Started
 ---------------
 
