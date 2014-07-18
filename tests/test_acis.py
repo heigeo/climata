@@ -9,7 +9,7 @@ class AcisTestCase(ClimataTestCase):
         data = StationMetaIO(
             county='27053',
         )
-        self.assertTrue(len(data) > 0)
+        self.assertGreater(len(data), 0)
         item = data[0]
         self.assertHasFields(item, ("latitude", "longitude", "sids"))
 
@@ -21,7 +21,7 @@ class AcisTestCase(ClimataTestCase):
             parameter='pcpn',
         )
 
-        self.assertTrue(len(data) > 0)
+        self.assertGreater(len(data), 0)
         item = data[0]
         self.assertHasFields(item, ("latitude", "longitude", "data"))
 

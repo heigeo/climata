@@ -12,7 +12,7 @@ class CocorahsTestCase(ClimataTestCase):
             start_date='2014-07-01',
             end_date='2014-07-01',
         )
-        self.assertTrue(len(data) > 0)
+        self.assertGreater(len(data), 0)
         item = data[0]
         fields = (
             "observationdate",

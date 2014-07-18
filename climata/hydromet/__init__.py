@@ -72,7 +72,7 @@ class HydrometIO(HydrometLoader, CsvParser, TimeSeriesMapper, BaseIO):
             ('format', 2),
         ])
 
-    # Help CsvParser find data
+    # Help CsvParser find data starting with BEGIN DATA
     def reader_class(self):
         cls = super(HydrometIO, self).reader_class()
 
@@ -84,14 +84,14 @@ class HydrometIO(HydrometLoader, CsvParser, TimeSeriesMapper, BaseIO):
                 return 0, ['header_not_found']
         return Reader
 
-    # Cancel BaseIO iteration when END DATA is seen
-    # FIXME: what about len()?
-    def usable_item(self, item):
-        item = super(HydrometIO, self).usable_item(item)
-        if item[0] == "END DATA":
-            return None
-        return item
-
+    # Remove END DATA and trailing HTML from output
+    def parse(self):
+        super(HydrometIO, self).parse()
+        for i in range(len(self.data)):
+            row = self.data[-i - 1]
+            if "END DATA" in row.values():
+                end_i = i
+        self.data = self.data[:-end_i - 1]
 
 class DailyDataIO(HydrometIO):
     """

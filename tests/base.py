@@ -20,7 +20,10 @@ class ClimataTestCase(unittest.TestCase):
             data = f.read()
             f.close()
             method = getattr(httpretty, row.method.upper())
-            url = row.url.replace('.', r'\.').replace('?', r'\?')
+            url = row.url
+            for char in '.?+':
+                url = url.replace(char, '\\' + char)
+
             httpretty.register_uri(
                 method,
                 re.compile(url),
