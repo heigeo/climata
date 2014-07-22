@@ -40,8 +40,11 @@ class HydrometTestCase(ClimataTestCase):
             station='HPD',
         )
         self.assertEqual(len(data), 0)
+
         with self.assertRaises(NoData):
-            data[0]
+            AgrimetRecentIO(
+                station='INVALID_ID',
+            )
 
     def test_agrimet_recent_data(self):
         data = AgrimetRecentIO(

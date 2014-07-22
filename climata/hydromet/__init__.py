@@ -2,6 +2,7 @@ from wq.io import CsvParser, TimeSeriesMapper, TupleMapper, BaseIO
 from datetime import datetime, date, timedelta
 from collections import OrderedDict
 from climata.base import WebserviceLoader, FilterOpt
+from wq.io.exceptions import NoData
 
 
 class HydrometLoader(WebserviceLoader):
@@ -81,16 +82,21 @@ class HydrometIO(HydrometLoader, CsvParser, TimeSeriesMapper, BaseIO):
                 for i, row in enumerate(rows):
                     if len(row) > 0 and row[0] == "BEGIN DATA":
                         return i + 1, rows[i + 1]
-                return 0, ['header_not_found']
+                raise NoData
         return Reader
 
     # Remove END DATA and trailing HTML from output
     def parse(self):
         super(HydrometIO, self).parse()
+        if not self.data:
+            return
+        end_i = None
         for i in range(len(self.data)):
             row = self.data[-i - 1]
             if "END DATA" in row.values():
                 end_i = i
+        if end_i is None:
+            return
         self.data = self.data[:-end_i - 1]
 
 class DailyDataIO(HydrometIO):
