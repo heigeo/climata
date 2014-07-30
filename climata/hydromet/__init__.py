@@ -99,6 +99,7 @@ class HydrometIO(HydrometLoader, CsvParser, TimeSeriesMapper, BaseIO):
             return
         self.data = self.data[:-end_i - 1]
 
+
 class DailyDataIO(HydrometIO):
     """
     Retrieves daily values for a single USBR Hydromet/Agrimet site.
