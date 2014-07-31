@@ -62,7 +62,8 @@ class HydrometIO(HydrometLoader, CsvParser, TimeSeriesMapper, BaseIO):
 
         # Note: The USBR Perl scripts are pretty quirky: a specific ordering of
         # URL parameters is important for proper function.
-        return OrderedDict([
+        from requests.compat import urlencode
+        return urlencode(OrderedDict([
             ('parameter', ",".join(pcodes)),
             ('syer', start.year),
             ('smnth', start.month),
@@ -71,7 +72,7 @@ class HydrometIO(HydrometLoader, CsvParser, TimeSeriesMapper, BaseIO):
             ('emnth', end.month),
             ('edy', end.day),
             ('format', 2),
-        ])
+        ]))
 
     # Help CsvParser find data starting with BEGIN DATA
     def reader_class(self):
