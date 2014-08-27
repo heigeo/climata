@@ -66,6 +66,8 @@ Python API:
             print evt.date, evt.avgt
 
 
+More Python code examples are available via the `climata-viewer website`_.
+
 .. _ACIS: http://data.rcc-acis.org/
 .. _CoCoRaHS: http://data.cocorahs.org/cocorahs/export/exportmanager.aspx
 .. _Hydromet: http://www.usbr.gov/pn/hydromet/arcread.html
@@ -76,3 +78,4 @@ Python API:
 .. _climata.hydromet: https://github.com/heigeo/climata/blob/master/climata/hydromet/__init__.py
 .. _climata.snotel: https://github.com/heigeo/climata/blob/master/climata/snotel/__init__.py
 .. _climata.usgs: https://github.com/heigeo/climata/blob/master/climata/usgs/__init__.py
+.. _climata-viewer website: http://climata.houstoneng.net/datarequests/
