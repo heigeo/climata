@@ -41,7 +41,7 @@ setup(
     author_email='gis@houstoneng.com',
     url='https://github.com/heigeo/climata',
     license='MIT',
-    packages=find_packages(),
+    packages=find_packages(exclude=['tests']),
     description=DESCRIPTION,
     long_description=long_description(),
     install_requires=['wq.io>=0.5.1', 'owslib', 'SOAPpy'],
