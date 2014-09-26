@@ -1,9 +1,6 @@
-from wq.io import BaseIO, CsvNetIO, TupleMapper, TimeSeriesMapper
+from wq.io import BaseIO, TimeSeriesMapper
 from wq.io.parsers.base import BaseParser
-from datetime import datetime, date, timedelta
-from wq.io.parsers import readers
-from SOAPpy import SOAPProxy
-from climata.base import WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt
+from climata.base import WebserviceLoader, FilterOpt, DateOpt
 from xml.etree import ElementTree as ET
 from dateutil import parser
 
@@ -22,11 +19,11 @@ parameters = {
 
 
 class NWSIO(WebserviceLoader, BaseParser, BaseIO):
-    #######################################################
-    ## This doesn't work as a timeseries, because        ##
-    ## a) The returned values vary by parameter, and     ##
-    ## b) The values come with a start and end date each ##
-    #######################################################
+    #####################################################
+    # This doesn't work as a timeseries, because        #
+    # a) The returned values vary by parameter, and     #
+    # b) The values come with a start and end date each #
+    #####################################################
     start_date = DateOpt(ignored=True)  # begin='' Leave blank to get all data
     end_date = DateOpt(ignored=True)  # end = ''  # leave blank to get all data
     state = FilterOpt(ignored=True)
@@ -61,7 +58,7 @@ class NWSIO(WebserviceLoader, BaseParser, BaseIO):
         if self.item_tag is None:
             self.item_tag = list(root)[1].tag  # This is the data
         self.data = self.parse_item(list(root)[1])
-        #self.data = map(self.parse_item, root.findall(self.item_tag))
+        # self.data = map(self.parse_item, root.findall(self.item_tag))
 
     def parse_item(self, element):
         item = []
