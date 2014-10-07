@@ -1,8 +1,12 @@
-from wq.io import BaseIO, TimeSeriesMapper
+from wq.io import CsvParser, XmlNetIO, BaseIO, TupleMapper, TimeSeriesMapper
 from wq.io.parsers.base import BaseParser
-from climata.base import WebserviceLoader, FilterOpt, DateOpt
+from climata.base import (
+    WebserviceLoader, ZipWebserviceLoader,
+    FilterOpt, DateOpt, ChoiceOpt
+)
 from xml.etree import ElementTree as ET
 from dateutil import parser
+from .parsers import EnsembleCsvParser
 
 # This service can be accessed via SOAP
 # or through REST. I chose the Rest/XML implementation
@@ -161,3 +165,93 @@ class NWSForecastIO(WebserviceLoader, BaseIO, TimeSeriesMapper):
             }
             items.append(item)
         return items
+
+
+class EnsembleForecastIO(ZipWebserviceLoader, EnsembleCsvParser,
+                         TupleMapper, BaseIO):
+
+    nested = True
+
+    start_date = DateOpt(required=True)
+    end_date = DateOpt(ignored=True)
+
+    # Region filters
+    state = FilterOpt(ignored=True)
+    county = FilterOpt(ignored=True)
+
+    # FIXME: this isn't actually a HUC8 basin
+    basin = FilterOpt(required=True)
+
+    station = FilterOpt(ignored=True)
+    parameter = FilterOpt(ignored=True)
+
+    region = ChoiceOpt(
+        default="cnrfc",
+        choices=["cnrfc"]
+    )
+
+    urls = {
+        "cnrfc": (
+            "http://www.cnrfc.noaa.gov/csv/" +
+            "{date}12_{basin}_hefs_csv_daily.zip"
+        )
+    }
+
+    @property
+    def params(self):
+        # Don't actually need params, but ensure validation logic is called
+        params = super(EnsembleForecastIO, self).params
+        return None
+
+    @property
+    def url(self):
+        url = self.urls[self.getvalue("region")]
+        return url.format(
+            date=self.getvalue("start_date").strftime("%Y%m%d"),
+            basin=self.getvalue("basin"),
+        )
+
+    def parse(self):
+        super(EnsembleForecastIO, self).parse()
+
+        # Pull in metadata from site list
+        sites = EnsembleSiteIO()
+        for item in self.data:
+            siteid = item['site']
+            if siteid not in sites:
+                siteid = item['site'][:-1]
+            item.update(sites[siteid]._asdict())
+
+    def usable_item(self, item):
+        item['data'] = TimeSeriesIO(data=item['data'])
+        return super(EnsembleForecastIO, self).usable_item(item)
+
+
+class TimeSeriesIO(TimeSeriesMapper, BaseIO):
+    date_formats = ["%Y-%m-%d %H:%M:%S"]
+
+
+class SiteIO(XmlNetIO):
+    layer = None
+    key_field = "id"
+    region = "cnrfc"
+    urls = {
+        "cnrfc": "http://www.cnrfc.noaa.gov/data/kml/%s.xml"
+    }
+
+    @property
+    def url(self):
+        if self.region not in self.urls:
+            raise Exception("Region %s not currently supported!" % self.region)
+        return self.urls[self.region] % self.layer
+
+    def parse_item(self, item):
+        return item.attrib
+
+
+class ForecastSiteIO(SiteIO):
+    layer = "riverFcst"
+
+
+class EnsembleSiteIO(SiteIO):
+    layer = "ensPoints"
