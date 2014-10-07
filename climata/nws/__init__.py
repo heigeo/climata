@@ -182,7 +182,7 @@ class EnsembleForecastIO(ZipWebserviceLoader, EnsembleCsvParser,
     # FIXME: this isn't actually a HUC8 basin
     basin = FilterOpt(required=True)
 
-    station = FilterOpt(ignored=True)
+    station = FilterOpt(multi=True)
     parameter = FilterOpt(ignored=True)
 
     region = ChoiceOpt(
@@ -216,13 +216,25 @@ class EnsembleForecastIO(ZipWebserviceLoader, EnsembleCsvParser,
 
         # Pull in metadata from site list
         sites = EnsembleSiteIO()
+
+        # Optionally filter by station id
+        site_filter = self.getvalue('station')
+        filtered_items = []
+
         for item in self.data:
             siteid = item['site']
             if siteid not in sites:
                 siteid = item['site'][:-1]
             item.update(sites[siteid]._asdict())
 
+            if site_filter and siteid in site_filter:
+                filtered_items.append(item)
+
+        if site_filter:
+            self.data = filtered_items
+
     def usable_item(self, item):
+        item = item.copy()
         item['data'] = TimeSeriesIO(data=item['data'])
         return super(EnsembleForecastIO, self).usable_item(item)
 
