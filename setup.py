@@ -56,5 +56,7 @@ setup(
         'Topic :: Scientific/Engineering :: GIS',
         'Topic :: Scientific/Engineering :: Information Analysis',
         'Topic :: System :: Networking :: Monitoring',
-    ]
+    ],
+    test_suite='tests',
+    tests_require='httpretty',
 )

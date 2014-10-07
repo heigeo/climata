@@ -127,7 +127,7 @@ class StationElementIO(SnotelIO):
 
     def load(self):
         super(StationElementIO, self).load()
-        names = {e.elementcd: e.name for e in elements}
+        names = ElementIO.get_names()
         for elem in self.data:
             elem['element_name'] = names[elem['elementCd']]
 
@@ -193,8 +193,21 @@ class ElementIO(SnotelIO):
     """
     data_function = 'getElements'
 
-# Singleton instance
-elements = ElementIO()
+    @classmethod
+    def get_elements(cls):
+        """
+        Store singleton instance on IO to speed up retrieval after first call.
+        """
+        if not hasattr(cls, '_cache'):
+            cls._cache = cls()
+        return cls._cache
+
+    @classmethod
+    def get_names(cls):
+        return {
+            e.elementcd: e.name
+            for e in cls.get_elements()
+        }
 
 
 class DailyDataIO(SnotelIO):

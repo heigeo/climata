@@ -2,6 +2,7 @@ from wq.io import CsvParser, TimeSeriesMapper, TupleMapper, BaseIO
 from datetime import datetime, date, timedelta
 from collections import OrderedDict
 from climata.base import WebserviceLoader, FilterOpt
+from wq.io.exceptions import NoData
 
 
 class HydrometLoader(WebserviceLoader):
@@ -61,7 +62,8 @@ class HydrometIO(HydrometLoader, CsvParser, TimeSeriesMapper, BaseIO):
 
         # Note: The USBR Perl scripts are pretty quirky: a specific ordering of
         # URL parameters is important for proper function.
-        return OrderedDict([
+        from requests.compat import urlencode
+        return urlencode(OrderedDict([
             ('parameter', ",".join(pcodes)),
             ('syer', start.year),
             ('smnth', start.month),
@@ -70,9 +72,9 @@ class HydrometIO(HydrometLoader, CsvParser, TimeSeriesMapper, BaseIO):
             ('emnth', end.month),
             ('edy', end.day),
             ('format', 2),
-        ])
+        ]))
 
-    # Help CsvParser find data
+    # Help CsvParser find data starting with BEGIN DATA
     def reader_class(self):
         cls = super(HydrometIO, self).reader_class()
 
@@ -81,16 +83,22 @@ class HydrometIO(HydrometLoader, CsvParser, TimeSeriesMapper, BaseIO):
                 for i, row in enumerate(rows):
                     if len(row) > 0 and row[0] == "BEGIN DATA":
                         return i + 1, rows[i + 1]
-                return 0, ['header_not_found']
+                raise NoData
         return Reader
 
-    # Cancel BaseIO iteration when END DATA is seen
-    # FIXME: what about len()?
-    def usable_item(self, item):
-        item = super(HydrometIO, self).usable_item(item)
-        if item[0] == "END DATA":
-            return None
-        return item
+    # Remove END DATA and trailing HTML from output
+    def parse(self):
+        super(HydrometIO, self).parse()
+        if not self.data:
+            return
+        end_i = None
+        for i in range(len(self.data)):
+            row = self.data[-i - 1]
+            if "END DATA" in row.values():
+                end_i = i
+        if end_i is None:
+            return
+        self.data = self.data[:-end_i - 1]
 
 
 class DailyDataIO(HydrometIO):

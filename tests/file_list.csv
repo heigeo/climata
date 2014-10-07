@@ -1,0 +1,12 @@
+module,filename,method,url
+acis,meta.json,GET,http://data.rcc-acis.org/StnMeta?county=27053&meta=name%2Cstate%2Csids%2Cll%2Celev%2Cuid%2Ccounty%2Cclimdiv
+acis,data.json,GET,http://data.rcc-acis.org/MultiStnData?county=27053&sdate=2014-07-01&meta=name%2Cstate%2Csids%2Cll%2Celev%2Cuid%2Ccounty%2Cclimdiv&edate=2014-07-01&elems=pcpn
+cocorahs,data.xml,GET,http://data.cocorahs.org/cocorahs/export/exportreports.aspx?StartDate=07%2F01%2F2014&TimesInGMT=False&EndDate=07%2F01%2F2014&Format=XML&dtf=1&county=HN&state=MN&ReportType=Daily&ReportDateType=reportdate&responsefields=all
+hydromet,daily.csv,GET,http://www.usbr.gov/pn-bin/webarccsv.pl?parameter=HPD+AF&syer=2014&smnth=7&sdy=1&eyer=2014&emnth=7&edy=1&format=2
+hydromet,instant.csv,GET,http://www.usbr.gov/pn-bin/webdaycsv.pl?parameter=HPD+AF&syer=2014&smnth=7&sdy=1&eyer=2014&emnth=7&edy=1&format=2
+hydromet,nodata.csv,GET,http://www.usbr.gov/pn-bin/agrimet.pl?cbtt=HPD&interval=instant&format=2&back=360
+hydromet,invalid.csv,GET,http://www.usbr.gov/pn-bin/agrimet.pl?cbtt=INVALID_ID&interval=instant&format=2&back=360
+hydromet,recent.csv,GET,http://www.usbr.gov/pn-bin/agrimet.pl?cbtt=KFLO&interval=instant&format=2&back=360
+usgs,site.rdb,GET,http://waterservices.usgs.gov/nwis/site/?countyCd=27053&siteStatus=active&outputDataTypeCd=all&format=rdb%2C1.0
+usgs,daily.xml,GET,http://waterservices.usgs.gov/nwis/dv/?endDT=2014-07-01&startDT=2014-07-01&countyCd=27053&format=waterml%2C1.1
+usgs,instant.xml,GET,http://waterservices.usgs.gov/nwis/iv/?endDT=2014-07-01&startDT=2014-07-01&countyCd=27053&format=waterml%2C1.1
