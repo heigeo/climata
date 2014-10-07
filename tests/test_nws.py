@@ -14,7 +14,7 @@ class NwsTestCase(ClimataTestCase):
         )
         self.assertGreater(len(data), 0)
         item = data[0]
-        self.assertHasFields(item, ("site", "stationname", "data"))
+        self.assertHasFields(item, ("site", "parameter", "data"))
         self.assertGreater(len(item.data), 0)
 
         row = item.data[0]

@@ -9,33 +9,39 @@ class EnsembleCsvParser(TableParser):
 
     def parse(self):
         csvdata = reader(self.file)
-        first_line = next(csvdata)
-        self.data = []
         sitedata = {}
+
+        # Extract metadata from first two rows
+        sites = next(csvdata)
+        params = next(csvdata)
         years = []
-        for col in first_line[1:]:
-            if col not in sitedata:
-                sitedata[col] = []
+        for site, param in zip(sites, params):
+            if site not in sitedata:
+                sitedata[site] = {}
+            if param not in sitedata[site]:
+                sitedata[site][param] = []
                 year = 1950
             else:
                 year += 1
             years.append(year)
 
-        # Skip second row
-        next(csvdata)
-        self.data = []
-
+        # Extract data from remaining rows
         for row in csvdata:
             date = row[0]
-            for site, val, year in zip(first_line[1:], row[1:], years):
+            for site, param, year, val in zip(sites, params, years, row[1:]):
                 data = {
                     'date': date,
                     'year': year,
                     'value': val,
                 }
-                sitedata[site].append(data)
+                sitedata[site][param].append(data)
 
-        self.data = [{
-            'site': site,
-            'data': data
-        } for site, data in sitedata.items()]
+        # Repackage into IO-friendly arrays
+        self.data = []
+        for site in sitedata:
+            for param in sitedata[site]:
+                self.data.append({
+                    'site': site,
+                    'parameter': param,
+                    'data': sitedata[site][param],
+                })
