@@ -10,5 +10,5 @@ hydromet,recent.csv,GET,http://www.usbr.gov/pn-bin/agrimet.pl?cbtt=KFLO&interval
 usgs,site.rdb,GET,http://waterservices.usgs.gov/nwis/site/?countyCd=27053&siteStatus=active&outputDataTypeCd=all&format=rdb%2C1.0
 usgs,daily.xml,GET,http://waterservices.usgs.gov/nwis/dv/?endDT=2014-07-01&startDT=2014-07-01&countyCd=27053&format=waterml%2C1.1
 usgs,instant.xml,GET,http://waterservices.usgs.gov/nwis/iv/?endDT=2014-07-01&startDT=2014-07-01&countyCd=27053&format=waterml%2C1.1
-nws,sites.xml,GET,http://www.cnrfc.noaa.gov/data/kml/riverFcst.xml
+nws,sites.xml,GET,http://www.cnrfc.noaa.gov/data/kml/ensPoints.xml
 nws,ensemble.zip,GET,http://www.cnrfc.noaa.gov/csv/2014010112_klamath_hefs_csv_daily.zip

@@ -40,6 +40,20 @@ class NwsTestCase(ClimataTestCase):
         self.assertIsInstance(row.year, int)
         self.assertIsInstance(row.value, float)
 
+    def test_ensemble_date(self):
+        data = EnsembleForecastIO(
+            basin='klamath',
+            start_date='2014-01-01',
+            end_date='2014-02-14',
+            station="KLAO3"
+        )
+        self.assertEqual(len(data), 1)
+        item = data[0]
+        self.assertEqual(item.site, "KLAO3")
+        self.assertGreater(len(item.data), 0)
+        for row in item.data:
+            self.assertLess(row.date.date(), date(2014, 2, 15))
+
     def test_ensemble_sites(self):
         sites = EnsembleSiteIO()
         self.assertGreater(len(sites), 0)

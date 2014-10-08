@@ -173,7 +173,7 @@ class EnsembleForecastIO(ZipWebserviceLoader, EnsembleCsvParser,
     nested = True
 
     start_date = DateOpt(required=True)
-    end_date = DateOpt(ignored=True)
+    end_date = DateOpt()
 
     # Region filters
     state = FilterOpt(ignored=True)
@@ -216,12 +216,21 @@ class EnsembleForecastIO(ZipWebserviceLoader, EnsembleCsvParser,
 
         # Optionally filter by station id
         site_filter = self.getvalue('station')
+        date_filter = self.getvalue('end_date')
         if not site_filter:
             return
         self.data = [
             item for item in self.data
             if item['site'] in site_filter
         ]
+        if not date_filter:
+            return
+        date_filter = date_filter.strftime('%Y-%m-%d') + " 23:59:59"
+        for item in self.data:
+            item['data'] = [
+                row for row in item['data']
+                if row['date'] <= date_filter
+            ]
 
     def usable_item(self, item):
         item = item.copy()
