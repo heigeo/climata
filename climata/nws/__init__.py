@@ -241,6 +241,11 @@ class EnsembleForecastIO(ZipWebserviceLoader, EnsembleCsvParser,
 class TimeSeriesIO(TimeSeriesMapper, BaseIO):
     date_formats = ["%Y-%m-%d %H:%M:%S"]
 
+    def usable_item(self, item):
+        uitem = super(TimeSeriesIO, self).usable_item(item)
+        # Convert KCFS to CFS
+        return uitem._replace(value=uitem.value * 1000)
+
 
 class SiteIO(XmlNetIO):
     layer = None
