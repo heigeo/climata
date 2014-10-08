@@ -22,15 +22,16 @@ See https://github.com/heigeo/climata to report any issues.
 Available Services
 ------------------
 
-=================== ============================================================ ============== ============
- Module             Classes                                                      Data Source     Agency/Org.
-=================== ============================================================ ============== ============
-climata.acis_       ``StationMetaIO``, ``StationDataIO``                         ACIS_           NOAA RCCs
-climata.cocorahs_   ``CocorahsIO``                                               CoCoRaHS_       CoCoRaHS
-climata.hydromet_   ``DailyDataIO``, ``InstantDataIO``, ``AgrimetRecentIO``      Hydromet_       USBR
-climata.snotel_     ``StationIO``, ``StationDailyDataIO``, ``RegionDailyDataIO`` `SNOTEL AWDB`_  NRCS
-climata.usgs_       ``SiteIO``, ``DailyValueIO``, ``InstantValueIO``             `NWIS`_         USGS
-=================== ============================================================ ============== ============
+=================== ================================================================ ============== ============
+ Module             Classes                                                          Data Source     Agency/Org.
+=================== ================================================================ ============== ============
+climata.acis_       ``StationMetaIO``, ``StationDataIO``                             ACIS_           NOAA RCCs
+climata.cocorahs_   ``CocorahsIO``                                                   CoCoRaHS_       CoCoRaHS
+climata.hydromet_   ``DailyDataIO``, ``InstantDataIO``, ``AgrimetRecentIO``          Hydromet_       USBR
+climata.nws_        ``HydroForecastIO``, ``EnsembleForecastIO``, ``EnsembleSiteIO``  CNRFC_          NWS
+climata.snotel_     ``StationIO``, ``StationDailyDataIO``, ``RegionDailyDataIO``     `SNOTEL AWDB`_  NRCS
+climata.usgs_       ``SiteIO``, ``DailyValueIO``, ``InstantValueIO``                 NWIS_           USGS
+=================== ================================================================ ============== ============
 
 Usage
 -----
@@ -71,11 +72,13 @@ More Python code examples are available via the `climata-viewer website`_.
 .. _ACIS: http://data.rcc-acis.org/
 .. _CoCoRaHS: http://data.cocorahs.org/cocorahs/export/exportmanager.aspx
 .. _Hydromet: http://www.usbr.gov/pn/hydromet/arcread.html
+.. _CNRFC: http://www.cnrfc.noaa.gov/
 .. _SNOTEL AWDB: http://www.wcc.nrcs.usda.gov/web_service/awdb_web_service_landing.htm
 .. _NWIS: http://waterdata.usgs.gov/nwis
 .. _climata.acis: https://github.com/heigeo/climata/blob/master/climata/acis/__init__.py
 .. _climata.cocorahs: https://github.com/heigeo/climata/blob/master/climata/cocorahs/__init__.py
 .. _climata.hydromet: https://github.com/heigeo/climata/blob/master/climata/hydromet/__init__.py
+.. _climata.nws: https://github.com/heigeo/climata/blob/master/climata/nws/__init__.py
 .. _climata.snotel: https://github.com/heigeo/climata/blob/master/climata/snotel/__init__.py
 .. _climata.usgs: https://github.com/heigeo/climata/blob/master/climata/usgs/__init__.py
 .. _climata-viewer website: http://climata.houstoneng.net/datarequests/
