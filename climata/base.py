@@ -1,6 +1,7 @@
 from datetime import datetime
 from warnings import warn
-from wq.io import make_date_mapper, NetLoader
+from wq.io import make_date_mapper, NetLoader, Zipper
+
 parse_date = make_date_mapper('%Y-%m-%d')
 
 from .version import VERSION
@@ -239,6 +240,14 @@ class WebserviceLoader(NetLoader):
             "https://github.com/heigeo/climata",
         )
         return agent
+
+
+class ZipWebserviceLoader(Zipper, WebserviceLoader):
+    binary = True
+
+    def load(self):
+        super(ZipWebserviceLoader, self).load()
+        self.unzip_file()
 
 
 def fill_date_range(start_date, end_date, date_format=None):

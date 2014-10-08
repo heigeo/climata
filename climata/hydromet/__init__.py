@@ -3,6 +3,7 @@ from datetime import datetime, date, timedelta
 from collections import OrderedDict
 from climata.base import WebserviceLoader, FilterOpt
 from wq.io.exceptions import NoData
+from requests.compat import urlencode
 
 
 class HydrometLoader(WebserviceLoader):
@@ -62,7 +63,6 @@ class HydrometIO(HydrometLoader, CsvParser, TimeSeriesMapper, BaseIO):
 
         # Note: The USBR Perl scripts are pretty quirky: a specific ordering of
         # URL parameters is important for proper function.
-        from requests.compat import urlencode
         return urlencode(OrderedDict([
             ('parameter', ",".join(pcodes)),
             ('syer', start.year),
@@ -186,9 +186,9 @@ class AgrimetRecentIO(InstantDataIO):
 
     @property
     def params(self):
-        return OrderedDict([
+        return urlencode(OrderedDict([
             ('cbtt', self.getvalue('station')),
             ('interval', 'instant'),
             ('format', 2),
             ('back', 360)
-        ])
+        ]))

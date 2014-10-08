@@ -1,5 +1,7 @@
 language: python
 python:
  - "2.7"
+install:
+ - pip install git+https://github.com/wq/wq.io
 script:
  - python setup.py test
