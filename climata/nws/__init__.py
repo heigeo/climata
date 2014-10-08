@@ -11,6 +11,9 @@ from .parsers import EnsembleCsvParser
 
 
 class HydroForecastIO(WebserviceLoader, XmlParser, TimeSeriesMapper, BaseIO):
+    """
+    Loads hydrograph forecast data (next 3 days) from weather.gov
+    """
 
     ###########################################
     # valid is the time of the forecast in UTC
@@ -46,6 +49,12 @@ class HydroForecastIO(WebserviceLoader, XmlParser, TimeSeriesMapper, BaseIO):
 
 class EnsembleForecastIO(ZipWebserviceLoader, EnsembleCsvParser,
                          TupleMapper, BaseIO):
+
+    """
+    Load ensemble forecast zip files from the CNRFC website.
+     - start_date and basin are required to specify the zip file;
+     - station and end_date can be used to filter the downloaded data.
+    """
 
     nested = True
 
@@ -125,6 +134,9 @@ class TimeSeriesIO(TimeSeriesMapper, BaseIO):
 
 
 class SiteIO(XmlNetIO):
+    """
+    Base class for CNRFC site layers.  Use ForecastSiteIO or EnsembleSiteIO.
+    """
     layer = None
     key_field = "id"
     region = "cnrfc"
@@ -143,8 +155,14 @@ class SiteIO(XmlNetIO):
 
 
 class ForecastSiteIO(SiteIO):
+    """
+    CNRFC sites with deterministic forecasts.
+    """
     layer = "riverFcst"
 
 
 class EnsembleSiteIO(SiteIO):
+    """
+    CNRFC sites with ensemble forecasts.
+    """
     layer = "ensPoints"
