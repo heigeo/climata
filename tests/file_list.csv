@@ -11,4 +11,5 @@ usgs,site.rdb,GET,http://waterservices.usgs.gov/nwis/site/?countyCd=27053&siteSt
 usgs,daily.xml,GET,http://waterservices.usgs.gov/nwis/dv/?endDT=2014-07-01&startDT=2014-07-01&countyCd=27053&format=waterml%2C1.1
 usgs,instant.xml,GET,http://waterservices.usgs.gov/nwis/iv/?endDT=2014-07-01&startDT=2014-07-01&countyCd=27053&format=waterml%2C1.1
 nws,sites.xml,GET,http://www.cnrfc.noaa.gov/data/kml/ensPoints.xml
+nws,hydrograph.xml,GET,http://water.weather.gov/ahps2/hydrograph_to_xml.php?gage=WMSO3
 nws,ensemble.zip,GET,http://www.cnrfc.noaa.gov/csv/2014010112_klamath_hefs_csv_daily.zip

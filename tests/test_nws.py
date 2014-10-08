@@ -1,11 +1,21 @@
 from .base import ClimataTestCase
-from climata.nws import EnsembleSiteIO, EnsembleForecastIO
+from climata.nws import EnsembleSiteIO, EnsembleForecastIO, HydroForecastIO
 from datetime import datetime, date
 from wq.io.exceptions import NoData
 
 
 class NwsTestCase(ClimataTestCase):
     module = "nws"
+
+    def test_hydro_forecast(self):
+        data = HydroForecastIO(station="WMSO3")
+        self.assertGreater(len(data), 0)
+        item = data[0]
+        self.assertHasFields(item, ("date", "stage", "flow"))
+
+        self.assertGreater(item.date, datetime.now())
+        self.assertGreater(item.stage, 0)
+        self.assertGreater(item.flow, 0)
 
     def test_ensemble_forecast(self):
         data = EnsembleForecastIO(
