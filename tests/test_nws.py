@@ -13,7 +13,7 @@ class NwsTestCase(ClimataTestCase):
         item = data[0]
         self.assertHasFields(item, ("date", "stage", "flow"))
 
-        self.assertGreater(item.date, datetime.now())
+        self.assertIsInstance(item.date, datetime)
         self.assertGreater(item.stage, 0)
         self.assertGreater(item.flow, 0)
 
