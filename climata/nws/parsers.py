@@ -12,8 +12,8 @@ class EnsembleCsvParser(TableParser):
         sitedata = {}
 
         # Extract metadata from first two rows
-        sites = next(csvdata)
-        params = next(csvdata)
+        sites = next(csvdata)[1:]
+        params = next(csvdata)[1:]
         years = []
         for site, param in zip(sites, params):
             if site not in sitedata:
@@ -39,9 +39,12 @@ class EnsembleCsvParser(TableParser):
         # Repackage into IO-friendly arrays
         self.data = []
         for site in sitedata:
+            siteid = site
+            if len(siteid) == 6 and siteid[-1] == "L":
+                siteid = siteid[:5]
             for param in sitedata[site]:
                 self.data.append({
-                    'site': site,
+                    'site': siteid,
                     'parameter': param,
                     'data': sitedata[site][param],
                 })
