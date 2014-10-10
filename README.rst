@@ -9,7 +9,11 @@ data parsing code, by smoothing over some of the differences between various dat
 
 .. image:: https://travis-ci.org/heigeo/climata.svg?branch=master
     :target: https://travis-ci.org/heigeo/climata
-
+    
+.. image:: https://pypip.in/version/climata/badge.svg
+    :target: https://pypi.python.org/pypi/climata/
+    :alt: Latest Version
+    
 Getting Started
 ---------------
 
