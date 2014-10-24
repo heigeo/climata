@@ -64,7 +64,7 @@ class DateOpt(FilterOpt):
         value = super(DateOpt, self).parse(value)
         if value is None:
             return None
-        if isinstance(value, basestring):
+        if isinstance(value, str):
             value = self.parse_date(value)
         if isinstance(value, datetime) and self.date_only:
             value = value.date()
@@ -176,7 +176,7 @@ class WebserviceLoader(NetLoader):
                 complex = True
                 return val
             else:
-                return unicode(val)
+                return str(val)
 
         if value is None:
             pass

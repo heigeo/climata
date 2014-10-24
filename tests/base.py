@@ -16,7 +16,7 @@ class ClimataTestCase(unittest.TestCase):
         for row in load_file(join('tests', 'file_list.csv')):
             if row.module != self.module:
                 continue
-            f = file(join('tests', 'files', row.module + '_' + row.filename))
+            f = open(join('tests', 'files', row.module + '_' + row.filename))
             data = f.read()
             f.close()
             method = getattr(httpretty, row.method.upper())
