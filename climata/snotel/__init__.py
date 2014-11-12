@@ -40,15 +40,10 @@ class SnotelIO(WebserviceLoader, BaseParser, TupleMapper, BaseIO):
         else:
             self.data = as_list(self.data)
 
-    def parse(self):
-        # Some records may have additional fields; loop through entire
-        # array to ensure all field names are accounted for.  (Otherwise BaseIO
-        # will guess field names using only the first record.)
-
-        field_names = set()
-        for row in self.data:
-            field_names.update(row.keys())
-        self.field_names = field_names
+    # Some records may have additional fields; loop through entire
+    # array to ensure all field names are accounted for.  (Otherwise BaseIO
+    # will guess field names using only the first record.)
+    scan_fields = True
 
     def print_debug(self):
         print '%s.%s(%s)' % (
