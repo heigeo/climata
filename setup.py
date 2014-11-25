@@ -44,7 +44,11 @@ setup(
     packages=find_packages(exclude=['tests']),
     description=DESCRIPTION,
     long_description=long_description(),
-    install_requires=['wq.io>=0.5.1', 'owslib', 'SOAPpy'],
+    install_requires=[
+        'wq.io>=0.7.0',
+        'owslib',
+        'SOAPpy'
+    ],
     scripts=['climata/bin/acis_sites.py', 'climata/bin/acis_data.py'],
     classifiers=[
         'Development Status :: 4 - Beta',
