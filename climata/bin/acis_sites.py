@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 import sys
 from datetime import date
 from climata.acis import StationMetaIO
@@ -29,7 +30,7 @@ def load_sites(*basin_ids):
     # Load sites with data since 1900
     sites = StationMetaIO(
         basin=basins,
-        parameter=elems.keys(),
+        parameter=list(elems.keys()),
         start_date='1900-01-01',
         end_date=date.today(),
         meta=ALL_META_FIELDS,
@@ -71,12 +72,12 @@ def load_sites(*basin_ids):
     # Print CSV headers (FIXME: use CsvFileIO for this?)
     seen_auths = sorted(seen_auths)
     seen_elems = sorted(seen_elems)
-    print ",".join(
+    print(",".join(
         ['ACIS uid', 'name']
         + seen_auths
         + ['latitude', 'longitude', 'start', 'end', 'years']
         + [elems[elem]['desc'] for elem in seen_elems]
-    )
+    ))
 
     # Print sites with data
     for site in sites:
@@ -97,25 +98,25 @@ def load_sites(*basin_ids):
             elem_ranges.append(erange)
 
         # Output CSV row
-        print ",".join(map(str,
+        print(",".join(map(str,
             [site.uid, site.name]
             + [site.sids.get(auth, "") for auth in seen_auths]
             + [site.latitude, site.longitude]
             + [start.date(), end.date(), years]
             + elem_ranges
-        ))
+        )))
 
     # Print CSV rows for sites without data
     for site in nodata_sites:
-        print ",".join(map(str,
+        print(",".join(map(str,
             [site.uid, site.name]
             + [site.sids.get(auth, "") for auth in seen_auths]
             + [site.latitude, site.longitude]
             + ["NO DATA"]
-        ))
+        )))
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print "Usage: acis_sites.py basin"
+        print("Usage: acis_sites.py basin")
         exit()
     load_sites(*sys.argv[1:])

@@ -61,7 +61,7 @@ class SnotelIO(WebserviceLoader, BaseParser, TupleMapper, BaseIO):
 
         field_names = set()
         for row in self.data:
-            field_names.update(row.keys())
+            field_names.update(list(row.keys()))
         self.field_names = field_names
 
     def print_debug(self):

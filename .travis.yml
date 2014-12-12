@@ -1,7 +1,9 @@
 language: python
 python:
  - "2.7"
+ - "3.4"
 install:
- - pip install git+https://github.com/wq/wq.io
+ - pip install wq.io
+ - pip install https://github.com/tbicr/OWSLib/archive/python3.zip
 script:
  - python setup.py test

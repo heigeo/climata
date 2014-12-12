@@ -26,7 +26,7 @@ class NwisLoader(WebserviceLoader):
     sitetype = ChoiceOpt(
         url_param='siteType',
         multi=True,
-        choices=SITE_TYPES.keys(),
+        choices=list(SITE_TYPES.keys()),
     )
 
     # Each NWIS webservice uses the same base URL, with a service path

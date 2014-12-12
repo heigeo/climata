@@ -62,7 +62,7 @@ def load_data(basin, elem, syear=1950, eyear=curyear,
 
     def header(field):
         vals = [get_val(site, field) for site in include_sites]
-        sys.stdout.write(",".join([field + ":"] + map(str, vals)))
+        sys.stdout.write(",".join([field + ":"] + list(map(str, vals))))
         sys.stdout.write("\n")
 
     header("name")
@@ -101,10 +101,10 @@ def load_year_data(basin, elem, year, include_sites):
 
     date = sdate
     while date <= edate:
-        data = map(str, [
+        data = list(map(str, [
             dates[date].get(site.uid, "")
             for site in include_sites
-        ])
+        ]))
         sys.stdout.write(",".join([str(date)] + data))
         sys.stdout.write("\n")
         date += one_day

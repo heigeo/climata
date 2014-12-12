@@ -28,7 +28,7 @@ AUTHORITY_BY_ID = {
 
 AUTHORITY_BY_NAME = {
     auth['name']: auth
-    for auth in AUTHORITY_BY_ID.values()
+    for auth in list(AUTHORITY_BY_ID.values())
 }
 
 # Element Codes
