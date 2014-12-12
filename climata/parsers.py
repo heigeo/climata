@@ -39,7 +39,7 @@ class WaterMlParser(BaseParser):
     def parse(self):
         response = WaterML(self.file.read()).response
         self.response = response
-        self.data = map(self.parse_timeseries, response.time_series)
+        self.data = list(map(self.parse_timeseries, response.time_series))
 
     def parse_timeseries(self, ts):
         site = ts.source_info
