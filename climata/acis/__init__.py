@@ -230,7 +230,7 @@ class DataIO(TimeSeriesMapper, BaseIO):
                 # element's value as attributes.
                 for elem, val in zip(self.parameter, row):
                     # namedtuple doesn't like numeric field names
-                    if elem.isnumeric():
+                    if elem.isdigit():
                         elem = "e%s" % elem
                     data[elem] = val
                 yield data
@@ -251,7 +251,7 @@ class DataIO(TimeSeriesMapper, BaseIO):
             field_names = ['date']
             for elem in self.parameter:
                 # namedtuple doesn't like numeric field names
-                if elem.isnumeric():
+                if elem.isdigit():
                     elem = "e%s" % elem
                 field_names.append(elem)
             return field_names
