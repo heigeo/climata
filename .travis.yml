@@ -4,6 +4,7 @@ python:
  - "3.4"
 install:
  - pip install wq.io
+ - pip install suds-jurko
  - pip install https://github.com/tbicr/OWSLib/archive/python3.zip
 script:
  - python setup.py test
