@@ -11,7 +11,14 @@ from climata.base import WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt
 from climata.base import fill_date_range, as_list
 
 url = 'http://www.wcc.nrcs.usda.gov/awdbWebService/services?WSDL'
-server = Client(url).service
+_server = None
+
+
+def get_server():
+    global _server
+    if not _server:
+        _server = Client(url).service
+    return _server
 
 
 class SnotelIO(WebserviceLoader, BaseParser, TupleMapper, BaseIO):
@@ -35,7 +42,7 @@ class SnotelIO(WebserviceLoader, BaseParser, TupleMapper, BaseIO):
         if self.debug:
             self.print_debug()
         params = self.params
-        fn = getattr(server, self.data_function)
+        fn = getattr(get_server(), self.data_function)
         self.data = fn(**params)
         if len(self.data) == 0:
             self.data = []
