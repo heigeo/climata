@@ -1,5 +1,6 @@
-climata
-=======
+.. image:: https://raw.githubusercontent.com/heigeo/climata-viewer/master/app/images/logo.svg
+    :target: http://climata.houstoneng.net
+    :alt: Climata
 
 climata is a pythonic interface for loading and processing time series data
 from climate and flow monitoring stations and observers. climata leverages 
@@ -10,16 +11,18 @@ data parsing code, by smoothing over some of the differences between various dat
 .. image:: https://travis-ci.org/heigeo/climata.svg?branch=master
     :target: https://travis-ci.org/heigeo/climata
     
-.. image:: https://pypip.in/version/climata/badge.svg
+.. image:: https://pypip.in/version/climata/badge.svg?style=flat
     :target: https://pypi.python.org/pypi/climata/
     :alt: Latest Version
     
+Tested on Python 2.7 and 3.4.
+
 Getting Started
 ---------------
 
 ::
 
-    pip install climata
+    pip3 install climata
 
 See https://github.com/heigeo/climata to report any issues.
 
