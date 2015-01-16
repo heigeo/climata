@@ -1,8 +1,9 @@
-.. image:: https://raw.githubusercontent.com/heigeo/climata-viewer/master/app/images/logo.svg
+.. image:: https://raw.githubusercontent.com/heigeo/climata-viewer/master/app/images/logo-small.png
     :target: http://climata.houstoneng.net
     :alt: Climata
+    :align: center
 
-climata is a pythonic interface for loading and processing time series data
+**climata** is a pythonic interface for loading and processing time series data
 from climate and flow monitoring stations and observers. climata leverages 
 a number of webservices as listed below.  climata is powered by
 `wq.io <http://wq.io/wq.io>`_, and shares its goal of maximizing the reusability of
@@ -10,7 +11,7 @@ data parsing code, by smoothing over some of the differences between various dat
 
 .. image:: https://travis-ci.org/heigeo/climata.svg?branch=master
     :target: https://travis-ci.org/heigeo/climata
-    
+
 .. image:: https://pypip.in/version/climata/badge.svg?style=flat
     :target: https://pypi.python.org/pypi/climata/
     :alt: Latest Version
