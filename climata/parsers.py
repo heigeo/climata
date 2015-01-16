@@ -44,7 +44,7 @@ class WaterMlParser(BaseParser):
     def parse_timeseries(self, ts):
         site = ts.source_info
         param = ts.variable
-        lng, lat = map(float, site.location.geo_coords[0])
+        lng, lat = list(map(float, site.location.geo_coords[0]))
 
         # FIXME: This assumes there is only one values array, which might not
         # always be the case? (Same for site_codes below and geo_coords above.)
