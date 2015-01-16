@@ -1,15 +1,24 @@
+from __future__ import print_function
+
 from wq.io import BaseIO, TupleMapper, TimeSeriesMapper
 from wq.io.parsers.base import BaseParser
 from wq.io.exceptions import NoData
 from wq.io.util import flattened
 
-from SOAPpy import SOAPProxy, simplify
+from suds.client import Client
+from suds.sudsobject import asdict, Object as SudsObject
 from climata.base import WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt
 from climata.base import fill_date_range, as_list
 
-namespace = 'http://www.wcc.nrcs.usda.gov/ns/awdbWebService'
 url = 'http://www.wcc.nrcs.usda.gov/awdbWebService/services?WSDL'
-server = SOAPProxy(url, namespace)
+_server = None
+
+
+def get_server():
+    global _server
+    if not _server:
+        _server = Client(url).service
+    return _server
 
 
 class SnotelIO(WebserviceLoader, BaseParser, TupleMapper, BaseIO):
@@ -33,12 +42,17 @@ class SnotelIO(WebserviceLoader, BaseParser, TupleMapper, BaseIO):
         if self.debug:
             self.print_debug()
         params = self.params
-        fn = getattr(server, self.data_function)
-        self.data = simplify(fn(**params))
-        if self.data == {}:
+        fn = getattr(get_server(), self.data_function)
+        self.data = fn(**params)
+        if len(self.data) == 0:
             self.data = []
         else:
             self.data = as_list(self.data)
+            if isinstance(self.data[0], SudsObject):
+                parse = asdict
+            else:
+                parse = str
+            self.data = [parse(row) for row in self.data]
 
     # Some records may have additional fields; loop through entire
     # array to ensure all field names are accounted for.  (Otherwise BaseIO
@@ -46,14 +60,14 @@ class SnotelIO(WebserviceLoader, BaseParser, TupleMapper, BaseIO):
     scan_fields = True
 
     def print_debug(self):
-        print '%s.%s(%s)' % (
+        print('%s.%s(%s)' % (
             self.webservice_name,
             self.data_function,
             ','.join(
                 '%s=%s' % (key, val)
                 for key, val in self.params.items()
             )
-        )
+        ))
 
 
 class StationIO(SnotelIO):

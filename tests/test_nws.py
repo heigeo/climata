@@ -67,5 +67,5 @@ class NwsTestCase(ClimataTestCase):
     def test_ensemble_sites(self):
         sites = EnsembleSiteIO()
         self.assertGreater(len(sites), 0)
-        site = sites[sites.keys()[0]]
+        site = sites[list(sites.keys())[0]]
         self.assertHasFields(site, ("stationname", "latitude", "longitude"))

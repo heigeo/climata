@@ -10,7 +10,7 @@ from .constants import *
 class ParameterOpt(ChoiceOpt):
     multi = True
     url_param = 'elems'
-    choices = ELEMENT_BY_ID.keys() + ELEMENT_BY_NAME.keys()
+    choices = list(ELEMENT_BY_ID.keys()) + list(ELEMENT_BY_NAME.keys())
 
 
 class AcisIO(WebserviceLoader, JsonParser, TupleMapper, BaseIO):
@@ -45,9 +45,9 @@ class AcisIO(WebserviceLoader, JsonParser, TupleMapper, BaseIO):
         if complex:
             # ACIS web service supports JSON object as "params" parameter
             nparams = {}
-            for key, val in params.items():
+            for key, val in list(params.items()):
                 url_param = self.get_url_param(key)
-                if len(val) == 1 and isinstance(val[0], basestring):
+                if len(val) == 1 and isinstance(val[0], str):
                     val = val[0]
                 nparams[url_param] = val
             return {'params': json.dumps(nparams)}
@@ -144,7 +144,7 @@ class StationDataIO(StationMetaIO):
         """
         field_names = super(StationDataIO, self).get_field_names()
         if field_names == ['meta', 'data']:
-            meta_fields = self.data[0]['meta'].keys()
+            meta_fields = list(self.data[0]['meta'].keys())
             if set(meta_fields) < set(self.getvalue('meta')):
                 meta_fields = self.getvalue('meta')
             field_names = list(meta_fields) + ['data']
@@ -230,7 +230,7 @@ class DataIO(TimeSeriesMapper, BaseIO):
                 # element's value as attributes.
                 for elem, val in zip(self.parameter, row):
                     # namedtuple doesn't like numeric field names
-                    if elem.isnumeric():
+                    if elem.isdigit():
                         elem = "e%s" % elem
                     data[elem] = val
                 yield data
@@ -251,7 +251,7 @@ class DataIO(TimeSeriesMapper, BaseIO):
             field_names = ['date']
             for elem in self.parameter:
                 # namedtuple doesn't like numeric field names
-                if elem.isnumeric():
+                if elem.isdigit():
                     elem = "e%s" % elem
                 field_names.append(elem)
             return field_names
