@@ -1,6 +1,5 @@
 from os.path import join, dirname
 from setuptools import setup, find_packages
-import sys
 
 
 SERVICES = (
@@ -18,15 +17,6 @@ LONG_DESCRIPTION = """
 A pythonic library for iterating over climate time series data from %s.
 Powered by wq.io.
 """ % SVC_STR
-
-if sys.version_info[0] >= 3:
-    OWSLIB = "OWSLib==0.8-dev"
-    DEP_LINKS = [
-        "https://github.com/tbicr/OWSLib/tarball/python3#egg=OWSLib-0.8-dev"
-    ]
-else:
-    OWSLIB = "OWSLib"
-    DEP_LINKS = []
 
 
 def long_description():
@@ -56,10 +46,9 @@ setup(
     long_description=long_description(),
     install_requires=[
         'wq.io>=0.7.0',
-        OWSLIB,
+        'owslib>=0.9',
         "suds-jurko",
     ],
-    dependency_links=DEP_LINKS,
     scripts=['climata/bin/acis_sites.py', 'climata/bin/acis_data.py'],
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -73,5 +62,4 @@ setup(
         'Topic :: System :: Networking :: Monitoring',
     ],
     test_suite='tests',
-    tests_require='httpretty',
 )

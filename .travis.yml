@@ -1,3 +1,4 @@
+sudo: false
 language: python
 python:
  - "2.7"
@@ -5,6 +6,10 @@ python:
 install:
  - pip install wq.io
  - pip install suds-jurko
- - pip install https://github.com/tbicr/OWSLib/archive/python3.zip
+ - pip install owslib
+ - pip install flake8
+env:
+ - 
+ - LINT=1
 script:
- - python setup.py test
+ - ./runtests.sh
