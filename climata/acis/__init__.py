@@ -143,7 +143,7 @@ class StationDataIO(StationMetaIO):
         Use meta attributes as field names
         """
         field_names = super(StationDataIO, self).get_field_names()
-        if field_names == ['meta', 'data']:
+        if set(field_names) == set(['meta', 'data']):
             meta_fields = list(self.data[0]['meta'].keys())
             if set(meta_fields) < set(self.getvalue('meta')):
                 meta_fields = self.getvalue('meta')

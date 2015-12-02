@@ -37,7 +37,7 @@ class WaterMlParser(BaseParser):
     no_pickle_parser = ['response']
 
     def parse(self):
-        response = WaterML(self.file.read()).response
+        response = WaterML(self.file.read().encode('utf-8')).response
         self.response = response
         self.data = list(map(self.parse_timeseries, response.time_series))
 
