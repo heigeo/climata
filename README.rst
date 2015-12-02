@@ -41,8 +41,7 @@ data parsing code, by smoothing over some of the differences between various dat
 .. image:: https://img.shields.io/pypi/pyversions/climata.svg
     :target: https://pypi.python.org/pypi/climata
     :alt: Python Support
-    
-Tested on Python 2.7 and 3.4.
+
 
 Getting Started
 ---------------
