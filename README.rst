@@ -9,12 +9,38 @@ a number of webservices as listed below.  climata is powered by
 `wq.io <http://wq.io/wq.io>`_, and shares its goal of maximizing the reusability of
 data parsing code, by smoothing over some of the differences between various data formats.
 
-.. image:: https://travis-ci.org/heigeo/climata.svg?branch=master
-    :target: https://travis-ci.org/heigeo/climata
 
-.. image:: https://pypip.in/version/climata/badge.svg?style=flat
-    :target: https://pypi.python.org/pypi/climata/
-    :alt: Latest Version
+.. image:: https://img.shields.io/pypi/v/climata.svg
+    :target: https://pypi.python.org/pypi/climata
+    :alt: Latest PyPI Release
+
+.. image:: https://img.shields.io/github/release/heigeo/climata.svg
+    :target: https://github.com/heigeo/climata/releases
+    :alt: Release Notes
+    
+.. image:: https://img.shields.io/pypi/l/climata.svg
+    :target: https://github.com/heigeo/climata/blob/master/LICENSE
+    :alt: License
+    
+.. image:: https://img.shields.io/github/stars/heigeo/climata.svg
+    :target: https://github.com/heigeo/climata/stargazers
+    :alt: GitHub Stars
+
+.. image:: https://img.shields.io/github/forks/heigeo/climata.svg
+    :target: https://github.com/heigeo/climata/network
+    :alt: GitHub Forks
+    
+.. image:: https://img.shields.io/github/issues/heigeo/climata.svg
+    :target: https://github.com/heigeo/climata/issues
+    :alt: GitHub Issues
+|
+.. image:: https://img.shields.io/travis/heigeo/climata.svg
+    :target: https://travis-ci.org/heigeo/climata
+    :alt: Travis Build Status
+    
+.. image:: https://img.shields.io/pypi/pyversions/climata.svg
+    :target: https://pypi.python.org/pypi/climata
+    :alt: Python Support
     
 Tested on Python 2.7 and 3.4.
 
