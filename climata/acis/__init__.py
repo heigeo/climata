@@ -4,7 +4,7 @@ from climata.base import (
     WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt,
     parse_date, fill_date_range,
 )
-from .constants import *
+from .constants import *  # noqa
 
 
 class ParameterOpt(ChoiceOpt):

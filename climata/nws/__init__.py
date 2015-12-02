@@ -1,8 +1,7 @@
 from wq.io import (
-    CsvParser, XmlNetIO, XmlParser, BaseIO,
+    XmlNetIO, XmlParser, BaseIO,
     TupleMapper, TimeSeriesMapper
 )
-from wq.io.parsers.base import BaseParser
 from climata.base import (
     WebserviceLoader, ZipWebserviceLoader,
     FilterOpt, DateOpt, ChoiceOpt
@@ -86,7 +85,7 @@ class EnsembleForecastIO(ZipWebserviceLoader, EnsembleCsvParser,
     @property
     def params(self):
         # Don't actually need params, but ensure validation logic is called
-        params = super(EnsembleForecastIO, self).params
+        super(EnsembleForecastIO, self).params
         return None
 
     @property

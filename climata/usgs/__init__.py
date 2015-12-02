@@ -1,4 +1,4 @@
-from wq.io import NetLoader, TupleMapper, TimeSeriesMapper, BaseIO
+from wq.io import NetLoader, TupleMapper, BaseIO
 from climata.base import WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt
 from climata.parsers import RdbParser, WaterMlParser
 from .constants import SITE_TYPES

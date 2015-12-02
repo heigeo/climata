@@ -1,5 +1,4 @@
 import unittest
-import re
 
 
 class ClimataTestCase(unittest.TestCase):

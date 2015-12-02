@@ -1,7 +1,6 @@
 from .base import ClimataTestCase
 from climata.nws import EnsembleSiteIO, EnsembleForecastIO, HydroForecastIO
 from datetime import datetime, date
-from wq.io.exceptions import NoData
 
 
 class NwsTestCase(ClimataTestCase):

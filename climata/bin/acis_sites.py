@@ -98,7 +98,8 @@ def load_sites(*basin_ids):
             elem_ranges.append(erange)
 
         # Output CSV row
-        print(",".join(map(str,
+        print(",".join(map(
+            str,
             [site.uid, site.name]
             + [site.sids.get(auth, "") for auth in seen_auths]
             + [site.latitude, site.longitude]
@@ -108,7 +109,8 @@ def load_sites(*basin_ids):
 
     # Print CSV rows for sites without data
     for site in nodata_sites:
-        print(",".join(map(str,
+        print(",".join(map(
+            str,
             [site.uid, site.name]
             + [site.sids.get(auth, "") for auth in seen_auths]
             + [site.latitude, site.longitude]

@@ -1,5 +1,4 @@
 from wq.io import CsvParser, TimeSeriesMapper, TupleMapper, BaseIO
-from datetime import datetime, date, timedelta
 from collections import OrderedDict
 from climata.base import WebserviceLoader, FilterOpt
 from wq.io.exceptions import NoData

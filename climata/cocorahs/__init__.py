@@ -1,5 +1,5 @@
 from wq.io import TimeSeriesMapper, XmlParser, BaseIO
-from datetime import datetime, date, timedelta
+from datetime import datetime
 from climata.base import WebserviceLoader, FilterOpt, DateOpt, ChoiceOpt
 
 

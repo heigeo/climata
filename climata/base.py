@@ -1,4 +1,3 @@
-from datetime import datetime
 from warnings import warn
 from wq.io import make_date_mapper, NetLoader, Zipper
 
@@ -169,11 +168,12 @@ class WebserviceLoader(NetLoader):
         nested dictionaries (a "complex" list)
         """
         value = self.getvalue(name)
-        complex = False
+        complex = {}
 
         def str_value(val):
+            # TODO: nonlocal complex
             if isinstance(val, dict):
-                complex = True
+                complex['complex'] = True
                 return val
             else:
                 return str(val)
@@ -183,7 +183,7 @@ class WebserviceLoader(NetLoader):
         else:
             value = [str_value(val) for val in as_list(value)]
 
-        return value, complex
+        return value, bool(complex)
 
     def set_param(self, into, name):
         """
