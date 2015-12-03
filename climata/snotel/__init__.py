@@ -16,7 +16,7 @@ _server = None
 
 def get_server():
     global _server
-    if not _server:
+    if _server is None:
         _server = Client(url).service
     return _server
 
