@@ -131,6 +131,7 @@ Available elem codes:
         sys.stderr.write(" %s:\t%s\n" % (elem, ELEMENT_BY_NAME[elem]['desc']))
     exit()
 
+
 if __name__ == "__main__":
     if len(sys.argv) < 3 or sys.argv[2] not in ELEMENT_BY_NAME:
         usage()

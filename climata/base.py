@@ -1,11 +1,10 @@
 from warnings import warn
+from .version import VERSION
+from datetime import datetime, timedelta
 from wq.io import make_date_mapper, NetLoader, Zipper
 
+
 parse_date = make_date_mapper('%Y-%m-%d')
-
-from .version import VERSION
-
-from datetime import datetime, timedelta
 
 
 class FilterOpt(object):
