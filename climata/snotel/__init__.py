@@ -10,7 +10,7 @@ from suds.sudsobject import asdict, Object as SudsObject
 from climata.base import WebserviceLoader, FilterOpt, DateOpt
 from climata.base import fill_date_range, as_list
 
-url = 'http://www.wcc.nrcs.usda.gov/awdbWebService/services?WSDL'
+url = 'https://wcc.sc.egov.usda.gov/awdbWebService/services?WSDL'
 _server = None
 
 

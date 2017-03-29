@@ -36,11 +36,6 @@ class HydrometTestCase(ClimataTestCase):
         self.assertGreater(item.af, 0)
 
     def test_no_data(self):
-        data = AgrimetRecentIO(
-            station='HPD',
-        )
-        self.assertEqual(len(data), 0)
-
         with self.assertRaises(NoData):
             AgrimetRecentIO(
                 station='INVALID_ID',
