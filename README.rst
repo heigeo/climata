@@ -59,6 +59,7 @@ Available Services
  Module             Classes                                                          Data Source     Agency/Org.
 =================== ================================================================ ============== ============
 climata.acis_       ``StationMetaIO``, ``StationDataIO``                             ACIS_           NOAA RCCs
+climata.epa_        ``WqxDomainIO``                                                  WQX_            EPA
 climata.cocorahs_   ``CocorahsIO``                                                   CoCoRaHS_       CoCoRaHS
 climata.hydromet_   ``DailyDataIO``, ``InstantDataIO``, ``AgrimetRecentIO``          Hydromet_       USBR
 climata.nws_        ``HydroForecastIO``, ``EnsembleForecastIO``, ``EnsembleSiteIO``  CNRFC_          NWS
@@ -104,12 +105,14 @@ More Python code examples are available via the `climata-viewer website`_.
 
 .. _ACIS: http://data.rcc-acis.org/
 .. _CoCoRaHS: http://data.cocorahs.org/cocorahs/export/exportmanager.aspx
+.. _WQX: https://www3.epa.gov/storet/wqx/wqx_getdomainvalueswebservice.html
 .. _Hydromet: http://www.usbr.gov/pn/hydromet/arcread.html
 .. _CNRFC: http://www.cnrfc.noaa.gov/
 .. _SNOTEL AWDB: http://www.wcc.nrcs.usda.gov/web_service/awdb_web_service_landing.htm
 .. _NWIS: http://waterdata.usgs.gov/nwis
 .. _climata.acis: https://github.com/heigeo/climata/blob/master/climata/acis/__init__.py
 .. _climata.cocorahs: https://github.com/heigeo/climata/blob/master/climata/cocorahs/__init__.py
+.. _climata.epa: https://github.com/heigeo/climata/blob/master/climata/epa/__init__.py
 .. _climata.hydromet: https://github.com/heigeo/climata/blob/master/climata/hydromet/__init__.py
 .. _climata.nws: https://github.com/heigeo/climata/blob/master/climata/nws/__init__.py
 .. _climata.snotel: https://github.com/heigeo/climata/blob/master/climata/snotel/__init__.py
