@@ -369,7 +369,10 @@ class HourlyDataIO(TimeSeriesMapper, SnotelIO):
     def load(self):
         super(HourlyDataIO, self).load()
         if self.data and 'values' in self.data[0]:
-            self.data = as_list(self.data[0]['values'])
+            self.data = [
+                asdict(row)
+                for row in as_list(self.data[0]['values'])
+            ]
         else:
             raise NoData
 

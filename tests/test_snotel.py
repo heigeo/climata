@@ -1,6 +1,7 @@
 from .base import ClimataTestCase
 from climata.snotel import (
-    StationIO, StationDailyDataIO, RegionDailyDataIO, ElementIO
+    StationIO, StationDailyDataIO, StationHourlyDataIO,
+    RegionDailyDataIO, ElementIO
 )
 
 
@@ -29,6 +30,22 @@ class SnotelTestCase(ClimataTestCase):
         )
         self.assertHasFields(
             item.data[0], ("value", "flag", "date")
+        )
+
+    def test_station_hourly_data(self):
+        data = StationHourlyDataIO(
+            station='395:OR:SNTL',
+            start_date='2014-07-01',
+            end_date='2014-07-01',
+        )
+        item = data[0]
+        self.assertHasFields(
+            item, (
+                "stationtriplet", "elementcd", "element_name", "storedunitcd"
+            )
+        )
+        self.assertHasFields(
+            item.data[0], ("value", "flag", "datetime")
         )
 
     def test_region_daily_data(self):
