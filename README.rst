@@ -46,9 +46,12 @@ data parsing code, by smoothing over some of the differences between various dat
 Getting Started
 ---------------
 
-::
+.. code:: bash
 
-    pip3 install climata
+    # Recommended: create virtual environment
+    # python3 -m venv venv
+    # . venv/bin/activate
+    pip install climata
 
 See https://github.com/heigeo/climata to report any issues.
 
