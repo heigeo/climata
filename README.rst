@@ -33,7 +33,9 @@ data parsing code, by smoothing over some of the differences between various dat
 .. image:: https://img.shields.io/github/issues/heigeo/climata.svg
     :target: https://github.com/heigeo/climata/issues
     :alt: GitHub Issues
+
 |
+
 .. image:: https://img.shields.io/travis/heigeo/climata.svg
     :target: https://travis-ci.org/heigeo/climata
     :alt: Travis Build Status
