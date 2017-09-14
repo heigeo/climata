@@ -67,5 +67,6 @@ setup(
         'Topic :: System :: Networking :: Monitoring',
     ],
     test_suite='tests',
-    tests_require=['iso8601'],
+    tests_require=['django'],
+    # tests_require=['iso8601'],  # FIXME: Requires wq.io==1.0.1
 )
