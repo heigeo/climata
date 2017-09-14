@@ -67,4 +67,5 @@ setup(
         'Topic :: System :: Networking :: Monitoring',
     ],
     test_suite='tests',
+    tests_require=['iso8601'],
 )
