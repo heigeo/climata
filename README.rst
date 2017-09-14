@@ -71,26 +71,27 @@ Usage
 -----
 Command-line interface:
 
-::
+.. code:: bash
 
-    # Load metadata for sites in Mississippi Headwaters HUC4
-    acis_sites.py 0701 > sites.csv
+    # Load metadata for sites in Upper Klamath Lake basin
+    wq cat climata.acis.StationMetaIO "basin=18010203" > sites.csv
 
     # Load daily average temperature for these sites
-    acis_data.py 0701 avgt > data.csv
+    PARAMS="basin=18010203,start_date=2017-01-01,end_date=2017-01-31,parameter=avgt"
+    wq cat climata.acis.StationDataIO "$PARAMS" > data.csv
 
 
 Python API:
 
-::
+.. code:: python
 
     from climata.acis import StationDataIO
 
-    # Load average temperature for sites in Mississippi Headwaters HUC8
+    # Load average temperature for sites in Upper Klamath Lake basin
     sites = StationDataIO(
-        basin="07010101",
-        start_date="2012-12-01",
-        end_date="2012-12-31",
+        basin="18010203",
+        start_date="2017-01-01",
+        end_date="2017-01-31",
         parameter="avgt"
     )
 
